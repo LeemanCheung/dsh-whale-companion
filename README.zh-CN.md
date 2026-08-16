@@ -4,6 +4,12 @@
 
 这是一个本地优先的 DSH 鲸鱼伙伴：把不含内容的会话活动元数据转换为可拖动鲸鱼、等级、连续使用天数、统计、12 个成就和 6 套皮肤。
 
+## 界面截图
+
+![Whale Companion 仪表盘](https://raw.githubusercontent.com/LeemanCheung/dsh-whale-companion/main/assets/screenshots/overview.png)
+
+> 使用 GPT Image 根据已实现的 Client 布局和功能生成；实际外观会随 DSH 主题和视口变化。
+
 ## 功能
 
 - `shell.overlay` 鲸鱼支持拖动、方向键移动（Shift 加速）、左右边缘吸附、视口限制、归一化位置持久化和每 5 秒刷新。

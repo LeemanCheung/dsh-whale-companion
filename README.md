@@ -4,6 +4,12 @@ English | [中文](README.zh-CN.md)
 
 A local-first DSH companion that turns privacy-safe session activity metadata into a draggable whale, levels, streaks, statistics, twelve achievements, and six skins.
 
+## Screenshot
+
+![Whale Companion dashboard](https://raw.githubusercontent.com/LeemanCheung/dsh-whale-companion/main/assets/screenshots/overview.png)
+
+> Generated with GPT Image from the implemented Client layout and feature set; runtime appearance follows the active DSH theme and viewport.
+
 ## Features
 
 - `shell.overlay` whale with persisted normalized position, viewport clamping, edge snapping, pointer drag, keyboard movement (arrow keys; Shift accelerates), and five-second live refresh.
