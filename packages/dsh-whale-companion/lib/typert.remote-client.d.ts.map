@@ -1,0 +1,1 @@
+{"version":3,"file":"typert.remote-client.d.ts","names":["export","get","import","reset","setPosition","setSkin"],"sources":["../src/index.ts"],"sourcesContent":[null],"mappings":";;;;;;;;;IA0EQA,M;IAlBAC,G;IAwBAC,M;IAMAC,K;IAlBAC,W;IANAC,O;;;IAYAL,uB;IAlBAC,oB;IAwBAC,uB;IAMAC,sB;IAlBAC,4B;IANAC,wB","ignoreList":[]}
