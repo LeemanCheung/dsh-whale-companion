@@ -1,0 +1,4 @@
+# Durable Host progress service; the dsh.client manifest contributes both UI surfaces.
+- insert:
+    - id: whale-companion
+      name: dsh-whale-companion
