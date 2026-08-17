@@ -75,7 +75,11 @@ function apiFrom(raw: RawWhaleApi): WhaleApi {
 /** Mount the generated Remote namespace and both browser surfaces. */
 export async function apply(ctx: Context): Promise<() => Promise<void>> {
   const disposeRemote = await ctx.remote.$mount(whaleRemote)
-  const raw = (ctx.remote as unknown as { whaleCompanion: RawWhaleApi }).whaleCompanion
+  const raw = ctx.get('remote.whaleCompanion') as RawWhaleApi | undefined
+  if (raw === undefined) {
+    await disposeRemote()
+    throw new Error('Whale Companion Remote namespace did not mount')
+  }
   const api = apiFrom(raw)
   ctx.slots.inject('shell.overlay', () => ctx.slots.register({
     name: 'shell.overlay', id: 'whale-companion', order: 30, inject: () => ({ api }),

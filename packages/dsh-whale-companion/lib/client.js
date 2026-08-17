@@ -4428,8 +4428,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			]
 		};
 		//#endregion
-		//#region \0dsh-community-css:C:\Users\zhanglimin202307\Desktop\dsh\dsh-plugins\.publish\repos\dsh-whale-companion\packages\dsh-whale-companion\src\client\Whale.module.css.mjs
-		const css = ".D7ILjW_overlay{pointer-events:none;z-index:1;position:fixed;inset:0}.D7ILjW_whale{min-width:72px;min-height:76px;color:var(--dsw-alias-label-primary);cursor:grab;touch-action:none;pointer-events:auto;background:0 0;border:0;border-radius:18px;place-items:center;padding:2px;display:grid;position:absolute;top:0;left:0}.D7ILjW_whale:active{cursor:grabbing}.D7ILjW_whale:focus-visible{outline:3px solid var(--dsw-alias-brand-primary);outline-offset:3px}.D7ILjW_whaleBody{color:var(--whale-skin);filter:var(--whale-filter,none) drop-shadow(0 7px 10px color-mix(in srgb, var(--whale-skin) 35%, transparent));font-size:54px;line-height:1;animation:3.2s ease-in-out infinite D7ILjW_float;display:block}.D7ILjW_whale[data-skin=coral]{--whale-filter:hue-rotate(145deg) saturate(1.35)}.D7ILjW_whale[data-skin=midnight]{--whale-filter:hue-rotate(45deg) saturate(.9) brightness(.72)}.D7ILjW_whale[data-skin=aurora]{--whale-filter:hue-rotate(285deg) saturate(1.15)}.D7ILjW_whale[data-skin=sunset]{--whale-filter:hue-rotate(175deg) saturate(1.4) brightness(1.08)}.D7ILjW_whale[data-skin=nebula]{--whale-filter:hue-rotate(75deg) saturate(1.25)}.D7ILjW_badge{border:1px solid var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);box-shadow:0 2px 8px color-mix(in srgb, var(--dsw-alias-bg-base) 45%, transparent);border-radius:999px;margin-top:-7px;padding:2px 8px;font-size:12px;font-weight:700;line-height:1.25}.D7ILjW_overlayStatus,.D7ILjW_visuallyHidden{clip:rect(0, 0, 0, 0);white-space:nowrap;border:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}.D7ILjW_home{max-width:920px;color:var(--dsw-alias-label-primary);padding:8px 2px 28px}.D7ILjW_home h2,.D7ILjW_home h3,.D7ILjW_home p{margin-top:0}.D7ILjW_hero{border:1px solid var(--dsw-alias-border-l2);background:linear-gradient(135deg, var(--dsw-alias-bg-layer-1), var(--dsw-alias-bg-layer-2));border-radius:20px;justify-content:space-between;align-items:center;gap:20px;padding:24px;display:flex;overflow:hidden}.D7ILjW_eyebrow{color:var(--dsw-alias-brand-primary);letter-spacing:.08em;margin-bottom:6px;font-size:12px;font-weight:700}.D7ILjW_hero h2{margin-bottom:7px;font-size:clamp(26px,4vw,38px);line-height:1.1}.D7ILjW_intro{max-width:520px;color:var(--dsw-alias-label-secondary);margin-bottom:0;line-height:1.6}.D7ILjW_heroWhale{filter:drop-shadow(0 8px 14px color-mix(in srgb, var(--dsw-alias-brand-primary) 28%, transparent));flex:none;font-size:clamp(56px,11vw,100px);animation:3.2s ease-in-out infinite D7ILjW_float}.D7ILjW_progressCard{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);border-radius:16px;margin-top:14px;padding:18px 20px}.D7ILjW_progressHeading,.D7ILjW_sectionHeading{justify-content:space-between;align-items:baseline;gap:12px;display:flex}.D7ILjW_progressHeading span,.D7ILjW_sectionHeading span,.D7ILjW_progressCard p{color:var(--dsw-alias-label-secondary)}.D7ILjW_progressCard p{margin:8px 0 0;font-size:13px}.D7ILjW_progressTrack{background:var(--dsw-alias-bg-layer-2);border-radius:999px;height:10px;margin-top:12px;overflow:hidden}.D7ILjW_progressTrack span{border-radius:inherit;background:var(--dsw-alias-brand-primary);height:100%;transition:width .24s;display:block}.D7ILjW_privacy{color:var(--dsw-alias-label-tertiary);margin:12px 2px 0;font-size:12px;line-height:1.55}.D7ILjW_error,.D7ILjW_success{border:1px solid var(--dsw-alias-border-l3);border-radius:10px;margin:14px 0;padding:10px 12px;line-height:1.45}.D7ILjW_error{color:var(--dsw-alias-state-error-primary);background:color-mix(in srgb, var(--dsw-alias-state-error-primary) 8%, var(--dsw-alias-bg-base))}.D7ILjW_success{color:var(--dsw-alias-state-success-primary);background:color-mix(in srgb, var(--dsw-alias-state-success-primary) 8%, var(--dsw-alias-bg-base))}.D7ILjW_loading{color:var(--dsw-alias-label-secondary)}.D7ILjW_stats{grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:10px;margin:20px 0;display:grid}.D7ILjW_stat{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);border-radius:13px;min-width:0;padding:14px}.D7ILjW_stat strong,.D7ILjW_stat span{text-overflow:ellipsis;white-space:nowrap;display:block;overflow:hidden}.D7ILjW_stat strong{font-size:18px}.D7ILjW_stat span{color:var(--dsw-alias-label-secondary);margin-top:4px;font-size:12px}.D7ILjW_section{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-base);border-radius:16px;margin-top:20px;padding:18px}.D7ILjW_sectionHeading{margin-bottom:14px}.D7ILjW_sectionHeading h3{margin-bottom:0;font-size:16px}.D7ILjW_sectionHeading span{font-size:12px}.D7ILjW_skins{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;display:grid}.D7ILjW_skin,.D7ILjW_selected,.D7ILjW_actions button{border:1px solid var(--dsw-alias-border-l2);min-height:40px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);font:inherit;cursor:pointer;border-radius:10px;justify-content:center;align-items:center;gap:8px;padding:8px 11px;display:inline-flex}.D7ILjW_skin:hover,.D7ILjW_actions button:hover{border-color:var(--dsw-alias-brand-primary);background:var(--dsw-alias-bg-layer-2)}.D7ILjW_selected{border-color:var(--dsw-alias-brand-primary);outline:2px solid var(--dsw-alias-brand-primary);outline-offset:-3px}.D7ILjW_swatch{border:2px solid var(--dsw-alias-bg-base);width:16px;height:16px;box-shadow:0 0 0 1px var(--dsw-alias-border-l3);border-radius:50%}.D7ILjW_home button:focus-visible,.D7ILjW_home textarea:focus-visible{outline:3px solid var(--dsw-alias-brand-primary);outline-offset:2px}.D7ILjW_home button:disabled,.D7ILjW_home textarea:disabled{cursor:not-allowed;opacity:.58}.D7ILjW_achievements{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:0;padding:0;list-style:none;display:grid}.D7ILjW_achievement{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);border-radius:12px;align-items:flex-start;gap:10px;min-height:72px;padding:11px;display:flex}.D7ILjW_achievementIcon{background:var(--dsw-alias-bg-layer-2);border-radius:9px;flex:none;place-items:center;width:30px;height:30px;font-size:17px;display:grid}.D7ILjW_achievement strong,.D7ILjW_achievement span{display:block}.D7ILjW_achievement strong{font-size:13px}.D7ILjW_achievement div>span{color:var(--dsw-alias-label-secondary);margin-top:4px;font-size:12px;line-height:1.35}.D7ILjW_locked{opacity:.72;border-style:dashed}.D7ILjW_backupLabel{color:var(--dsw-alias-label-secondary);margin-bottom:7px;font-size:13px;display:block}.D7ILjW_home textarea{box-sizing:border-box;resize:vertical;border:1px solid var(--dsw-alias-border-l2);width:100%;min-height:106px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);border-radius:10px;padding:10px 12px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}.D7ILjW_actions{flex-wrap:wrap;gap:9px;margin-top:10px;display:flex}.D7ILjW_actions button{background:var(--dsw-alias-bg-layer-2)}.D7ILjW_actions .D7ILjW_danger{color:var(--dsw-alias-state-error-primary)}@keyframes D7ILjW_float{50%{transform:translateY(-6px)}}@media (width<=780px){.D7ILjW_stats{grid-template-columns:repeat(3,minmax(104px,1fr))}.D7ILjW_achievements{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (width<=520px){.D7ILjW_home{padding-inline:0}.D7ILjW_hero{align-items:flex-start;padding:18px}.D7ILjW_heroWhale{font-size:58px}.D7ILjW_skins{grid-template-columns:repeat(2,minmax(0,1fr))}.D7ILjW_stats{grid-template-columns:repeat(2,minmax(104px,1fr))}.D7ILjW_achievements{grid-template-columns:1fr}.D7ILjW_section{padding:14px}}@media (prefers-reduced-motion:reduce){.D7ILjW_whaleBody,.D7ILjW_heroWhale{animation:none}.D7ILjW_progressTrack span{transition:none}}";
+		//#region \0dsh-community-css:C:\Users\zhanglimin202307\Desktop\dsh\dsh-plugins\.publish\hotfix-whale-remote\packages\dsh-whale-companion\src\client\Whale.module.css.mjs
+		const css = ".r4MKMG_overlay{pointer-events:none;z-index:1;position:fixed;inset:0}.r4MKMG_whale{min-width:72px;min-height:76px;color:var(--dsw-alias-label-primary);cursor:grab;touch-action:none;pointer-events:auto;background:0 0;border:0;border-radius:18px;place-items:center;padding:2px;display:grid;position:absolute;top:0;left:0}.r4MKMG_whale:active{cursor:grabbing}.r4MKMG_whale:focus-visible{outline:3px solid var(--dsw-alias-brand-primary);outline-offset:3px}.r4MKMG_whaleBody{color:var(--whale-skin);filter:var(--whale-filter,none) drop-shadow(0 7px 10px color-mix(in srgb, var(--whale-skin) 35%, transparent));font-size:54px;line-height:1;animation:3.2s ease-in-out infinite r4MKMG_float;display:block}.r4MKMG_whale[data-skin=coral]{--whale-filter:hue-rotate(145deg) saturate(1.35)}.r4MKMG_whale[data-skin=midnight]{--whale-filter:hue-rotate(45deg) saturate(.9) brightness(.72)}.r4MKMG_whale[data-skin=aurora]{--whale-filter:hue-rotate(285deg) saturate(1.15)}.r4MKMG_whale[data-skin=sunset]{--whale-filter:hue-rotate(175deg) saturate(1.4) brightness(1.08)}.r4MKMG_whale[data-skin=nebula]{--whale-filter:hue-rotate(75deg) saturate(1.25)}.r4MKMG_badge{border:1px solid var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);box-shadow:0 2px 8px color-mix(in srgb, var(--dsw-alias-bg-base) 45%, transparent);border-radius:999px;margin-top:-7px;padding:2px 8px;font-size:12px;font-weight:700;line-height:1.25}.r4MKMG_overlayStatus,.r4MKMG_visuallyHidden{clip:rect(0, 0, 0, 0);white-space:nowrap;border:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}.r4MKMG_home{max-width:920px;color:var(--dsw-alias-label-primary);padding:8px 2px 28px}.r4MKMG_home h2,.r4MKMG_home h3,.r4MKMG_home p{margin-top:0}.r4MKMG_hero{border:1px solid var(--dsw-alias-border-l2);background:linear-gradient(135deg, var(--dsw-alias-bg-layer-1), var(--dsw-alias-bg-layer-2));border-radius:20px;justify-content:space-between;align-items:center;gap:20px;padding:24px;display:flex;overflow:hidden}.r4MKMG_eyebrow{color:var(--dsw-alias-brand-primary);letter-spacing:.08em;margin-bottom:6px;font-size:12px;font-weight:700}.r4MKMG_hero h2{margin-bottom:7px;font-size:clamp(26px,4vw,38px);line-height:1.1}.r4MKMG_intro{max-width:520px;color:var(--dsw-alias-label-secondary);margin-bottom:0;line-height:1.6}.r4MKMG_heroWhale{filter:drop-shadow(0 8px 14px color-mix(in srgb, var(--dsw-alias-brand-primary) 28%, transparent));flex:none;font-size:clamp(56px,11vw,100px);animation:3.2s ease-in-out infinite r4MKMG_float}.r4MKMG_progressCard{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);border-radius:16px;margin-top:14px;padding:18px 20px}.r4MKMG_progressHeading,.r4MKMG_sectionHeading{justify-content:space-between;align-items:baseline;gap:12px;display:flex}.r4MKMG_progressHeading span,.r4MKMG_sectionHeading span,.r4MKMG_progressCard p{color:var(--dsw-alias-label-secondary)}.r4MKMG_progressCard p{margin:8px 0 0;font-size:13px}.r4MKMG_progressTrack{background:var(--dsw-alias-bg-layer-2);border-radius:999px;height:10px;margin-top:12px;overflow:hidden}.r4MKMG_progressTrack span{border-radius:inherit;background:var(--dsw-alias-brand-primary);height:100%;transition:width .24s;display:block}.r4MKMG_privacy{color:var(--dsw-alias-label-tertiary);margin:12px 2px 0;font-size:12px;line-height:1.55}.r4MKMG_error,.r4MKMG_success{border:1px solid var(--dsw-alias-border-l3);border-radius:10px;margin:14px 0;padding:10px 12px;line-height:1.45}.r4MKMG_error{color:var(--dsw-alias-state-error-primary);background:color-mix(in srgb, var(--dsw-alias-state-error-primary) 8%, var(--dsw-alias-bg-base))}.r4MKMG_success{color:var(--dsw-alias-state-success-primary);background:color-mix(in srgb, var(--dsw-alias-state-success-primary) 8%, var(--dsw-alias-bg-base))}.r4MKMG_loading{color:var(--dsw-alias-label-secondary)}.r4MKMG_stats{grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:10px;margin:20px 0;display:grid}.r4MKMG_stat{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);border-radius:13px;min-width:0;padding:14px}.r4MKMG_stat strong,.r4MKMG_stat span{text-overflow:ellipsis;white-space:nowrap;display:block;overflow:hidden}.r4MKMG_stat strong{font-size:18px}.r4MKMG_stat span{color:var(--dsw-alias-label-secondary);margin-top:4px;font-size:12px}.r4MKMG_section{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-base);border-radius:16px;margin-top:20px;padding:18px}.r4MKMG_sectionHeading{margin-bottom:14px}.r4MKMG_sectionHeading h3{margin-bottom:0;font-size:16px}.r4MKMG_sectionHeading span{font-size:12px}.r4MKMG_skins{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;display:grid}.r4MKMG_skin,.r4MKMG_selected,.r4MKMG_actions button{border:1px solid var(--dsw-alias-border-l2);min-height:40px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);font:inherit;cursor:pointer;border-radius:10px;justify-content:center;align-items:center;gap:8px;padding:8px 11px;display:inline-flex}.r4MKMG_skin:hover,.r4MKMG_actions button:hover{border-color:var(--dsw-alias-brand-primary);background:var(--dsw-alias-bg-layer-2)}.r4MKMG_selected{border-color:var(--dsw-alias-brand-primary);outline:2px solid var(--dsw-alias-brand-primary);outline-offset:-3px}.r4MKMG_swatch{border:2px solid var(--dsw-alias-bg-base);width:16px;height:16px;box-shadow:0 0 0 1px var(--dsw-alias-border-l3);border-radius:50%}.r4MKMG_home button:focus-visible,.r4MKMG_home textarea:focus-visible{outline:3px solid var(--dsw-alias-brand-primary);outline-offset:2px}.r4MKMG_home button:disabled,.r4MKMG_home textarea:disabled{cursor:not-allowed;opacity:.58}.r4MKMG_achievements{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:0;padding:0;list-style:none;display:grid}.r4MKMG_achievement{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);border-radius:12px;align-items:flex-start;gap:10px;min-height:72px;padding:11px;display:flex}.r4MKMG_achievementIcon{background:var(--dsw-alias-bg-layer-2);border-radius:9px;flex:none;place-items:center;width:30px;height:30px;font-size:17px;display:grid}.r4MKMG_achievement strong,.r4MKMG_achievement span{display:block}.r4MKMG_achievement strong{font-size:13px}.r4MKMG_achievement div>span{color:var(--dsw-alias-label-secondary);margin-top:4px;font-size:12px;line-height:1.35}.r4MKMG_locked{opacity:.72;border-style:dashed}.r4MKMG_backupLabel{color:var(--dsw-alias-label-secondary);margin-bottom:7px;font-size:13px;display:block}.r4MKMG_home textarea{box-sizing:border-box;resize:vertical;border:1px solid var(--dsw-alias-border-l2);width:100%;min-height:106px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);border-radius:10px;padding:10px 12px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}.r4MKMG_actions{flex-wrap:wrap;gap:9px;margin-top:10px;display:flex}.r4MKMG_actions button{background:var(--dsw-alias-bg-layer-2)}.r4MKMG_actions .r4MKMG_danger{color:var(--dsw-alias-state-error-primary)}@keyframes r4MKMG_float{50%{transform:translateY(-6px)}}@media (width<=780px){.r4MKMG_stats{grid-template-columns:repeat(3,minmax(104px,1fr))}.r4MKMG_achievements{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (width<=520px){.r4MKMG_home{padding-inline:0}.r4MKMG_hero{align-items:flex-start;padding:18px}.r4MKMG_heroWhale{font-size:58px}.r4MKMG_skins{grid-template-columns:repeat(2,minmax(0,1fr))}.r4MKMG_stats{grid-template-columns:repeat(2,minmax(104px,1fr))}.r4MKMG_achievements{grid-template-columns:1fr}.r4MKMG_section{padding:14px}}@media (prefers-reduced-motion:reduce){.r4MKMG_whaleBody,.r4MKMG_heroWhale{animation:none}.r4MKMG_progressTrack span{transition:none}}";
 		const tagId = "dsh-whale-companion/Whale.module.css";
 		if (typeof document !== "undefined" && !document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]")) {
 			const tag = document.createElement("style");
@@ -4439,40 +4439,40 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			document.head.appendChild(tag);
 		}
 		var Whale_module_css_default = {
-			"eyebrow": "D7ILjW_eyebrow",
-			"danger": "D7ILjW_danger",
-			"loading": "D7ILjW_loading",
-			"success": "D7ILjW_success",
-			"swatch": "D7ILjW_swatch",
-			"overlay": "D7ILjW_overlay",
-			"stats": "D7ILjW_stats",
-			"badge": "D7ILjW_badge",
-			"achievement": "D7ILjW_achievement",
-			"progressTrack": "D7ILjW_progressTrack",
-			"privacy": "D7ILjW_privacy",
-			"skin": "D7ILjW_skin",
-			"achievementIcon": "D7ILjW_achievementIcon",
-			"section": "D7ILjW_section",
-			"heroWhale": "D7ILjW_heroWhale",
-			"achievements": "D7ILjW_achievements",
-			"whale": "D7ILjW_whale",
-			"float": "D7ILjW_float",
-			"intro": "D7ILjW_intro",
-			"progressHeading": "D7ILjW_progressHeading",
-			"overlayStatus": "D7ILjW_overlayStatus",
-			"error": "D7ILjW_error",
-			"stat": "D7ILjW_stat",
-			"locked": "D7ILjW_locked",
-			"progressCard": "D7ILjW_progressCard",
-			"whaleBody": "D7ILjW_whaleBody",
-			"home": "D7ILjW_home",
-			"backupLabel": "D7ILjW_backupLabel",
-			"visuallyHidden": "D7ILjW_visuallyHidden",
-			"sectionHeading": "D7ILjW_sectionHeading",
-			"selected": "D7ILjW_selected",
-			"actions": "D7ILjW_actions",
-			"hero": "D7ILjW_hero",
-			"skins": "D7ILjW_skins"
+			"section": "r4MKMG_section",
+			"privacy": "r4MKMG_privacy",
+			"locked": "r4MKMG_locked",
+			"selected": "r4MKMG_selected",
+			"skin": "r4MKMG_skin",
+			"heroWhale": "r4MKMG_heroWhale",
+			"whale": "r4MKMG_whale",
+			"overlayStatus": "r4MKMG_overlayStatus",
+			"actions": "r4MKMG_actions",
+			"achievements": "r4MKMG_achievements",
+			"badge": "r4MKMG_badge",
+			"skins": "r4MKMG_skins",
+			"swatch": "r4MKMG_swatch",
+			"sectionHeading": "r4MKMG_sectionHeading",
+			"intro": "r4MKMG_intro",
+			"achievementIcon": "r4MKMG_achievementIcon",
+			"home": "r4MKMG_home",
+			"loading": "r4MKMG_loading",
+			"float": "r4MKMG_float",
+			"progressHeading": "r4MKMG_progressHeading",
+			"error": "r4MKMG_error",
+			"stat": "r4MKMG_stat",
+			"overlay": "r4MKMG_overlay",
+			"backupLabel": "r4MKMG_backupLabel",
+			"eyebrow": "r4MKMG_eyebrow",
+			"danger": "r4MKMG_danger",
+			"whaleBody": "r4MKMG_whaleBody",
+			"progressCard": "r4MKMG_progressCard",
+			"stats": "r4MKMG_stats",
+			"visuallyHidden": "r4MKMG_visuallyHidden",
+			"progressTrack": "r4MKMG_progressTrack",
+			"hero": "r4MKMG_hero",
+			"achievement": "r4MKMG_achievement",
+			"success": "r4MKMG_success"
 		};
 		//#endregion
 		//#region src/client/index.tsx
@@ -4583,7 +4583,11 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 		/** Mount the generated Remote namespace and both browser surfaces. */
 		async function apply(ctx) {
 			const disposeRemote = await ctx.remote.$mount(TYPERT_REMOTE);
-			const raw = ctx.remote.whaleCompanion;
+			const raw = ctx.get("remote.whaleCompanion");
+			if (raw === void 0) {
+				await disposeRemote();
+				throw new Error("Whale Companion Remote namespace did not mount");
+			}
 			const api = apiFrom(raw);
 			ctx.slots.inject("shell.overlay", () => ctx.slots.register({
 				name: "shell.overlay",
