@@ -89,6 +89,14 @@ jobs:
         run: corepack pnpm test:e2e:update
       - name: Verify browser smoke and visual regression
         run: corepack pnpm test:e2e
+      - name: Upload validated workflow definitions
+        uses: actions/upload-artifact@v4
+        with:
+          name: whale-companion-release-workflows
+          path: |
+            .github/workflows/ci.yml
+            .github/workflows/release-2.2.0.yml
+          if-no-files-found: error
       - name: Upload browser evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -99,13 +107,14 @@ jobs:
             playwright-report/**
             test-results/**
           if-no-files-found: ignore
-      - name: Commit validated implementation
+      - name: Commit validated implementation without workflow definitions
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          rm -rf scripts/.complete-planned-items scripts/complete-planned-items.mjs .github/workflows/complete-planned-items.yml
+          rm -rf scripts/.complete-planned-items scripts/complete-planned-items.mjs
           git add -A
+          git reset -- .github/workflows
           if git diff --cached --quiet; then
             echo "No generated changes."
           else
