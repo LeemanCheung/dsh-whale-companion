@@ -63,11 +63,15 @@ jobs:
 
           e2e = Path('tests/e2e/whale-companion.e2e.ts')
           source = e2e.read_text(encoding='utf-8')
-          old = 'resonance: { blue: 420, common-minke: 180 },'
-          new = "resonance: { blue: 420, 'common-minke': 180 },"
-          if source.count(old) != 1:
-              raise SystemExit('E2E resonance fixture anchor missing or duplicated')
-          e2e.write_text(source.replace(old, new), encoding='utf-8')
+          fixes = [
+              ('resonance: { blue: 420, common-minke: 180 },', "resonance: { blue: 420, 'common-minke': 180 },"),
+              ("await expect(page.locator('#overlay')).toHaveScreenshot('quick-card-dark.png')", "await expect(page.getByLabel('鲸鱼伙伴快速航行卡')).toHaveScreenshot('quick-card-dark.png')"),
+          ]
+          for old, new in fixes:
+              if source.count(old) != 1:
+                  raise SystemExit(f'E2E correction anchor missing or duplicated: {old}')
+              source = source.replace(old, new)
+          e2e.write_text(source, encoding='utf-8')
           PY
       - name: Install and refresh lockfile
         run: corepack pnpm install --no-frozen-lockfile
