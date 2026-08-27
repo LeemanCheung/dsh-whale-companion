@@ -1,0 +1,53 @@
+name: Refresh deterministic Whale Companion bundle
+
+on:
+  push:
+    branches:
+      - feat/complete-all-planned-items
+    paths:
+      - build/plugin-bundle.ts
+      - .github/workflows/refresh-deterministic-build.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/complete-all-planned-items
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+      - run: corepack enable
+      - run: corepack pnpm install --frozen-lockfile
+      - run: corepack pnpm verify:planned
+      - run: corepack pnpm typecheck
+      - run: corepack pnpm test
+      - name: Build twice and prove byte-for-byte determinism
+        shell: bash
+        run: |
+          corepack pnpm build
+          rm -rf /tmp/whale-lib-first
+          cp -a packages/dsh-whale-companion/lib /tmp/whale-lib-first
+          corepack pnpm build
+          diff -ru /tmp/whale-lib-first packages/dsh-whale-companion/lib
+      - run: corepack pnpm pack:check
+      - run: corepack pnpm exec playwright install --with-deps chromium
+      - run: corepack pnpm test:e2e
+      - name: Commit the deterministic generated artifacts
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/dsh-whale-companion/lib
+          if git diff --cached --quiet; then
+            echo "Generated artifacts are already current."
+          else
+            git commit -m "build: refresh deterministic Whale Companion artifacts"
+            git push origin HEAD:feat/complete-all-planned-items
+          fi
