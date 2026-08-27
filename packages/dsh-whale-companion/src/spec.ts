@@ -14,6 +14,7 @@ const month = z.string().regex(/^\d{4}-\d{2}$/)
 const id = z.string().min(1).max(80).regex(/^[a-z0-9-]+$/)
 
 export const skinSchema = z.enum(['ocean', 'coral', 'midnight', 'aurora', 'sunset', 'nebula'])
+export const companionNameSchema = z.string().trim().min(1, '伙伴名字不能为空').max(20, '伙伴名字最多 20 个字符')
 export const whaleSpeciesIdSchema = z.enum(whaleSpeciesId)
 export const whalePositionSchema = z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) }).strict()
 export type WhalePosition = z.infer<typeof whalePositionSchema>
@@ -64,7 +65,7 @@ const communitySchema = z.object({ enabled: z.boolean(), aliasId: whaleAliasIdSc
 const sharedState = {
   xp: count, level: count, turns: count, sessions: count, tools: count, streak: count, longestStreak: count,
   lastActiveDay: day.optional(), checkpoints: z.array(z.string().min(1).max(64)).max(4096),
-  achievements: z.array(achievementIdSchema), skin: skinSchema, position: whalePositionSchema, updatedAt: timestamp,
+  achievements: z.array(achievementIdSchema), skin: skinSchema, position: whalePositionSchema, name: companionNameSchema.optional(), updatedAt: timestamp,
 } as const
 
 export const legacyWhaleStateSchema = z.object({ version: z.literal(1), ...sharedState }).strict().superRefine((state, ctx) => {
@@ -115,7 +116,7 @@ export const emptyRoomSlots = (): WhaleState['room']['slots'] => ({ backdrop: nu
 
 export const initialWhaleState = (): WhaleState => ({
   version: 5, xp: 0, level: 1, turns: 0, sessions: 0, tools: 0, streak: 0, longestStreak: 0,
-  checkpoints: [], achievements: [], skin: 'ocean', species: 'common-minke', resonance: {}, position: { x: 0.03, y: 0.08 }, updatedAt: 0,
+  checkpoints: [], achievements: [], skin: 'ocean', species: 'common-minke', resonance: {}, position: { x: 0.03, y: 0.08 }, name: '小蓝', updatedAt: 0,
   moments: [], monthlyTides: [], reactionCooldowns: [], collectibles: [], room: { slots: emptyRoomSlots(), presets: [] },
   expedition: null, storyFragments: [], community: { enabled: false, aliasId: 'blue-current', peers: [] },
 })

@@ -493,6 +493,7 @@ const skinSchema = z.enum([
 	"sunset",
 	"nebula"
 ]);
+const companionNameSchema = z.string().trim().min(1, "伙伴名字不能为空").max(20, "伙伴名字最多 20 个字符");
 const whaleSpeciesIdSchema = z.enum(whaleSpeciesId);
 const whalePositionSchema = z.object({
 	x: z.number().min(0).max(1),
@@ -617,6 +618,7 @@ const sharedState = {
 	achievements: z.array(achievementIdSchema),
 	skin: skinSchema,
 	position: whalePositionSchema,
+	name: companionNameSchema.optional(),
 	updatedAt: timestamp
 };
 const legacyWhaleStateSchema = z.object({
@@ -710,6 +712,7 @@ const initialWhaleState = () => ({
 		x: .03,
 		y: .08
 	},
+	name: "小蓝",
 	updatedAt: 0,
 	moments: [],
 	monthlyTides: [],
@@ -937,6 +940,7 @@ const RESONANCE = {
 	session: 2
 };
 const ACHIEVEMENTS = achievementIdSchema.options;
+const MAX_IMPORT_BYTES = 524288;
 const COLLECTIBLES = WHALE_COLLECTIBLES;
 const COLLECTIBLE_BY_ID = WHALE_COLLECTIBLE_BY_ID;
 const reactionText = {
@@ -1008,10 +1012,19 @@ function reduceWhale(state, event) {
 	const beforeLevel = state.level;
 	const beforeStars = resonanceStars(state.resonance[state.species] ?? 0);
 	const xp = state.xp + XP[event.kind];
-	const active = state.lastActiveDay === event.day;
 	const previous = state.lastActiveDay;
-	const adjacent = previous !== void 0 && utcDayOffset(previous, event.day) === 1;
-	const streak = event.kind === "session" && !active ? adjacent ? state.streak + 1 : 1 : state.streak;
+	let streak = state.streak;
+	let lastActiveDay = state.lastActiveDay;
+	if (event.kind === "session") {
+		const offset = previous === void 0 ? void 0 : utcDayOffset(previous, event.day);
+		if (offset === void 0) {
+			streak = 1;
+			lastActiveDay = event.day;
+		} else if (offset > 0) {
+			streak = offset === 1 ? state.streak + 1 : 1;
+			lastActiveDay = event.day;
+		}
+	}
 	const resonanceGain = RESONANCE[event.kind];
 	const resonance = resonanceGain === 0 ? state.resonance : {
 		...state.resonance,
@@ -1026,7 +1039,7 @@ function reduceWhale(state, event) {
 		sessions: state.sessions + Number(event.kind === "session"),
 		streak,
 		longestStreak: Math.max(state.longestStreak, streak),
-		lastActiveDay: event.kind === "session" ? event.day : state.lastActiveDay,
+		lastActiveDay,
 		checkpoints: [...state.checkpoints, event.checkpoint].slice(-4096),
 		resonance,
 		updatedAt: Math.max(state.updatedAt, event.at)
@@ -1139,7 +1152,7 @@ function setCommunity(state, enabled, aliasId, at = Date.now()) {
 /** Imports a safe community summary into the local trusted-peers list. */
 function importCommunitySong(state, raw, at = Date.now()) {
 	if (!state.community.enabled) throw new Error("请先主动开启鲸群分享");
-	const song = communitySongSchema.parse(typeof raw === "string" ? JSON.parse(raw) : raw);
+	const song = communitySongSchema.parse(parseBoundedJson(raw, "鲸歌"));
 	if (song.member.aliasId === state.community.aliasId) throw new Error("不能导入自己的鲸歌");
 	const peer = {
 		...song.member,
@@ -1203,7 +1216,7 @@ function exportVisitorBottle(state) {
 }
 /** Validates a visitor bottle for isolated preview. */
 function importVisitorBottle(raw) {
-	return visitorBottleSchema.parse(typeof raw === "string" ? JSON.parse(raw) : raw);
+	return visitorBottleSchema.parse(parseBoundedJson(raw, "访客瓶"));
 }
 /** Resets all local whale data. */
 function resetWhale() {
@@ -1246,7 +1259,7 @@ function exportWhale(state) {
 }
 /** Imports and migrates every supported whale backup version. */
 function importWhale(raw) {
-	const parsed = typeof raw === "string" ? JSON.parse(raw) : raw;
+	const parsed = parseBoundedJson(raw, "鲸鱼备份");
 	if (typeof parsed !== "object" || parsed === null || parsed.format !== "dsh-whale-companion") throw new Error("Invalid whale export");
 	const version = parsed.version;
 	if (![
@@ -1425,6 +1438,15 @@ function mergeMonthly(current, moments) {
 		speciesSeen: tide.speciesSeen.sort()
 	})).sort((left, right) => left.month.localeCompare(right.month)).slice(-24);
 }
+function parseBoundedJson(raw, label) {
+	if (typeof raw !== "string") return raw;
+	if (new TextEncoder().encode(raw).byteLength > 524288) throw new Error(`${label}过大，最大允许 512 KiB`);
+	try {
+		return JSON.parse(raw);
+	} catch {
+		throw new Error(`${label}不是有效 JSON`);
+	}
+}
 function reactionMessage(templateId) {
 	return reactionText[templateId] ?? "鲸鱼在海面留下了一段轻柔的潮汐。";
 }
@@ -1501,6 +1523,7 @@ let WhaleCompanionService = (() => {
 	let _get_decorators;
 	let _getV5_decorators;
 	let _setSkin_decorators;
+	let _setName_decorators;
 	let _setPosition_decorators;
 	let _setSpecies_decorators;
 	let _placeCollectible_decorators;
@@ -1524,6 +1547,7 @@ let WhaleCompanionService = (() => {
 			_get_decorators = [Remote("get")];
 			_getV5_decorators = [Remote("getV5")];
 			_setSkin_decorators = [Remote("setSkin")];
+			_setName_decorators = [Remote("setName")];
 			_setPosition_decorators = [Remote("setPosition")];
 			_setSpecies_decorators = [Remote("setSpeciesV5")];
 			_placeCollectible_decorators = [Remote("placeCollectibleV5")];
@@ -1571,6 +1595,17 @@ let WhaleCompanionService = (() => {
 				access: {
 					has: (obj) => "setSkin" in obj,
 					get: (obj) => obj.setSkin
+				},
+				metadata: _metadata
+			}, null, _instanceExtraInitializers);
+			__esDecorate(this, null, _setName_decorators, {
+				kind: "method",
+				name: "setName",
+				static: false,
+				private: false,
+				access: {
+					has: (obj) => "setName" in obj,
+					get: (obj) => obj.setName
 				},
 				metadata: _metadata
 			}, null, _instanceExtraInitializers);
@@ -1780,9 +1815,10 @@ let WhaleCompanionService = (() => {
 			const domain = await this.ctx.storageDomain.open(whaleDomainSpec);
 			this.table = domain.table("state");
 			this.ctx.on("session/created", (session) => {
-				const at = Date.now();
+				const createdAt = session.header.createdAt;
+				const at = typeof createdAt === "number" && Number.isFinite(createdAt) ? createdAt : Date.now();
 				this.record({
-					checkpoint: this.receipt("session-created", session.id, String(session.header.createdAt)),
+					checkpoint: this.receipt("session-created", session.id, String(createdAt)),
 					kind: "session",
 					day: dayOf(at),
 					at
@@ -1809,6 +1845,14 @@ let WhaleCompanionService = (() => {
 			return this.enqueue(() => this.commit({
 				...this.state(),
 				skin: parsed,
+				updatedAt: Date.now()
+			}));
+		}
+		async setName(name) {
+			const parsed = companionNameSchema.parse(name);
+			return this.enqueue(() => this.commit({
+				...this.state(),
+				name: parsed,
 				updatedAt: Date.now()
 			}));
 		}
@@ -1905,7 +1949,7 @@ let WhaleCompanionService = (() => {
 			return this.table?.get("global") ?? initialWhaleState();
 		}
 		async commit(state) {
-			const next = Object.freeze({ ...state });
+			const next = Object.freeze(whaleStateSchema.parse(state));
 			await this.requireTable().put("global", next);
 			return next;
 		}
@@ -1919,6 +1963,6 @@ function dayOf(time) {
 	return new Date(time).toISOString().slice(0, 10);
 }
 //#endregion
-export { ACHIEVEMENTS, COLLECTIBLES, COLLECTIBLE_BY_ID, RESONANCE, RESONANCE_THRESHOLDS, WHALE_ALIAS_LABELS, WHALE_COLLECTIBLES, WHALE_COLLECTIBLE_BY_ID, WHALE_REACTION_MANIFEST, WHALE_SLOT_LABELS, WHALE_SPECIES, WHALE_SPECIES_BY_ID, WhaleCompanionService, WhaleCompanionService as default, XP, achievementIdSchema, claimExpedition, emptyRoomSlots, equipSpecies, exportCommunitySong, exportVisitorBottle, exportWhale, importCommunitySong, importVisitorBottle, importWhale, initialWhaleState, isSpeciesUnlocked, legacyLevelForXp, legacyWhaleStateSchema, levelForXp, loadRoomPreset, placeCollectible, postcardView, reduceWhale, removeCommunityPeer, resetWhale, resonanceStars, saveRoomPreset, setCommunity, skinSchema, startExpedition, whaleAliasId, whaleAliasIdSchema, whaleCollectibleId, whaleCollectibleIdSchema, whaleDomainSpec, whaleEventIdSchema, whalePositionSchema, whaleRoomSlotId, whaleRoomSlotIdSchema, whaleSpeciesId, whaleSpeciesIdSchema, whaleStateSchema, xpFloorForLevel, xpToNextLevel };
+export { ACHIEVEMENTS, COLLECTIBLES, COLLECTIBLE_BY_ID, MAX_IMPORT_BYTES, RESONANCE, RESONANCE_THRESHOLDS, WHALE_ALIAS_LABELS, WHALE_COLLECTIBLES, WHALE_COLLECTIBLE_BY_ID, WHALE_REACTION_MANIFEST, WHALE_SLOT_LABELS, WHALE_SPECIES, WHALE_SPECIES_BY_ID, WhaleCompanionService, WhaleCompanionService as default, XP, achievementIdSchema, claimExpedition, companionNameSchema, emptyRoomSlots, equipSpecies, exportCommunitySong, exportVisitorBottle, exportWhale, importCommunitySong, importVisitorBottle, importWhale, initialWhaleState, isSpeciesUnlocked, legacyLevelForXp, legacyWhaleStateSchema, levelForXp, loadRoomPreset, placeCollectible, postcardView, reduceWhale, removeCommunityPeer, resetWhale, resonanceStars, saveRoomPreset, setCommunity, skinSchema, startExpedition, whaleAliasId, whaleAliasIdSchema, whaleCollectibleId, whaleCollectibleIdSchema, whaleDomainSpec, whaleEventIdSchema, whalePositionSchema, whaleRoomSlotId, whaleRoomSlotIdSchema, whaleSpeciesId, whaleSpeciesIdSchema, whaleStateSchema, xpFloorForLevel, xpToNextLevel };
 
 //# sourceMappingURL=index.js.map

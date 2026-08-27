@@ -16,6 +16,9 @@ A local-first DSH whale world. Privacy-safe session metadata becomes a draggable
 
 ## Features
 
+- **Complete 2.2.0 delivery:** named companion, four adaptive voyage goals, an animated self-contained SVG whale, a compact quick card, XP feedback, six multi-layer palettes, and local PNG/text sharing.
+- Session dates now prefer the real creation timestamp; late historical events cannot roll streaks backward; every text import is capped at 512 KiB before JSON parsing; durable writes are fully schema-validated.
+- CI now mounts the actual built client bundle in a browser-compatible DSH slot/Remote harness and runs desktop, mobile, light-theme, and reduced-motion Playwright visual regression.
 - A movable `shell.overlay` whale supports pointer drag, keyboard movement, edge snapping, persisted viewport-safe placement, and one shared five-second local refresh. New tide moments appear in a bounded visible bubble; only milestones are announced to screen readers.
 - Quiet, standard, and lively presentation modes stay in browser-local preferences. System reduced-motion always wins, and storage denial falls back safely without affecting progress.
 - Whale Home now leads with a seven-day ocean journal, the current whale story beat, a visual cove preview, and a field-backed Privacy Ledger.

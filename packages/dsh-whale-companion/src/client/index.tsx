@@ -11,7 +11,9 @@ import { WHALE_SPECIES, WHALE_SPECIES_BY_ID, isSpeciesUnlocked, resonanceStars, 
 import type { WhaleAchievementId } from '../types.ts'
 import { ACHIEVEMENTS, SKINS } from './catalog.ts'
 import { CoveOverview, PresentationSection, PrivacyLedgerSection, StoryBeatSection, WeeklyJournal } from './enrichment.tsx'
-import { CommunitySection as CommunitySectionV21, ExpeditionSection as ExpeditionSectionV21, RoomSection as RoomSectionV21, SkinSelector as SkinSelectorV21, TideSection as TideSectionV21 } from './feature-sections.tsx'
+import { CommunitySection as CommunitySectionV21, ExpeditionSection as ExpeditionSectionV21, RoomSection as RoomSectionV21, TideSection as TideSectionV21 } from './feature-sections.tsx'
+import { WhaleArt, skinPaletteStyle } from './WhaleArt.tsx'
+import { CompanionPlanSection, SkinPaletteSection, WhaleOverlayExtras } from './planned-sections.tsx'
 import { usePresentation } from './presentation-store.ts'
 import { speciesArtStyle } from './asset-styles.ts'
 import { apiFrom, storeFor, useWhale, type RawWhaleApi, type WhaleApi } from './store.ts'
@@ -37,6 +39,9 @@ function WhaleOverlay({ api }: { api: WhaleApi }): React.ReactElement {
   const { state, error } = useWhale(api)
   const [position, setPosition] = React.useState({ x: 24, y: 24 })
   const [homeOpen, setHomeOpen] = React.useState(false)
+  const [quickOpen, setQuickOpen] = React.useState(false)
+  const [xpGain, setXpGain] = React.useState<number>()
+  const previousXp = React.useRef<number>()
   const positionRef = React.useRef(position)
   const drag = React.useRef<{ x: number, y: number, startX: number, startY: number, moved: boolean }>()
   const clickEligible = React.useRef(false)
@@ -47,6 +52,15 @@ function WhaleOverlay({ api }: { api: WhaleApi }): React.ReactElement {
   const latestReaction = reactionPresentation(latestMoment)
   const firstMoment = React.useRef<string>()
   const [visibleReaction, setVisibleReaction] = React.useState<typeof latestReaction>()
+  React.useEffect(() => {
+    if (state === undefined) return
+    const previous = previousXp.current
+    previousXp.current = state.xp
+    if (previous === undefined || state.xp <= previous) return
+    setXpGain(state.xp - previous)
+    const timer = window.setTimeout(() => setXpGain(undefined), 1_900)
+    return () => window.clearTimeout(timer)
+  }, [state?.xp])
   React.useEffect(() => {
     if (latestReaction === undefined) { setVisibleReaction(undefined); return }
     if (firstMoment.current === undefined) { firstMoment.current = latestReaction.id; setVisibleReaction(undefined); return }
@@ -73,7 +87,7 @@ function WhaleOverlay({ api }: { api: WhaleApi }): React.ReactElement {
     const current = drag.current
     if (current === undefined) return
     if (!current.moved && Math.hypot(event.clientX - current.startX, event.clientY - current.startY) < DRAG_THRESHOLD) return
-    if (!current.moved) { current.moved = true; clickEligible.current = false; setDragging(true) }
+    if (!current.moved) { current.moved = true; clickEligible.current = false; setQuickOpen(false); setDragging(true) }
     place(clampPosition({ x: event.clientX - current.x, y: event.clientY - current.y }, event.currentTarget.offsetWidth, event.currentTarget.offsetHeight))
   }
   const end = (event: React.PointerEvent<HTMLButtonElement>, snap = true): void => {
@@ -86,6 +100,7 @@ function WhaleOverlay({ api }: { api: WhaleApi }): React.ReactElement {
     persist({ ...positionRef.current, x: edge }, event.currentTarget)
   }
   const keyMove = (event: React.KeyboardEvent<HTMLButtonElement>): void => {
+    if (event.key === 'Escape') { setQuickOpen(false); return }
     const step = event.shiftKey ? 32 : 12; const target = event.currentTarget; let next = positionRef.current
     if (event.key === 'ArrowLeft') next = { ...next, x: next.x - step }; else if (event.key === 'ArrowRight') next = { ...next, x: next.x + step }
     else if (event.key === 'ArrowUp') next = { ...next, y: next.y - step }; else if (event.key === 'ArrowDown') next = { ...next, y: next.y + step }
@@ -93,17 +108,18 @@ function WhaleOverlay({ api }: { api: WhaleApi }): React.ReactElement {
     event.preventDefault(); persist(next, target)
   }
   const species = WHALE_SPECIES_BY_ID[state?.species ?? 'common-minke']
-  const whaleArt = speciesArtStyle(species)
+  const skin = state?.skin ?? 'ocean'
   const reduced = presentation.systemReducedMotion || presentation.value.reduceMotion
   return React.createElement('div', { className: styles.overlay, 'data-mode': presentation.value.mode, 'data-reduced': reduced ? 'true' : 'false' },
     React.createElement('button', {
-      ref: whale, type: 'button', className: styles.whale, style: { transform: `translate(${position.x}px, ${position.y}px)`, '--whale-skin': SKINS[state?.skin ?? 'ocean'].color, '--species-color': species.palette } as React.CSSProperties,
+      ref: whale, type: 'button', className: styles.whale, style: { ...skinPaletteStyle(skin), transform: `translate(${position.x}px, ${position.y}px)`, '--species-color': species.palette } as React.CSSProperties,
       onPointerDown: (event: React.PointerEvent<HTMLButtonElement>) => { event.currentTarget.setPointerCapture(event.pointerId); drag.current = { x: event.clientX - positionRef.current.x, y: event.clientY - positionRef.current.y, startX: event.clientX, startY: event.clientY, moved: false }; clickEligible.current = true },
-      onPointerMove: move, onPointerUp: end, onPointerCancel: (event: React.PointerEvent<HTMLButtonElement>) => { clickEligible.current = false; end(event, false) }, onClick: (event: React.MouseEvent<HTMLButtonElement>) => { if (event.detail !== 0 && !clickEligible.current) return; clickEligible.current = false; setHomeOpen(true) }, onKeyDown: keyMove,
-      'data-skin': state?.skin ?? 'ocean', 'aria-label': `${species.nameZh}鲸鱼伙伴，海洋等级 ${state?.level ?? 1}。点击打开鲸鱼小屋；可拖动；使用方向键移动。`, 'aria-describedby': 'whale-move-help',
-    }, React.createElement('span', { className: styles.whaleBody, style: whaleArt, 'aria-hidden': true }), React.createElement('span', { className: styles.badge }, `Lv ${state?.level ?? 1} · ${species.nameZh}`)),
+      onPointerMove: move, onPointerUp: end, onPointerCancel: (event: React.PointerEvent<HTMLButtonElement>) => { clickEligible.current = false; end(event, false) }, onClick: (event: React.MouseEvent<HTMLButtonElement>) => { if (event.detail !== 0 && !clickEligible.current) return; clickEligible.current = false; setQuickOpen(value => !value) }, onKeyDown: keyMove,
+      'data-skin': skin, 'aria-label': `${state?.name ?? '小蓝'}，${species.nameZh}鲸鱼伙伴，海洋等级 ${state?.level ?? 1}。点击打开快速航行卡；可拖动；使用方向键移动。`, 'aria-describedby': 'whale-move-help', 'aria-expanded': quickOpen, 'aria-controls': 'whale-quick-card',
+    }, React.createElement(WhaleArt, { species, skin, compact: true, title: `${species.nameZh}鲸鱼伙伴` }), React.createElement('span', { className: styles.badge }, `Lv ${state?.level ?? 1} · ${species.nameZh}`)),
     visibleReaction && React.createElement('div', { className: visibleReaction.priority === 'high' ? `${styles.reactionBubble} ${styles.reactionHigh}` : styles.reactionBubble, style: { transform: `translate(${position.x + 76}px, ${Math.max(8, position.y - 4)}px)` }, role: visibleReaction.priority === 'high' ? 'status' : undefined, 'aria-live': visibleReaction.priority === 'high' ? 'polite' : undefined }, React.createElement('strong', null, species.nameZh), React.createElement('span', null, visibleReaction.message)),
-    React.createElement('span', { id: 'whale-move-help', className: styles.visuallyHidden }, '点击打开鲸鱼小屋。拖动后自动吸附到屏幕左右边缘。按方向键移动，按 Shift 加方向键可快速移动。'),
+    state && React.createElement(WhaleOverlayExtras, { state, position, open: quickOpen, xpGain, onClose: () => setQuickOpen(false), onOpenHome: () => { setQuickOpen(false); setHomeOpen(true) } }),
+    React.createElement('span', { id: 'whale-move-help', className: styles.visuallyHidden }, '点击打开快速航行卡，再进入完整鲸鱼小屋。拖动后自动吸附到屏幕左右边缘。按方向键移动，按 Shift 加方向键可快速移动；按 Escape 关闭快速卡。'),
     React.createElement('span', { className: styles.overlayStatus, role: 'status', 'aria-live': 'polite' }, error ?? (dragging ? '正在移动鲸鱼' : '')),
     homeOpen && React.createElement(WhaleHut, { api, onClose: () => setHomeOpen(false), returnFocus: () => window.setTimeout(() => whale.current?.focus(), 0) }),
   )
@@ -155,12 +171,13 @@ function WhaleSettings({ api, headingId }: { api: WhaleApi, headingId?: string }
   return React.createElement('section', { className: styles.home, 'aria-busy': busy || refreshing, 'data-presentation': presentation.value.mode, 'data-reduced': presentation.systemReducedMotion || presentation.value.reduceMotion ? 'true' : 'false' },
     React.createElement('header', { className: styles.hero },
       React.createElement('div', null, React.createElement('p', { className: styles.eyebrow }, '本地鲸鱼伙伴 · OCEAN TIDES'), React.createElement('h2', { id: headingId }, '鲸鱼小屋'), React.createElement('p', { className: styles.intro }, '鲸鱼会把安全的工作节奏化成潮汐、纪念物与一间只属于你的海湾。')),
-      React.createElement('span', { className: styles.heroWhale, style: { '--species-color': species.palette } as React.CSSProperties, role: 'img', 'aria-label': species.nameZh }, React.createElement('span', { className: styles.heroWhaleArt, style: speciesArtStyle(species), 'aria-hidden': true })),
+      React.createElement('span', { className: styles.heroWhale, style: { '--species-color': species.palette, ...skinPaletteStyle(state.skin) } as React.CSSProperties, 'aria-hidden': true }, React.createElement(WhaleArt, { species, skin: state.skin })),
     ),
     React.createElement('div', { className: styles.progressCard }, React.createElement('div', { className: styles.progressHeading }, React.createElement('strong', null, `海洋等级 ${state.level}`), React.createElement('span', null, `${state.xp} XP`)), React.createElement('div', { className: styles.progressTrack, role: 'progressbar', 'aria-label': '距下一等级的经验进度', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': progress }, React.createElement('span', { style: { width: `${progress}%` } })), React.createElement('p', null, state.level >= 100 ? '已抵达等级 100 · 未知之鲸正在聆听。' : `${progress}% 前往等级 ${state.level + 1} · 还需 ${levelFloor + span - state.xp} XP`)),
     React.createElement('p', { className: styles.privacy }, '隐私承诺：只使用事件类型、序号与时间产生本地进度。不会读取、保存、导出或分享提示词、消息、代码、路径、工具参数或工具结果。'),
     error && React.createElement('div', { className: styles.error, role: 'alert' }, React.createElement('span', null, `${error}，已保留上次读取的本地进度。`), React.createElement('button', { type: 'button', onClick: () => storeFor(api).retry() }, '重试')), notice && React.createElement('p', { className: notice.startsWith('已') ? styles.success : styles.error, role: notice.startsWith('已') ? 'status' : 'alert', 'aria-live': 'polite' }, notice),
     React.createElement('div', { className: styles.stats, 'aria-label': '进度统计' }, stat('海洋等级', state.level), stat('已观测鲸灵', `${WHALE_SPECIES.filter(candidate => isSpeciesUnlocked(candidate, state.level)).length}/20`), stat('当前共鸣', `${stars} 星`), stat('连续使用', `${state.streak} 天`), stat('今日潮汐', state.moments.filter(moment => moment.progressDay === state.moments.at(-1)?.progressDay).length), stat('纪念物', `${state.collectibles.length}/24`)),
+    React.createElement(CompanionPlanSection, { api, state, busy, action, onNotice: setNotice }),
     React.createElement(WeeklyJournal, { journal }),
     React.createElement(CoveOverview, { cove, species, skin: state.skin }),
     React.createElement(StoryBeatSection, { story, speciesName: species.nameZh }),
@@ -175,7 +192,7 @@ function WhaleSettings({ api, headingId }: { api: WhaleApi, headingId?: string }
     React.createElement(CommunitySectionV21, { api, state, busy, community, setCommunity, action, exportText }),
     React.createElement('section', { className: styles.section, 'aria-labelledby': sectionIds.visitor }, React.createElement('div', { className: styles.sectionHeading }, React.createElement('h3', { id: sectionIds.visitor }, '访客瓶'), React.createElement('span', null, '只读预览，不覆盖进度')), React.createElement('p', { className: styles.sectionIntro }, '把小屋的皮肤、鲸灵和布置装进一只本地文件。它不包含任务、对话、路径或账号。'), React.createElement('textarea', { value: visitor, disabled: busy, onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => setVisitor(event.currentTarget.value), placeholder: '导出自己的访客瓶，或粘贴朋友的访客瓶。' }), React.createElement('div', { className: styles.actions }, React.createElement('button', { type: 'button', disabled: busy, onClick: () => void exportText(() => api.exportVisitorBottleV5(), setVisitor, '已导出只读访客瓶。') }, '导出访客瓶'), React.createElement('button', { type: 'button', disabled: busy || visitor.trim() === '', onClick: () => void (async () => { setBusy(true); try { setVisitorPreview(await api.importVisitorBottleV5(visitor)); setNotice('已在隔离预览中打开访客瓶。') } catch (reason) { setNotice(reason instanceof Error ? reason.message : String(reason)) } finally { setBusy(false) } })() }, '隔离预览')), visitorPreview && React.createElement('div', { className: styles.preview }, React.createElement('strong', null, `${WHALE_SPECIES_BY_ID[visitorPreview.room.species].nameZh}的访客海湾`), React.createElement('span', null, `已放置 ${Object.values(visitorPreview.room.slots).filter(Boolean).length} 件纪念物 · 仅预览`))),
     React.createElement(PrivacyLedgerSection),
-    React.createElement(SkinSelectorV21, { api, state, busy, action }),
+    React.createElement(SkinPaletteSection, { api, state, busy, action }),
     React.createElement('section', { className: styles.section, 'aria-labelledby': sectionIds.achievements }, React.createElement('div', { className: styles.sectionHeading }, React.createElement('h3', { id: sectionIds.achievements }, '成就图鉴'), React.createElement('span', null, `${state.achievements.length}/12 已解锁`)), React.createElement('ul', { className: styles.achievements }, ...Object.entries(ACHIEVEMENTS).map(([id, meta]) => { const earned = state.achievements.includes(id as WhaleAchievementId); return React.createElement('li', { key: id, className: earned ? styles.achievement : `${styles.achievement} ${styles.locked}` }, React.createElement('span', { className: styles.achievementIcon, 'data-achievement': meta.mark, 'data-locked': earned ? 'false' : 'true', 'aria-hidden': true }), React.createElement('div', null, React.createElement('strong', null, earned ? meta.title : '未解锁成就'), React.createElement('span', null, earned ? meta.description : `达成条件：${meta.description}`))) }))),
     React.createElement('section', { className: styles.section, 'aria-labelledby': sectionIds.backup },
       React.createElement('div', { className: styles.sectionHeading }, React.createElement('h3', { id: sectionIds.backup }, '本地备份'), React.createElement('span', null, '不含会话与工作内容')),

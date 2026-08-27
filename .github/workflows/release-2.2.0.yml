@@ -1,0 +1,46 @@
+name: Release Whale Companion 2.2.0
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: github.repository == 'LeemanCheung/dsh-whale-companion'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+      - run: corepack enable
+      - run: corepack pnpm install --frozen-lockfile
+      - run: corepack pnpm verify:planned
+      - run: corepack pnpm typecheck
+      - run: corepack pnpm test
+      - run: corepack pnpm build
+      - run: git diff --exit-code -- packages/dsh-whale-companion/lib
+      - run: corepack pnpm pack:check
+      - name: Create tag and GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git rev-parse "refs/tags/v2.2.0" >/dev/null 2>&1; then
+            echo "v2.2.0 already exists."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a v2.2.0 -m "Whale Companion 2.2.0"
+          git push origin v2.2.0
+          gh release create v2.2.0 \
+            --title "Whale Companion 2.2.0 — Complete Planned Delivery" \
+            --generate-notes \
+            --notes "Completes every audited plan item: named companion, dynamic voyage goals, SVG interactive whale, quick card and XP feedback, multi-layer skins, PNG/text sharing, monotonic session dates, bounded imports, schema-validated commits, and browser visual regression coverage."

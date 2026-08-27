@@ -9,8 +9,8 @@ import {
   setCommunity, startExpedition, type WhaleObservation, type WhalePostcard, type WhaleVisitorBottle,
 } from './reducer.ts'
 import {
-  initialWhaleState, skinSchema, whaleAliasIdSchema, whaleCollectibleIdSchema, whaleDomainSpec, whalePositionSchema,
-  whaleRoomSlotIdSchema, whaleSpeciesIdSchema, type WhalePosition, type WhaleState,
+  companionNameSchema, initialWhaleState, skinSchema, whaleAliasIdSchema, whaleCollectibleIdSchema, whaleDomainSpec, whalePositionSchema,
+  whaleRoomSlotIdSchema, whaleSpeciesIdSchema, whaleStateSchema, type WhalePosition, type WhaleState,
 } from './spec.ts'
 
 export * from './catalog.ts'
@@ -44,8 +44,9 @@ export class WhaleCompanionService extends TypertRemoteService {
     const domain = await this.ctx.storageDomain.open(whaleDomainSpec)
     this.table = domain.table('state')
     this.ctx.on('session/created', session => {
-      const at = Date.now()
-      void this.record({ checkpoint: this.receipt('session-created', session.id, String(session.header.createdAt)), kind: 'session', day: dayOf(at), at })
+      const createdAt = session.header.createdAt
+      const at = typeof createdAt === 'number' && Number.isFinite(createdAt) ? createdAt : Date.now()
+      void this.record({ checkpoint: this.receipt('session-created', session.id, String(createdAt)), kind: 'session', day: dayOf(at), at })
     })
     this.ctx.on('session/event', (session, event) => { void this.recordEvent(session, event) })
     this.ctx.effect(() => async () => {
@@ -65,6 +66,12 @@ export class WhaleCompanionService extends TypertRemoteService {
   async setSkin(skin: WhaleState['skin']): Promise<WhaleState> {
     const parsed = skinSchema.parse(skin)
     return this.enqueue(() => this.commit({ ...this.state(), skin: parsed, updatedAt: Date.now() }))
+  }
+
+  @Remote('setName')
+  async setName(name: string): Promise<WhaleState> {
+    const parsed = companionNameSchema.parse(name)
+    return this.enqueue(() => this.commit({ ...this.state(), name: parsed, updatedAt: Date.now() }))
   }
 
   @Remote('setPosition')
@@ -158,7 +165,7 @@ export class WhaleCompanionService extends TypertRemoteService {
   private state(): WhaleState { return this.table?.get('global') ?? initialWhaleState() }
 
   private async commit(state: WhaleState): Promise<WhaleState> {
-    const next = Object.freeze({ ...state })
+    const next = Object.freeze(whaleStateSchema.parse(state))
     await this.requireTable().put('global', next)
     return next
   }

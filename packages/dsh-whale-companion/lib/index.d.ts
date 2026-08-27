@@ -27,6 +27,7 @@ declare const skinSchema: z.ZodEnum<{
   sunset: "sunset";
   nebula: "nebula";
 }>;
+declare const companionNameSchema: z.ZodString;
 declare const whaleSpeciesIdSchema: z.ZodEnum<{
   "common-minke": "common-minke";
   brydes: "brydes";
@@ -165,6 +166,7 @@ declare const legacyWhaleStateSchema: z.ZodObject<{
     x: z.ZodNumber;
     y: z.ZodNumber;
   }, z.core.$strict>;
+  name: z.ZodOptional<z.ZodString>;
   updatedAt: z.ZodNumber;
   version: z.ZodLiteral<1>;
 }, z.core.$strict>;
@@ -891,6 +893,7 @@ declare const currentWhaleStateSchema: z.ZodObject<{
     x: z.ZodNumber;
     y: z.ZodNumber;
   }, z.core.$strict>;
+  name: z.ZodOptional<z.ZodString>;
   updatedAt: z.ZodNumber;
   version: z.ZodLiteral<5>;
 }, z.core.$strict>;
@@ -1617,6 +1620,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
     x: z.ZodNumber;
     y: z.ZodNumber;
   }, z.core.$strict>;
+  name: z.ZodOptional<z.ZodString>;
   updatedAt: z.ZodNumber;
   version: z.ZodLiteral<5>;
 }, z.core.$strict>, z.ZodPipe<z.ZodObject<{
@@ -2232,6 +2236,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
     x: z.ZodNumber;
     y: z.ZodNumber;
   }, z.core.$strict>;
+  name: z.ZodOptional<z.ZodString>;
   updatedAt: z.ZodNumber;
   version: z.ZodLiteral<4>;
 }, z.core.$strict>, z.ZodTransform<{
@@ -2324,6 +2329,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
   updatedAt: number;
   version: 5;
   lastActiveDay?: string | undefined;
+  name?: string | undefined;
 }, {
   species: "common-minke" | "brydes" | "humpback" | "gray" | "beluga" | "orca" | "sperm" | "pilot" | "narwhal" | "bowhead" | "fin" | "sei" | "blue" | "southern-right" | "omura" | "cuviers-beaked" | "north-atlantic-right" | "north-pacific-right" | "rices" | "spade-toothed";
   resonance: Partial<Record<"common-minke" | "brydes" | "humpback" | "gray" | "beluga" | "orca" | "sperm" | "pilot" | "narwhal" | "bowhead" | "fin" | "sei" | "blue" | "southern-right" | "omura" | "cuviers-beaked" | "north-atlantic-right" | "north-pacific-right" | "rices" | "spade-toothed", number>>;
@@ -2390,6 +2396,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
   updatedAt: number;
   version: 4;
   lastActiveDay?: string | undefined;
+  name?: string | undefined;
 }>>, z.ZodPipe<z.ZodObject<{
   species: z.ZodEnum<{
     "common-minke": "common-minke";
@@ -2551,6 +2558,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
     x: z.ZodNumber;
     y: z.ZodNumber;
   }, z.core.$strict>;
+  name: z.ZodOptional<z.ZodString>;
   updatedAt: z.ZodNumber;
   version: z.ZodLiteral<3>;
 }, z.core.$strict>, z.ZodTransform<{
@@ -2643,6 +2651,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
   updatedAt: number;
   version: 5;
   lastActiveDay?: string | undefined;
+  name?: string | undefined;
 }, {
   species: "common-minke" | "brydes" | "humpback" | "gray" | "beluga" | "orca" | "sperm" | "pilot" | "narwhal" | "bowhead" | "fin" | "sei" | "blue" | "southern-right" | "omura" | "cuviers-beaked" | "north-atlantic-right" | "north-pacific-right" | "rices" | "spade-toothed";
   resonance: Partial<Record<"common-minke" | "brydes" | "humpback" | "gray" | "beluga" | "orca" | "sperm" | "pilot" | "narwhal" | "bowhead" | "fin" | "sei" | "blue" | "southern-right" | "omura" | "cuviers-beaked" | "north-atlantic-right" | "north-pacific-right" | "rices" | "spade-toothed", number>>;
@@ -2682,6 +2691,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
   updatedAt: number;
   version: 3;
   lastActiveDay?: string | undefined;
+  name?: string | undefined;
 }>>, z.ZodPipe<z.ZodObject<{
   species: z.ZodEnum<{
     "common-minke": "common-minke";
@@ -2762,6 +2772,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
     x: z.ZodNumber;
     y: z.ZodNumber;
   }, z.core.$strict>;
+  name: z.ZodOptional<z.ZodString>;
   updatedAt: z.ZodNumber;
   version: z.ZodLiteral<2>;
 }, z.core.$strict>, z.ZodTransform<{
@@ -2854,6 +2865,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
   updatedAt: number;
   version: 5;
   lastActiveDay?: string | undefined;
+  name?: string | undefined;
 }, {
   species: "common-minke" | "brydes" | "humpback" | "gray" | "beluga" | "orca" | "sperm" | "pilot" | "narwhal" | "bowhead" | "fin" | "sei" | "blue" | "southern-right" | "omura" | "cuviers-beaked" | "north-atlantic-right" | "north-pacific-right" | "rices" | "spade-toothed";
   resonance: Partial<Record<"common-minke" | "brydes" | "humpback" | "gray" | "beluga" | "orca" | "sperm" | "pilot" | "narwhal" | "bowhead" | "fin" | "sei" | "blue" | "southern-right" | "omura" | "cuviers-beaked" | "north-atlantic-right" | "north-pacific-right" | "rices" | "spade-toothed", number>>;
@@ -2874,6 +2886,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
   updatedAt: number;
   version: 2;
   lastActiveDay?: string | undefined;
+  name?: string | undefined;
 }>>, z.ZodPipe<z.ZodObject<{
   xp: z.ZodNumber;
   level: z.ZodNumber;
@@ -2910,6 +2923,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
     x: z.ZodNumber;
     y: z.ZodNumber;
   }, z.core.$strict>;
+  name: z.ZodOptional<z.ZodString>;
   updatedAt: z.ZodNumber;
   version: z.ZodLiteral<1>;
 }, z.core.$strict>, z.ZodTransform<{
@@ -3002,6 +3016,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
   updatedAt: number;
   version: 5;
   lastActiveDay?: string | undefined;
+  name?: string | undefined;
 }, {
   xp: number;
   level: number;
@@ -3020,6 +3035,7 @@ declare const whaleStateSchema: z.ZodUnion<readonly [z.ZodObject<{
   updatedAt: number;
   version: 1;
   lastActiveDay?: string | undefined;
+  name?: string | undefined;
 }>>]>;
 declare const whaleDomainSpec: {
   name: string;
@@ -3115,6 +3131,7 @@ declare const whaleDomainSpec: {
       updatedAt: number;
       version: 5;
       lastActiveDay?: string | undefined;
+      name?: string | undefined;
     }>;
   };
 };
@@ -3181,6 +3198,7 @@ declare const RESONANCE: {
   readonly session: 2;
 };
 declare const ACHIEVEMENTS: ("first-swim" | "ten-turns" | "century" | "week-current" | "month-tide" | "level-five" | "level-ten" | "tool-diver" | "early-bird" | "night-owl" | "steady-fin" | "collector")[];
+declare const MAX_IMPORT_BYTES: number;
 declare const COLLECTIBLES: readonly Readonly<{
   id: WhaleCollectibleId;
   name: string;
@@ -3512,6 +3530,7 @@ declare class WhaleCompanionService extends TypertRemoteService {
   get(): Promise<WhaleState>;
   getV5(): Promise<WhaleState>;
   setSkin(skin: WhaleState['skin']): Promise<WhaleState>;
+  setName(name: string): Promise<WhaleState>;
   setPosition(position: WhalePosition): Promise<WhaleState>;
   setSpecies(species: WhaleState['species']): Promise<WhaleState>;
   placeCollectible(slot: string, collectible: string | null): Promise<WhaleState>;
@@ -3538,5 +3557,5 @@ declare class WhaleCompanionService extends TypertRemoteService {
   private requireTable;
 }
 //#endregion
-export { ACHIEVEMENTS, COLLECTIBLES, COLLECTIBLE_BY_ID, LegacyWhaleState, RESONANCE, RESONANCE_THRESHOLDS, WHALE_ALIAS_LABELS, WHALE_COLLECTIBLES, WHALE_COLLECTIBLE_BY_ID, WHALE_REACTION_MANIFEST, WHALE_SLOT_LABELS, WHALE_SPECIES, WHALE_SPECIES_BY_ID, type WhaleAchievementId, WhaleAffinity, WhaleAliasId, WhaleCollectibleId, WhaleCompanionService, WhaleCompanionService as default, WhaleEventId, type WhaleImport, WhaleObservation, WhalePosition, WhalePostcard, type WhaleProgress, WhaleRarity, WhaleReactionManifestEntry, WhaleRoomSlotId, type WhaleSkin, WhaleSpeciesDefinition, WhaleSpeciesId, WhaleState, WhaleVisitorBottle, XP, achievementIdSchema, claimExpedition, emptyRoomSlots, equipSpecies, exportCommunitySong, exportVisitorBottle, exportWhale, importCommunitySong, importVisitorBottle, importWhale, initialWhaleState, isSpeciesUnlocked, legacyLevelForXp, legacyWhaleStateSchema, levelForXp, loadRoomPreset, placeCollectible, postcardView, reduceWhale, removeCommunityPeer, resetWhale, resonanceStars, saveRoomPreset, setCommunity, skinSchema, startExpedition, whaleAliasId, whaleAliasIdSchema, whaleCollectibleId, whaleCollectibleIdSchema, whaleDomainSpec, whaleEventIdSchema, whalePositionSchema, whaleRoomSlotId, whaleRoomSlotIdSchema, whaleSpeciesId, whaleSpeciesIdSchema, whaleStateSchema, xpFloorForLevel, xpToNextLevel };
+export { ACHIEVEMENTS, COLLECTIBLES, COLLECTIBLE_BY_ID, LegacyWhaleState, MAX_IMPORT_BYTES, RESONANCE, RESONANCE_THRESHOLDS, WHALE_ALIAS_LABELS, WHALE_COLLECTIBLES, WHALE_COLLECTIBLE_BY_ID, WHALE_REACTION_MANIFEST, WHALE_SLOT_LABELS, WHALE_SPECIES, WHALE_SPECIES_BY_ID, type WhaleAchievementId, WhaleAffinity, WhaleAliasId, WhaleCollectibleId, WhaleCompanionService, WhaleCompanionService as default, WhaleEventId, type WhaleImport, WhaleObservation, WhalePosition, WhalePostcard, type WhaleProgress, WhaleRarity, WhaleReactionManifestEntry, WhaleRoomSlotId, type WhaleSkin, WhaleSpeciesDefinition, WhaleSpeciesId, WhaleState, WhaleVisitorBottle, XP, achievementIdSchema, claimExpedition, companionNameSchema, emptyRoomSlots, equipSpecies, exportCommunitySong, exportVisitorBottle, exportWhale, importCommunitySong, importVisitorBottle, importWhale, initialWhaleState, isSpeciesUnlocked, legacyLevelForXp, legacyWhaleStateSchema, levelForXp, loadRoomPreset, placeCollectible, postcardView, reduceWhale, removeCommunityPeer, resetWhale, resonanceStars, saveRoomPreset, setCommunity, skinSchema, startExpedition, whaleAliasId, whaleAliasIdSchema, whaleCollectibleId, whaleCollectibleIdSchema, whaleDomainSpec, whaleEventIdSchema, whalePositionSchema, whaleRoomSlotId, whaleRoomSlotIdSchema, whaleSpeciesId, whaleSpeciesIdSchema, whaleStateSchema, xpFloorForLevel, xpToNextLevel };
 //# sourceMappingURL=index.d.ts.map

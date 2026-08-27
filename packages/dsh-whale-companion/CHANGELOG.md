@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.2.0
+
+- Complete every audited plan item without removing the 2.1 whale-world features.
+- Add a persisted, validated companion name; four adaptive voyage goals; a compact desktop quick card; XP feedback; and a self-contained animated SVG companion.
+- Upgrade all six skins to multi-layer body, belly, accent, depth, and glow palettes.
+- Add local 1200×675 PNG voyage cards and privacy-safe text reports.
+- Make session dates use the real creation timestamp, keep streak dates monotonic, bound every text import before parsing, and validate every durable commit.
+- Add a permanent plan-completeness gate plus actual built-bundle browser smoke tests and desktop/mobile/light/reduced-motion screenshot regression.
+
 ## 2.1.1
 
 - Replace all emoji-based whale and achievement artwork with the plugin's bundled whale atlas, CSS-drawn achievement marks, and an original SVG whale silhouette for postcards.

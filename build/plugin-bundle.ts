@@ -100,7 +100,8 @@ export function clientBundle(packageName: string): ReturnType<typeof defineConfi
           minify: true,
         })
         const classes: Record<string, string> = {}
-        for (const [local, entry] of Object.entries(result.exports ?? {})) classes[local] = entry.name
+        const exports = Object.entries(result.exports ?? {}).sort(([left], [right]) => left < right ? -1 : left > right ? 1 : 0)
+        for (const [local, entry] of exports) classes[local] = entry.name
         return [
           `const css=${JSON.stringify(result.code.toString())};`,
           `const tagId=${JSON.stringify(`${packageName}/${basename(filename)}`)};`,
