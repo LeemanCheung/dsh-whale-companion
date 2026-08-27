@@ -3,24 +3,52 @@ import type {
   RemoteResult,
   TypertRemoteContribution,
 } from '@deepseek-ai/dsh-typert-protocol'
-import type { WhalePosition, WhaleState } from 'dsh-whale-companion/types'
+import type { WhalePosition, WhalePostcard, WhaleState, WhaleVisitorBottle } from 'dsh-whale-companion/types'
 
 declare module '@deepseek-ai/dsh-typert-protocol' {
   interface TypertRemoteNamespace$7768616c65436f6d70616e696f6e {
+    claimExpeditionV5: () => Promise<RemoteResult<WhaleState>>
     export: () => Promise<RemoteResult<string>>
+    exportCommunitySongV5: () => Promise<RemoteResult<string>>
+    exportVisitorBottleV5: () => Promise<RemoteResult<string>>
     get: () => Promise<RemoteResult<WhaleState>>
+    getV5: () => Promise<RemoteResult<WhaleState>>
     import: (payload: string) => Promise<RemoteResult<WhaleState>>
+    importCommunitySongV5: (payload: string) => Promise<RemoteResult<WhaleState>>
+    importVisitorBottleV5: (payload: string) => Promise<RemoteResult<WhaleVisitorBottle>>
+    loadRoomPresetV5: (index: number) => Promise<RemoteResult<WhaleState>>
+    placeCollectibleV5: (slot: string, collectible: string | null) => Promise<RemoteResult<WhaleState>>
+    postcardV5: () => Promise<RemoteResult<WhalePostcard>>
+    removeCommunityPeerV5: (aliasId: string) => Promise<RemoteResult<WhaleState>>
     reset: () => Promise<RemoteResult<WhaleState>>
+    saveRoomPresetV5: () => Promise<RemoteResult<WhaleState>>
+    setCommunityV5: (enabled: boolean, aliasId: string) => Promise<RemoteResult<WhaleState>>
     setPosition: (position: WhalePosition) => Promise<RemoteResult<WhaleState>>
     setSkin: (skin: WhaleState['skin']) => Promise<RemoteResult<WhaleState>>
+    setSpeciesV5: (species: WhaleState['species']) => Promise<RemoteResult<WhaleState>>
+    startExpeditionV5: (expeditionId: string, species: WhaleState['species'], goal: number) => Promise<RemoteResult<WhaleState>>
   }
   interface TypertRemoteMap {
+    'whaleCompanion/claimExpeditionV5': () => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/export': () => Promise<RemoteResult<string>>
+    'whaleCompanion/exportCommunitySongV5': () => Promise<RemoteResult<string>>
+    'whaleCompanion/exportVisitorBottleV5': () => Promise<RemoteResult<string>>
     'whaleCompanion/get': () => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/getV5': () => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/import': (payload: string) => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/importCommunitySongV5': (payload: string) => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/importVisitorBottleV5': (payload: string) => Promise<RemoteResult<WhaleVisitorBottle>>
+    'whaleCompanion/loadRoomPresetV5': (index: number) => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/placeCollectibleV5': (slot: string, collectible: string | null) => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/postcardV5': () => Promise<RemoteResult<WhalePostcard>>
+    'whaleCompanion/removeCommunityPeerV5': (aliasId: string) => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/reset': () => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/saveRoomPresetV5': () => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/setCommunityV5': (enabled: boolean, aliasId: string) => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/setPosition': (position: WhalePosition) => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/setSkin': (skin: WhaleState['skin']) => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/setSpeciesV5': (species: WhaleState['species']) => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/startExpeditionV5': (expeditionId: string, species: WhaleState['species'], goal: number) => Promise<RemoteResult<WhaleState>>
   }
   interface TypertRemoteNamespaceMap {
     'whaleCompanion': TypertRemoteNamespace$7768616c65436f6d70616e696f6e

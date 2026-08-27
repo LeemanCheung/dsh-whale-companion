@@ -2,21 +2,22 @@
 
 English | [中文](README.zh-CN.md)
 
-A local-first DSH companion that turns privacy-safe session activity metadata into a draggable whale, levels, streaks, statistics, twelve achievements, and six skins.
+A local-first DSH whale world with safe tide reactions, 20 whale spirits, 24 collectible cove objects, gentle expeditions, visitor bottles, and opt-in local whale-circle cards.
 
 ## Features
 
-- `shell.overlay` whale with persisted normalized position, viewport clamping, edge snapping, pointer drag, keyboard movement (arrow keys; Shift accelerates), and five-second live refresh.
-- Settings → **Whale Home** offers Chinese-localized level progress, statistics, all twelve locked/unlocked achievements, six skin swatches, clear busy/error notices, export, strict import, and reset.
-- Durable `storageDomain` state with serialized mutations and bounded idempotency checkpoints.
-- Six visual skins: `ocean`, `coral`, `midnight`, `aurora`, `sunset`, and `nebula`.
-- Semantic DSH theme tokens, reduced-motion support, and local packaged assets only.
-
-Turns grant 10 XP, tool results grant 5 XP, and session starts grant 20 XP. Only `user/message` counts as a turn. Levels derive from XP and streaks from UTC session-start dates; **Early Bird** is earned before 06:00 UTC (not on a particular day of the month).
+- The `shell.overlay` whale is keyboard-accessible, draggable, edge-snapped, viewport-safe, and refreshed through one shared five-second store. New moments become visible, bounded reaction bubbles; only milestones enter the live region.
+- Browser-local quiet, standard, and lively preferences control presentation without entering Host state, backups, or community cards. Whale Home adds a seven-day journal, current story beat, cove preview, and Privacy Ledger.
+- A 20-species manifest maps safe live event families to tide effects. It never reads event content or changes model behavior.
+- Tides are bounded local moments built from session starts, user turns, and tool results. Tool-result repetition cannot farm collectibles or expeditions.
+- Whale Home includes local SVG postcards, eight fixed room slots, three room presets, a 24-item catalog, and a non-punitive expedition.
+- Visitor bottles are strict, read-only local room previews. Whale-circle cards are explicit local-file exchanges with no networking or free text.
 
 ## Privacy
 
-The Host reads only session id, sequence, event type, and timestamp. It never reads, stores, exports, or renders prompt text, assistant output, code, paths, tool arguments, or tool results. Exported backups contain only the validated `whale/v1` progress record.
+The Host reads only session id, sequence, type, and timestamp. It never reads or retains prompts, assistant output, source code, paths, tool arguments, or tool results.
+
+The Host creates HMAC-normalized receipt digests for current-process live dedupe. The persisted 4,096-receipt window is bounded and is not a permanent exactly-once claim. Backups omit receipt digests, session ids, and event payloads. Postcards, bottles, and whale-circle cards use strict local schemas with no task or conversation content.
 
 ## Install
 
@@ -24,7 +25,7 @@ Build a tarball and add it to the DSH Web profile:
 
 ```powershell
 npm pack . --pack-destination ../../dist
-dsh plugin --profile web add ../../dist/dsh-whale-companion-1.0.0.tgz
+dsh plugin --profile web add ../../dist/dsh-whale-companion-2.1.1.tgz
 ```
 
 Restart the existing DSH Web process and refresh its page. See the suite [installation guide](../../INSTALL.md) for prerequisites and validation steps.
@@ -35,7 +36,7 @@ This plugin adds no model prompt, tools, messages, token usage, or KV-cache cont
 
 ## Known limitations
 
-Progress is local to one DSH storage backend and is not synchronized between devices. The overlay polls every five seconds rather than receiving a dedicated progress event.
+Progress stays on one local storage backend. The plugin polls durable state every five seconds because the current host Remote event allowlist has no whale-state push route. Whale-circle cards are local only; a hosted community requires a separately owned transport provider with authentication, retention, deletion, rate limiting, and moderation.
 
 ## Development
 

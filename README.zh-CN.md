@@ -2,35 +2,47 @@
 
 [English](README.md) | 中文
 
-这是一个本地优先的 DSH 鲸鱼伙伴：把不含内容的会话活动元数据转换为可拖动鲸鱼、等级、连续使用天数、统计、12 个成就和 6 套皮肤。
+这是一个本地优先的 DSH 鲸鱼世界：把安全的会话活动元数据变成可拖动的鲸鱼伙伴、20 种可解锁鲸灵、潮汐记录、个人海湾、温柔远征和主动加入的本地鲸群卡片。
 
 ## 界面截图
 
-![Whale Companion 仪表盘](https://raw.githubusercontent.com/LeemanCheung/dsh-whale-companion/main/assets/screenshots/overview.png)
+| 鲸鱼小屋 | 鲸灵图鉴 |
+| --- | --- |
+| ![Whale Companion 概览](assets/screenshots/overview.png) | ![Whale Companion 鲸灵图鉴](assets/screenshots/atlas.png) |
 
-> 使用 GPT Image 根据已实现的 Client 布局和功能生成；实际外观会随 DSH 主题和视口变化。
+![Whale Companion 皮肤、成就与本地备份](assets/screenshots/customize.png)
+
+> 在本地运行的 DSH Web 会话中未经编辑截取；进度数据来自该会话，实际外观会随 DSH 主题和视口变化。
 
 ## 功能
 
-- `shell.overlay` 鲸鱼支持拖动、方向键移动（Shift 加速）、左右边缘吸附、视口限制、归一化位置持久化和每 5 秒刷新。
-- Settings → **鲸鱼小屋** 提供中文等级进度、统计、12 个锁定/解锁成就、6 款皮肤色板、明确的忙碌/错误提示、导出、严格导入和重置。
-- 使用 `storageDomain` 持久化，所有变更串行执行，并限制幂等检查点数量。
-- 皮肤包括 `ocean`、`coral`、`midnight`、`aurora`、`sunset` 和 `nebula`。
-- 只使用 DSH 语义主题 token、本地打包资源，并支持减少动画设置。
+- `shell.overlay` 鲸鱼支持指针拖动、方向键移动、边缘吸附、视口安全位置持久化，以及共享的每 5 秒本地刷新。新潮汐会显示为有时限的可见气泡，只有里程碑会打扰读屏。
+- 安静、标准、热闹三档陪伴强度只保存在浏览器本地；系统减少动画设置始终优先，偏好存储被拒绝也不会影响进度。
+- 鲸鱼小屋首页新增七日航海日志、当前鲸灵故事、可视海湾预览和与真实出口一致的隐私账本。
+- 20 种鲸灵随海洋等级 1–100 解锁。它们把故事与可见潮汐反应映射到安全事件家族，不会改变模型执行结果。
+- 只使用 live-only 的 `session/created`、`user/message` 和 `tool/result` 元数据产生有上限的本地潮汐。重复工具结果仍保留旧版 XP 统计，但不能刷潮汐、纪念物或远征进度。
+- 鲸鱼小屋包含潮汐时间线、本地 SVG 明信片、24 件纪念物、8 个固定房间插槽、3 个小屋方案，以及无惩罚远征。
+- 访客瓶是隔离的只读小屋预览，不会合并或覆盖接收者的进度。
+- 鲸群卡片需要主动开启，只通过本地文件交换预设别名、鲸灵、皮肤、粗粒度活跃桶和共鸣星级。没有帐号、联网、排行、自由文本、提示词摘录、任务名或工具数据。
+- 提供 6 套海域皮肤、12 个成就、响应式布局、键盘操作、焦点管理和减少动画呈现。
 
-每个用户回合获得 10 XP，工具结果获得 5 XP，会话开始获得 20 XP。只有 `user/message` 计为用户回合；等级由 XP 推导，连续天数按 UTC 会话开始日期计算；**早潮出发** 成就在 UTC 06:00 前活动时获得，而非取决于每月日期。
+用户回合获得 10 XP，工具结果获得 5 XP，会话开始获得 20 XP。只有 `user/message` 计为用户回合；等级由 XP 推导，连续使用按 UTC 会话开始日期计算。缺席不会丢失进度或纪念物。
 
 ## 隐私
 
-Host 只读取会话 id、事件序号、事件类型和时间戳。它绝不读取、保存、导出或展示提示词、助手输出、代码、路径、工具参数或工具结果。导出备份只包含通过校验的 `whale/v1` 进度数据。
+Host 只读取会话 id、事件序号、事件类型和时间戳。它绝不读取、保存、导出或展示提示词、助手输出、代码、路径、工具参数或工具结果。
+
+新的内存收据摘要使用只在 Host 进程内存在的 HMAC 密钥。持久收据最多保留 4,096 条，用于防止最近的 live 重复投递，而不是承诺跨 Host 重启的永久去重。备份刻意不包含收据摘要、会话 id 或事件数据。SVG 明信片和鲸群卡片都在本地生成，且只包含此文档列出的安全字段。
 
 ## 安装
+
+直接从 GitHub 安装到 DSH Web profile：
 
 ```powershell
 dsh plugin --profile web add github:LeemanCheung/dsh-whale-companion
 ```
 
-安装后重启原有 DSH Web 进程并刷新页面。
+重启原有 DSH Web 进程并刷新页面。
 
 ## 模型体验
 
@@ -38,10 +50,17 @@ dsh plugin --profile web add github:LeemanCheung/dsh-whale-companion
 
 ## 已知限制
 
-进度只保存在一个 DSH 本地存储后端，不会跨设备同步。覆盖层通过每 5 秒轮询刷新，而不是订阅专用进度事件。
+进度只保存在一个 DSH 存储后端，不会跨设备同步。因为当前 Host Remote 事件白名单没有包级鲸鱼状态推送路由，覆盖层每 5 秒轮询一次。鲸群卡片刻意只支持本地导入导出；托管社区需要独立负责认证、删除、限流和审核的传输服务。
 
 ## 开发
 
-在仓库根目录运行 `corepack pnpm typecheck`、`corepack pnpm test`、`corepack pnpm build` 和 `corepack pnpm pack:check`。
+在仓库根目录运行：
+
+```powershell
+corepack pnpm typecheck
+corepack pnpm test
+corepack pnpm build
+corepack pnpm pack:check
+```
 
 MIT，见 [LICENSE](LICENSE)。
