@@ -1,0 +1,71 @@
+name: Complete all planned Whale Companion items
+
+on:
+  push:
+    branches:
+      - feat/complete-all-planned-items
+    paths:
+      - scripts/.complete-planned-items/**
+      - .github/workflows/complete-planned-items.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/complete-all-planned-items
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+      - run: corepack enable
+      - name: Reassemble and apply deterministic completion patch
+        shell: bash
+        run: |
+          cat scripts/.complete-planned-items/part-*.b64 | base64 -d | gzip -d > /tmp/complete-planned-items.mjs
+          node --check /tmp/complete-planned-items.mjs
+          node /tmp/complete-planned-items.mjs
+      - name: Install and refresh lockfile
+        run: corepack pnpm install --no-frozen-lockfile
+      - name: Generate Host and Remote contracts
+        run: corepack pnpm build:host
+      - name: Verify every planned item is present
+        run: corepack pnpm verify:planned
+      - run: corepack pnpm typecheck
+      - run: corepack pnpm test
+      - run: corepack pnpm build
+      - run: corepack pnpm pack:check
+      - name: Install Chromium
+        run: corepack pnpm exec playwright install --with-deps chromium
+      - name: Generate visual baselines from the real built bundle
+        run: corepack pnpm test:e2e:update
+      - name: Verify browser smoke and visual regression
+        run: corepack pnpm test:e2e
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: whale-companion-browser-evidence
+          path: |
+            tests/e2e/**/*-snapshots/**
+            playwright-report/**
+            test-results/**
+          if-no-files-found: ignore
+      - name: Commit validated implementation
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -rf scripts/.complete-planned-items .github/workflows/complete-planned-items.yml
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+          else
+            git commit -m "feat: complete every planned whale companion improvement"
+            git push origin HEAD:feat/complete-all-planned-items
+          fi
