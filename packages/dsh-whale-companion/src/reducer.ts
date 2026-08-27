@@ -13,6 +13,7 @@ export type WhaleObservation = Readonly<{ checkpoint: string, kind: 'turn' | 'to
 export const XP = { turn: 10, tool: 5, session: 20 } as const
 export const RESONANCE = { turn: 2, tool: 0, session: 2 } as const
 export const ACHIEVEMENTS = achievementIdSchema.options
+export const MAX_IMPORT_BYTES = 512 * 1024
 
 export const COLLECTIBLES = WHALE_COLLECTIBLES
 export const COLLECTIBLE_BY_ID = WHALE_COLLECTIBLE_BY_ID
@@ -43,16 +44,25 @@ export function reduceWhale(state: WhaleState, event: WhaleObservation): WhaleSt
   const beforeLevel = state.level
   const beforeStars = resonanceStars(state.resonance[state.species] ?? 0)
   const xp = state.xp + XP[event.kind]
-  const active = state.lastActiveDay === event.day
   const previous = state.lastActiveDay
-  const adjacent = previous !== undefined && utcDayOffset(previous, event.day) === 1
-  const streak = event.kind === 'session' && !active ? (adjacent ? state.streak + 1 : 1) : state.streak
+  let streak = state.streak
+  let lastActiveDay = state.lastActiveDay
+  if (event.kind === 'session') {
+    const offset = previous === undefined ? undefined : utcDayOffset(previous, event.day)
+    if (offset === undefined) {
+      streak = 1
+      lastActiveDay = event.day
+    } else if (offset > 0) {
+      streak = offset === 1 ? state.streak + 1 : 1
+      lastActiveDay = event.day
+    }
+  }
   const resonanceGain = RESONANCE[event.kind]
   const resonance = resonanceGain === 0 ? state.resonance : { ...state.resonance, [state.species]: Math.min(800, (state.resonance[state.species] ?? 0) + resonanceGain) }
   const base: WhaleState = {
     ...state, xp, level: levelForXp(xp), turns: state.turns + Number(event.kind === 'turn'), tools: state.tools + Number(event.kind === 'tool'),
     sessions: state.sessions + Number(event.kind === 'session'), streak, longestStreak: Math.max(state.longestStreak, streak),
-    lastActiveDay: event.kind === 'session' ? event.day : state.lastActiveDay, checkpoints: [...state.checkpoints, event.checkpoint].slice(-4096), resonance,
+    lastActiveDay, checkpoints: [...state.checkpoints, event.checkpoint].slice(-4096), resonance,
     updatedAt: Math.max(state.updatedAt, event.at),
   }
   const withAchievements = { ...base, achievements: unlock(base, event) }
@@ -118,7 +128,7 @@ export function setCommunity(state: WhaleState, enabled: boolean, aliasId: Whale
 /** Imports a safe community summary into the local trusted-peers list. */
 export function importCommunitySong(state: WhaleState, raw: unknown, at = Date.now()): WhaleState {
   if (!state.community.enabled) throw new Error('请先主动开启鲸群分享')
-  const song = communitySongSchema.parse(typeof raw === 'string' ? JSON.parse(raw) : raw)
+  const song = communitySongSchema.parse(parseBoundedJson(raw, '鲸歌'))
   if (song.member.aliasId === state.community.aliasId) throw new Error('不能导入自己的鲸歌')
   const peer = { ...song.member, importedAt: at }
   return { ...state, community: { ...state.community, peers: [...state.community.peers.filter(candidate => candidate.aliasId !== peer.aliasId), peer].slice(-7) }, updatedAt: Math.max(state.updatedAt, at) }
@@ -147,7 +157,7 @@ export function exportVisitorBottle(state: WhaleState): string {
 }
 
 /** Validates a visitor bottle for isolated preview. */
-export function importVisitorBottle(raw: unknown): WhaleVisitorBottle { return visitorBottleSchema.parse(typeof raw === 'string' ? JSON.parse(raw) : raw) }
+export function importVisitorBottle(raw: unknown): WhaleVisitorBottle { return visitorBottleSchema.parse(parseBoundedJson(raw, '访客瓶')) }
 
 /** Resets all local whale data. */
 export function resetWhale(): WhaleState { return initialWhaleState() }
@@ -168,7 +178,7 @@ export function exportWhale(state: WhaleState): string {
 
 /** Imports and migrates every supported whale backup version. */
 export function importWhale(raw: unknown): WhaleState {
-  const parsed = typeof raw === 'string' ? JSON.parse(raw) : raw
+  const parsed = parseBoundedJson(raw, '鲸鱼备份')
   if (typeof parsed !== 'object' || parsed === null || (parsed as { format?: unknown }).format !== 'dsh-whale-companion') throw new Error('Invalid whale export')
   const version = (parsed as { version?: unknown }).version
   if (![1, 2, 3, 4, 5].includes(version as number)) throw new Error('Invalid or unsupported whale export')
@@ -266,6 +276,11 @@ function mergeMonthly(current: WhaleState['monthlyTides'], moments: WhaleState['
     byMonth.set(value.month, value)
   }
   return [...byMonth.values()].map(tide => ({ ...tide, speciesSeen: tide.speciesSeen.sort() })).sort((left, right) => left.month.localeCompare(right.month)).slice(-24) as WhaleState['monthlyTides']
+}
+function parseBoundedJson(raw: unknown, label: string): unknown {
+  if (typeof raw !== 'string') return raw
+  if (new TextEncoder().encode(raw).byteLength > MAX_IMPORT_BYTES) throw new Error(`${label}过大，最大允许 512 KiB`)
+  try { return JSON.parse(raw) } catch { throw new Error(`${label}不是有效 JSON`) }
 }
 function reactionMessage(templateId: string): string { return reactionText[templateId] ?? '鲸鱼在海面留下了一段轻柔的潮汐。' }
 function bucket(value: number, boundaries: readonly [number, number, number]): '0' | '1' | '2-4' | '5+' { return value <= boundaries[0] ? '0' : value <= boundaries[1] ? '1' : value <= boundaries[2] ? '2-4' : '5+' }

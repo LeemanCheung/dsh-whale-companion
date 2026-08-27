@@ -122,6 +122,7 @@ const dsh_whale_companion_whaleCompanion_claimExpeditionV5_result$schema = z.obj
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_export_result$schema = z.string()
 const dsh_whale_companion_whaleCompanion_exportCommunitySongV5_result$schema = z.string()
@@ -247,6 +248,7 @@ const dsh_whale_companion_whaleCompanion_get_result$schema = z.object({
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_getV5_result$schema = z.object({
   'species': z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")]),
@@ -369,6 +371,7 @@ const dsh_whale_companion_whaleCompanion_getV5_result$schema = z.object({
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_import_parameter_0$schema = z.string()
 const dsh_whale_companion_whaleCompanion_import_result$schema = z.object({
@@ -492,6 +495,7 @@ const dsh_whale_companion_whaleCompanion_import_result$schema = z.object({
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_importCommunitySongV5_parameter_0$schema = z.string()
 const dsh_whale_companion_whaleCompanion_importCommunitySongV5_result$schema = z.object({
@@ -615,6 +619,7 @@ const dsh_whale_companion_whaleCompanion_importCommunitySongV5_result$schema = z
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_importVisitorBottleV5_parameter_0$schema = z.string()
 const dsh_whale_companion_whaleCompanion_importVisitorBottleV5_result$schema = z.object({
@@ -757,6 +762,7 @@ const dsh_whale_companion_whaleCompanion_loadRoomPresetV5_result$schema = z.obje
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_placeCollectibleV5_parameter_0$schema = z.string()
 const dsh_whale_companion_whaleCompanion_placeCollectibleV5_parameter_1$schema = z.union([z.literal(null), z.string()])
@@ -881,6 +887,7 @@ const dsh_whale_companion_whaleCompanion_placeCollectibleV5_result$schema = z.ob
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_postcardV5_result$schema = z.object({
   'day': z.string(),
@@ -1021,6 +1028,7 @@ const dsh_whale_companion_whaleCompanion_removeCommunityPeerV5_result$schema = z
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_reset_result$schema = z.object({
   'species': z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")]),
@@ -1143,6 +1151,7 @@ const dsh_whale_companion_whaleCompanion_reset_result$schema = z.object({
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_saveRoomPresetV5_result$schema = z.object({
   'species': z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")]),
@@ -1265,6 +1274,7 @@ const dsh_whale_companion_whaleCompanion_saveRoomPresetV5_result$schema = z.obje
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_setCommunityV5_parameter_0$schema = z.boolean()
 const dsh_whale_companion_whaleCompanion_setCommunityV5_parameter_1$schema = z.string()
@@ -1389,6 +1399,131 @@ const dsh_whale_companion_whaleCompanion_setCommunityV5_result$schema = z.object
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
+})
+const dsh_whale_companion_whaleCompanion_setName_parameter_0$schema = z.string()
+const dsh_whale_companion_whaleCompanion_setName_result$schema = z.object({
+  'species': z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")]),
+  'resonance': z.object({
+  'common-minke': z.union([z.undefined(), z.number()]).optional(),
+  'brydes': z.union([z.undefined(), z.number()]).optional(),
+  'humpback': z.union([z.undefined(), z.number()]).optional(),
+  'gray': z.union([z.undefined(), z.number()]).optional(),
+  'beluga': z.union([z.undefined(), z.number()]).optional(),
+  'orca': z.union([z.undefined(), z.number()]).optional(),
+  'sperm': z.union([z.undefined(), z.number()]).optional(),
+  'pilot': z.union([z.undefined(), z.number()]).optional(),
+  'narwhal': z.union([z.undefined(), z.number()]).optional(),
+  'bowhead': z.union([z.undefined(), z.number()]).optional(),
+  'fin': z.union([z.undefined(), z.number()]).optional(),
+  'sei': z.union([z.undefined(), z.number()]).optional(),
+  'blue': z.union([z.undefined(), z.number()]).optional(),
+  'southern-right': z.union([z.undefined(), z.number()]).optional(),
+  'omura': z.union([z.undefined(), z.number()]).optional(),
+  'cuviers-beaked': z.union([z.undefined(), z.number()]).optional(),
+  'north-atlantic-right': z.union([z.undefined(), z.number()]).optional(),
+  'north-pacific-right': z.union([z.undefined(), z.number()]).optional(),
+  'rices': z.union([z.undefined(), z.number()]).optional(),
+  'spade-toothed': z.union([z.undefined(), z.number()]).optional(),
+}),
+  'moments': z.array(z.object({
+  'id': z.string(),
+  'progressDay': z.string(),
+  'at': z.number(),
+  'category': z.union([z.literal("session-start"), z.literal("utc-day-session"), z.literal("utc-night-session"), z.literal("user-turn"), z.literal("tool-result"), z.literal("level-up"), z.literal("resonance-star"), z.literal("species-unlock"), z.literal("return")]),
+  'species': z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")]),
+  'reactionId': z.string(),
+  'templateId': z.string(),
+  'visualSeed': z.number(),
+})),
+  'monthlyTides': z.array(z.object({
+  'month': z.string(),
+  'categoryCounts': z.object({
+  'session-start': z.union([z.undefined(), z.number()]).optional(),
+  'utc-day-session': z.union([z.undefined(), z.number()]).optional(),
+  'utc-night-session': z.union([z.undefined(), z.number()]).optional(),
+  'user-turn': z.union([z.undefined(), z.number()]).optional(),
+  'tool-result': z.union([z.undefined(), z.number()]).optional(),
+  'level-up': z.union([z.undefined(), z.number()]).optional(),
+  'resonance-star': z.union([z.undefined(), z.number()]).optional(),
+  'species-unlock': z.union([z.undefined(), z.number()]).optional(),
+  'return': z.union([z.undefined(), z.number()]).optional(),
+}),
+  'speciesSeen': z.array(z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")])),
+})),
+  'reactionCooldowns': z.array(z.object({
+  'reactionId': z.string(),
+  'lastAt': z.number(),
+})),
+  'collectibles': z.array(z.object({
+  'collectibleId': z.union([z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'variant': z.number(),
+  'earnedProgressDay': z.string(),
+})),
+  'room': z.object({
+  'slots': z.object({
+  'backdrop': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'seafloor': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'lighting': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'hanging': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'habitatLeft': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'habitatRight': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'foreground': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'soundscape': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+}),
+  'presets': z.array(z.object({
+  'backdrop': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'seafloor': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'lighting': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'hanging': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'habitatLeft': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'habitatRight': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'foreground': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+  'soundscape': z.union([z.literal(null), z.literal("first-wake"), z.literal("blue-current-lamp"), z.literal("warm-coral"), z.literal("echo-shell"), z.literal("tide-map"), z.literal("song-chime"), z.literal("moon-pearl"), z.literal("dawn-reed"), z.literal("night-reef"), z.literal("sunken-compass"), z.literal("glow-algae"), z.literal("kelp-cushion"), z.literal("ice-fragment"), z.literal("star-lantern"), z.literal("deep-bell"), z.literal("migration-banner"), z.literal("quiet-cove"), z.literal("memory-orb"), z.literal("aurora-arch"), z.literal("ancient-anchor"), z.literal("horizon-window"), z.literal("tidal-garden"), z.literal("whale-stone"), z.literal("unknown-spire")]),
+})),
+}),
+  'expedition': z.union([z.literal(null), z.object({
+  'expeditionId': z.string(),
+  'species': z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")]),
+  'startedProgressDay': z.string(),
+  'progress': z.number(),
+  'goal': z.number(),
+  'rewardClaimed': z.boolean(),
+  'lastAdvancedProgressDay': z.union([z.undefined(), z.string()]).optional(),
+})]),
+  'storyFragments': z.array(z.string()),
+  'community': z.object({
+  'enabled': z.boolean(),
+  'aliasId': z.union([z.literal("blue-current"), z.literal("sea-salt"), z.literal("north-wind"), z.literal("moon-reef"), z.literal("quiet-kelp"), z.literal("warm-sand"), z.literal("far-song"), z.literal("ice-lantern"), z.literal("tide-glass"), z.literal("coral-dawn"), z.literal("deep-star"), z.literal("open-horizon")]),
+  'peers': z.array(z.object({
+  'aliasId': z.union([z.literal("blue-current"), z.literal("sea-salt"), z.literal("north-wind"), z.literal("moon-reef"), z.literal("quiet-kelp"), z.literal("warm-sand"), z.literal("far-song"), z.literal("ice-lantern"), z.literal("tide-glass"), z.literal("coral-dawn"), z.literal("deep-star"), z.literal("open-horizon")]),
+  'species': z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")]),
+  'skin': z.union([z.literal("ocean"), z.literal("coral"), z.literal("midnight"), z.literal("aurora"), z.literal("sunset"), z.literal("nebula")]),
+  'activityBucket': z.union([z.literal("0"), z.literal("1"), z.literal("2-4"), z.literal("5+")]),
+  'observedBucket': z.union([z.literal("1-4"), z.literal("5-9"), z.literal("10-14"), z.literal("15-20")]),
+  'resonanceStars': z.number(),
+  'seed': z.number(),
+  'importedAt': z.number(),
+})),
+}),
+  'xp': z.number(),
+  'level': z.number(),
+  'turns': z.number(),
+  'sessions': z.number(),
+  'tools': z.number(),
+  'streak': z.number(),
+  'longestStreak': z.number(),
+  'checkpoints': z.array(z.string()),
+  'achievements': z.array(z.union([z.literal("first-swim"), z.literal("ten-turns"), z.literal("century"), z.literal("week-current"), z.literal("month-tide"), z.literal("level-five"), z.literal("level-ten"), z.literal("tool-diver"), z.literal("early-bird"), z.literal("night-owl"), z.literal("steady-fin"), z.literal("collector")])),
+  'skin': z.union([z.literal("ocean"), z.literal("coral"), z.literal("midnight"), z.literal("aurora"), z.literal("sunset"), z.literal("nebula")]),
+  'position': z.object({
+  'x': z.number(),
+  'y': z.number(),
+}),
+  'updatedAt': z.number(),
+  'version': z.literal(5),
+  'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_setPosition_parameter_0$schema = z.object({
   'x': z.number(),
@@ -1515,6 +1650,7 @@ const dsh_whale_companion_whaleCompanion_setPosition_result$schema = z.object({
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_setSkin_parameter_0$schema = z.union([z.literal("ocean"), z.literal("coral"), z.literal("midnight"), z.literal("aurora"), z.literal("sunset"), z.literal("nebula")])
 const dsh_whale_companion_whaleCompanion_setSkin_result$schema = z.object({
@@ -1638,6 +1774,7 @@ const dsh_whale_companion_whaleCompanion_setSkin_result$schema = z.object({
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_setSpeciesV5_parameter_0$schema = z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")])
 const dsh_whale_companion_whaleCompanion_setSpeciesV5_result$schema = z.object({
@@ -1761,6 +1898,7 @@ const dsh_whale_companion_whaleCompanion_setSpeciesV5_result$schema = z.object({
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 const dsh_whale_companion_whaleCompanion_startExpeditionV5_parameter_0$schema = z.string()
 const dsh_whale_companion_whaleCompanion_startExpeditionV5_parameter_1$schema = z.union([z.literal("common-minke"), z.literal("brydes"), z.literal("humpback"), z.literal("gray"), z.literal("beluga"), z.literal("orca"), z.literal("sperm"), z.literal("pilot"), z.literal("narwhal"), z.literal("bowhead"), z.literal("fin"), z.literal("sei"), z.literal("blue"), z.literal("southern-right"), z.literal("omura"), z.literal("cuviers-beaked"), z.literal("north-atlantic-right"), z.literal("north-pacific-right"), z.literal("rices"), z.literal("spade-toothed")])
@@ -1886,6 +2024,7 @@ const dsh_whale_companion_whaleCompanion_startExpeditionV5_result$schema = z.obj
   'updatedAt': z.number(),
   'version': z.literal(5),
   'lastActiveDay': z.union([z.undefined(), z.string()]).optional(),
+  'name': z.union([z.undefined(), z.string()]).optional(),
 })
 
 export const TYPERT = {
@@ -1908,7 +2047,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_claimExpeditionV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":103,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":110,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/export',
@@ -1923,7 +2062,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion#whaleCompanion/export:result',
         schema: dsh_whale_companion_whaleCompanion_export_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":129,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":136,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/exportCommunitySongV5',
@@ -1939,7 +2078,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion#whaleCompanion/exportCommunitySongV5:result',
         schema: dsh_whale_companion_whaleCompanion_exportCommunitySongV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":117,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":124,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/exportVisitorBottleV5',
@@ -1955,7 +2094,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion#whaleCompanion/exportVisitorBottleV5:result',
         schema: dsh_whale_companion_whaleCompanion_exportVisitorBottleV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":106,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":113,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/get',
@@ -1970,7 +2109,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_get_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":59,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":60,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/getV5',
@@ -1985,7 +2124,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_getV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":62,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":63,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/import',
@@ -2010,7 +2149,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_import_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":132,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":139,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/importCommunitySongV5',
@@ -2036,7 +2175,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_importCommunitySongV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":120,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":127,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/importVisitorBottleV5',
@@ -2062,7 +2201,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleVisitorBottle',
         schema: dsh_whale_companion_whaleCompanion_importVisitorBottleV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":109,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":116,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/loadRoomPresetV5',
@@ -2088,7 +2227,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_loadRoomPresetV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":93,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":100,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/placeCollectibleV5',
@@ -2124,7 +2263,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_placeCollectibleV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":83,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":90,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/postcardV5',
@@ -2140,7 +2279,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhalePostcard',
         schema: dsh_whale_companion_whaleCompanion_postcardV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":126,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":133,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/removeCommunityPeerV5',
@@ -2166,7 +2305,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_removeCommunityPeerV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":123,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":130,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/reset',
@@ -2181,7 +2320,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_reset_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":135,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":142,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/saveRoomPresetV5',
@@ -2197,7 +2336,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_saveRoomPresetV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":90,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":97,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/setCommunityV5',
@@ -2233,7 +2372,32 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_setCommunityV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":112,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":119,"column":9},
+    },
+    {
+      id: 'dsh-whale-companion#whaleCompanion/setName',
+      service: 'whaleCompanion',
+      namespace: 'whaleCompanion',
+      method: 'setName',
+      invocation: { kind: 'direct' },
+      parameters: [
+        {
+          name: 'name',
+          wire: 'name',
+          source: 'json',
+          codec: {
+            mode: 'strict',
+            typeSymbol: 'dsh-whale-companion#whaleCompanion/setName:name',
+            schema: dsh_whale_companion_whaleCompanion_setName_parameter_0$schema,
+          },
+        },
+      ],
+      result: {
+        mode: 'strict',
+        typeSymbol: 'dsh-whale-companion/types#WhaleState',
+        schema: dsh_whale_companion_whaleCompanion_setName_result$schema,
+      },
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":72,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/setPosition',
@@ -2258,7 +2422,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_setPosition_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":71,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":78,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/setSkin',
@@ -2283,7 +2447,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_setSkin_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":65,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":66,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/setSpeciesV5',
@@ -2309,7 +2473,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_setSpeciesV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":77,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":84,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/startExpeditionV5',
@@ -2355,7 +2519,7 @@ export const TYPERT = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_startExpeditionV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":96,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":103,"column":9},
     },
   ],
   model: {
@@ -2382,6 +2546,11 @@ export const TYPERT = {
             "kind": "method",
             "name": "setSkin",
             "signature": "@Remote('setSkin') async setSkin(skin: WhaleState['skin']): Promise<WhaleState>"
+          },
+          {
+            "kind": "method",
+            "name": "setName",
+            "signature": "@Remote('setName') async setName(name: string): Promise<WhaleState>"
           },
           {
             "kind": "method",

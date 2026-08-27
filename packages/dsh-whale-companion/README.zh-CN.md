@@ -6,6 +6,9 @@
 
 ## 功能
 
+- **2.2.0 完整计划交付**：新增可命名伙伴、四类动态航行任务、自绘 SVG 交互鲸鱼、快速航行卡、XP 即时反馈、六套多层海域配色，以及本地生成的 PNG 航行名片和文本战报。
+- Session 日期现在优先使用真实创建时间；历史迟到事件不会回滚连续天数；所有文本导入在 JSON 解析前执行 512 KiB 上限检查，持久化提交前重新通过完整 Schema 校验。
+- CI 新增实际客户端 Bundle 的浏览器挂载烟雾测试，以及桌面、移动端、浅色和减少动画模式的 Playwright 截图回归。
 - `shell.overlay` 鲸鱼支持键盘、拖动、边缘吸附、视口安全位置，并通过一个共享 store 每 5 秒刷新。新潮汐会变成有时限的可见气泡，只有里程碑进入读屏 live region。
 - 安静、标准、热闹三档偏好只保存在浏览器，不进入 Host、备份或鲸群卡片。鲸鱼小屋新增七日航海日志、当前故事、海湾预览和隐私账本。
 - 20 种鲸灵由 manifest 映射到安全的 live 事件家族与潮汐效果，不读取事件内容，也不改变模型行为。
@@ -25,7 +28,7 @@ Host 为当前进程的 live 去重生成 HMAC 归一化收据摘要。持久化
 
 ```powershell
 npm pack . --pack-destination ../../dist
-dsh plugin --profile web add ../../dist/dsh-whale-companion-2.1.1.tgz
+dsh plugin --profile web add ../../dist/dsh-whale-companion-2.2.0.tgz
 ```
 
 重启原有 DSH Web 进程并刷新页面。环境要求和验收步骤见[套件安装指南](../../INSTALL.zh-CN.md)。

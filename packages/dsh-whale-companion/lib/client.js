@@ -28,6 +28,7 @@ window.__ModuleLoader__.load({
 		//#endregion
 		let react = require("react");
 		react = __toESM(react, 1);
+		let react_jsx_runtime = require("react/jsx-runtime");
 		//#region ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js
 		var _a$1;
 		function $constructor(name, initializer, params) {
@@ -4854,7 +4855,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_export_result$schema = string();
 		const dsh_whale_companion_whaleCompanion_exportCommunitySongV5_result$schema = string();
@@ -5598,7 +5600,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_getV5_result$schema = object({
 			"species": union([
@@ -6339,7 +6342,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_import_parameter_0$schema = string();
 		const dsh_whale_companion_whaleCompanion_import_result$schema = object({
@@ -7081,7 +7085,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_importCommunitySongV5_parameter_0$schema = string();
 		const dsh_whale_companion_whaleCompanion_importCommunitySongV5_result$schema = object({
@@ -7823,7 +7828,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_importVisitorBottleV5_parameter_0$schema = string();
 		const dsh_whale_companion_whaleCompanion_importVisitorBottleV5_result$schema = object({
@@ -8820,7 +8826,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_placeCollectibleV5_parameter_0$schema = string();
 		const dsh_whale_companion_whaleCompanion_placeCollectibleV5_parameter_1$schema = union([literal(null), string()]);
@@ -9563,7 +9570,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_postcardV5_result$schema = object({
 			"day": string(),
@@ -10381,7 +10389,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_reset_result$schema = object({
 			"species": union([
@@ -11122,7 +11131,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_saveRoomPresetV5_result$schema = object({
 			"species": union([
@@ -11863,7 +11873,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_setCommunityV5_parameter_0$schema = boolean();
 		const dsh_whale_companion_whaleCompanion_setCommunityV5_parameter_1$schema = string();
@@ -12606,7 +12617,751 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
+		});
+		const dsh_whale_companion_whaleCompanion_setName_parameter_0$schema = string();
+		const dsh_whale_companion_whaleCompanion_setName_result$schema = object({
+			"species": union([
+				literal("common-minke"),
+				literal("brydes"),
+				literal("humpback"),
+				literal("gray"),
+				literal("beluga"),
+				literal("orca"),
+				literal("sperm"),
+				literal("pilot"),
+				literal("narwhal"),
+				literal("bowhead"),
+				literal("fin"),
+				literal("sei"),
+				literal("blue"),
+				literal("southern-right"),
+				literal("omura"),
+				literal("cuviers-beaked"),
+				literal("north-atlantic-right"),
+				literal("north-pacific-right"),
+				literal("rices"),
+				literal("spade-toothed")
+			]),
+			"resonance": object({
+				"common-minke": union([_undefined(), number()]).optional(),
+				"brydes": union([_undefined(), number()]).optional(),
+				"humpback": union([_undefined(), number()]).optional(),
+				"gray": union([_undefined(), number()]).optional(),
+				"beluga": union([_undefined(), number()]).optional(),
+				"orca": union([_undefined(), number()]).optional(),
+				"sperm": union([_undefined(), number()]).optional(),
+				"pilot": union([_undefined(), number()]).optional(),
+				"narwhal": union([_undefined(), number()]).optional(),
+				"bowhead": union([_undefined(), number()]).optional(),
+				"fin": union([_undefined(), number()]).optional(),
+				"sei": union([_undefined(), number()]).optional(),
+				"blue": union([_undefined(), number()]).optional(),
+				"southern-right": union([_undefined(), number()]).optional(),
+				"omura": union([_undefined(), number()]).optional(),
+				"cuviers-beaked": union([_undefined(), number()]).optional(),
+				"north-atlantic-right": union([_undefined(), number()]).optional(),
+				"north-pacific-right": union([_undefined(), number()]).optional(),
+				"rices": union([_undefined(), number()]).optional(),
+				"spade-toothed": union([_undefined(), number()]).optional()
+			}),
+			"moments": array(object({
+				"id": string(),
+				"progressDay": string(),
+				"at": number(),
+				"category": union([
+					literal("session-start"),
+					literal("utc-day-session"),
+					literal("utc-night-session"),
+					literal("user-turn"),
+					literal("tool-result"),
+					literal("level-up"),
+					literal("resonance-star"),
+					literal("species-unlock"),
+					literal("return")
+				]),
+				"species": union([
+					literal("common-minke"),
+					literal("brydes"),
+					literal("humpback"),
+					literal("gray"),
+					literal("beluga"),
+					literal("orca"),
+					literal("sperm"),
+					literal("pilot"),
+					literal("narwhal"),
+					literal("bowhead"),
+					literal("fin"),
+					literal("sei"),
+					literal("blue"),
+					literal("southern-right"),
+					literal("omura"),
+					literal("cuviers-beaked"),
+					literal("north-atlantic-right"),
+					literal("north-pacific-right"),
+					literal("rices"),
+					literal("spade-toothed")
+				]),
+				"reactionId": string(),
+				"templateId": string(),
+				"visualSeed": number()
+			})),
+			"monthlyTides": array(object({
+				"month": string(),
+				"categoryCounts": object({
+					"session-start": union([_undefined(), number()]).optional(),
+					"utc-day-session": union([_undefined(), number()]).optional(),
+					"utc-night-session": union([_undefined(), number()]).optional(),
+					"user-turn": union([_undefined(), number()]).optional(),
+					"tool-result": union([_undefined(), number()]).optional(),
+					"level-up": union([_undefined(), number()]).optional(),
+					"resonance-star": union([_undefined(), number()]).optional(),
+					"species-unlock": union([_undefined(), number()]).optional(),
+					"return": union([_undefined(), number()]).optional()
+				}),
+				"speciesSeen": array(union([
+					literal("common-minke"),
+					literal("brydes"),
+					literal("humpback"),
+					literal("gray"),
+					literal("beluga"),
+					literal("orca"),
+					literal("sperm"),
+					literal("pilot"),
+					literal("narwhal"),
+					literal("bowhead"),
+					literal("fin"),
+					literal("sei"),
+					literal("blue"),
+					literal("southern-right"),
+					literal("omura"),
+					literal("cuviers-beaked"),
+					literal("north-atlantic-right"),
+					literal("north-pacific-right"),
+					literal("rices"),
+					literal("spade-toothed")
+				]))
+			})),
+			"reactionCooldowns": array(object({
+				"reactionId": string(),
+				"lastAt": number()
+			})),
+			"collectibles": array(object({
+				"collectibleId": union([
+					literal("first-wake"),
+					literal("blue-current-lamp"),
+					literal("warm-coral"),
+					literal("echo-shell"),
+					literal("tide-map"),
+					literal("song-chime"),
+					literal("moon-pearl"),
+					literal("dawn-reed"),
+					literal("night-reef"),
+					literal("sunken-compass"),
+					literal("glow-algae"),
+					literal("kelp-cushion"),
+					literal("ice-fragment"),
+					literal("star-lantern"),
+					literal("deep-bell"),
+					literal("migration-banner"),
+					literal("quiet-cove"),
+					literal("memory-orb"),
+					literal("aurora-arch"),
+					literal("ancient-anchor"),
+					literal("horizon-window"),
+					literal("tidal-garden"),
+					literal("whale-stone"),
+					literal("unknown-spire")
+				]),
+				"variant": number(),
+				"earnedProgressDay": string()
+			})),
+			"room": object({
+				"slots": object({
+					"backdrop": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"seafloor": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"lighting": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"hanging": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"habitatLeft": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"habitatRight": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"foreground": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"soundscape": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					])
+				}),
+				"presets": array(object({
+					"backdrop": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"seafloor": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"lighting": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"hanging": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"habitatLeft": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"habitatRight": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"foreground": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					]),
+					"soundscape": union([
+						literal(null),
+						literal("first-wake"),
+						literal("blue-current-lamp"),
+						literal("warm-coral"),
+						literal("echo-shell"),
+						literal("tide-map"),
+						literal("song-chime"),
+						literal("moon-pearl"),
+						literal("dawn-reed"),
+						literal("night-reef"),
+						literal("sunken-compass"),
+						literal("glow-algae"),
+						literal("kelp-cushion"),
+						literal("ice-fragment"),
+						literal("star-lantern"),
+						literal("deep-bell"),
+						literal("migration-banner"),
+						literal("quiet-cove"),
+						literal("memory-orb"),
+						literal("aurora-arch"),
+						literal("ancient-anchor"),
+						literal("horizon-window"),
+						literal("tidal-garden"),
+						literal("whale-stone"),
+						literal("unknown-spire")
+					])
+				}))
+			}),
+			"expedition": union([literal(null), object({
+				"expeditionId": string(),
+				"species": union([
+					literal("common-minke"),
+					literal("brydes"),
+					literal("humpback"),
+					literal("gray"),
+					literal("beluga"),
+					literal("orca"),
+					literal("sperm"),
+					literal("pilot"),
+					literal("narwhal"),
+					literal("bowhead"),
+					literal("fin"),
+					literal("sei"),
+					literal("blue"),
+					literal("southern-right"),
+					literal("omura"),
+					literal("cuviers-beaked"),
+					literal("north-atlantic-right"),
+					literal("north-pacific-right"),
+					literal("rices"),
+					literal("spade-toothed")
+				]),
+				"startedProgressDay": string(),
+				"progress": number(),
+				"goal": number(),
+				"rewardClaimed": boolean(),
+				"lastAdvancedProgressDay": union([_undefined(), string()]).optional()
+			})]),
+			"storyFragments": array(string()),
+			"community": object({
+				"enabled": boolean(),
+				"aliasId": union([
+					literal("blue-current"),
+					literal("sea-salt"),
+					literal("north-wind"),
+					literal("moon-reef"),
+					literal("quiet-kelp"),
+					literal("warm-sand"),
+					literal("far-song"),
+					literal("ice-lantern"),
+					literal("tide-glass"),
+					literal("coral-dawn"),
+					literal("deep-star"),
+					literal("open-horizon")
+				]),
+				"peers": array(object({
+					"aliasId": union([
+						literal("blue-current"),
+						literal("sea-salt"),
+						literal("north-wind"),
+						literal("moon-reef"),
+						literal("quiet-kelp"),
+						literal("warm-sand"),
+						literal("far-song"),
+						literal("ice-lantern"),
+						literal("tide-glass"),
+						literal("coral-dawn"),
+						literal("deep-star"),
+						literal("open-horizon")
+					]),
+					"species": union([
+						literal("common-minke"),
+						literal("brydes"),
+						literal("humpback"),
+						literal("gray"),
+						literal("beluga"),
+						literal("orca"),
+						literal("sperm"),
+						literal("pilot"),
+						literal("narwhal"),
+						literal("bowhead"),
+						literal("fin"),
+						literal("sei"),
+						literal("blue"),
+						literal("southern-right"),
+						literal("omura"),
+						literal("cuviers-beaked"),
+						literal("north-atlantic-right"),
+						literal("north-pacific-right"),
+						literal("rices"),
+						literal("spade-toothed")
+					]),
+					"skin": union([
+						literal("ocean"),
+						literal("coral"),
+						literal("midnight"),
+						literal("aurora"),
+						literal("sunset"),
+						literal("nebula")
+					]),
+					"activityBucket": union([
+						literal("0"),
+						literal("1"),
+						literal("2-4"),
+						literal("5+")
+					]),
+					"observedBucket": union([
+						literal("1-4"),
+						literal("5-9"),
+						literal("10-14"),
+						literal("15-20")
+					]),
+					"resonanceStars": number(),
+					"seed": number(),
+					"importedAt": number()
+				}))
+			}),
+			"xp": number(),
+			"level": number(),
+			"turns": number(),
+			"sessions": number(),
+			"tools": number(),
+			"streak": number(),
+			"longestStreak": number(),
+			"checkpoints": array(string()),
+			"achievements": array(union([
+				literal("first-swim"),
+				literal("ten-turns"),
+				literal("century"),
+				literal("week-current"),
+				literal("month-tide"),
+				literal("level-five"),
+				literal("level-ten"),
+				literal("tool-diver"),
+				literal("early-bird"),
+				literal("night-owl"),
+				literal("steady-fin"),
+				literal("collector")
+			])),
+			"skin": union([
+				literal("ocean"),
+				literal("coral"),
+				literal("midnight"),
+				literal("aurora"),
+				literal("sunset"),
+				literal("nebula")
+			]),
+			"position": object({
+				"x": number(),
+				"y": number()
+			}),
+			"updatedAt": number(),
+			"version": literal(5),
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_setPosition_parameter_0$schema = object({
 			"x": number(),
@@ -13351,7 +14106,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_setSkin_parameter_0$schema = union([
 			literal("ocean"),
@@ -14100,7 +14856,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_setSpeciesV5_parameter_0$schema = union([
 			literal("common-minke"),
@@ -14863,7 +15620,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const dsh_whale_companion_whaleCompanion_startExpeditionV5_parameter_0$schema = string();
 		const dsh_whale_companion_whaleCompanion_startExpeditionV5_parameter_1$schema = union([
@@ -15628,7 +16386,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}),
 			"updatedAt": number(),
 			"version": literal(5),
-			"lastActiveDay": union([_undefined(), string()]).optional()
+			"lastActiveDay": union([_undefined(), string()]).optional(),
+			"name": union([_undefined(), string()]).optional()
 		});
 		const TYPERT_REMOTE = {
 			package: "dsh-whale-companion",
@@ -15648,7 +16407,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 103,
+						"line": 110,
 						"column": 9
 					}
 				},
@@ -15666,7 +16425,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 129,
+						"line": 136,
 						"column": 9
 					}
 				},
@@ -15685,7 +16444,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 117,
+						"line": 124,
 						"column": 9
 					}
 				},
@@ -15704,7 +16463,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 106,
+						"line": 113,
 						"column": 9
 					}
 				},
@@ -15722,7 +16481,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 59,
+						"line": 60,
 						"column": 9
 					}
 				},
@@ -15740,7 +16499,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 62,
+						"line": 63,
 						"column": 9
 					}
 				},
@@ -15767,7 +16526,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 132,
+						"line": 139,
 						"column": 9
 					}
 				},
@@ -15795,7 +16554,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 120,
+						"line": 127,
 						"column": 9
 					}
 				},
@@ -15823,7 +16582,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 109,
+						"line": 116,
 						"column": 9
 					}
 				},
@@ -15851,7 +16610,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 93,
+						"line": 100,
 						"column": 9
 					}
 				},
@@ -15888,7 +16647,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 83,
+						"line": 90,
 						"column": 9
 					}
 				},
@@ -15907,7 +16666,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 126,
+						"line": 133,
 						"column": 9
 					}
 				},
@@ -15935,7 +16694,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 123,
+						"line": 130,
 						"column": 9
 					}
 				},
@@ -15953,7 +16712,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 135,
+						"line": 142,
 						"column": 9
 					}
 				},
@@ -15972,7 +16731,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 90,
+						"line": 97,
 						"column": 9
 					}
 				},
@@ -16009,7 +16768,34 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 112,
+						"line": 119,
+						"column": 9
+					}
+				},
+				{
+					id: "dsh-whale-companion#whaleCompanion/setName",
+					service: "whaleCompanion",
+					namespace: "whaleCompanion",
+					method: "setName",
+					invocation: { kind: "direct" },
+					parameters: [{
+						name: "name",
+						wire: "name",
+						source: "json",
+						codec: {
+							mode: "strict",
+							typeSymbol: "dsh-whale-companion#whaleCompanion/setName:name",
+							schema: dsh_whale_companion_whaleCompanion_setName_parameter_0$schema
+						}
+					}],
+					result: {
+						mode: "strict",
+						typeSymbol: "dsh-whale-companion/types#WhaleState",
+						schema: dsh_whale_companion_whaleCompanion_setName_result$schema
+					},
+					sourceLocation: {
+						"file": "packages/dsh-whale-companion/src/index.ts",
+						"line": 72,
 						"column": 9
 					}
 				},
@@ -16036,7 +16822,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 71,
+						"line": 78,
 						"column": 9
 					}
 				},
@@ -16063,7 +16849,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 65,
+						"line": 66,
 						"column": 9
 					}
 				},
@@ -16091,7 +16877,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 77,
+						"line": 84,
 						"column": 9
 					}
 				},
@@ -16141,7 +16927,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 					},
 					sourceLocation: {
 						"file": "packages/dsh-whale-companion/src/index.ts",
-						"line": 96,
+						"line": 103,
 						"column": 9
 					}
 				}
@@ -16600,27 +17386,57 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 		const SKINS = {
 			ocean: {
 				name: "蔚蓝海域",
-				color: "#2c9cff"
+				description: "清透、平静的默认海色",
+				color: "#51b7ff",
+				deep: "#1768d4",
+				belly: "#dff5ff",
+				accent: "#93ddff",
+				glow: "#47c9ff"
 			},
 			coral: {
 				name: "珊瑚暖流",
-				color: "#ed6f61"
+				description: "温暖而明亮的珊瑚粉",
+				color: "#ff8e89",
+				deep: "#d85267",
+				belly: "#fff0e9",
+				accent: "#ffc1a8",
+				glow: "#ff7d9d"
 			},
 			midnight: {
 				name: "深海午夜",
-				color: "#5d68d9"
+				description: "克制、沉静的午夜蓝紫",
+				color: "#7f8dff",
+				deep: "#343e9f",
+				belly: "#d9ddff",
+				accent: "#aeb9ff",
+				glow: "#7b6cff"
 			},
 			aurora: {
 				name: "极光海湾",
-				color: "#35c894"
+				description: "带有冷光的薄荷极光",
+				color: "#54d9ba",
+				deep: "#137f7a",
+				belly: "#ddfff7",
+				accent: "#8af2d3",
+				glow: "#42e6c1"
 			},
 			sunset: {
 				name: "落日鲸歌",
-				color: "#f49a3d"
+				description: "柔和、松弛的金橙暮色",
+				color: "#ffb15d",
+				deep: "#d96a3a",
+				belly: "#fff2d8",
+				accent: "#ffd18b",
+				glow: "#ff9c4a"
 			},
 			nebula: {
 				name: "星云潮汐",
-				color: "#a976eb"
+				description: "梦幻而不失层次的星云紫",
+				color: "#bf8cff",
+				deep: "#6d3cbe",
+				belly: "#f2e5ff",
+				accent: "#ddaaff",
+				glow: "#b16cff"
 			}
 		};
 		const ACHIEVEMENTS = {
@@ -16688,13 +17504,18 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 		const PRIVACY_LEDGER = [
 			{
 				name: "本地进度",
-				includes: "等级、鲸灵、共鸣、纪念物、小屋与有限潮汐",
+				includes: "名字、等级、鲸灵、共鸣、纪念物、小屋与有限潮汐",
 				excludes: "提示词、回答、代码、路径和工具内容"
 			},
 			{
 				name: "备份",
-				includes: "稳定成长、装扮与小屋",
+				includes: "伙伴名字、稳定成长、装扮与小屋",
 				excludes: "会话标识、收据、精确活动时间线与潮汐日志"
+			},
+			{
+				name: "PNG 航行名片",
+				includes: "伙伴名字、等级、鲸灵、连续天数与数量型里程碑",
+				excludes: "任务名、工具名、会话内容与账号"
 			},
 			{
 				name: "潮汐明信片",
@@ -16847,101 +17668,101 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			};
 		}
 		//#endregion
-		//#region \0dsh-community-css:C:\Users\zhanglimin202307\Desktop\dsh\dsh-whale-companion\packages\dsh-whale-companion\src\client\Whale.module.css.mjs
-		const css = ".J_JdNW_overlay{z-index:1;pointer-events:none;position:fixed;inset:0}.J_JdNW_whale{min-width:76px;min-height:82px;color:var(--dsw-alias-label-primary);cursor:grab;touch-action:none;pointer-events:auto;background:0 0;border:0;place-items:center;padding:0;display:grid;position:absolute;top:0;left:0}.J_JdNW_whale:active{cursor:grabbing}.J_JdNW_whale:focus-visible,.J_JdNW_home button:focus-visible,.J_JdNW_home textarea:focus-visible,.J_JdNW_home select:focus-visible{outline:3px solid var(--dsw-alias-brand-primary);outline-offset:3px}.J_JdNW_whaleBody{border:2px solid color-mix(in srgb, var(--species-color) 58%, transparent);width:76px;height:62px;box-shadow:0 8px 18px color-mix(in srgb, var(--species-color) 34%, transparent);background-color:#062847;background-repeat:no-repeat;background-size:500% 400%;border-radius:16px;animation:3.8s cubic-bezier(.22,.8,.3,1) infinite J_JdNW_whaleFloat;display:block}.J_JdNW_badge{border:1px solid color-mix(in srgb, var(--species-color) 50%, var(--dsw-alias-border-l2));color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);letter-spacing:.02em;border-radius:999px;margin-top:-9px;padding:3px 8px;font-size:11px;font-weight:720}.J_JdNW_overlayStatus,.J_JdNW_visuallyHidden{clip:rect(0 0 0 0);white-space:nowrap;border:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}.J_JdNW_hutBackdrop{background:color-mix(in srgb, var(--dsw-alias-bg-base) 78%, transparent);backdrop-filter:blur(4px);pointer-events:auto;place-items:center;padding:clamp(12px,3vw,40px);display:grid;position:fixed;inset:0}.J_JdNW_hut{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-base);width:min(1120px,100%);max-height:min(900px,100vh - 24px);box-shadow:0 24px 80px color-mix(in srgb, var(--dsw-alias-bg-base) 42%, transparent);border-radius:24px;position:relative;overflow:auto}.J_JdNW_hutClose{z-index:2;float:right;border:1px solid var(--dsw-alias-border-l2);width:44px;height:44px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);cursor:pointer;border-radius:50%;margin:10px 12px 0 0;font-size:21px;line-height:1;position:sticky;top:10px}.J_JdNW_home{box-sizing:border-box;width:100%;min-width:0;max-width:100%;color:var(--dsw-alias-label-primary);padding:clamp(16px,3vw,34px);overflow-x:clip}.J_JdNW_home h2,.J_JdNW_home h3,.J_JdNW_home p{margin-top:0}.J_JdNW_hero{border:1px solid var(--dsw-alias-border-l2);background:linear-gradient(125deg, var(--dsw-alias-bg-layer-1) 0 58%, color-mix(in srgb, var(--dsw-alias-brand-primary) 13%, var(--dsw-alias-bg-layer-2)) 100%);border-radius:20px 52px 20px 20px;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:clamp(18px,4vw,56px);min-width:0;padding:clamp(22px,4vw,46px);display:grid;position:relative;overflow:hidden}.J_JdNW_hero>div:first-child{min-width:0}.J_JdNW_hero:after{aspect-ratio:1;border:1px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 28%, transparent);content:\"\";border-radius:50%;width:48%;position:absolute;bottom:-100px;right:-7%}.J_JdNW_eyebrow{color:var(--dsw-alias-brand-primary);letter-spacing:.13em;margin-bottom:9px;font-size:11px;font-weight:750}.J_JdNW_hero h2{letter-spacing:-.055em;margin-bottom:9px;font-size:clamp(31px,5vw,54px);line-height:.98}.J_JdNW_intro{overflow-wrap:anywhere;max-width:580px;color:var(--dsw-alias-label-secondary);margin-bottom:0;font-size:clamp(14px,1.8vw,16px);line-height:1.65}.J_JdNW_heroWhale{z-index:1;aspect-ratio:4/3;border:1px solid color-mix(in srgb, var(--species-color) 56%, var(--dsw-alias-border-l2));width:clamp(110px,16vw,168px);color:var(--species-color);background:color-mix(in srgb, var(--species-color) 11%, var(--dsw-alias-bg-layer-2));filter:drop-shadow(0 16px 22px color-mix(in srgb, var(--species-color) 25%, transparent));border-radius:38% 62% 47% 53%/45% 43% 57% 55%;place-items:center;animation:3.8s cubic-bezier(.22,.8,.3,1) infinite J_JdNW_whaleFloat;display:grid;position:relative;overflow:hidden}.J_JdNW_heroWhaleArt{background-color:#062847;background-repeat:no-repeat;background-size:500% 400%;width:100%;height:100%;display:block;transform:scale(1.12)}.J_JdNW_progressCard{border-left:3px solid var(--dsw-alias-brand-primary);background:color-mix(in srgb, var(--dsw-alias-bg-layer-1) 92%, var(--dsw-alias-brand-primary));margin-top:16px;padding:18px 20px}.J_JdNW_progressHeading,.J_JdNW_sectionHeading{flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 14px;min-width:0;display:flex}.J_JdNW_progressHeading span,.J_JdNW_sectionHeading span,.J_JdNW_progressCard p,.J_JdNW_sectionIntro{color:var(--dsw-alias-label-secondary)}.J_JdNW_progressCard p{margin:8px 0 0;font-size:13px}.J_JdNW_progressTrack{background:var(--dsw-alias-bg-layer-2);border-radius:999px;height:8px;margin-top:13px;overflow:hidden}.J_JdNW_progressTrack span{border-radius:inherit;background:var(--dsw-alias-brand-primary);height:100%;transition:width .32s cubic-bezier(.2,.8,.3,1);display:block}.J_JdNW_privacy{max-width:760px;color:var(--dsw-alias-label-tertiary);margin:14px 2px 0;font-size:12px;line-height:1.6}.J_JdNW_error,.J_JdNW_success{border-left:3px solid;margin:16px 0;padding:11px 13px;line-height:1.5}.J_JdNW_error{color:var(--dsw-alias-state-error-primary);background:color-mix(in srgb, var(--dsw-alias-state-error-primary) 8%, var(--dsw-alias-bg-base))}.J_JdNW_success{color:var(--dsw-alias-state-success-primary);background:color-mix(in srgb, var(--dsw-alias-state-success-primary) 9%, var(--dsw-alias-bg-base))}.J_JdNW_loading,.J_JdNW_empty{color:var(--dsw-alias-label-secondary);line-height:1.6}.J_JdNW_stats{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;margin:24px 0;display:grid}.J_JdNW_stat{background:var(--dsw-alias-bg-base);min-width:0;padding:15px 13px}.J_JdNW_stat strong,.J_JdNW_stat span{text-overflow:ellipsis;white-space:nowrap;display:block;overflow:hidden}.J_JdNW_stat strong{letter-spacing:-.04em;font-size:clamp(18px,2vw,24px)}.J_JdNW_stat span{color:var(--dsw-alias-label-secondary);margin-top:3px;font-size:11px}.J_JdNW_section{border-top:1px solid var(--dsw-alias-border-l1);margin-top:28px;padding-top:17px}.J_JdNW_sectionHeading{margin-bottom:13px}.J_JdNW_sectionHeading h3{letter-spacing:-.025em;margin-bottom:0;font-size:18px}.J_JdNW_sectionHeading span{font-size:12px}.J_JdNW_sectionIntro{max-width:720px;margin-bottom:14px;font-size:13px;line-height:1.6}.J_JdNW_tideSection{border-top:2px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 55%, var(--dsw-alias-border-l1))}.J_JdNW_tideList{border:1px solid var(--dsw-alias-border-l1);grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;margin:0;padding:0;list-style:none;display:grid}.J_JdNW_tideList li{border-right:1px solid var(--dsw-alias-border-l1);gap:10px;min-width:0;padding:13px;display:flex}.J_JdNW_tideList strong,.J_JdNW_tideList span{display:block}.J_JdNW_tideList strong{font-size:13px;line-height:1.45}.J_JdNW_tideList span:last-child{color:var(--dsw-alias-label-secondary);margin-top:4px;font-size:11px}.J_JdNW_tideDot,.J_JdNW_peerDot{background:var(--dsw-alias-brand-primary);width:11px;height:11px;box-shadow:0 0 0 4px color-mix(in srgb, var(--dsw-alias-brand-primary) 15%, transparent);border-radius:50%;flex:none;margin-top:5px}.J_JdNW_tideDot[data-category=level-up],.J_JdNW_tideDot[data-category=species-unlock]{background:#e0a13a}.J_JdNW_tideDot[data-category=return],.J_JdNW_tideDot[data-category=resonance-star]{background:#b17ee8}.J_JdNW_postcardButton{border:1px solid var(--dsw-alias-brand-primary);width:100%;color:var(--dsw-alias-brand-primary);font:inherit;cursor:pointer;background:0 0;margin-top:10px;padding:12px;font-weight:700}.J_JdNW_speciesGrid{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;display:grid}.J_JdNW_speciesCard{background:var(--dsw-alias-bg-base);grid-template-rows:minmax(0,1fr) auto;grid-template-columns:128px minmax(0,1fr);align-items:start;gap:8px 14px;min-width:0;min-height:118px;padding:12px;display:grid}.J_JdNW_speciesCard strong,.J_JdNW_speciesCard span,.J_JdNW_speciesCard p,.J_JdNW_speciesCard small{display:block}.J_JdNW_speciesCard>div{min-width:0}.J_JdNW_speciesCard strong{font-size:15px}.J_JdNW_speciesCard span{color:var(--dsw-alias-label-secondary);text-overflow:ellipsis;white-space:nowrap;font-size:11px;overflow:hidden}.J_JdNW_speciesCard p{color:var(--dsw-alias-label-secondary);margin:7px 0;font-size:12px;line-height:1.45}.J_JdNW_speciesCard small{color:var(--dsw-alias-brand-primary);font-size:12px}.J_JdNW_speciesCard button,.J_JdNW_peerList button{border:1px solid var(--dsw-alias-border-l2);min-height:32px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);font:inherit;cursor:pointer;padding:6px 10px;font-size:12px}.J_JdNW_speciesCard button{grid-column:2;justify-self:start}.J_JdNW_speciesArt{border:1px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 18%, var(--dsw-alias-border-l1));background-color:#062847;background-repeat:no-repeat;background-size:500% 400%;border-radius:13px;grid-row:1/span 2;width:128px;height:86px;display:block;box-shadow:0 8px 20px #001a3329}.J_JdNW_locked{opacity:.52}.J_JdNW_locked .J_JdNW_speciesArt{filter:grayscale()brightness(.65)}.J_JdNW_room{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;display:grid}.J_JdNW_roomSlot,.J_JdNW_roomSlotSelected{min-height:104px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-base);text-align:left;font:inherit;cursor:pointer;border:0;align-content:end;gap:4px;padding:12px 12px 12px 68px;display:grid;position:relative;overflow:hidden}.J_JdNW_roomSlot>span:not(.J_JdNW_roomSlotArt),.J_JdNW_roomSlotSelected>span:not(.J_JdNW_roomSlotArt){color:var(--dsw-alias-label-secondary);font-size:11px}.J_JdNW_roomSlot strong,.J_JdNW_roomSlotSelected strong{text-overflow:ellipsis;white-space:nowrap;font-size:13px;overflow:hidden}.J_JdNW_roomSlotSelected{background:color-mix(in srgb, var(--dsw-alias-brand-primary) 10%, var(--dsw-alias-bg-base));box-shadow:inset 0 -3px var(--dsw-alias-brand-primary)}.J_JdNW_roomSlotArt{border:1px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 34%, var(--dsw-alias-border-l2));background-repeat:no-repeat;background-size:600% 400%;border-radius:12px;width:48px;height:48px;position:absolute;top:50%;left:10px;transform:translateY(-50%);box-shadow:0 7px 18px #001a3357}.J_JdNW_roomControls{background:var(--dsw-alias-bg-layer-1);margin-top:12px;padding:14px}.J_JdNW_roomControls>strong{margin-bottom:10px;display:block}.J_JdNW_chips{flex-wrap:wrap;gap:8px;display:flex}.J_JdNW_chips button{border:1px solid var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-base);font:inherit;cursor:pointer;border-radius:10px;align-items:center;gap:7px;padding:5px 9px 5px 5px;font-size:12px;display:inline-flex}.J_JdNW_chipArt{background-repeat:no-repeat;background-size:600% 400%;border-radius:7px;width:28px;height:28px}.J_JdNW_actions{flex-wrap:wrap;gap:8px;margin-top:12px;display:flex}.J_JdNW_actions button{border:1px solid var(--dsw-alias-border-l2);min-height:44px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);font:inherit;cursor:pointer;flex:132px;padding:9px 12px;font-weight:650}.J_JdNW_actions button:hover,.J_JdNW_chips button:hover,.J_JdNW_speciesCard button:hover,.J_JdNW_peerList button:hover{border-color:var(--dsw-alias-brand-primary)}.J_JdNW_actions .J_JdNW_danger{color:var(--dsw-alias-state-error-primary)}.J_JdNW_communityControls{background:var(--dsw-alias-bg-layer-1);grid-template-columns:minmax(0,1fr) minmax(180px,.45fr);gap:12px;padding:13px;display:grid}.J_JdNW_communityControls label{color:var(--dsw-alias-label-secondary);align-items:center;gap:8px;font-size:13px;display:flex}.J_JdNW_communityControls select{border:1px solid var(--dsw-alias-border-l2);min-width:0;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-base);font:inherit;flex:1;padding:7px}.J_JdNW_peerList{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);gap:1px;margin:12px 0 0;padding:0;list-style:none;display:grid}.J_JdNW_peerList li{background:var(--dsw-alias-bg-base);grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:11px;display:grid}.J_JdNW_peerList strong,.J_JdNW_peerList span{display:block}.J_JdNW_peerList strong{font-size:13px}.J_JdNW_peerList div>span{color:var(--dsw-alias-label-secondary);margin-top:3px;font-size:11px}.J_JdNW_preview{border:1px dashed var(--dsw-alias-border-l3);flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:10px;padding:12px;display:flex}.J_JdNW_preview span{color:var(--dsw-alias-label-secondary);font-size:12px}.J_JdNW_skins{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;display:grid}.J_JdNW_skin,.J_JdNW_selected{min-height:44px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-base);font:inherit;cursor:pointer;border:0;justify-content:center;align-items:center;gap:8px;display:inline-flex}.J_JdNW_selected{background:color-mix(in srgb, var(--dsw-alias-brand-primary) 10%, var(--dsw-alias-bg-base));box-shadow:inset 0 -3px var(--dsw-alias-brand-primary)}.J_JdNW_swatch{width:13px;height:13px;box-shadow:0 0 0 2px var(--dsw-alias-bg-base), 0 0 0 3px var(--dsw-alias-border-l2);border-radius:50%}.J_JdNW_achievements{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin:0;padding:0;list-style:none;display:grid}.J_JdNW_achievement{background:var(--dsw-alias-bg-base);align-items:flex-start;gap:10px;min-height:76px;padding:12px;display:flex}.J_JdNW_achievementIcon{border:1px solid color-mix(in srgb, var(--achievement-color,var(--dsw-alias-brand-primary)) 42%, var(--dsw-alias-border-l2));background:color-mix(in srgb, var(--achievement-color,var(--dsw-alias-brand-primary)) 12%, var(--dsw-alias-bg-layer-2));border-radius:8px;flex:none;width:30px;height:30px;display:block;position:relative;overflow:hidden}.J_JdNW_achievementIcon:before,.J_JdNW_achievementIcon:after{content:\"\";position:absolute}.J_JdNW_achievementIcon:before{border-top:2px solid var(--achievement-color,var(--dsw-alias-brand-primary));border-bottom:2px solid var(--achievement-color,var(--dsw-alias-brand-primary));border-radius:50%;width:16px;height:8px;top:10px;left:6px}.J_JdNW_achievementIcon:after{background:var(--achievement-color,var(--dsw-alias-brand-primary));border-radius:999px;width:4px;height:16px;top:7px;left:13px;transform:rotate(45deg)}.J_JdNW_achievementIcon[data-achievement=first-swim],.J_JdNW_achievementIcon[data-achievement=steady-fin]{--achievement-color:#2c9cff}.J_JdNW_achievementIcon[data-achievement=ten-turns],.J_JdNW_achievementIcon[data-achievement=tool-diver]{--achievement-color:#35c894}.J_JdNW_achievementIcon[data-achievement=century],.J_JdNW_achievementIcon[data-achievement=collector]{--achievement-color:#f49a3d}.J_JdNW_achievementIcon[data-achievement=week-current],.J_JdNW_achievementIcon[data-achievement=early-bird]{--achievement-color:#ed6f61}.J_JdNW_achievementIcon[data-achievement=month-tide],.J_JdNW_achievementIcon[data-achievement=night-owl]{--achievement-color:#5d68d9}.J_JdNW_achievementIcon[data-achievement=level-five],.J_JdNW_achievementIcon[data-achievement=level-ten]{--achievement-color:#a976eb}.J_JdNW_achievementIcon[data-locked=true]{--achievement-color:var(--dsw-alias-label-tertiary);opacity:.52}.J_JdNW_achievement strong,.J_JdNW_achievement span{display:block}.J_JdNW_achievement strong{font-size:13px}.J_JdNW_achievement div>span{color:var(--dsw-alias-label-secondary);margin-top:4px;font-size:11px;line-height:1.35}.J_JdNW_home textarea{box-sizing:border-box;border:1px solid var(--dsw-alias-border-l2);width:100%;min-height:95px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);resize:vertical;padding:10px 12px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}.J_JdNW_home button:disabled,.J_JdNW_home textarea:disabled,.J_JdNW_home select:disabled{cursor:not-allowed;opacity:.55}.J_JdNW_reactionBubble{border:1px solid var(--dsw-alias-border-l2);width:min(260px,100vw - 108px);color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);box-shadow:0 10px 28px color-mix(in srgb, var(--dsw-alias-bg-base) 36%, transparent);opacity:.96;pointer-events:none;border-radius:14px 14px 14px 3px;padding:10px 12px;animation:.34s cubic-bezier(.2,.8,.3,1) both J_JdNW_reactionEnter;position:absolute;top:0;left:0}.J_JdNW_reactionBubble strong,.J_JdNW_reactionBubble span{display:block}.J_JdNW_reactionBubble strong{letter-spacing:.04em;font-size:11px}.J_JdNW_reactionBubble span{margin-top:3px;font-size:13px;line-height:1.42}.J_JdNW_reactionHigh{border-color:color-mix(in srgb, var(--dsw-alias-brand-primary) 65%, var(--dsw-alias-border-l2))}.J_JdNW_overlay[data-mode=lively] .J_JdNW_reactionBubble{animation-duration:.5s}.J_JdNW_overlay[data-mode=quiet] .J_JdNW_reactionBubble{width:auto;max-width:190px;padding:7px 9px}.J_JdNW_overlay[data-reduced=true] .J_JdNW_reactionBubble,.J_JdNW_overlay[data-reduced=true] .J_JdNW_whaleBody,.J_JdNW_home[data-reduced=true] *{transition:none!important;animation:none!important}.J_JdNW_retryButton,.J_JdNW_error button{min-height:44px;color:inherit;font:inherit;cursor:pointer;background:0 0;border:1px solid;margin-top:10px;padding:8px 12px}.J_JdNW_journal{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;width:100%;min-width:0;margin:0;padding:0;list-style:none;display:grid}.J_JdNW_journal li{box-sizing:border-box;border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-base);align-content:end;gap:7px;min-width:0;min-height:116px;padding:10px 8px;display:grid}.J_JdNW_journalDate,.J_JdNW_journal small{color:var(--dsw-alias-label-secondary);font-size:10px}.J_JdNW_journal strong{text-overflow:ellipsis;white-space:nowrap;font-size:12px;overflow:hidden}.J_JdNW_journalBar{width:100%;height:calc(10px + var(--journal-level) * 9px);background:linear-gradient(to top, var(--dsw-alias-brand-primary), color-mix(in srgb, var(--dsw-alias-brand-primary) 25%, transparent));border-radius:999px 999px 3px 3px;display:block}.J_JdNW_journalQuiet .J_JdNW_journalBar{background:var(--dsw-alias-border-l2);height:6px}.J_JdNW_coveScene{border:1px solid color-mix(in srgb, var(--cove-color) 38%, var(--dsw-alias-border-l2));background-color:#062847;background-image:linear-gradient(to bottom, color-mix(in srgb, var(--cove-color) 8%, transparent), #00122629), var(--cove-image);background-position:50%;background-size:cover;border-radius:32px 68px 24px 24px;min-height:300px;position:relative;overflow:hidden;box-shadow:inset 0 0 56px #00152b52,0 18px 42px #001a332e}.J_JdNW_coveScene:after{content:\"\";pointer-events:none;background:linear-gradient(90deg,#00102233,#0000 28% 72%,#00102233);position:absolute;inset:0}.J_JdNW_coveWhale{z-index:2;aspect-ratio:3/2;filter:drop-shadow(0 12px 16px #0012268c);mix-blend-mode:screen;background-color:#03233d6b;background-repeat:no-repeat;background-size:500% 400%;border:1px solid #91dcf733;border-radius:44%;width:270px;animation:4.6s ease-in-out infinite J_JdNW_whaleFloat;position:absolute;top:22%;left:calc(50% - 135px);box-shadow:inset 0 0 34px #54cdf71f,0 18px 36px #00122652}.J_JdNW_coveItem{z-index:3;color:#e2f2f8c2;opacity:.48;backdrop-filter:blur(8px);background:#031f37ad;border:1px solid #96d3eb42;border-radius:12px;align-items:center;gap:6px;max-width:156px;padding:4px 8px 4px 4px;font-size:10px;display:inline-flex;position:absolute;box-shadow:0 5px 16px #000e1e47}.J_JdNW_coveItem[data-occupied=true]{color:#f2fbff;border-color:color-mix(in srgb, var(--cove-color) 56%, #a8e2f46b);opacity:1}.J_JdNW_coveItemArt{background-repeat:no-repeat;background-size:600% 400%;border-radius:7px;flex:none;width:28px;height:28px;display:block}.J_JdNW_cove_backdrop{top:8%;left:4%}.J_JdNW_cove_seafloor{bottom:7%;left:34%}.J_JdNW_cove_lighting{top:7%;right:7%}.J_JdNW_cove_hanging{top:27%;left:20%}.J_JdNW_cove_habitatLeft{bottom:19%;left:4%}.J_JdNW_cove_habitatRight{bottom:20%;right:4%}.J_JdNW_cove_foreground{bottom:6%;right:8%}.J_JdNW_cove_soundscape{top:47%;right:17%}.J_JdNW_sceneHint{color:var(--dsw-alias-label-secondary);margin:8px 0 0;font-size:11px}.J_JdNW_storyBeat{border:1px solid var(--dsw-alias-border-l1);background:color-mix(in srgb, var(--dsw-alias-brand-primary) 5%, var(--dsw-alias-bg-base));grid-template-columns:auto minmax(0,1fr);gap:16px;padding:16px;display:grid}.J_JdNW_storyNumber{color:var(--dsw-alias-brand-primary);font-size:42px;font-weight:300;line-height:1}.J_JdNW_storyBeat strong{font-size:16px}.J_JdNW_storyBeat p{color:var(--dsw-alias-label-secondary);margin:6px 0;line-height:1.62}.J_JdNW_storyBeat small{color:var(--dsw-alias-label-tertiary)}.J_JdNW_preferenceOptions{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;display:grid}.J_JdNW_preferenceOptions label,.J_JdNW_motionToggle{background:var(--dsw-alias-bg-base);cursor:pointer;justify-content:center;align-items:center;gap:8px;min-height:44px;padding:8px 12px;display:flex}.J_JdNW_motionToggle{border:1px solid var(--dsw-alias-border-l1);justify-content:flex-start;margin-top:8px}.J_JdNW_preferenceWarning{color:var(--dsw-alias-state-warning-primary,var(--dsw-alias-label-secondary));margin:8px 0 0;font-size:12px}.J_JdNW_privacyLedger{border:1px solid var(--dsw-alias-border-l1);grid-template-columns:minmax(110px,.3fr) minmax(0,1fr);margin:0;display:grid}.J_JdNW_privacyLedger dt,.J_JdNW_privacyLedger dd{border-bottom:1px solid var(--dsw-alias-border-l1);margin:0;padding:12px}.J_JdNW_privacyLedger dt{background:var(--dsw-alias-bg-layer-1);font-weight:700}.J_JdNW_privacyLedger dd{color:var(--dsw-alias-label-secondary);line-height:1.55}.J_JdNW_privacyLedger strong{color:var(--dsw-alias-label-primary);font-size:11px}@keyframes J_JdNW_reactionEnter{0%{opacity:0;transform:translateY(8px)scale(.98)}}@keyframes J_JdNW_whaleFloat{50%{transform:translateY(-7px)rotate(-2deg)}}@media (width<=860px){.J_JdNW_stats{grid-template-columns:repeat(3,minmax(0,1fr))}.J_JdNW_room,.J_JdNW_achievements{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (width<=560px){.J_JdNW_home{padding:16px;font-size:14px}.J_JdNW_hero{border-radius:18px 34px 18px 18px;grid-template-columns:1fr;padding:24px}.J_JdNW_heroWhale{order:-1}.J_JdNW_stats{grid-template-columns:repeat(2,minmax(0,1fr))}.J_JdNW_speciesGrid,.J_JdNW_achievements,.J_JdNW_skins,.J_JdNW_communityControls,.J_JdNW_preferenceOptions,.J_JdNW_tideList{grid-template-columns:1fr}.J_JdNW_journal{grid-template-columns:repeat(7,minmax(44px,1fr));overflow-x:auto}.J_JdNW_coveScene{min-height:190px}.J_JdNW_coveWhale{width:180px;top:24%;left:calc(50% - 90px)}.J_JdNW_privacyLedger{grid-template-columns:1fr}.J_JdNW_privacyLedger dt{border-bottom:0}.J_JdNW_hutBackdrop{padding:0}.J_JdNW_hut{border-radius:0;max-height:100vh}.J_JdNW_hutClose{margin-right:8px}}@media (prefers-reduced-motion:reduce){.J_JdNW_whaleBody,.J_JdNW_heroWhale{animation:none}.J_JdNW_progressTrack span{transition:none}}";
-		const tagId = "dsh-whale-companion/Whale.module.css";
-		if (typeof document !== "undefined" && !document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]")) {
+		//#region \0dsh-community-css:/home/runner/work/dsh-whale-companion/dsh-whale-companion/packages/dsh-whale-companion/src/client/Whale.module.css.mjs
+		const css$1 = ".IZCqda_overlay{z-index:1;pointer-events:none;position:fixed;inset:0}.IZCqda_whale{min-width:76px;min-height:82px;color:var(--dsw-alias-label-primary);cursor:grab;touch-action:none;pointer-events:auto;background:0 0;border:0;place-items:center;padding:0;display:grid;position:absolute;top:0;left:0}.IZCqda_whale:active{cursor:grabbing}.IZCqda_whale:focus-visible,.IZCqda_home button:focus-visible,.IZCqda_home textarea:focus-visible,.IZCqda_home select:focus-visible{outline:3px solid var(--dsw-alias-brand-primary);outline-offset:3px}.IZCqda_whaleBody{border:2px solid color-mix(in srgb, var(--species-color) 58%, transparent);width:76px;height:62px;box-shadow:0 8px 18px color-mix(in srgb, var(--species-color) 34%, transparent);background-color:#062847;background-repeat:no-repeat;background-size:500% 400%;border-radius:16px;animation:3.8s cubic-bezier(.22,.8,.3,1) infinite IZCqda_whaleFloat;display:block}.IZCqda_badge{border:1px solid color-mix(in srgb, var(--species-color) 50%, var(--dsw-alias-border-l2));color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);letter-spacing:.02em;border-radius:999px;margin-top:-9px;padding:3px 8px;font-size:11px;font-weight:720}.IZCqda_overlayStatus,.IZCqda_visuallyHidden{clip:rect(0 0 0 0);white-space:nowrap;border:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}.IZCqda_hutBackdrop{background:color-mix(in srgb, var(--dsw-alias-bg-base) 78%, transparent);backdrop-filter:blur(4px);pointer-events:auto;place-items:center;padding:clamp(12px,3vw,40px);display:grid;position:fixed;inset:0}.IZCqda_hut{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-base);width:min(1120px,100%);max-height:min(900px,100vh - 24px);box-shadow:0 24px 80px color-mix(in srgb, var(--dsw-alias-bg-base) 42%, transparent);border-radius:24px;position:relative;overflow:auto}.IZCqda_hutClose{z-index:2;float:right;border:1px solid var(--dsw-alias-border-l2);width:44px;height:44px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);cursor:pointer;border-radius:50%;margin:10px 12px 0 0;font-size:21px;line-height:1;position:sticky;top:10px}.IZCqda_home{box-sizing:border-box;width:100%;min-width:0;max-width:100%;color:var(--dsw-alias-label-primary);padding:clamp(16px,3vw,34px);overflow-x:clip}.IZCqda_home h2,.IZCqda_home h3,.IZCqda_home p{margin-top:0}.IZCqda_hero{border:1px solid var(--dsw-alias-border-l2);background:linear-gradient(125deg, var(--dsw-alias-bg-layer-1) 0 58%, color-mix(in srgb, var(--dsw-alias-brand-primary) 13%, var(--dsw-alias-bg-layer-2)) 100%);border-radius:20px 52px 20px 20px;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:clamp(18px,4vw,56px);min-width:0;padding:clamp(22px,4vw,46px);display:grid;position:relative;overflow:hidden}.IZCqda_hero>div:first-child{min-width:0}.IZCqda_hero:after{aspect-ratio:1;border:1px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 28%, transparent);content:\"\";border-radius:50%;width:48%;position:absolute;bottom:-100px;right:-7%}.IZCqda_eyebrow{color:var(--dsw-alias-brand-primary);letter-spacing:.13em;margin-bottom:9px;font-size:11px;font-weight:750}.IZCqda_hero h2{letter-spacing:-.055em;margin-bottom:9px;font-size:clamp(31px,5vw,54px);line-height:.98}.IZCqda_intro{overflow-wrap:anywhere;max-width:580px;color:var(--dsw-alias-label-secondary);margin-bottom:0;font-size:clamp(14px,1.8vw,16px);line-height:1.65}.IZCqda_heroWhale{z-index:1;aspect-ratio:4/3;border:1px solid color-mix(in srgb, var(--species-color) 56%, var(--dsw-alias-border-l2));width:clamp(110px,16vw,168px);color:var(--species-color);background:color-mix(in srgb, var(--species-color) 11%, var(--dsw-alias-bg-layer-2));filter:drop-shadow(0 16px 22px color-mix(in srgb, var(--species-color) 25%, transparent));border-radius:38% 62% 47% 53%/45% 43% 57% 55%;place-items:center;animation:3.8s cubic-bezier(.22,.8,.3,1) infinite IZCqda_whaleFloat;display:grid;position:relative;overflow:hidden}.IZCqda_heroWhaleArt{background-color:#062847;background-repeat:no-repeat;background-size:500% 400%;width:100%;height:100%;display:block;transform:scale(1.12)}.IZCqda_progressCard{border-left:3px solid var(--dsw-alias-brand-primary);background:color-mix(in srgb, var(--dsw-alias-bg-layer-1) 92%, var(--dsw-alias-brand-primary));margin-top:16px;padding:18px 20px}.IZCqda_progressHeading,.IZCqda_sectionHeading{flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 14px;min-width:0;display:flex}.IZCqda_progressHeading span,.IZCqda_sectionHeading span,.IZCqda_progressCard p,.IZCqda_sectionIntro{color:var(--dsw-alias-label-secondary)}.IZCqda_progressCard p{margin:8px 0 0;font-size:13px}.IZCqda_progressTrack{background:var(--dsw-alias-bg-layer-2);border-radius:999px;height:8px;margin-top:13px;overflow:hidden}.IZCqda_progressTrack span{border-radius:inherit;background:var(--dsw-alias-brand-primary);height:100%;transition:width .32s cubic-bezier(.2,.8,.3,1);display:block}.IZCqda_privacy{max-width:760px;color:var(--dsw-alias-label-tertiary);margin:14px 2px 0;font-size:12px;line-height:1.6}.IZCqda_error,.IZCqda_success{border-left:3px solid;margin:16px 0;padding:11px 13px;line-height:1.5}.IZCqda_error{color:var(--dsw-alias-state-error-primary);background:color-mix(in srgb, var(--dsw-alias-state-error-primary) 8%, var(--dsw-alias-bg-base))}.IZCqda_success{color:var(--dsw-alias-state-success-primary);background:color-mix(in srgb, var(--dsw-alias-state-success-primary) 9%, var(--dsw-alias-bg-base))}.IZCqda_loading,.IZCqda_empty{color:var(--dsw-alias-label-secondary);line-height:1.6}.IZCqda_stats{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;margin:24px 0;display:grid}.IZCqda_stat{background:var(--dsw-alias-bg-base);min-width:0;padding:15px 13px}.IZCqda_stat strong,.IZCqda_stat span{text-overflow:ellipsis;white-space:nowrap;display:block;overflow:hidden}.IZCqda_stat strong{letter-spacing:-.04em;font-size:clamp(18px,2vw,24px)}.IZCqda_stat span{color:var(--dsw-alias-label-secondary);margin-top:3px;font-size:11px}.IZCqda_section{border-top:1px solid var(--dsw-alias-border-l1);margin-top:28px;padding-top:17px}.IZCqda_sectionHeading{margin-bottom:13px}.IZCqda_sectionHeading h3{letter-spacing:-.025em;margin-bottom:0;font-size:18px}.IZCqda_sectionHeading span{font-size:12px}.IZCqda_sectionIntro{max-width:720px;margin-bottom:14px;font-size:13px;line-height:1.6}.IZCqda_tideSection{border-top:2px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 55%, var(--dsw-alias-border-l1))}.IZCqda_tideList{border:1px solid var(--dsw-alias-border-l1);grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;margin:0;padding:0;list-style:none;display:grid}.IZCqda_tideList li{border-right:1px solid var(--dsw-alias-border-l1);gap:10px;min-width:0;padding:13px;display:flex}.IZCqda_tideList strong,.IZCqda_tideList span{display:block}.IZCqda_tideList strong{font-size:13px;line-height:1.45}.IZCqda_tideList span:last-child{color:var(--dsw-alias-label-secondary);margin-top:4px;font-size:11px}.IZCqda_tideDot,.IZCqda_peerDot{background:var(--dsw-alias-brand-primary);width:11px;height:11px;box-shadow:0 0 0 4px color-mix(in srgb, var(--dsw-alias-brand-primary) 15%, transparent);border-radius:50%;flex:none;margin-top:5px}.IZCqda_tideDot[data-category=level-up],.IZCqda_tideDot[data-category=species-unlock]{background:#e0a13a}.IZCqda_tideDot[data-category=return],.IZCqda_tideDot[data-category=resonance-star]{background:#b17ee8}.IZCqda_postcardButton{border:1px solid var(--dsw-alias-brand-primary);width:100%;color:var(--dsw-alias-brand-primary);font:inherit;cursor:pointer;background:0 0;margin-top:10px;padding:12px;font-weight:700}.IZCqda_speciesGrid{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;display:grid}.IZCqda_speciesCard{background:var(--dsw-alias-bg-base);grid-template-rows:minmax(0,1fr) auto;grid-template-columns:128px minmax(0,1fr);align-items:start;gap:8px 14px;min-width:0;min-height:118px;padding:12px;display:grid}.IZCqda_speciesCard strong,.IZCqda_speciesCard span,.IZCqda_speciesCard p,.IZCqda_speciesCard small{display:block}.IZCqda_speciesCard>div{min-width:0}.IZCqda_speciesCard strong{font-size:15px}.IZCqda_speciesCard span{color:var(--dsw-alias-label-secondary);text-overflow:ellipsis;white-space:nowrap;font-size:11px;overflow:hidden}.IZCqda_speciesCard p{color:var(--dsw-alias-label-secondary);margin:7px 0;font-size:12px;line-height:1.45}.IZCqda_speciesCard small{color:var(--dsw-alias-brand-primary);font-size:12px}.IZCqda_speciesCard button,.IZCqda_peerList button{border:1px solid var(--dsw-alias-border-l2);min-height:32px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);font:inherit;cursor:pointer;padding:6px 10px;font-size:12px}.IZCqda_speciesCard button{grid-column:2;justify-self:start}.IZCqda_speciesArt{border:1px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 18%, var(--dsw-alias-border-l1));background-color:#062847;background-repeat:no-repeat;background-size:500% 400%;border-radius:13px;grid-row:1/span 2;width:128px;height:86px;display:block;box-shadow:0 8px 20px #001a3329}.IZCqda_locked{opacity:.52}.IZCqda_locked .IZCqda_speciesArt{filter:grayscale()brightness(.65)}.IZCqda_room{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;display:grid}.IZCqda_roomSlot,.IZCqda_roomSlotSelected{min-height:104px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-base);text-align:left;font:inherit;cursor:pointer;border:0;align-content:end;gap:4px;padding:12px 12px 12px 68px;display:grid;position:relative;overflow:hidden}.IZCqda_roomSlot>span:not(.IZCqda_roomSlotArt),.IZCqda_roomSlotSelected>span:not(.IZCqda_roomSlotArt){color:var(--dsw-alias-label-secondary);font-size:11px}.IZCqda_roomSlot strong,.IZCqda_roomSlotSelected strong{text-overflow:ellipsis;white-space:nowrap;font-size:13px;overflow:hidden}.IZCqda_roomSlotSelected{background:color-mix(in srgb, var(--dsw-alias-brand-primary) 10%, var(--dsw-alias-bg-base));box-shadow:inset 0 -3px var(--dsw-alias-brand-primary)}.IZCqda_roomSlotArt{border:1px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 34%, var(--dsw-alias-border-l2));background-repeat:no-repeat;background-size:600% 400%;border-radius:12px;width:48px;height:48px;position:absolute;top:50%;left:10px;transform:translateY(-50%);box-shadow:0 7px 18px #001a3357}.IZCqda_roomControls{background:var(--dsw-alias-bg-layer-1);margin-top:12px;padding:14px}.IZCqda_roomControls>strong{margin-bottom:10px;display:block}.IZCqda_chips{flex-wrap:wrap;gap:8px;display:flex}.IZCqda_chips button{border:1px solid var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-base);font:inherit;cursor:pointer;border-radius:10px;align-items:center;gap:7px;padding:5px 9px 5px 5px;font-size:12px;display:inline-flex}.IZCqda_chipArt{background-repeat:no-repeat;background-size:600% 400%;border-radius:7px;width:28px;height:28px}.IZCqda_actions{flex-wrap:wrap;gap:8px;margin-top:12px;display:flex}.IZCqda_actions button{border:1px solid var(--dsw-alias-border-l2);min-height:44px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);font:inherit;cursor:pointer;flex:132px;padding:9px 12px;font-weight:650}.IZCqda_actions button:hover,.IZCqda_chips button:hover,.IZCqda_speciesCard button:hover,.IZCqda_peerList button:hover{border-color:var(--dsw-alias-brand-primary)}.IZCqda_actions .IZCqda_danger{color:var(--dsw-alias-state-error-primary)}.IZCqda_communityControls{background:var(--dsw-alias-bg-layer-1);grid-template-columns:minmax(0,1fr) minmax(180px,.45fr);gap:12px;padding:13px;display:grid}.IZCqda_communityControls label{color:var(--dsw-alias-label-secondary);align-items:center;gap:8px;font-size:13px;display:flex}.IZCqda_communityControls select{border:1px solid var(--dsw-alias-border-l2);min-width:0;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-base);font:inherit;flex:1;padding:7px}.IZCqda_peerList{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);gap:1px;margin:12px 0 0;padding:0;list-style:none;display:grid}.IZCqda_peerList li{background:var(--dsw-alias-bg-base);grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:11px;display:grid}.IZCqda_peerList strong,.IZCqda_peerList span{display:block}.IZCqda_peerList strong{font-size:13px}.IZCqda_peerList div>span{color:var(--dsw-alias-label-secondary);margin-top:3px;font-size:11px}.IZCqda_preview{border:1px dashed var(--dsw-alias-border-l3);flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:10px;padding:12px;display:flex}.IZCqda_preview span{color:var(--dsw-alias-label-secondary);font-size:12px}.IZCqda_skins{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;display:grid}.IZCqda_skin,.IZCqda_selected{min-height:44px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-base);font:inherit;cursor:pointer;border:0;justify-content:center;align-items:center;gap:8px;display:inline-flex}.IZCqda_selected{background:color-mix(in srgb, var(--dsw-alias-brand-primary) 10%, var(--dsw-alias-bg-base));box-shadow:inset 0 -3px var(--dsw-alias-brand-primary)}.IZCqda_swatch{width:13px;height:13px;box-shadow:0 0 0 2px var(--dsw-alias-bg-base), 0 0 0 3px var(--dsw-alias-border-l2);border-radius:50%}.IZCqda_achievements{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin:0;padding:0;list-style:none;display:grid}.IZCqda_achievement{background:var(--dsw-alias-bg-base);align-items:flex-start;gap:10px;min-height:76px;padding:12px;display:flex}.IZCqda_achievementIcon{border:1px solid color-mix(in srgb, var(--achievement-color,var(--dsw-alias-brand-primary)) 42%, var(--dsw-alias-border-l2));background:color-mix(in srgb, var(--achievement-color,var(--dsw-alias-brand-primary)) 12%, var(--dsw-alias-bg-layer-2));border-radius:8px;flex:none;width:30px;height:30px;display:block;position:relative;overflow:hidden}.IZCqda_achievementIcon:before,.IZCqda_achievementIcon:after{content:\"\";position:absolute}.IZCqda_achievementIcon:before{border-top:2px solid var(--achievement-color,var(--dsw-alias-brand-primary));border-bottom:2px solid var(--achievement-color,var(--dsw-alias-brand-primary));border-radius:50%;width:16px;height:8px;top:10px;left:6px}.IZCqda_achievementIcon:after{background:var(--achievement-color,var(--dsw-alias-brand-primary));border-radius:999px;width:4px;height:16px;top:7px;left:13px;transform:rotate(45deg)}.IZCqda_achievementIcon[data-achievement=first-swim],.IZCqda_achievementIcon[data-achievement=steady-fin]{--achievement-color:#2c9cff}.IZCqda_achievementIcon[data-achievement=ten-turns],.IZCqda_achievementIcon[data-achievement=tool-diver]{--achievement-color:#35c894}.IZCqda_achievementIcon[data-achievement=century],.IZCqda_achievementIcon[data-achievement=collector]{--achievement-color:#f49a3d}.IZCqda_achievementIcon[data-achievement=week-current],.IZCqda_achievementIcon[data-achievement=early-bird]{--achievement-color:#ed6f61}.IZCqda_achievementIcon[data-achievement=month-tide],.IZCqda_achievementIcon[data-achievement=night-owl]{--achievement-color:#5d68d9}.IZCqda_achievementIcon[data-achievement=level-five],.IZCqda_achievementIcon[data-achievement=level-ten]{--achievement-color:#a976eb}.IZCqda_achievementIcon[data-locked=true]{--achievement-color:var(--dsw-alias-label-tertiary);opacity:.52}.IZCqda_achievement strong,.IZCqda_achievement span{display:block}.IZCqda_achievement strong{font-size:13px}.IZCqda_achievement div>span{color:var(--dsw-alias-label-secondary);margin-top:4px;font-size:11px;line-height:1.35}.IZCqda_home textarea{box-sizing:border-box;border:1px solid var(--dsw-alias-border-l2);width:100%;min-height:95px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);resize:vertical;padding:10px 12px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}.IZCqda_home button:disabled,.IZCqda_home textarea:disabled,.IZCqda_home select:disabled{cursor:not-allowed;opacity:.55}.IZCqda_reactionBubble{border:1px solid var(--dsw-alias-border-l2);width:min(260px,100vw - 108px);color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);box-shadow:0 10px 28px color-mix(in srgb, var(--dsw-alias-bg-base) 36%, transparent);opacity:.96;pointer-events:none;border-radius:14px 14px 14px 3px;padding:10px 12px;animation:.34s cubic-bezier(.2,.8,.3,1) both IZCqda_reactionEnter;position:absolute;top:0;left:0}.IZCqda_reactionBubble strong,.IZCqda_reactionBubble span{display:block}.IZCqda_reactionBubble strong{letter-spacing:.04em;font-size:11px}.IZCqda_reactionBubble span{margin-top:3px;font-size:13px;line-height:1.42}.IZCqda_reactionHigh{border-color:color-mix(in srgb, var(--dsw-alias-brand-primary) 65%, var(--dsw-alias-border-l2))}.IZCqda_overlay[data-mode=lively] .IZCqda_reactionBubble{animation-duration:.5s}.IZCqda_overlay[data-mode=quiet] .IZCqda_reactionBubble{width:auto;max-width:190px;padding:7px 9px}.IZCqda_overlay[data-reduced=true] .IZCqda_reactionBubble,.IZCqda_overlay[data-reduced=true] .IZCqda_whaleBody,.IZCqda_home[data-reduced=true] *{transition:none!important;animation:none!important}.IZCqda_retryButton,.IZCqda_error button{min-height:44px;color:inherit;font:inherit;cursor:pointer;background:0 0;border:1px solid;margin-top:10px;padding:8px 12px}.IZCqda_journal{grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;width:100%;min-width:0;margin:0;padding:0;list-style:none;display:grid}.IZCqda_journal li{box-sizing:border-box;border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-base);align-content:end;gap:7px;min-width:0;min-height:116px;padding:10px 8px;display:grid}.IZCqda_journalDate,.IZCqda_journal small{color:var(--dsw-alias-label-secondary);font-size:10px}.IZCqda_journal strong{text-overflow:ellipsis;white-space:nowrap;font-size:12px;overflow:hidden}.IZCqda_journalBar{width:100%;height:calc(10px + var(--journal-level) * 9px);background:linear-gradient(to top, var(--dsw-alias-brand-primary), color-mix(in srgb, var(--dsw-alias-brand-primary) 25%, transparent));border-radius:999px 999px 3px 3px;display:block}.IZCqda_journalQuiet .IZCqda_journalBar{background:var(--dsw-alias-border-l2);height:6px}.IZCqda_coveScene{border:1px solid color-mix(in srgb, var(--cove-color) 38%, var(--dsw-alias-border-l2));background-color:#062847;background-image:linear-gradient(to bottom, color-mix(in srgb, var(--cove-color) 8%, transparent), #00122629), var(--cove-image);background-position:50%;background-size:cover;border-radius:32px 68px 24px 24px;min-height:300px;position:relative;overflow:hidden;box-shadow:inset 0 0 56px #00152b52,0 18px 42px #001a332e}.IZCqda_coveScene:after{content:\"\";pointer-events:none;background:linear-gradient(90deg,#00102233,#0000 28% 72%,#00102233);position:absolute;inset:0}.IZCqda_coveWhale{z-index:2;aspect-ratio:3/2;filter:drop-shadow(0 12px 16px #0012268c);mix-blend-mode:screen;background-color:#03233d6b;background-repeat:no-repeat;background-size:500% 400%;border:1px solid #91dcf733;border-radius:44%;width:270px;animation:4.6s ease-in-out infinite IZCqda_whaleFloat;position:absolute;top:22%;left:calc(50% - 135px);box-shadow:inset 0 0 34px #54cdf71f,0 18px 36px #00122652}.IZCqda_coveItem{z-index:3;color:#e2f2f8c2;opacity:.48;backdrop-filter:blur(8px);background:#031f37ad;border:1px solid #96d3eb42;border-radius:12px;align-items:center;gap:6px;max-width:156px;padding:4px 8px 4px 4px;font-size:10px;display:inline-flex;position:absolute;box-shadow:0 5px 16px #000e1e47}.IZCqda_coveItem[data-occupied=true]{color:#f2fbff;border-color:color-mix(in srgb, var(--cove-color) 56%, #a8e2f46b);opacity:1}.IZCqda_coveItemArt{background-repeat:no-repeat;background-size:600% 400%;border-radius:7px;flex:none;width:28px;height:28px;display:block}.IZCqda_cove_backdrop{top:8%;left:4%}.IZCqda_cove_seafloor{bottom:7%;left:34%}.IZCqda_cove_lighting{top:7%;right:7%}.IZCqda_cove_hanging{top:27%;left:20%}.IZCqda_cove_habitatLeft{bottom:19%;left:4%}.IZCqda_cove_habitatRight{bottom:20%;right:4%}.IZCqda_cove_foreground{bottom:6%;right:8%}.IZCqda_cove_soundscape{top:47%;right:17%}.IZCqda_sceneHint{color:var(--dsw-alias-label-secondary);margin:8px 0 0;font-size:11px}.IZCqda_storyBeat{border:1px solid var(--dsw-alias-border-l1);background:color-mix(in srgb, var(--dsw-alias-brand-primary) 5%, var(--dsw-alias-bg-base));grid-template-columns:auto minmax(0,1fr);gap:16px;padding:16px;display:grid}.IZCqda_storyNumber{color:var(--dsw-alias-brand-primary);font-size:42px;font-weight:300;line-height:1}.IZCqda_storyBeat strong{font-size:16px}.IZCqda_storyBeat p{color:var(--dsw-alias-label-secondary);margin:6px 0;line-height:1.62}.IZCqda_storyBeat small{color:var(--dsw-alias-label-tertiary)}.IZCqda_preferenceOptions{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-border-l1);grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;display:grid}.IZCqda_preferenceOptions label,.IZCqda_motionToggle{background:var(--dsw-alias-bg-base);cursor:pointer;justify-content:center;align-items:center;gap:8px;min-height:44px;padding:8px 12px;display:flex}.IZCqda_motionToggle{border:1px solid var(--dsw-alias-border-l1);justify-content:flex-start;margin-top:8px}.IZCqda_preferenceWarning{color:var(--dsw-alias-state-warning-primary,var(--dsw-alias-label-secondary));margin:8px 0 0;font-size:12px}.IZCqda_privacyLedger{border:1px solid var(--dsw-alias-border-l1);grid-template-columns:minmax(110px,.3fr) minmax(0,1fr);margin:0;display:grid}.IZCqda_privacyLedger dt,.IZCqda_privacyLedger dd{border-bottom:1px solid var(--dsw-alias-border-l1);margin:0;padding:12px}.IZCqda_privacyLedger dt{background:var(--dsw-alias-bg-layer-1);font-weight:700}.IZCqda_privacyLedger dd{color:var(--dsw-alias-label-secondary);line-height:1.55}.IZCqda_privacyLedger strong{color:var(--dsw-alias-label-primary);font-size:11px}@keyframes IZCqda_reactionEnter{0%{opacity:0;transform:translateY(8px)scale(.98)}}@keyframes IZCqda_whaleFloat{50%{transform:translateY(-7px)rotate(-2deg)}}@media (width<=860px){.IZCqda_stats{grid-template-columns:repeat(3,minmax(0,1fr))}.IZCqda_room,.IZCqda_achievements{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (width<=560px){.IZCqda_home{padding:16px;font-size:14px}.IZCqda_hero{border-radius:18px 34px 18px 18px;grid-template-columns:1fr;padding:24px}.IZCqda_heroWhale{order:-1}.IZCqda_stats{grid-template-columns:repeat(2,minmax(0,1fr))}.IZCqda_speciesGrid,.IZCqda_achievements,.IZCqda_skins,.IZCqda_communityControls,.IZCqda_preferenceOptions,.IZCqda_tideList{grid-template-columns:1fr}.IZCqda_journal{grid-template-columns:repeat(7,minmax(44px,1fr));overflow-x:auto}.IZCqda_coveScene{min-height:190px}.IZCqda_coveWhale{width:180px;top:24%;left:calc(50% - 90px)}.IZCqda_privacyLedger{grid-template-columns:1fr}.IZCqda_privacyLedger dt{border-bottom:0}.IZCqda_hutBackdrop{padding:0}.IZCqda_hut{border-radius:0;max-height:100vh}.IZCqda_hutClose{margin-right:8px}}@media (prefers-reduced-motion:reduce){.IZCqda_whaleBody,.IZCqda_heroWhale{animation:none}.IZCqda_progressTrack span{transition:none}}";
+		const tagId$1 = "dsh-whale-companion/Whale.module.css";
+		if (typeof document !== "undefined" && !document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId$1) + "]")) {
 			const tag = document.createElement("style");
 			tag.dataset.plugin = "dsh-whale-companion";
-			tag.dataset.pluginCss = tagId;
-			tag.textContent = css;
+			tag.dataset.pluginCss = tagId$1;
+			tag.textContent = css$1;
 			document.head.appendChild(tag);
 		}
 		var Whale_module_css_default = {
-			"coveItem": "J_JdNW_coveItem",
-			"coveScene": "J_JdNW_coveScene",
-			"danger": "J_JdNW_danger",
-			"cove_soundscape": "J_JdNW_cove_soundscape",
-			"roomSlot": "J_JdNW_roomSlot",
-			"hutClose": "J_JdNW_hutClose",
-			"cove_backdrop": "J_JdNW_cove_backdrop",
-			"privacyLedger": "J_JdNW_privacyLedger",
-			"preview": "J_JdNW_preview",
-			"eyebrow": "J_JdNW_eyebrow",
-			"skin": "J_JdNW_skin",
-			"chipArt": "J_JdNW_chipArt",
-			"hero": "J_JdNW_hero",
-			"progressHeading": "J_JdNW_progressHeading",
-			"sectionIntro": "J_JdNW_sectionIntro",
-			"success": "J_JdNW_success",
-			"postcardButton": "J_JdNW_postcardButton",
-			"heroWhale": "J_JdNW_heroWhale",
-			"roomControls": "J_JdNW_roomControls",
-			"empty": "J_JdNW_empty",
-			"cove_seafloor": "J_JdNW_cove_seafloor",
-			"sectionHeading": "J_JdNW_sectionHeading",
-			"cove_hanging": "J_JdNW_cove_hanging",
-			"sceneHint": "J_JdNW_sceneHint",
-			"storyBeat": "J_JdNW_storyBeat",
-			"tideList": "J_JdNW_tideList",
-			"tideSection": "J_JdNW_tideSection",
-			"hutBackdrop": "J_JdNW_hutBackdrop",
-			"overlayStatus": "J_JdNW_overlayStatus",
-			"error": "J_JdNW_error",
-			"tideDot": "J_JdNW_tideDot",
-			"journalBar": "J_JdNW_journalBar",
-			"skins": "J_JdNW_skins",
-			"journalDate": "J_JdNW_journalDate",
-			"hut": "J_JdNW_hut",
-			"whale": "J_JdNW_whale",
-			"speciesGrid": "J_JdNW_speciesGrid",
-			"coveItemArt": "J_JdNW_coveItemArt",
-			"motionToggle": "J_JdNW_motionToggle",
-			"selected": "J_JdNW_selected",
-			"achievements": "J_JdNW_achievements",
-			"retryButton": "J_JdNW_retryButton",
-			"preferenceWarning": "J_JdNW_preferenceWarning",
-			"journalQuiet": "J_JdNW_journalQuiet",
-			"reactionHigh": "J_JdNW_reactionHigh",
-			"preferenceOptions": "J_JdNW_preferenceOptions",
-			"actions": "J_JdNW_actions",
-			"whaleFloat": "J_JdNW_whaleFloat",
-			"privacy": "J_JdNW_privacy",
-			"loading": "J_JdNW_loading",
-			"peerDot": "J_JdNW_peerDot",
-			"cove_lighting": "J_JdNW_cove_lighting",
-			"storyNumber": "J_JdNW_storyNumber",
-			"peerList": "J_JdNW_peerList",
-			"reactionBubble": "J_JdNW_reactionBubble",
-			"achievement": "J_JdNW_achievement",
-			"stat": "J_JdNW_stat",
-			"whaleBody": "J_JdNW_whaleBody",
-			"badge": "J_JdNW_badge",
-			"overlay": "J_JdNW_overlay",
-			"heroWhaleArt": "J_JdNW_heroWhaleArt",
-			"roomSlotArt": "J_JdNW_roomSlotArt",
-			"achievementIcon": "J_JdNW_achievementIcon",
-			"speciesArt": "J_JdNW_speciesArt",
-			"room": "J_JdNW_room",
-			"section": "J_JdNW_section",
-			"chips": "J_JdNW_chips",
-			"communityControls": "J_JdNW_communityControls",
-			"swatch": "J_JdNW_swatch",
-			"cove_habitatRight": "J_JdNW_cove_habitatRight",
-			"visuallyHidden": "J_JdNW_visuallyHidden",
-			"locked": "J_JdNW_locked",
-			"roomSlotSelected": "J_JdNW_roomSlotSelected",
-			"progressCard": "J_JdNW_progressCard",
-			"home": "J_JdNW_home",
-			"cove_habitatLeft": "J_JdNW_cove_habitatLeft",
-			"cove_foreground": "J_JdNW_cove_foreground",
-			"stats": "J_JdNW_stats",
-			"intro": "J_JdNW_intro",
-			"journal": "J_JdNW_journal",
-			"progressTrack": "J_JdNW_progressTrack",
-			"speciesCard": "J_JdNW_speciesCard",
-			"reactionEnter": "J_JdNW_reactionEnter",
-			"coveWhale": "J_JdNW_coveWhale"
+			"overlayStatus": "IZCqda_overlayStatus",
+			"journalDate": "IZCqda_journalDate",
+			"coveItem": "IZCqda_coveItem",
+			"stat": "IZCqda_stat",
+			"chipArt": "IZCqda_chipArt",
+			"coveScene": "IZCqda_coveScene",
+			"hutClose": "IZCqda_hutClose",
+			"preferenceWarning": "IZCqda_preferenceWarning",
+			"eyebrow": "IZCqda_eyebrow",
+			"progressCard": "IZCqda_progressCard",
+			"hero": "IZCqda_hero",
+			"hutBackdrop": "IZCqda_hutBackdrop",
+			"progressHeading": "IZCqda_progressHeading",
+			"tideList": "IZCqda_tideList",
+			"roomSlot": "IZCqda_roomSlot",
+			"actions": "IZCqda_actions",
+			"roomControls": "IZCqda_roomControls",
+			"skin": "IZCqda_skin",
+			"empty": "IZCqda_empty",
+			"speciesArt": "IZCqda_speciesArt",
+			"achievements": "IZCqda_achievements",
+			"section": "IZCqda_section",
+			"skins": "IZCqda_skins",
+			"privacy": "IZCqda_privacy",
+			"heroWhale": "IZCqda_heroWhale",
+			"tideSection": "IZCqda_tideSection",
+			"badge": "IZCqda_badge",
+			"home": "IZCqda_home",
+			"preview": "IZCqda_preview",
+			"loading": "IZCqda_loading",
+			"reactionEnter": "IZCqda_reactionEnter",
+			"locked": "IZCqda_locked",
+			"coveItemArt": "IZCqda_coveItemArt",
+			"whale": "IZCqda_whale",
+			"storyBeat": "IZCqda_storyBeat",
+			"overlay": "IZCqda_overlay",
+			"peerDot": "IZCqda_peerDot",
+			"speciesCard": "IZCqda_speciesCard",
+			"intro": "IZCqda_intro",
+			"retryButton": "IZCqda_retryButton",
+			"cove_habitatRight": "IZCqda_cove_habitatRight",
+			"preferenceOptions": "IZCqda_preferenceOptions",
+			"achievementIcon": "IZCqda_achievementIcon",
+			"sceneHint": "IZCqda_sceneHint",
+			"postcardButton": "IZCqda_postcardButton",
+			"cove_lighting": "IZCqda_cove_lighting",
+			"journalQuiet": "IZCqda_journalQuiet",
+			"visuallyHidden": "IZCqda_visuallyHidden",
+			"cove_habitatLeft": "IZCqda_cove_habitatLeft",
+			"chips": "IZCqda_chips",
+			"heroWhaleArt": "IZCqda_heroWhaleArt",
+			"sectionHeading": "IZCqda_sectionHeading",
+			"cove_foreground": "IZCqda_cove_foreground",
+			"whaleFloat": "IZCqda_whaleFloat",
+			"journalBar": "IZCqda_journalBar",
+			"cove_soundscape": "IZCqda_cove_soundscape",
+			"swatch": "IZCqda_swatch",
+			"cove_backdrop": "IZCqda_cove_backdrop",
+			"whaleBody": "IZCqda_whaleBody",
+			"danger": "IZCqda_danger",
+			"error": "IZCqda_error",
+			"room": "IZCqda_room",
+			"peerList": "IZCqda_peerList",
+			"communityControls": "IZCqda_communityControls",
+			"privacyLedger": "IZCqda_privacyLedger",
+			"coveWhale": "IZCqda_coveWhale",
+			"success": "IZCqda_success",
+			"speciesGrid": "IZCqda_speciesGrid",
+			"sectionIntro": "IZCqda_sectionIntro",
+			"achievement": "IZCqda_achievement",
+			"stats": "IZCqda_stats",
+			"cove_seafloor": "IZCqda_cove_seafloor",
+			"reactionHigh": "IZCqda_reactionHigh",
+			"selected": "IZCqda_selected",
+			"progressTrack": "IZCqda_progressTrack",
+			"journal": "IZCqda_journal",
+			"cove_hanging": "IZCqda_cove_hanging",
+			"storyNumber": "IZCqda_storyNumber",
+			"motionToggle": "IZCqda_motionToggle",
+			"roomSlotSelected": "IZCqda_roomSlotSelected",
+			"roomSlotArt": "IZCqda_roomSlotArt",
+			"reactionBubble": "IZCqda_reactionBubble",
+			"tideDot": "IZCqda_tideDot",
+			"hut": "IZCqda_hut"
 		};
 		//#endregion
 		//#region src/client/enrichment.tsx
@@ -17286,28 +18107,6 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 				onClick: () => void action(() => api.claimExpeditionV5(), "已领取远征故事碎片。")
 			}, expedition.rewardClaimed ? "已领取故事" : expedition.progress < expedition.goal ? "自然航行中" : "领取故事碎片"))));
 		}
-		function SkinSelector({ api, state, busy, action }) {
-			const titleId = react.useId();
-			const groupName = `whale-skin-${titleId}`;
-			return react.createElement("section", {
-				className: Whale_module_css_default.section,
-				"aria-labelledby": titleId
-			}, react.createElement("div", { className: Whale_module_css_default.sectionHeading }, react.createElement("h3", { id: titleId }, "海域皮肤"), react.createElement("span", null, "6 款可选")), react.createElement("div", { className: Whale_module_css_default.skins }, ...Object.entries(SKINS).map(([value, meta]) => react.createElement("label", {
-				key: value,
-				className: state.skin === value ? Whale_module_css_default.selected : Whale_module_css_default.skin
-			}, react.createElement("input", {
-				type: "radio",
-				name: groupName,
-				value,
-				checked: state.skin === value,
-				disabled: busy,
-				onChange: () => void action(() => api.setSkin(value), `已切换为${meta.name}。`)
-			}), react.createElement("span", {
-				className: Whale_module_css_default.swatch,
-				style: { backgroundColor: meta.color },
-				"aria-hidden": true
-			}), react.createElement("span", null, meta.name)))));
-		}
 		function CommunitySection({ api, state, busy, community, setCommunity, action, exportText }) {
 			const titleId = react.useId();
 			const peerItems = state.community.peers.map((peer) => react.createElement("li", { key: peer.aliasId }, react.createElement("span", {
@@ -17350,6 +18149,902 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}, "导入鲸歌")), peerItems.length === 0 ? react.createElement("p", { className: Whale_module_css_default.empty }, "鲸群还没有访客。导入朋友的鲸歌后，这里会出现一片不含工作内容的共同海景。") : react.createElement("ul", { className: Whale_module_css_default.peerList }, ...peerItems));
 		}
 		//#endregion
+		//#region \0dsh-community-css:/home/runner/work/dsh-whale-companion/dsh-whale-companion/packages/dsh-whale-companion/src/client/Planned.module.css.mjs
+		const css = ".tW0N4W_whaleArt{width:min(100%,240px);height:auto;filter:drop-shadow(0 18px 28px color-mix(in srgb, var(--whale-glow) 28%, transparent));animation:4.8s ease-in-out infinite tW0N4W_whaleBreath;display:block;overflow:visible}.tW0N4W_whaleArtCompact{width:82px}.tW0N4W_whaleAura{transform-origin:50%;animation:4.8s ease-in-out infinite tW0N4W_auraPulse}.tW0N4W_whaleTail{transform-origin:58px 80px;animation:2.5s ease-in-out infinite tW0N4W_tailSweep}.tW0N4W_whaleFin{transform-origin:139px 111px;animation:3.1s ease-in-out infinite tW0N4W_finSweep}.tW0N4W_whaleEye{transform-origin:190px 68px;animation:6.4s linear infinite tW0N4W_whaleBlink}.tW0N4W_whaleBubbles circle{fill:var(--whale-belly);stroke:color-mix(in srgb, var(--whale-accent) 64%, white);stroke-width:1px;opacity:.72}.tW0N4W_whaleBubbleOne{animation:3.8s ease-in infinite tW0N4W_bubbleRise}.tW0N4W_whaleBubbleTwo{animation:3.8s ease-in 1.1s infinite tW0N4W_bubbleRise}.tW0N4W_whaleBubbleThree{animation:3.8s ease-in 2.1s infinite tW0N4W_bubbleRise}.tW0N4W_whaleBodyShape,.tW0N4W_whaleBelly,.tW0N4W_whaleHighlight,.tW0N4W_whaleMarkings,.tW0N4W_whaleTusk{transition:opacity .22s,filter .22s}.tW0N4W_xpBurst{z-index:4;pointer-events:none;border:1px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 42%, transparent);color:var(--dsw-alias-label-primary);background:color-mix(in srgb, var(--dsw-alias-bg-layer-2) 88%, transparent);box-shadow:0 12px 30px color-mix(in srgb, var(--dsw-alias-bg-base) 44%, transparent);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800;animation:1.9s ease-out both tW0N4W_xpLift;position:absolute;top:0;left:0}.tW0N4W_quickCard{z-index:5;box-sizing:border-box;pointer-events:auto;width:min(318px,100vw - 16px);color:var(--dsw-alias-label-primary);border:1px solid color-mix(in srgb, var(--whale-accent) 28%, var(--dsw-alias-border-l2));background:radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--whale-glow) 22%, transparent), transparent 40%), linear-gradient(145deg, color-mix(in srgb, var(--dsw-alias-bg-layer-1) 92%, transparent), color-mix(in srgb, var(--dsw-alias-bg-layer-2) 88%, transparent));box-shadow:0 24px 70px color-mix(in srgb, var(--dsw-alias-bg-base) 58%, transparent), inset 0 1px 0 #ffffff17;backdrop-filter:blur(20px)saturate(1.22);border-radius:22px;padding:16px;animation:.2s ease-out both tW0N4W_cardReveal;position:absolute;top:0;left:0}.tW0N4W_quickHeader{justify-content:space-between;align-items:flex-start;gap:12px;display:flex}.tW0N4W_quickHeader>div{min-width:0}.tW0N4W_quickHeader span,.tW0N4W_quickHeader strong,.tW0N4W_quickHeader small{display:block}.tW0N4W_quickHeader span{color:var(--whale-accent);letter-spacing:.08em;font-size:10px;font-weight:800}.tW0N4W_quickHeader strong{text-overflow:ellipsis;white-space:nowrap;margin-top:3px;font-size:22px;overflow:hidden}.tW0N4W_quickHeader small{color:var(--dsw-alias-label-secondary);margin-top:2px}.tW0N4W_quickHeader button{border:1px solid var(--dsw-alias-border-l2);width:30px;height:30px;color:var(--dsw-alias-label-primary);background:color-mix(in srgb, var(--dsw-alias-bg-layer-2) 74%, transparent);cursor:pointer;border-radius:50%;flex:none;padding:0}.tW0N4W_quickWhale{place-items:center;min-height:92px;margin:8px 0 2px;display:grid}.tW0N4W_quickCard>p{color:var(--dsw-alias-label-secondary);margin:0 0 12px;font-size:12px;line-height:1.55}.tW0N4W_quickProgressHeading{justify-content:space-between;gap:10px;font-size:11px;display:flex}.tW0N4W_quickProgressHeading span{color:var(--dsw-alias-label-secondary)}.tW0N4W_quickProgress{background:color-mix(in srgb, var(--dsw-alias-bg-base) 56%, transparent);border-radius:999px;height:7px;margin-top:7px;overflow:hidden}.tW0N4W_quickProgress span,.tW0N4W_goalTrack span{border-radius:inherit;background:linear-gradient(90deg, var(--whale-main), var(--whale-accent));height:100%;box-shadow:0 0 18px color-mix(in srgb, var(--whale-glow) 54%, transparent);transition:width .28s;display:block}.tW0N4W_quickMetrics{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:13px 0;display:grid}.tW0N4W_quickMetrics span{text-align:center;border:1px solid color-mix(in srgb, var(--dsw-alias-border-l2) 72%, transparent);background:color-mix(in srgb, var(--dsw-alias-bg-layer-2) 64%, transparent);border-radius:11px;min-width:0;padding:8px 5px}.tW0N4W_quickMetrics strong,.tW0N4W_quickMetrics small{display:block}.tW0N4W_quickMetrics strong{font-size:15px}.tW0N4W_quickMetrics small{color:var(--dsw-alias-label-tertiary);text-overflow:ellipsis;white-space:nowrap;margin-top:2px;font-size:9px;overflow:hidden}.tW0N4W_quickPrimary{color:#fff;background:linear-gradient(135deg, var(--whale-deep), var(--whale-main));width:100%;min-height:38px;box-shadow:0 10px 28px color-mix(in srgb, var(--whale-glow) 24%, transparent);font:inherit;cursor:pointer;border:0;border-radius:12px;font-size:12px;font-weight:800}.tW0N4W_glassPanel{border:1px solid var(--dsw-alias-border-l1);background:linear-gradient(145deg, color-mix(in srgb, var(--dsw-alias-bg-layer-1) 96%, transparent), color-mix(in srgb, var(--dsw-alias-bg-base) 94%, transparent));border-radius:22px;min-width:0;position:relative;overflow:hidden;box-shadow:inset 0 1px #ffffff0d}.tW0N4W_planSection{margin-top:18px;padding:22px}.tW0N4W_planSection:before{content:\"\";pointer-events:none;background:radial-gradient(circle, color-mix(in srgb, var(--whale-glow) 18%, transparent), transparent 66%);border-radius:50%;width:360px;height:360px;position:absolute;inset:-140px auto auto 58%}.tW0N4W_planHero{z-index:1;grid-template-columns:minmax(0,1.55fr) minmax(190px,.75fr);align-items:center;gap:22px;display:grid;position:relative}.tW0N4W_planCopy{min-width:0}.tW0N4W_kicker{color:var(--dsw-alias-brand-primary);letter-spacing:.11em;margin:0 0 6px;font-size:10px;font-weight:800;display:block}.tW0N4W_planCopy h3,.tW0N4W_sectionHeading h3{margin:0;font-size:19px}.tW0N4W_planCopy>p{max-width:680px;color:var(--dsw-alias-label-secondary);margin:8px 0 0;line-height:1.65}.tW0N4W_nameForm{margin-top:16px}.tW0N4W_nameForm label{color:var(--dsw-alias-label-secondary);margin-bottom:7px;font-size:12px;display:block}.tW0N4W_nameForm>div{gap:8px;display:flex}.tW0N4W_nameForm input{box-sizing:border-box;border:1px solid var(--dsw-alias-border-l2);min-width:0;height:40px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-1);font:inherit;border-radius:11px;flex:auto;padding:0 12px}.tW0N4W_nameForm button,.tW0N4W_shareCard button,.tW0N4W_paletteButton,.tW0N4W_paletteSelected{border:1px solid var(--dsw-alias-border-l2);min-height:40px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-2);font:inherit;cursor:pointer;border-radius:11px}.tW0N4W_nameForm button{flex:none;padding:0 14px;font-size:12px;font-weight:700}.tW0N4W_nameForm button:disabled,.tW0N4W_shareCard button:disabled,.tW0N4W_paletteButton:disabled,.tW0N4W_paletteSelected:disabled{cursor:not-allowed;opacity:.56}.tW0N4W_planWhale{text-align:center;border:1px solid color-mix(in srgb, var(--whale-accent) 24%, var(--dsw-alias-border-l2));background:color-mix(in srgb, var(--dsw-alias-bg-layer-2) 65%, transparent);border-radius:18px;place-items:center;min-width:0;padding:12px;display:grid}.tW0N4W_planWhale strong{margin-top:-5px;font-size:18px}.tW0N4W_planWhale>span{color:var(--dsw-alias-label-secondary);margin-top:3px;font-size:11px}.tW0N4W_goalGrid{z-index:1;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px;display:grid;position:relative}.tW0N4W_goalCard{border:1px solid var(--dsw-alias-border-l2);background:color-mix(in srgb, var(--dsw-alias-bg-layer-2) 56%, transparent);border-radius:14px;min-width:0;padding:13px}.tW0N4W_goalCard>div:first-child{justify-content:space-between;align-items:baseline;gap:8px;display:flex}.tW0N4W_goalCard>div:first-child span{text-overflow:ellipsis;white-space:nowrap;font-size:12px;font-weight:700;overflow:hidden}.tW0N4W_goalCard>div:first-child strong{color:var(--whale-accent);font-size:12px}.tW0N4W_goalCard p{min-height:46px;color:var(--dsw-alias-label-secondary);margin:8px 0;font-size:11px;line-height:1.45}.tW0N4W_goalTrack{background:color-mix(in srgb, var(--dsw-alias-bg-base) 50%, transparent);border-radius:999px;height:7px;overflow:hidden}.tW0N4W_goalCard small{color:var(--dsw-alias-label-tertiary);margin-top:7px;font-size:10px;display:block}.tW0N4W_encounterShare{z-index:1;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px;display:grid;position:relative}.tW0N4W_encounterCard,.tW0N4W_shareCard{border:1px solid var(--dsw-alias-border-l2);background:color-mix(in srgb, var(--dsw-alias-bg-layer-1) 72%, transparent);border-radius:15px;min-width:0;padding:15px}.tW0N4W_encounterCard strong,.tW0N4W_shareCard strong{margin-top:3px;font-size:15px;display:block}.tW0N4W_encounterCard p,.tW0N4W_shareCard p{color:var(--dsw-alias-label-secondary);margin:7px 0 0;font-size:12px;line-height:1.55}.tW0N4W_encounterCard small{color:var(--whale-accent);margin-top:8px;display:block}.tW0N4W_shareCard>div{flex-wrap:wrap;gap:8px;margin-top:12px;display:flex}.tW0N4W_shareCard button{flex:150px;padding:0 12px;font-size:12px;font-weight:700}.tW0N4W_shareCard button:first-child{color:#fff;background:linear-gradient(135deg, var(--whale-deep), var(--whale-main));border-color:#0000}.tW0N4W_paletteSection{margin-top:20px;padding:18px}.tW0N4W_sectionHeading{flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:8px 14px;display:flex}.tW0N4W_sectionHeading>span{color:var(--dsw-alias-label-secondary);font-size:11px}.tW0N4W_paletteGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:14px;display:grid}.tW0N4W_paletteButton,.tW0N4W_paletteSelected{text-align:left;justify-content:flex-start;align-items:center;gap:10px;min-width:0;padding:10px;display:flex;position:relative}.tW0N4W_paletteButton:hover{border-color:var(--palette-main);transform:translateY(-1px)}.tW0N4W_paletteSelected{border-color:var(--palette-main);box-shadow:inset 0 0 0 2px color-mix(in srgb, var(--palette-main) 50%, transparent), 0 10px 28px color-mix(in srgb, var(--palette-glow) 13%, transparent)}.tW0N4W_palettePreview{background:linear-gradient(135deg, var(--palette-accent), var(--palette-main) 48%, var(--palette-deep));width:48px;height:34px;box-shadow:0 7px 18px color-mix(in srgb, var(--palette-glow) 24%, transparent);border-radius:12px;flex:0 0 48px;display:block;position:relative;overflow:hidden}.tW0N4W_palettePreview i{background:var(--palette-belly);opacity:.72;border-radius:50%;position:absolute;inset:18px -8px -8px 12px}.tW0N4W_palettePreview b,.tW0N4W_palettePreview em,.tW0N4W_palettePreview u{background:var(--palette-glow);border-radius:50%;position:absolute}.tW0N4W_palettePreview b{width:6px;height:6px;top:5px;right:8px}.tW0N4W_palettePreview em{width:3px;height:3px;top:12px;right:17px}.tW0N4W_palettePreview u{width:2px;height:2px;top:5px;left:8px}.tW0N4W_paletteButton>span:nth-child(2),.tW0N4W_paletteSelected>span:nth-child(2){min-width:0}.tW0N4W_paletteButton strong,.tW0N4W_paletteSelected strong,.tW0N4W_paletteButton small,.tW0N4W_paletteSelected small{display:block}.tW0N4W_paletteButton strong,.tW0N4W_paletteSelected strong{font-size:12px}.tW0N4W_paletteButton small,.tW0N4W_paletteSelected small{color:var(--dsw-alias-label-tertiary);text-overflow:ellipsis;white-space:nowrap;margin-top:3px;font-size:10px;overflow:hidden}.tW0N4W_paletteSelected mark{color:var(--palette-main);background:color-mix(in srgb, var(--palette-main) 12%, transparent);border-radius:999px;margin-left:auto;padding:3px 6px;font-size:9px;font-weight:800}.tW0N4W_nameForm input:focus-visible,.tW0N4W_nameForm button:focus-visible,.tW0N4W_shareCard button:focus-visible,.tW0N4W_quickCard button:focus-visible,.tW0N4W_paletteButton:focus-visible,.tW0N4W_paletteSelected:focus-visible{outline:3px solid var(--dsw-alias-brand-primary);outline-offset:2px}@keyframes tW0N4W_whaleBreath{50%{transform:translateY(-4px)rotate(-.6deg)}}@keyframes tW0N4W_auraPulse{50%{opacity:.72;transform:scale(1.04)}}@keyframes tW0N4W_tailSweep{50%{transform:rotate(-7deg)}}@keyframes tW0N4W_finSweep{50%{transform:rotate(7deg)}}@keyframes tW0N4W_whaleBlink{0%,44%,48%,to{transform:scaleY(1)}46%{transform:scaleY(.08)}}@keyframes tW0N4W_bubbleRise{0%{opacity:0;transform:translateY(12px)scale(.65)}25%{opacity:.78}to{opacity:0;transform:translateY(-24px)scale(1.12)}}@keyframes tW0N4W_xpLift{0%{opacity:0;transform:translateY(8px)scale(.9)}18%{opacity:1}to{opacity:0;transform:translateY(-28px)scale(1.03)}}@keyframes tW0N4W_cardReveal{0%{opacity:0;transform:translateY(8px)scale(.98)}}@media (width<=920px){.tW0N4W_goalGrid,.tW0N4W_paletteGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (width<=640px){.tW0N4W_planSection{padding:15px}.tW0N4W_planHero{grid-template-columns:1fr}.tW0N4W_planWhale{order:-1}.tW0N4W_planWhale .tW0N4W_whaleArt{width:150px}.tW0N4W_goalGrid,.tW0N4W_encounterShare,.tW0N4W_paletteGrid{grid-template-columns:1fr}.tW0N4W_nameForm>div{flex-direction:column;align-items:stretch}.tW0N4W_nameForm button{min-height:40px}.tW0N4W_goalCard p{min-height:0}.tW0N4W_quickMetrics{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (prefers-reduced-motion:reduce){.tW0N4W_whaleArt,.tW0N4W_whaleAura,.tW0N4W_whaleTail,.tW0N4W_whaleFin,.tW0N4W_whaleEye,.tW0N4W_whaleBubbleOne,.tW0N4W_whaleBubbleTwo,.tW0N4W_whaleBubbleThree,.tW0N4W_xpBurst,.tW0N4W_quickCard{transition:none!important;animation:none!important}.tW0N4W_quickProgress span,.tW0N4W_goalTrack span{transition:none}}";
+		const tagId = "dsh-whale-companion/Planned.module.css";
+		if (typeof document !== "undefined" && !document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]")) {
+			const tag = document.createElement("style");
+			tag.dataset.plugin = "dsh-whale-companion";
+			tag.dataset.pluginCss = tagId;
+			tag.textContent = css;
+			document.head.appendChild(tag);
+		}
+		var Planned_module_css_default = {
+			"glassPanel": "tW0N4W_glassPanel",
+			"planCopy": "tW0N4W_planCopy",
+			"goalCard": "tW0N4W_goalCard",
+			"encounterCard": "tW0N4W_encounterCard",
+			"whaleTail": "tW0N4W_whaleTail",
+			"whaleArt": "tW0N4W_whaleArt",
+			"quickProgress": "tW0N4W_quickProgress",
+			"whaleBubbleTwo": "tW0N4W_whaleBubbleTwo",
+			"paletteSelected": "tW0N4W_paletteSelected",
+			"encounterShare": "tW0N4W_encounterShare",
+			"whaleBreath": "tW0N4W_whaleBreath",
+			"whaleEye": "tW0N4W_whaleEye",
+			"paletteSection": "tW0N4W_paletteSection",
+			"planSection": "tW0N4W_planSection",
+			"quickMetrics": "tW0N4W_quickMetrics",
+			"quickCard": "tW0N4W_quickCard",
+			"shareCard": "tW0N4W_shareCard",
+			"planWhale": "tW0N4W_planWhale",
+			"whaleArtCompact": "tW0N4W_whaleArtCompact",
+			"whaleBubbleOne": "tW0N4W_whaleBubbleOne",
+			"whaleFin": "tW0N4W_whaleFin",
+			"xpBurst": "tW0N4W_xpBurst",
+			"quickProgressHeading": "tW0N4W_quickProgressHeading",
+			"tailSweep": "tW0N4W_tailSweep",
+			"whaleBlink": "tW0N4W_whaleBlink",
+			"quickHeader": "tW0N4W_quickHeader",
+			"goalTrack": "tW0N4W_goalTrack",
+			"quickPrimary": "tW0N4W_quickPrimary",
+			"planHero": "tW0N4W_planHero",
+			"goalGrid": "tW0N4W_goalGrid",
+			"quickWhale": "tW0N4W_quickWhale",
+			"auraPulse": "tW0N4W_auraPulse",
+			"kicker": "tW0N4W_kicker",
+			"cardReveal": "tW0N4W_cardReveal",
+			"nameForm": "tW0N4W_nameForm",
+			"whaleHighlight": "tW0N4W_whaleHighlight",
+			"xpLift": "tW0N4W_xpLift",
+			"whaleBodyShape": "tW0N4W_whaleBodyShape",
+			"whaleBelly": "tW0N4W_whaleBelly",
+			"paletteButton": "tW0N4W_paletteButton",
+			"whaleBubbleThree": "tW0N4W_whaleBubbleThree",
+			"finSweep": "tW0N4W_finSweep",
+			"sectionHeading": "tW0N4W_sectionHeading",
+			"whaleTusk": "tW0N4W_whaleTusk",
+			"bubbleRise": "tW0N4W_bubbleRise",
+			"paletteGrid": "tW0N4W_paletteGrid",
+			"palettePreview": "tW0N4W_palettePreview",
+			"whaleAura": "tW0N4W_whaleAura",
+			"whaleBubbles": "tW0N4W_whaleBubbles",
+			"whaleMarkings": "tW0N4W_whaleMarkings"
+		};
+		//#endregion
+		//#region src/client/WhaleArt.tsx
+		function skinPaletteStyle(skin) {
+			const palette = SKINS[skin];
+			return {
+				"--whale-main": palette.color,
+				"--whale-deep": palette.deep,
+				"--whale-belly": palette.belly,
+				"--whale-accent": palette.accent,
+				"--whale-glow": palette.glow
+			};
+		}
+		function speciesMark(species) {
+			if (species.id === "narwhal") return "tusk";
+			if (species.id === "orca" || species.id === "pilot") return "saddle";
+			if (species.rarity === "UR" || species.id === "bowhead") return "constellation";
+			if (species.id.includes("right") || species.id === "gray" || species.id === "omura") return "spots";
+			if (species.id === "fin" || species.id === "sei" || species.id === "brydes") return "stripes";
+			return "clean";
+		}
+		function WhaleArt({ species, skin, compact = false, className, title }) {
+			const id = react.useId().replaceAll(":", "");
+			const gradient = `whale-gradient-${id}`;
+			const glow = `whale-glow-${id}`;
+			const mark = speciesMark(species);
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("svg", {
+				viewBox: "0 0 240 150",
+				className: [
+					Planned_module_css_default.whaleArt,
+					compact ? Planned_module_css_default.whaleArtCompact : "",
+					className ?? ""
+				].filter(Boolean).join(" "),
+				style: skinPaletteStyle(skin),
+				"data-mark": mark,
+				role: title === void 0 ? void 0 : "img",
+				"aria-label": title,
+				"aria-hidden": title === void 0,
+				focusable: "false",
+				children: [
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("defs", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("linearGradient", {
+						id: gradient,
+						x1: "38",
+						y1: "27",
+						x2: "196",
+						y2: "126",
+						gradientUnits: "userSpaceOnUse",
+						children: [
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("stop", {
+								offset: "0",
+								stopColor: "var(--whale-accent)"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("stop", {
+								offset: ".48",
+								stopColor: "var(--whale-main)"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("stop", {
+								offset: "1",
+								stopColor: "var(--whale-deep)"
+							})
+						]
+					}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("radialGradient", {
+						id: glow,
+						cx: "0",
+						cy: "0",
+						r: "1",
+						gradientTransform: "translate(128 78) rotate(90) scale(68 104)",
+						gradientUnits: "userSpaceOnUse",
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("stop", {
+							stopColor: "var(--whale-glow)",
+							stopOpacity: ".38"
+						}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("stop", {
+							offset: "1",
+							stopColor: "var(--whale-glow)",
+							stopOpacity: "0"
+						})]
+					})] }),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("ellipse", {
+						className: Planned_module_css_default.whaleAura,
+						cx: "128",
+						cy: "84",
+						rx: "104",
+						ry: "62",
+						fill: `url(#${glow})`
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("g", {
+						className: Planned_module_css_default.whaleBubbles,
+						"aria-hidden": "true",
+						children: [
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								className: Planned_module_css_default.whaleBubbleOne,
+								cx: "185",
+								cy: "30",
+								r: "5"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								className: Planned_module_css_default.whaleBubbleTwo,
+								cx: "199",
+								cy: "18",
+								r: "3"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								className: Planned_module_css_default.whaleBubbleThree,
+								cx: "173",
+								cy: "17",
+								r: "2.5"
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("g", {
+						className: Planned_module_css_default.whaleTail,
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+							d: "M48 83C27 71 16 60 13 42c18 4 32 13 43 28 1-20 12-33 29-40 3 20-4 38-25 53Z",
+							fill: "var(--whale-deep)"
+						}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+							d: "M56 77C35 76 22 81 11 96c19 5 37 2 51-11Z",
+							fill: "var(--whale-main)",
+							opacity: ".92"
+						})]
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+						className: Planned_module_css_default.whaleBodyShape,
+						d: "M48 73c18-31 56-48 101-43 39 4 70 22 76 45 7 29-19 48-61 50-32 2-57-6-77-20-13-9-27-10-44-5 9-9 14-18 15-27Z",
+						fill: `url(#${gradient})`
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+						className: Planned_module_css_default.whaleBelly,
+						d: "M91 101c28 13 74 13 103-4-13 24-43 31-75 26-15-2-25-9-28-22Z",
+						fill: "var(--whale-belly)",
+						opacity: ".84"
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+						className: Planned_module_css_default.whaleFin,
+						d: "M122 105c-9 20-3 33 12 39 6-18 14-28 31-35-16-6-29-7-43-4Z",
+						fill: "var(--whale-deep)",
+						opacity: ".96"
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+						className: Planned_module_css_default.whaleSmile,
+						d: "M186 91c10 7 20 7 30 1",
+						fill: "none",
+						stroke: "var(--whale-deep)",
+						strokeWidth: "3",
+						strokeLinecap: "round",
+						opacity: ".7"
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("g", {
+						className: Planned_module_css_default.whaleEye,
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+							cx: "190",
+							cy: "68",
+							r: "5.4",
+							fill: "var(--whale-deep)"
+						}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+							cx: "192",
+							cy: "66",
+							r: "1.8",
+							fill: "var(--whale-belly)"
+						})]
+					}),
+					mark === "spots" && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("g", {
+						className: Planned_module_css_default.whaleMarkings,
+						fill: "var(--whale-belly)",
+						opacity: ".45",
+						children: [
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								cx: "102",
+								cy: "55",
+								r: "7"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								cx: "126",
+								cy: "47",
+								r: "4"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								cx: "82",
+								cy: "69",
+								r: "4.5"
+							})
+						]
+					}),
+					mark === "stripes" && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("g", {
+						className: Planned_module_css_default.whaleMarkings,
+						fill: "none",
+						stroke: "var(--whale-belly)",
+						strokeWidth: "4",
+						strokeLinecap: "round",
+						opacity: ".42",
+						children: [
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", { d: "M95 46c-4 14-3 27 3 40" }),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", { d: "M113 40c-4 15-2 29 4 42" }),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", { d: "M131 38c-2 15 1 27 8 39" })
+						]
+					}),
+					mark === "saddle" && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+						className: Planned_module_css_default.whaleMarkings,
+						d: "M122 37c20-2 39 2 52 10-11 5-20 13-25 24-11-12-19-22-27-34Z",
+						fill: "var(--whale-belly)",
+						opacity: ".82"
+					}),
+					mark === "constellation" && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("g", {
+						className: Planned_module_css_default.whaleMarkings,
+						fill: "var(--whale-belly)",
+						stroke: "var(--whale-belly)",
+						opacity: ".72",
+						children: [
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+								d: "M91 61l22-12 20 16 22-18",
+								fill: "none",
+								strokeWidth: "1.4"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								cx: "91",
+								cy: "61",
+								r: "3"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								cx: "113",
+								cy: "49",
+								r: "2.5"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								cx: "133",
+								cy: "65",
+								r: "3"
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("circle", {
+								cx: "155",
+								cy: "47",
+								r: "2.5"
+							})
+						]
+					}),
+					mark === "tusk" && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+						className: Planned_module_css_default.whaleTusk,
+						d: "M216 70 239 53 221 79Z",
+						fill: "var(--whale-belly)",
+						stroke: "var(--whale-accent)",
+						strokeWidth: "1.5"
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("path", {
+						className: Planned_module_css_default.whaleHighlight,
+						d: "M80 51c25-19 65-22 96-9",
+						fill: "none",
+						stroke: "var(--whale-belly)",
+						strokeWidth: "5",
+						strokeLinecap: "round",
+						opacity: ".28"
+					})
+				]
+			});
+		}
+		//#endregion
+		//#region src/client/planned-features.ts
+		const milestones = {
+			turns: [
+				10,
+				25,
+				50,
+				100,
+				250,
+				500,
+				1e3,
+				2e3
+			],
+			tools: [
+				10,
+				25,
+				50,
+				100,
+				250,
+				500,
+				1e3
+			],
+			streak: [
+				3,
+				7,
+				14,
+				30,
+				60,
+				100,
+				180,
+				365
+			]
+		};
+		function companionName(state) {
+			return state.name?.trim() || "小蓝";
+		}
+		function levelProgress(state) {
+			if (state.level >= 100) return {
+				current: 1,
+				target: 1,
+				percent: 100,
+				remaining: 0
+			};
+			const floor = xpFloorForLevel(state.level);
+			const target = xpToNextLevel(state.level);
+			const current = Math.max(0, Math.min(target, state.xp - floor));
+			return {
+				current,
+				target,
+				percent: Math.min(100, Math.round(current / Math.max(1, target) * 100)),
+				remaining: Math.max(0, target - current)
+			};
+		}
+		function unlockedSpeciesCount(level) {
+			return WHALE_SPECIES.filter((species) => species.unlockLevel <= level).length;
+		}
+		function nextSpeciesForLevel(level) {
+			return WHALE_SPECIES.find((species) => species.unlockLevel > level);
+		}
+		function voyageGoals(state) {
+			const level = levelProgress(state);
+			const turnsTarget = nextMilestone(state.turns, milestones.turns);
+			const toolsTarget = nextMilestone(state.tools, milestones.tools);
+			const streakTarget = nextMilestone(state.streak, milestones.streak);
+			return [
+				{
+					id: "level",
+					title: state.level >= 100 ? "守望未知海域" : `抵达海洋等级 ${state.level + 1}`,
+					description: state.level >= 100 ? "等级已满，继续航行会积累鲸歌与潮汐。" : "自然使用 DSH 即可积累经验，不增加任何模型负担。",
+					current: level.current,
+					target: level.target,
+					suffix: " XP",
+					percent: level.percent
+				},
+				{
+					id: "turns",
+					title: `收集 ${turnsTarget} 次回声`,
+					description: "用户回合会变成航线坐标，但消息正文永远不会进入插件。",
+					current: state.turns,
+					target: turnsTarget,
+					suffix: " 回合",
+					percent: percentage(state.turns, turnsTarget)
+				},
+				{
+					id: "tools",
+					title: `完成 ${toolsTarget} 次深潜`,
+					description: "工具结果只按事件类型计数，不读取工具名称、参数或返回内容。",
+					current: state.tools,
+					target: toolsTarget,
+					suffix: " 次",
+					percent: percentage(state.tools, toolsTarget)
+				},
+				{
+					id: "streak",
+					title: `保持 ${streakTarget} 天潮汐`,
+					description: "连续天数按会话创建日期计算，迟到事件不会把当前航线回滚。",
+					current: state.streak,
+					target: streakTarget,
+					suffix: " 天",
+					percent: percentage(state.streak, streakTarget)
+				}
+			];
+		}
+		function shareSummary(state) {
+			const species = WHALE_SPECIES_BY_ID[state.species];
+			return `${companionName(state)} · 海洋等级 ${state.level} · ${species.nameZh}｜连续航行 ${state.streak} 天｜解锁 ${state.achievements.length}/12 成就、${unlockedSpeciesCount(state.level)}/20 鲸灵与 ${state.collectibles.length}/24 纪念物。全部数据来自本地、安全的活动元数据，不包含提示词、回复、代码、路径或工具内容。`;
+		}
+		function nextMilestone(value, targets) {
+			return targets.find((target) => value < target) ?? Math.ceil((value + 1) / 250) * 250;
+		}
+		function percentage(current, target) {
+			return Math.min(100, Math.round(Math.max(0, current) / Math.max(1, target) * 100));
+		}
+		//#endregion
+		//#region src/client/planned-sections.tsx
+		function WhaleOverlayExtras({ state, position, open, xpGain, onClose, onOpenHome }) {
+			const species = WHALE_SPECIES_BY_ID[state.species];
+			const progress = levelProgress(state);
+			const viewportWidth = typeof window === "undefined" ? 1280 : window.innerWidth;
+			const viewportHeight = typeof window === "undefined" ? 800 : window.innerHeight;
+			const width = 318;
+			const left = position.x + 94 + width < viewportWidth ? position.x + 92 : Math.max(8, position.x - width - 12);
+			const top = Math.min(Math.max(8, position.y - 12), Math.max(8, viewportHeight - 306));
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [xpGain !== void 0 && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+				className: Planned_module_css_default.xpBurst,
+				style: { transform: `translate(${position.x + 54}px, ${Math.max(8, position.y - 16)}px)` },
+				role: "status",
+				"aria-live": "polite",
+				children: [
+					"+",
+					xpGain,
+					" XP"
+				]
+			}), open && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("aside", {
+				id: "whale-quick-card",
+				className: Planned_module_css_default.quickCard,
+				style: {
+					transform: `translate(${left}px, ${top}px)`,
+					...skinPaletteStyle(state.skin)
+				},
+				"aria-label": "鲸鱼伙伴快速航行卡",
+				children: [
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+						className: Planned_module_css_default.quickHeader,
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", { children: [
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [
+								species.rarity,
+								" · ",
+								species.ability
+							] }),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("strong", { children: companionName(state) }),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("small", { children: [
+								species.nameZh,
+								" · 海洋等级 ",
+								state.level
+							] })
+						] }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+							type: "button",
+							onClick: onClose,
+							"aria-label": "关闭快速航行卡",
+							children: "×"
+						})]
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+						className: Planned_module_css_default.quickWhale,
+						children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(WhaleArt, {
+							species,
+							skin: state.skin,
+							compact: true,
+							title: `${species.nameZh}鲸鱼伙伴`
+						})
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", { children: species.story }),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+						className: Planned_module_css_default.quickProgressHeading,
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: state.level >= 100 ? "等级已满" : `前往 Lv ${state.level + 1}` }), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("strong", { children: [progress.percent, "%"] })]
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+						className: Planned_module_css_default.quickProgress,
+						role: "progressbar",
+						"aria-label": "快速卡等级进度",
+						"aria-valuemin": 0,
+						"aria-valuemax": 100,
+						"aria-valuenow": progress.percent,
+						children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { style: { width: `${progress.percent}%` } })
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+						className: Planned_module_css_default.quickMetrics,
+						children: [
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("strong", { children: state.streak }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("small", { children: "连续天数" })] }),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("strong", { children: state.achievements.length }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("small", { children: "成就" })] }),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("strong", { children: unlockedSpeciesCount(state.level) }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("small", { children: "鲸灵" })] }),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("strong", { children: state.tools }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("small", { children: "深潜" })] })
+						]
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+						type: "button",
+						className: Planned_module_css_default.quickPrimary,
+						onClick: onOpenHome,
+						children: "打开完整鲸鱼小屋"
+					})
+				]
+			})] });
+		}
+		function CompanionPlanSection({ api, state, busy, action, onNotice }) {
+			const titleId = react.useId();
+			const [nameDraft, setNameDraft] = react.useState(companionName(state));
+			const [sharing, setSharing] = react.useState(false);
+			react.useEffect(() => setNameDraft(companionName(state)), [state.name]);
+			const goals = voyageGoals(state);
+			const nextSpecies = nextSpeciesForLevel(state.level);
+			const sharePng = async () => {
+				setSharing(true);
+				try {
+					await downloadPngShareCard(state);
+					onNotice("已下载隐私安全的 PNG 航行名片。");
+				} catch (reason) {
+					onNotice(`分享失败：${message$1(reason)}`);
+				} finally {
+					setSharing(false);
+				}
+			};
+			const copyReport = async () => {
+				setSharing(true);
+				try {
+					await copyText(shareSummary(state));
+					onNotice("已复制隐私安全的航行战报。");
+				} catch (reason) {
+					onNotice(`复制失败：${message$1(reason)}`);
+				} finally {
+					setSharing(false);
+				}
+			};
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("section", {
+				className: `${Planned_module_css_default.planSection} ${Planned_module_css_default.glassPanel}`,
+				"aria-labelledby": titleId,
+				style: skinPaletteStyle(state.skin),
+				children: [
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+						className: Planned_module_css_default.planHero,
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+							className: Planned_module_css_default.planCopy,
+							children: [
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+									className: Planned_module_css_default.kicker,
+									children: "COMPANION PROFILE · VOYAGE BOARD"
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("h3", {
+									id: titleId,
+									children: "伙伴档案与动态航线"
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", { children: "名字、任务与分享卡都只使用本地成长数据。没有任何提示词、回复、代码、路径或工具内容进入这些界面。" }),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("form", {
+									className: Planned_module_css_default.nameForm,
+									onSubmit: (event) => {
+										event.preventDefault();
+										action(() => api.setName(nameDraft), `已将鲸鱼伙伴命名为“${nameDraft.trim()}”。`);
+									},
+									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("label", {
+										htmlFor: `${titleId}-name`,
+										children: "伙伴名字"
+									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("input", {
+										id: `${titleId}-name`,
+										value: nameDraft,
+										maxLength: 20,
+										disabled: busy,
+										onChange: (event) => setNameDraft(event.currentTarget.value),
+										autoComplete: "off"
+									}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+										type: "submit",
+										disabled: busy || nameDraft.trim() === "" || nameDraft.trim() === companionName(state),
+										children: "保存名字"
+									})] })]
+								})
+							]
+						}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+							className: Planned_module_css_default.planWhale,
+							children: [
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(WhaleArt, {
+									species: WHALE_SPECIES_BY_ID[state.species],
+									skin: state.skin,
+									title: `${companionName(state)}，${WHALE_SPECIES_BY_ID[state.species].nameZh}`
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("strong", { children: companionName(state) }),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [
+									"Lv ",
+									state.level,
+									" · ",
+									WHALE_SPECIES_BY_ID[state.species].nameZh
+								] })
+							]
+						})]
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+						className: Planned_module_css_default.goalGrid,
+						children: goals.map((goal) => /* @__PURE__ */ (0, react_jsx_runtime.jsx)(GoalCard, { goal }, goal.id))
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+						className: Planned_module_css_default.encounterShare,
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("article", {
+							className: Planned_module_css_default.encounterCard,
+							children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+								className: Planned_module_css_default.kicker,
+								children: "NEXT ENCOUNTER"
+							}), nextSpecies === void 0 ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("strong", { children: "完整鲸灵星图已点亮" }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", { children: "20 种鲸灵已经全部解锁，继续航行会累积共鸣、潮汐、纪念物与远征故事。" })] }) : /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("strong", { children: [
+									nextSpecies.nameZh,
+									" · Lv ",
+									nextSpecies.unlockLevel
+								] }),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", { children: nextSpecies.story }),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("small", { children: [
+									"再提升 ",
+									nextSpecies.unlockLevel - state.level,
+									" 级即可相遇"
+								] })
+							] })]
+						}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("article", {
+							className: Planned_module_css_default.shareCard,
+							children: [
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+									className: Planned_module_css_default.kicker,
+									children: "SAFE TO SHARE"
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("strong", { children: "生成你的航行名片" }),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", { children: "PNG 和文本战报均在浏览器本地生成，只展示伙伴名字、等级、连续天数、成就、鲸灵与纪念物数量。" }),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+									type: "button",
+									disabled: busy || sharing,
+									onClick: () => void sharePng(),
+									children: "下载 PNG 名片"
+								}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+									type: "button",
+									disabled: busy || sharing,
+									onClick: () => void copyReport(),
+									children: "复制航行战报"
+								})] })
+							]
+						})]
+					})
+				]
+			});
+		}
+		function SkinPaletteSection({ api, state, busy, action }) {
+			const titleId = react.useId();
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("section", {
+				className: `${Planned_module_css_default.paletteSection} ${Planned_module_css_default.glassPanel}`,
+				"aria-labelledby": titleId,
+				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+					className: Planned_module_css_default.sectionHeading,
+					children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+						className: Planned_module_css_default.kicker,
+						children: "MULTI-LAYER OCEAN MOODS"
+					}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("h3", {
+						id: titleId,
+						children: "海域主题"
+					})] }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: "6 套完整主体、腹部、强调和环境光配色" })]
+				}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+					className: Planned_module_css_default.paletteGrid,
+					role: "radiogroup",
+					"aria-label": "选择鲸鱼海域主题",
+					children: Object.entries(SKINS).map(([skin, palette]) => /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("button", {
+						type: "button",
+						role: "radio",
+						"aria-checked": state.skin === skin,
+						className: state.skin === skin ? Planned_module_css_default.paletteSelected : Planned_module_css_default.paletteButton,
+						style: {
+							"--palette-main": palette.color,
+							"--palette-deep": palette.deep,
+							"--palette-belly": palette.belly,
+							"--palette-accent": palette.accent,
+							"--palette-glow": palette.glow
+						},
+						disabled: busy,
+						onClick: () => void action(() => api.setSkin(skin), `已切换为${palette.name}。`),
+						children: [
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+								className: Planned_module_css_default.palettePreview,
+								"aria-hidden": "true",
+								children: [
+									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("i", {}),
+									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("b", {}),
+									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("em", {}),
+									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("u", {})
+								]
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("strong", { children: palette.name }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("small", { children: palette.description })] }),
+							state.skin === skin && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("mark", { children: "正在使用" })
+						]
+					}, skin))
+				})]
+			});
+		}
+		function GoalCard({ goal }) {
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("article", {
+				className: Planned_module_css_default.goalCard,
+				children: [
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: goal.title }), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("strong", { children: [goal.percent, "%"] })] }),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", { children: goal.description }),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+						className: Planned_module_css_default.goalTrack,
+						role: "progressbar",
+						"aria-label": goal.title,
+						"aria-valuemin": 0,
+						"aria-valuemax": 100,
+						"aria-valuenow": goal.percent,
+						children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { style: { width: `${goal.percent}%` } })
+					}),
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("small", { children: [
+						goal.current,
+						"/",
+						goal.target,
+						goal.suffix
+					] })
+				]
+			});
+		}
+		async function downloadPngShareCard(state) {
+			const canvas = document.createElement("canvas");
+			canvas.width = 1200;
+			canvas.height = 675;
+			const ctx = canvas.getContext("2d");
+			if (ctx === null) throw new Error("当前浏览器无法生成 PNG");
+			const palette = SKINS[state.skin];
+			const species = WHALE_SPECIES_BY_ID[state.species];
+			const name = companionName(state);
+			const background = ctx.createLinearGradient(0, 0, 1200, 675);
+			background.addColorStop(0, "#06172f");
+			background.addColorStop(.55, palette.deep);
+			background.addColorStop(1, "#020b17");
+			ctx.fillStyle = background;
+			ctx.fillRect(0, 0, 1200, 675);
+			const glow = ctx.createRadialGradient(930, 190, 10, 930, 190, 500);
+			glow.addColorStop(0, `${palette.glow}99`);
+			glow.addColorStop(1, `${palette.glow}00`);
+			ctx.fillStyle = glow;
+			ctx.fillRect(0, 0, 1200, 675);
+			for (let index = 0; index < 42; index += 1) {
+				const x = index * 197 % 1160 + 20;
+				const y = index * 83 % 625 + 25;
+				ctx.fillStyle = `rgba(255,255,255,${.045 + index % 5 * .018})`;
+				ctx.beginPath();
+				ctx.arc(x, y, 1.5 + index % 4, 0, Math.PI * 2);
+				ctx.fill();
+			}
+			roundedRect(ctx, 58, 54, 1084, 568, 38);
+			ctx.fillStyle = "rgba(1,12,27,.54)";
+			ctx.fill();
+			ctx.strokeStyle = "rgba(255,255,255,.18)";
+			ctx.lineWidth = 2;
+			ctx.stroke();
+			ctx.fillStyle = "rgba(255,255,255,.62)";
+			ctx.font = "700 18px Inter, \"PingFang SC\", \"Microsoft YaHei\", sans-serif";
+			ctx.fillText("LOCAL OCEAN COMPANION · PRIVACY SAFE", 98, 112);
+			ctx.fillStyle = "#fff";
+			ctx.font = "800 58px Inter, \"PingFang SC\", \"Microsoft YaHei\", sans-serif";
+			ctx.fillText(name, 98, 188, 520);
+			ctx.fillStyle = palette.accent;
+			ctx.font = "700 24px Inter, \"PingFang SC\", \"Microsoft YaHei\", sans-serif";
+			ctx.fillText(`海洋等级 ${state.level} · ${species.nameZh} · ${species.ability}`, 98, 232);
+			ctx.fillStyle = "rgba(255,255,255,.74)";
+			ctx.font = "400 21px Inter, \"PingFang SC\", \"Microsoft YaHei\", sans-serif";
+			ctx.fillText(species.story, 98, 282, 570);
+			[
+				[`${state.streak} 天`, "连续航行"],
+				[`${state.achievements.length}/12`, "潮汐成就"],
+				[`${unlockedSpeciesCount(state.level)}/20`, "鲸灵图鉴"],
+				[`${state.collectibles.length}/24`, "纪念物"]
+			].forEach(([value, label], index) => {
+				const x = 98 + index * 144;
+				roundedRect(ctx, x, 340, 128, 110, 20);
+				ctx.fillStyle = "rgba(255,255,255,.09)";
+				ctx.fill();
+				ctx.fillStyle = "#fff";
+				ctx.font = "800 27px Inter, \"PingFang SC\", \"Microsoft YaHei\", sans-serif";
+				ctx.fillText(value, x + 15, 385, 102);
+				ctx.fillStyle = "rgba(255,255,255,.58)";
+				ctx.font = "500 15px Inter, \"PingFang SC\", \"Microsoft YaHei\", sans-serif";
+				ctx.fillText(label, x + 15, 417);
+			});
+			drawWhale(ctx, 742, 176, 1.72, palette.color, palette.deep, palette.belly);
+			ctx.fillStyle = "rgba(255,255,255,.5)";
+			ctx.font = "400 15px Inter, \"PingFang SC\", \"Microsoft YaHei\", sans-serif";
+			ctx.fillText("不包含提示词、回复、代码、路径、工具名称、参数或结果内容", 98, 568);
+			ctx.fillStyle = "rgba(255,255,255,.72)";
+			ctx.font = "700 17px Inter, \"PingFang SC\", \"Microsoft YaHei\", sans-serif";
+			ctx.fillText("DSH WHALE COMPANION", 875, 568);
+			const blob = await new Promise((resolve, reject) => canvas.toBlob((value) => value === null ? reject(/* @__PURE__ */ new Error("PNG 编码失败")) : resolve(value), "image/png"));
+			const url = URL.createObjectURL(blob);
+			const anchor = document.createElement("a");
+			anchor.href = url;
+			anchor.download = `${safeFilename(name)}-whale-voyage.png`;
+			document.body.appendChild(anchor);
+			anchor.click();
+			anchor.remove();
+			window.setTimeout(() => URL.revokeObjectURL(url), 1e3);
+		}
+		function roundedRect(ctx, x, y, width, height, radius) {
+			const r = Math.min(radius, width / 2, height / 2);
+			ctx.beginPath();
+			ctx.moveTo(x + r, y);
+			ctx.arcTo(x + width, y, x + width, y + height, r);
+			ctx.arcTo(x + width, y + height, x, y + height, r);
+			ctx.arcTo(x, y + height, x, y, r);
+			ctx.arcTo(x, y, x + width, y, r);
+			ctx.closePath();
+		}
+		function drawWhale(ctx, x, y, scale, main, deep, belly) {
+			ctx.save();
+			ctx.translate(x, y);
+			ctx.scale(scale, scale);
+			ctx.fillStyle = "rgba(255,255,255,.12)";
+			ctx.beginPath();
+			ctx.ellipse(118, 78, 112, 68, 0, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.fillStyle = deep;
+			ctx.beginPath();
+			ctx.moveTo(42, 74);
+			ctx.bezierCurveTo(20, 56, 13, 39, 16, 23);
+			ctx.bezierCurveTo(36, 30, 49, 43, 55, 61);
+			ctx.bezierCurveTo(60, 41, 74, 29, 92, 25);
+			ctx.bezierCurveTo(91, 48, 80, 67, 58, 79);
+			ctx.closePath();
+			ctx.fill();
+			const gradient = ctx.createLinearGradient(48, 34, 207, 118);
+			gradient.addColorStop(0, belly);
+			gradient.addColorStop(.28, main);
+			gradient.addColorStop(1, deep);
+			ctx.fillStyle = gradient;
+			ctx.beginPath();
+			ctx.moveTo(48, 72);
+			ctx.bezierCurveTo(68, 34, 113, 19, 161, 29);
+			ctx.bezierCurveTo(201, 37, 225, 59, 219, 84);
+			ctx.bezierCurveTo(213, 111, 169, 124, 119, 113);
+			ctx.bezierCurveTo(86, 106, 67, 88, 42, 96);
+			ctx.bezierCurveTo(49, 87, 52, 80, 48, 72);
+			ctx.closePath();
+			ctx.fill();
+			ctx.fillStyle = belly;
+			ctx.globalAlpha = .72;
+			ctx.beginPath();
+			ctx.moveTo(94, 98);
+			ctx.bezierCurveTo(126, 111, 175, 107, 202, 91);
+			ctx.bezierCurveTo(188, 117, 147, 124, 116, 114);
+			ctx.bezierCurveTo(104, 110, 97, 104, 94, 98);
+			ctx.fill();
+			ctx.globalAlpha = 1;
+			ctx.fillStyle = deep;
+			ctx.beginPath();
+			ctx.arc(190, 64, 5, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.strokeStyle = deep;
+			ctx.lineWidth = 3;
+			ctx.lineCap = "round";
+			ctx.beginPath();
+			ctx.moveTo(188, 88);
+			ctx.quadraticCurveTo(203, 99, 216, 88);
+			ctx.stroke();
+			ctx.restore();
+		}
+		async function copyText(value) {
+			if (navigator.clipboard?.writeText !== void 0) {
+				await navigator.clipboard.writeText(value);
+				return;
+			}
+			const textarea = document.createElement("textarea");
+			textarea.value = value;
+			textarea.style.position = "fixed";
+			textarea.style.opacity = "0";
+			document.body.appendChild(textarea);
+			textarea.select();
+			const copied = document.execCommand("copy");
+			textarea.remove();
+			if (!copied) throw new Error("当前浏览器无法复制文本");
+		}
+		function safeFilename(value) {
+			return value.replace(/[\\/:*?"<>|]+/g, "-").trim().slice(0, 60) || "whale";
+		}
+		function message$1(reason) {
+			return reason instanceof Error ? reason.message : String(reason);
+		}
+		//#endregion
 		//#region src/client/store.ts
 		async function unwrap(pending) {
 			const result = await pending;
@@ -17360,6 +19055,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			return {
 				getV5: () => unwrap(raw.getV5()),
 				setSkin: (skin) => unwrap(raw.setSkin(skin)),
+				setName: (name) => unwrap(raw.setName(name)),
 				setPosition: (position) => unwrap(raw.setPosition(position)),
 				setSpeciesV5: (species) => unwrap(raw.setSpeciesV5(species)),
 				placeCollectibleV5: (slot, collectible) => unwrap(raw.placeCollectibleV5(slot, collectible)),
@@ -17519,6 +19215,9 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 				y: 24
 			});
 			const [homeOpen, setHomeOpen] = react.useState(false);
+			const [quickOpen, setQuickOpen] = react.useState(false);
+			const [xpGain, setXpGain] = react.useState();
+			const previousXp = react.useRef();
 			const positionRef = react.useRef(position);
 			const drag = react.useRef();
 			const clickEligible = react.useRef(false);
@@ -17529,6 +19228,15 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			const latestReaction = reactionPresentation(latestMoment);
 			const firstMoment = react.useRef();
 			const [visibleReaction, setVisibleReaction] = react.useState();
+			react.useEffect(() => {
+				if (state === void 0) return;
+				const previous = previousXp.current;
+				previousXp.current = state.xp;
+				if (previous === void 0 || state.xp <= previous) return;
+				setXpGain(state.xp - previous);
+				const timer = window.setTimeout(() => setXpGain(void 0), 1900);
+				return () => window.clearTimeout(timer);
+			}, [state?.xp]);
 			react.useEffect(() => {
 				if (latestReaction === void 0) {
 					setVisibleReaction(void 0);
@@ -17600,6 +19308,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 				if (!current.moved) {
 					current.moved = true;
 					clickEligible.current = false;
+					setQuickOpen(false);
 					setDragging(true);
 				}
 				place(clampPosition({
@@ -17621,6 +19330,10 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 				}, event.currentTarget);
 			};
 			const keyMove = (event) => {
+				if (event.key === "Escape") {
+					setQuickOpen(false);
+					return;
+				}
 				const step = event.shiftKey ? 32 : 12;
 				const target = event.currentTarget;
 				let next = positionRef.current;
@@ -17653,7 +19366,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 				persist(next, target);
 			};
 			const species = WHALE_SPECIES_BY_ID[state?.species ?? "common-minke"];
-			const whaleArt = speciesArtStyle(species);
+			const skin = state?.skin ?? "ocean";
 			const reduced = presentation.systemReducedMotion || presentation.value.reduceMotion;
 			return react.createElement("div", {
 				className: Whale_module_css_default.overlay,
@@ -17664,8 +19377,8 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 				type: "button",
 				className: Whale_module_css_default.whale,
 				style: {
+					...skinPaletteStyle(skin),
 					transform: `translate(${position.x}px, ${position.y}px)`,
-					"--whale-skin": SKINS[state?.skin ?? "ocean"].color,
 					"--species-color": species.palette
 				},
 				onPointerDown: (event) => {
@@ -17688,25 +19401,38 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 				onClick: (event) => {
 					if (event.detail !== 0 && !clickEligible.current) return;
 					clickEligible.current = false;
-					setHomeOpen(true);
+					setQuickOpen((value) => !value);
 				},
 				onKeyDown: keyMove,
-				"data-skin": state?.skin ?? "ocean",
-				"aria-label": `${species.nameZh}鲸鱼伙伴，海洋等级 ${state?.level ?? 1}。点击打开鲸鱼小屋；可拖动；使用方向键移动。`,
-				"aria-describedby": "whale-move-help"
-			}, react.createElement("span", {
-				className: Whale_module_css_default.whaleBody,
-				style: whaleArt,
-				"aria-hidden": true
+				"data-skin": skin,
+				"aria-label": `${state?.name ?? "小蓝"}，${species.nameZh}鲸鱼伙伴，海洋等级 ${state?.level ?? 1}。点击打开快速航行卡；可拖动；使用方向键移动。`,
+				"aria-describedby": "whale-move-help",
+				"aria-expanded": quickOpen,
+				"aria-controls": "whale-quick-card"
+			}, react.createElement(WhaleArt, {
+				species,
+				skin,
+				compact: true,
+				title: `${species.nameZh}鲸鱼伙伴`
 			}), react.createElement("span", { className: Whale_module_css_default.badge }, `Lv ${state?.level ?? 1} · ${species.nameZh}`)), visibleReaction && react.createElement("div", {
 				className: visibleReaction.priority === "high" ? `${Whale_module_css_default.reactionBubble} ${Whale_module_css_default.reactionHigh}` : Whale_module_css_default.reactionBubble,
 				style: { transform: `translate(${position.x + 76}px, ${Math.max(8, position.y - 4)}px)` },
 				role: visibleReaction.priority === "high" ? "status" : void 0,
 				"aria-live": visibleReaction.priority === "high" ? "polite" : void 0
-			}, react.createElement("strong", null, species.nameZh), react.createElement("span", null, visibleReaction.message)), react.createElement("span", {
+			}, react.createElement("strong", null, species.nameZh), react.createElement("span", null, visibleReaction.message)), state && react.createElement(WhaleOverlayExtras, {
+				state,
+				position,
+				open: quickOpen,
+				xpGain,
+				onClose: () => setQuickOpen(false),
+				onOpenHome: () => {
+					setQuickOpen(false);
+					setHomeOpen(true);
+				}
+			}), react.createElement("span", {
 				id: "whale-move-help",
 				className: Whale_module_css_default.visuallyHidden
-			}, "点击打开鲸鱼小屋。拖动后自动吸附到屏幕左右边缘。按方向键移动，按 Shift 加方向键可快速移动。"), react.createElement("span", {
+			}, "点击打开快速航行卡，再进入完整鲸鱼小屋。拖动后自动吸附到屏幕左右边缘。按方向键移动，按 Shift 加方向键可快速移动；按 Escape 关闭快速卡。"), react.createElement("span", {
 				className: Whale_module_css_default.overlayStatus,
 				role: "status",
 				"aria-live": "polite"
@@ -17845,13 +19571,14 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 				"data-reduced": presentation.systemReducedMotion || presentation.value.reduceMotion ? "true" : "false"
 			}, react.createElement("header", { className: Whale_module_css_default.hero }, react.createElement("div", null, react.createElement("p", { className: Whale_module_css_default.eyebrow }, "本地鲸鱼伙伴 · OCEAN TIDES"), react.createElement("h2", { id: headingId }, "鲸鱼小屋"), react.createElement("p", { className: Whale_module_css_default.intro }, "鲸鱼会把安全的工作节奏化成潮汐、纪念物与一间只属于你的海湾。")), react.createElement("span", {
 				className: Whale_module_css_default.heroWhale,
-				style: { "--species-color": species.palette },
-				role: "img",
-				"aria-label": species.nameZh
-			}, react.createElement("span", {
-				className: Whale_module_css_default.heroWhaleArt,
-				style: speciesArtStyle(species),
+				style: {
+					"--species-color": species.palette,
+					...skinPaletteStyle(state.skin)
+				},
 				"aria-hidden": true
+			}, react.createElement(WhaleArt, {
+				species,
+				skin: state.skin
 			}))), react.createElement("div", { className: Whale_module_css_default.progressCard }, react.createElement("div", { className: Whale_module_css_default.progressHeading }, react.createElement("strong", null, `海洋等级 ${state.level}`), react.createElement("span", null, `${state.xp} XP`)), react.createElement("div", {
 				className: Whale_module_css_default.progressTrack,
 				role: "progressbar",
@@ -17872,7 +19599,13 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			}, notice), react.createElement("div", {
 				className: Whale_module_css_default.stats,
 				"aria-label": "进度统计"
-			}, stat("海洋等级", state.level), stat("已观测鲸灵", `${WHALE_SPECIES.filter((candidate) => isSpeciesUnlocked(candidate, state.level)).length}/20`), stat("当前共鸣", `${stars} 星`), stat("连续使用", `${state.streak} 天`), stat("今日潮汐", state.moments.filter((moment) => moment.progressDay === state.moments.at(-1)?.progressDay).length), stat("纪念物", `${state.collectibles.length}/24`)), react.createElement(WeeklyJournal, { journal }), react.createElement(CoveOverview, {
+			}, stat("海洋等级", state.level), stat("已观测鲸灵", `${WHALE_SPECIES.filter((candidate) => isSpeciesUnlocked(candidate, state.level)).length}/20`), stat("当前共鸣", `${stars} 星`), stat("连续使用", `${state.streak} 天`), stat("今日潮汐", state.moments.filter((moment) => moment.progressDay === state.moments.at(-1)?.progressDay).length), stat("纪念物", `${state.collectibles.length}/24`)), react.createElement(CompanionPlanSection, {
+				api,
+				state,
+				busy,
+				action,
+				onNotice: setNotice
+			}), react.createElement(WeeklyJournal, { journal }), react.createElement(CoveOverview, {
 				cove,
 				species,
 				skin: state.skin
@@ -17953,7 +19686,7 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 						setBusy(false);
 					}
 				})()
-			}, "隔离预览")), visitorPreview && react.createElement("div", { className: Whale_module_css_default.preview }, react.createElement("strong", null, `${WHALE_SPECIES_BY_ID[visitorPreview.room.species].nameZh}的访客海湾`), react.createElement("span", null, `已放置 ${Object.values(visitorPreview.room.slots).filter(Boolean).length} 件纪念物 · 仅预览`))), react.createElement(PrivacyLedgerSection), react.createElement(SkinSelector, {
+			}, "隔离预览")), visitorPreview && react.createElement("div", { className: Whale_module_css_default.preview }, react.createElement("strong", null, `${WHALE_SPECIES_BY_ID[visitorPreview.room.species].nameZh}的访客海湾`), react.createElement("span", null, `已放置 ${Object.values(visitorPreview.room.slots).filter(Boolean).length} 件纪念物 · 仅预览`))), react.createElement(PrivacyLedgerSection), react.createElement(SkinPaletteSection, {
 				api,
 				state,
 				busy,

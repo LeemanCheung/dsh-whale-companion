@@ -4,10 +4,11 @@ import type { WhalePostcard, WhaleVisitorBottle } from '../reducer.ts'
 import type { WhalePosition, WhaleState } from '../spec.ts'
 import type { WhaleSpeciesId } from '../species.ts'
 
-export type RawWhaleApi = TypertRemoteNamespaceMap['whaleCompanion']
+export type RawWhaleApi = TypertRemoteNamespaceMap['whaleCompanion'] & { setName: (name: string) => Promise<{ ok: true, value: WhaleState } | { ok: false, error: { message: string } }> }
 export type WhaleApi = {
   getV5: () => Promise<WhaleState>
   setSkin: (skin: WhaleState['skin']) => Promise<WhaleState>
+  setName: (name: string) => Promise<WhaleState>
   setPosition: (position: WhalePosition) => Promise<WhaleState>
   setSpeciesV5: (species: WhaleSpeciesId) => Promise<WhaleState>
   placeCollectibleV5: (slot: string, collectible: string | null) => Promise<WhaleState>
@@ -36,7 +37,7 @@ async function unwrap<T>(pending: Promise<{ ok: true, value: T } | { ok: false, 
 
 export function apiFrom(raw: RawWhaleApi): WhaleApi {
   return {
-    getV5: () => unwrap(raw.getV5()), setSkin: skin => unwrap(raw.setSkin(skin)), setPosition: position => unwrap(raw.setPosition(position)),
+    getV5: () => unwrap(raw.getV5()), setSkin: skin => unwrap(raw.setSkin(skin)), setName: name => unwrap(raw.setName(name)), setPosition: position => unwrap(raw.setPosition(position)),
     setSpeciesV5: species => unwrap(raw.setSpeciesV5(species)), placeCollectibleV5: (slot, collectible) => unwrap(raw.placeCollectibleV5(slot, collectible)),
     saveRoomPresetV5: () => unwrap(raw.saveRoomPresetV5()), loadRoomPresetV5: index => unwrap(raw.loadRoomPresetV5(index)),
     startExpeditionV5: (id, species, goal) => unwrap(raw.startExpeditionV5(id, species, goal)), claimExpeditionV5: () => unwrap(raw.claimExpeditionV5()),

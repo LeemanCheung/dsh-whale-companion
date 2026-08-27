@@ -1,0 +1,233 @@
+.whaleArt {
+  display: block;
+  width: min(100%, 240px);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 18px 28px color-mix(in srgb, var(--whale-glow) 28%, transparent));
+  animation: whaleBreath 4.8s ease-in-out infinite;
+}
+.whaleArtCompact { width: 82px; }
+.whaleAura { transform-origin: center; animation: auraPulse 4.8s ease-in-out infinite; }
+.whaleTail { transform-origin: 58px 80px; animation: tailSweep 2.5s ease-in-out infinite; }
+.whaleFin { transform-origin: 139px 111px; animation: finSweep 3.1s ease-in-out infinite; }
+.whaleEye { transform-origin: 190px 68px; animation: whaleBlink 6.4s linear infinite; }
+.whaleBubbles circle { fill: var(--whale-belly); stroke: color-mix(in srgb, var(--whale-accent) 64%, white); stroke-width: 1; opacity: .72; }
+.whaleBubbleOne { animation: bubbleRise 3.8s ease-in infinite; }
+.whaleBubbleTwo { animation: bubbleRise 3.8s 1.1s ease-in infinite; }
+.whaleBubbleThree { animation: bubbleRise 3.8s 2.1s ease-in infinite; }
+.whaleBodyShape, .whaleBelly, .whaleHighlight, .whaleMarkings, .whaleTusk { transition: opacity .22s ease, filter .22s ease; }
+
+.xpBurst {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  pointer-events: none;
+  padding: 6px 10px;
+  border: 1px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 42%, transparent);
+  border-radius: 999px;
+  color: var(--dsw-alias-label-primary);
+  background: color-mix(in srgb, var(--dsw-alias-bg-layer-2) 88%, transparent);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--dsw-alias-bg-base) 44%, transparent);
+  font-size: 12px;
+  font-weight: 800;
+  animation: xpLift 1.9s ease-out both;
+}
+
+.quickCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  box-sizing: border-box;
+  width: min(318px, calc(100vw - 16px));
+  padding: 16px;
+  pointer-events: auto;
+  color: var(--dsw-alias-label-primary);
+  border: 1px solid color-mix(in srgb, var(--whale-accent) 28%, var(--dsw-alias-border-l2));
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--whale-glow) 22%, transparent), transparent 40%),
+    linear-gradient(145deg, color-mix(in srgb, var(--dsw-alias-bg-layer-1) 92%, transparent), color-mix(in srgb, var(--dsw-alias-bg-layer-2) 88%, transparent));
+  box-shadow: 0 24px 70px color-mix(in srgb, var(--dsw-alias-bg-base) 58%, transparent), inset 0 1px 0 color-mix(in srgb, white 9%, transparent);
+  backdrop-filter: blur(20px) saturate(1.22);
+  animation: cardReveal .2s ease-out both;
+}
+.quickHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.quickHeader > div { min-width: 0; }
+.quickHeader span, .quickHeader strong, .quickHeader small { display: block; }
+.quickHeader span { color: var(--whale-accent); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.quickHeader strong { margin-top: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 22px; }
+.quickHeader small { margin-top: 2px; color: var(--dsw-alias-label-secondary); }
+.quickHeader button {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 50%;
+  color: var(--dsw-alias-label-primary);
+  background: color-mix(in srgb, var(--dsw-alias-bg-layer-2) 74%, transparent);
+  cursor: pointer;
+}
+.quickWhale { display: grid; min-height: 92px; place-items: center; margin: 8px 0 2px; }
+.quickCard > p { margin: 0 0 12px; color: var(--dsw-alias-label-secondary); font-size: 12px; line-height: 1.55; }
+.quickProgressHeading { display: flex; justify-content: space-between; gap: 10px; font-size: 11px; }
+.quickProgressHeading span { color: var(--dsw-alias-label-secondary); }
+.quickProgress { height: 7px; margin-top: 7px; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, var(--dsw-alias-bg-base) 56%, transparent); }
+.quickProgress span, .goalTrack span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--whale-main), var(--whale-accent));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--whale-glow) 54%, transparent);
+  transition: width .28s ease;
+}
+.quickMetrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin: 13px 0; }
+.quickMetrics span { min-width: 0; padding: 8px 5px; text-align: center; border: 1px solid color-mix(in srgb, var(--dsw-alias-border-l2) 72%, transparent); border-radius: 11px; background: color-mix(in srgb, var(--dsw-alias-bg-layer-2) 64%, transparent); }
+.quickMetrics strong, .quickMetrics small { display: block; }
+.quickMetrics strong { font-size: 15px; }
+.quickMetrics small { margin-top: 2px; overflow: hidden; color: var(--dsw-alias-label-tertiary); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.quickPrimary {
+  width: 100%;
+  min-height: 38px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--whale-deep), var(--whale-main));
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--whale-glow) 24%, transparent);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.glassPanel {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--dsw-alias-border-l1);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--dsw-alias-bg-layer-1) 96%, transparent), color-mix(in srgb, var(--dsw-alias-bg-base) 94%, transparent));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 5%, transparent);
+}
+.planSection { margin-top: 18px; padding: 22px; }
+.planSection::before {
+  position: absolute;
+  inset: -140px auto auto 58%;
+  width: 360px;
+  height: 360px;
+  content: "";
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--whale-glow) 18%, transparent), transparent 66%);
+}
+.planHero { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(190px, .75fr); gap: 22px; align-items: center; }
+.planCopy { min-width: 0; }
+.kicker { display: block; margin: 0 0 6px; color: var(--dsw-alias-brand-primary); font-size: 10px; font-weight: 800; letter-spacing: .11em; }
+.planCopy h3, .sectionHeading h3 { margin: 0; font-size: 19px; }
+.planCopy > p { max-width: 680px; margin: 8px 0 0; color: var(--dsw-alias-label-secondary); line-height: 1.65; }
+.nameForm { margin-top: 16px; }
+.nameForm label { display: block; margin-bottom: 7px; color: var(--dsw-alias-label-secondary); font-size: 12px; }
+.nameForm > div { display: flex; gap: 8px; }
+.nameForm input {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 11px;
+  color: var(--dsw-alias-label-primary);
+  background: var(--dsw-alias-bg-layer-1);
+  font: inherit;
+}
+.nameForm button, .shareCard button, .paletteButton, .paletteSelected {
+  min-height: 40px;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 11px;
+  color: var(--dsw-alias-label-primary);
+  background: var(--dsw-alias-bg-layer-2);
+  font: inherit;
+  cursor: pointer;
+}
+.nameForm button { flex: 0 0 auto; padding: 0 14px; font-size: 12px; font-weight: 700; }
+.nameForm button:disabled, .shareCard button:disabled, .paletteButton:disabled, .paletteSelected:disabled { cursor: not-allowed; opacity: .56; }
+.planWhale { display: grid; min-width: 0; place-items: center; padding: 12px; text-align: center; border: 1px solid color-mix(in srgb, var(--whale-accent) 24%, var(--dsw-alias-border-l2)); border-radius: 18px; background: color-mix(in srgb, var(--dsw-alias-bg-layer-2) 65%, transparent); }
+.planWhale strong { margin-top: -5px; font-size: 18px; }
+.planWhale > span { margin-top: 3px; color: var(--dsw-alias-label-secondary); font-size: 11px; }
+
+.goalGrid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+.goalCard { min-width: 0; padding: 13px; border: 1px solid var(--dsw-alias-border-l2); border-radius: 14px; background: color-mix(in srgb, var(--dsw-alias-bg-layer-2) 56%, transparent); }
+.goalCard > div:first-child { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.goalCard > div:first-child span { overflow: hidden; font-size: 12px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.goalCard > div:first-child strong { color: var(--whale-accent); font-size: 12px; }
+.goalCard p { min-height: 46px; margin: 8px 0; color: var(--dsw-alias-label-secondary); font-size: 11px; line-height: 1.45; }
+.goalTrack { height: 7px; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, var(--dsw-alias-bg-base) 50%, transparent); }
+.goalCard small { display: block; margin-top: 7px; color: var(--dsw-alias-label-tertiary); font-size: 10px; }
+
+.encounterShare { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+.encounterCard, .shareCard { min-width: 0; padding: 15px; border: 1px solid var(--dsw-alias-border-l2); border-radius: 15px; background: color-mix(in srgb, var(--dsw-alias-bg-layer-1) 72%, transparent); }
+.encounterCard strong, .shareCard strong { display: block; margin-top: 3px; font-size: 15px; }
+.encounterCard p, .shareCard p { margin: 7px 0 0; color: var(--dsw-alias-label-secondary); font-size: 12px; line-height: 1.55; }
+.encounterCard small { display: block; margin-top: 8px; color: var(--whale-accent); }
+.shareCard > div { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.shareCard button { flex: 1 1 150px; padding: 0 12px; font-size: 12px; font-weight: 700; }
+.shareCard button:first-child { color: #fff; border-color: transparent; background: linear-gradient(135deg, var(--whale-deep), var(--whale-main)); }
+
+.paletteSection { margin-top: 20px; padding: 18px; }
+.sectionHeading { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 14px; }
+.sectionHeading > span { color: var(--dsw-alias-label-secondary); font-size: 11px; }
+.paletteGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin-top: 14px; }
+.paletteButton, .paletteSelected { position: relative; display: flex; min-width: 0; align-items: center; justify-content: flex-start; gap: 10px; padding: 10px; text-align: left; }
+.paletteButton:hover { border-color: var(--palette-main); transform: translateY(-1px); }
+.paletteSelected { border-color: var(--palette-main); box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--palette-main) 50%, transparent), 0 10px 28px color-mix(in srgb, var(--palette-glow) 13%, transparent); }
+.palettePreview { position: relative; display: block; flex: 0 0 48px; width: 48px; height: 34px; overflow: hidden; border-radius: 12px; background: linear-gradient(135deg, var(--palette-accent), var(--palette-main) 48%, var(--palette-deep)); box-shadow: 0 7px 18px color-mix(in srgb, var(--palette-glow) 24%, transparent); }
+.palettePreview i { position: absolute; inset: 18px -8px -8px 12px; border-radius: 50%; background: var(--palette-belly); opacity: .72; }
+.palettePreview b, .palettePreview em, .palettePreview u { position: absolute; border-radius: 50%; background: var(--palette-glow); }
+.palettePreview b { width: 6px; height: 6px; top: 5px; right: 8px; }
+.palettePreview em { width: 3px; height: 3px; top: 12px; right: 17px; }
+.palettePreview u { width: 2px; height: 2px; top: 5px; left: 8px; }
+.paletteButton > span:nth-child(2), .paletteSelected > span:nth-child(2) { min-width: 0; }
+.paletteButton strong, .paletteSelected strong, .paletteButton small, .paletteSelected small { display: block; }
+.paletteButton strong, .paletteSelected strong { font-size: 12px; }
+.paletteButton small, .paletteSelected small { margin-top: 3px; overflow: hidden; color: var(--dsw-alias-label-tertiary); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.paletteSelected mark { margin-left: auto; padding: 3px 6px; border-radius: 999px; color: var(--palette-main); background: color-mix(in srgb, var(--palette-main) 12%, transparent); font-size: 9px; font-weight: 800; }
+
+.nameForm input:focus-visible, .nameForm button:focus-visible, .shareCard button:focus-visible, .quickCard button:focus-visible, .paletteButton:focus-visible, .paletteSelected:focus-visible {
+  outline: 3px solid var(--dsw-alias-brand-primary);
+  outline-offset: 2px;
+}
+
+@keyframes whaleBreath { 50% { transform: translateY(-4px) rotate(-.6deg); } }
+@keyframes auraPulse { 50% { opacity: .72; transform: scale(1.04); } }
+@keyframes tailSweep { 50% { transform: rotate(-7deg); } }
+@keyframes finSweep { 50% { transform: rotate(7deg); } }
+@keyframes whaleBlink { 0%, 44%, 48%, 100% { transform: scaleY(1); } 46% { transform: scaleY(.08); } }
+@keyframes bubbleRise { 0% { opacity: 0; transform: translateY(12px) scale(.65); } 25% { opacity: .78; } 100% { opacity: 0; transform: translateY(-24px) scale(1.12); } }
+@keyframes xpLift { 0% { opacity: 0; transform: translateY(8px) scale(.9); } 18% { opacity: 1; } 100% { opacity: 0; transform: translateY(-28px) scale(1.03); } }
+@keyframes cardReveal { from { opacity: 0; transform: translateY(8px) scale(.98); } }
+
+@media (max-width: 920px) {
+  .goalGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .paletteGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .planSection { padding: 15px; }
+  .planHero { grid-template-columns: 1fr; }
+  .planWhale { order: -1; }
+  .planWhale .whaleArt { width: 150px; }
+  .goalGrid, .encounterShare, .paletteGrid { grid-template-columns: 1fr; }
+  .nameForm > div { align-items: stretch; flex-direction: column; }
+  .nameForm button { min-height: 40px; }
+  .goalCard p { min-height: 0; }
+  .quickMetrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whaleArt, .whaleAura, .whaleTail, .whaleFin, .whaleEye, .whaleBubbleOne, .whaleBubbleTwo, .whaleBubbleThree, .xpBurst, .quickCard {
+    animation: none !important;
+    transition: none !important;
+  }
+  .quickProgress span, .goalTrack span { transition: none; }
+}

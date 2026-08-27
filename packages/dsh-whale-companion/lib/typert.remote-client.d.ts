@@ -23,6 +23,7 @@ declare module '@deepseek-ai/dsh-typert-protocol' {
     reset: () => Promise<RemoteResult<WhaleState>>
     saveRoomPresetV5: () => Promise<RemoteResult<WhaleState>>
     setCommunityV5: (enabled: boolean, aliasId: string) => Promise<RemoteResult<WhaleState>>
+    setName: (name: string) => Promise<RemoteResult<WhaleState>>
     setPosition: (position: WhalePosition) => Promise<RemoteResult<WhaleState>>
     setSkin: (skin: WhaleState['skin']) => Promise<RemoteResult<WhaleState>>
     setSpeciesV5: (species: WhaleState['species']) => Promise<RemoteResult<WhaleState>>
@@ -45,6 +46,7 @@ declare module '@deepseek-ai/dsh-typert-protocol' {
     'whaleCompanion/reset': () => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/saveRoomPresetV5': () => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/setCommunityV5': (enabled: boolean, aliasId: string) => Promise<RemoteResult<WhaleState>>
+    'whaleCompanion/setName': (name: string) => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/setPosition': (position: WhalePosition) => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/setSkin': (skin: WhaleState['skin']) => Promise<RemoteResult<WhaleState>>
     'whaleCompanion/setSpeciesV5': (species: WhaleState['species']) => Promise<RemoteResult<WhaleState>>
