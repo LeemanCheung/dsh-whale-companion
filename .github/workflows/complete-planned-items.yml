@@ -51,6 +51,16 @@ jobs:
           echo "cb024e8e89a7e6a0676485bfb3d78a25c9a7f73482a196866a1cc75b70fad8aa  scripts/complete-planned-items.mjs" | sha256sum -c -
           node --check scripts/complete-planned-items.mjs
           node scripts/complete-planned-items.mjs
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('packages/dsh-whale-companion/src/client/store.ts')
+          source = path.read_text(encoding='utf-8')
+          old = "export type RawWhaleApi = TypertRemoteNamespaceMap['whaleCompanion']"
+          new = old + " & { setName: (name: string) => Promise<{ ok: true, value: WhaleState } | { ok: false, error: { message: string } }> }"
+          if source.count(old) != 1:
+              raise SystemExit('RawWhaleApi bootstrap anchor missing or duplicated')
+          path.write_text(source.replace(old, new), encoding='utf-8')
+          PY
       - name: Install and refresh lockfile
         run: corepack pnpm install --no-frozen-lockfile
       - name: Generate Host and Remote contracts
