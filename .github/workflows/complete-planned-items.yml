@@ -53,13 +53,21 @@ jobs:
           node scripts/complete-planned-items.mjs
           python - <<'PY'
           from pathlib import Path
-          path = Path('packages/dsh-whale-companion/src/client/store.ts')
-          source = path.read_text(encoding='utf-8')
+          store = Path('packages/dsh-whale-companion/src/client/store.ts')
+          source = store.read_text(encoding='utf-8')
           old = "export type RawWhaleApi = TypertRemoteNamespaceMap['whaleCompanion']"
           new = old + " & { setName: (name: string) => Promise<{ ok: true, value: WhaleState } | { ok: false, error: { message: string } }> }"
           if source.count(old) != 1:
               raise SystemExit('RawWhaleApi bootstrap anchor missing or duplicated')
-          path.write_text(source.replace(old, new), encoding='utf-8')
+          store.write_text(source.replace(old, new), encoding='utf-8')
+
+          e2e = Path('tests/e2e/whale-companion.e2e.ts')
+          source = e2e.read_text(encoding='utf-8')
+          old = 'resonance: { blue: 420, common-minke: 180 },'
+          new = "resonance: { blue: 420, 'common-minke': 180 },"
+          if source.count(old) != 1:
+              raise SystemExit('E2E resonance fixture anchor missing or duplicated')
+          e2e.write_text(source.replace(old, new), encoding='utf-8')
           PY
       - name: Install and refresh lockfile
         run: corepack pnpm install --no-frozen-lockfile
