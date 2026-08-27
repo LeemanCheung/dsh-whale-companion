@@ -27,9 +27,13 @@ jobs:
       - name: Reassemble and apply deterministic completion patch
         shell: bash
         run: |
-          cat scripts/.complete-planned-items/part-*.b64 | base64 -d | gzip -d > /tmp/complete-planned-items.mjs
-          node --check /tmp/complete-planned-items.mjs
-          node /tmp/complete-planned-items.mjs
+          cat scripts/.complete-planned-items/part-*.b64 > /tmp/complete-planned-items.b64
+          base64 -d /tmp/complete-planned-items.b64 > /tmp/complete-planned-items.mjs.gz
+          echo "7a0b0b4e8f1a898257907a70a2364d4a4f1e5042f9f2008a7aed3229d7e18cf6  /tmp/complete-planned-items.mjs.gz" | sha256sum -c -
+          gzip -d -c /tmp/complete-planned-items.mjs.gz > scripts/complete-planned-items.mjs
+          echo "2e9052524d73b3d1ef91ecc420e87bf468b61ab3bfbbcb4e57c001775bf278bc  scripts/complete-planned-items.mjs" | sha256sum -c -
+          node --check scripts/complete-planned-items.mjs
+          node scripts/complete-planned-items.mjs
       - name: Install and refresh lockfile
         run: corepack pnpm install --no-frozen-lockfile
       - name: Generate Host and Remote contracts
@@ -61,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          rm -rf scripts/.complete-planned-items .github/workflows/complete-planned-items.yml
+          rm -rf scripts/.complete-planned-items scripts/complete-planned-items.mjs .github/workflows/complete-planned-items.yml
           git add -A
           if git diff --cached --quiet; then
             echo "No generated changes."
