@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.3.0
+
+- Add a reference-edited, transparent 24-frame common-minke swim card with a static ocean layer and reduced-motion fallback.
+- Add separate head, torso, tail, continuity, loop-seam, alpha, provenance, and exact-embed gates for the generated motion asset.
+- Make CSS-module build IDs checkout-independent, strip source-image C2PA metadata without changing pixels, pin Pillow 12.3.0, and add a no-write source-to-output rebuild gate.
+
 ## 2.2.0
 
 - Complete every audited plan item without removing the 2.1 whale-world features.

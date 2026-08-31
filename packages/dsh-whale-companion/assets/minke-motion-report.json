@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "reference": {
+    "path": "packages/dsh-whale-companion/assets/whale-species-atlas.webp",
+    "sha256": "5b71c91786ececb67214ce4df4f764d89c428275514af80067d5c1caba138e77",
+    "cell": [
+      0,
+      0
+    ],
+    "extraction": "crop (2,2,cellWidth-2,cellHeight-2), then Lanczos resize to 384x320 RGB",
+    "decodedRgbSha256": "5803d06a958e210125e7cf8f09acecf9efcd68139f72a12e0801aa0e7e4580c8"
+  },
+  "source": {
+    "path": "packages/dsh-whale-companion/assets/minke-imagegen-clean.png",
+    "sha256": "ae9f40403fca9ab58ed640b64d63f6ad1ea4a12148dc4faf62a930b5f62642ae",
+    "method": "OpenAI built-in image edit using the original atlas cell as the local reference; background removal and style-preserving cleanup only"
+  },
+  "sprite": {
+    "path": "packages/dsh-whale-companion/assets/minke-swim-sprite.png",
+    "sha256": "8ff88ff4f722c43621620c7718479ad4b1797bc7ccb04b901bdb80f71afd3cdb",
+    "size": [
+      2304,
+      1280
+    ],
+    "mode": "RGBA",
+    "frames": 24,
+    "columns": 6,
+    "frameSize": [
+      384,
+      320
+    ]
+  },
+  "preview": {
+    "path": "packages/dsh-whale-companion/assets/minke-swim-preview.gif",
+    "sha256": "edfc11a48d5406a1a29bafe756963b93d1dfeacf5874da9b31d664cbab3664f7",
+    "durationMs": 70
+  },
+  "contactSheet": {
+    "path": "docs/minke-motion-contact-sheet.png",
+    "sha256": "6d9329d8f088b93f6c454bc75258c7b8ed685196b5035b5ea42ea7f07af56f85"
+  },
+  "motion": {
+    "uniqueFrames": 24,
+    "uniqueMasks": 24,
+    "adjacentPremultipliedMad": [
+      0.969999,
+      0.856553,
+      0.762033,
+      0.649085,
+      0.590442,
+      0.582749,
+      0.64348,
+      0.83502,
+      1.009176,
+      1.112297,
+      1.122808,
+      1.096068,
+      1.026173,
+      0.910982,
+      0.801374,
+      0.701532,
+      0.642189,
+      0.580107,
+      0.639008,
+      0.819658,
+      0.991507,
+      1.076164,
+      1.093929,
+      1.050262
+    ],
+    "medianAdjacentMad": 0.83502,
+    "loopSeamRatio": 1.257769,
+    "maxAdjacentRatio": 1.344648,
+    "adjacentMaskChange": [
+      0.004867,
+      0.00437,
+      0.003947,
+      0.002995,
+      0.002425,
+      0.002091,
+      0.002075,
+      0.002865,
+      0.00402,
+      0.004956,
+      0.005111,
+      0.00533,
+      0.005314,
+      0.004761,
+      0.004118,
+      0.00341,
+      0.002938,
+      0.001961,
+      0.002181,
+      0.002816,
+      0.003996,
+      0.004582,
+      0.005005,
+      0.005111
+    ],
+    "medianMaskChange": 0.003996,
+    "maskLoopSeamRatio": 1.279022,
+    "maxMaskChangeRatio": 1.334012,
+    "headCentroidYRange": 0.308731,
+    "torsoCentroidYRange": 3.424438,
+    "tailCentroidYRange": 22.25148,
+    "foregroundCoverageRange": [
+      0.103695,
+      0.104956
+    ],
+    "mainComponentShareRange": [
+      1.0,
+      1.0
+    ],
+    "nonzeroAlphaCoverageRange": [
+      0.113631,
+      0.114648
+    ],
+    "lowAlphaCoverageRange": [
+      0.009473,
+      0.010181
+    ]
+  },
+  "backgroundContract": "The sprite is transparent RGBA. The card background is a separate static CSS layer and is not warped or repeated in the animation frames."
+}

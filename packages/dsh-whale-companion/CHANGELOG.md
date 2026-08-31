@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.3.0
+
+- Add a reference-edited, transparent 24-frame common-minke swim card with a static ocean layer and reduced-motion fallback.
+- Add deterministic motion provenance, exact-embed, rebuild, and audit gates to the release workflow.
+
 ## 2.2.0
 
 - Complete every audited plan item without removing the 2.1 whale-world features.

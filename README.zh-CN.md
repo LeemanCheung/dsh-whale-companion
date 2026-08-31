@@ -16,12 +16,13 @@
 
 ## 功能
 
-- **2.2.0 完整计划交付**：新增可命名伙伴、四类动态航行任务、自绘 SVG 交互鲸鱼、快速航行卡、XP 即时反馈、六套多层海域配色，以及本地生成的 PNG 航行名片和文本战报。
+- **2.3.0 完整交付**：新增可命名伙伴、四类动态航行任务、自绘 SVG 交互鲸鱼、快速航行卡、XP 即时反馈、六套多层海域配色、本地生成的 PNG 航行名片和文本战报，以及已验证的小须鲸动态卡。
 - Session 日期现在优先使用真实创建时间；历史迟到事件不会回滚连续天数；所有文本导入在 JSON 解析前执行 512 KiB 上限检查，持久化提交前重新通过完整 Schema 校验。
 - CI 新增实际客户端 Bundle 的浏览器挂载烟雾测试，以及桌面、移动端、浅色和减少动画模式的 Playwright 截图回归。
 - `shell.overlay` 鲸鱼支持指针拖动、方向键移动、边缘吸附、视口安全位置持久化，以及共享的每 5 秒本地刷新。新潮汐会显示为有时限的可见气泡，只有里程碑会打扰读屏。
 - 安静、标准、热闹三档陪伴强度只保存在浏览器本地；系统减少动画设置始终优先，偏好存储被拒绝也不会影响进度。
 - 鲸鱼小屋首页新增七日航海日志、当前鲸灵故事、可视海湾预览和与真实出口一致的隐私账本。
+- 当前同行卡为小须鲸提供了基于原图参考编辑的 24 帧连续游动：头部保持清晰，运动沿躯干、胸鳍、尾柄和尾鳍传递，海水背景保持静止；减少动画模式会固定在第一帧。
 - 20 种鲸灵随海洋等级 1–100 解锁。它们把故事与可见潮汐反应映射到安全事件家族，不会改变模型执行结果。
 - 只使用 live-only 的 `session/created`、`user/message` 和 `tool/result` 元数据产生有上限的本地潮汐。重复工具结果仍保留旧版 XP 统计，但不能刷潮汐、纪念物或远征进度。
 - 鲸鱼小屋包含潮汐时间线、本地 SVG 明信片、24 件纪念物、8 个固定房间插槽、3 个小屋方案，以及无惩罚远征。
@@ -60,10 +61,17 @@ dsh plugin --profile web add github:LeemanCheung/dsh-whale-companion
 在仓库根目录运行：
 
 ```powershell
+python -m pip install -r requirements-art.txt
 corepack pnpm typecheck
+corepack pnpm verify:minke:rebuild
+corepack pnpm verify:minke
 corepack pnpm test
 corepack pnpm build
 corepack pnpm pack:check
 ```
+
+美术流水线固定使用 Python 3.12、NumPy 2.3.3 和 Pillow 12.3.0。`corepack pnpm art:minke` 可从仓库内的参考编辑源图确定性重建透明 Sprite、预览 GIF、接触表和运动报告；源图与生成物都不包含运行时 URL 或模型凭据。生产客户端内嵌 Sprite 以保持运行时请求完全本地；`client.js.map` 仅作为仓库验证工件保留，不进入发布包，避免重复携带内嵌图像。
+
+视觉截图基线只由 Ubuntu CI 维护。其他平台仍执行交互、动态、减少动画和窄屏布局断言，但不会生成用于候选发布的截图基线。
 
 MIT，见 [LICENSE](LICENSE)。

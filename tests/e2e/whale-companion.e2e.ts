@@ -5,6 +5,7 @@ import { resolve } from 'node:path'
 const bundle = readFileSync(resolve('packages/dsh-whale-companion/lib/client.js'), 'utf8')
 const react = resolve('node_modules/react/umd/react.production.min.js')
 const reactDom = resolve('node_modules/react-dom/umd/react-dom.production.min.js')
+const usesLinuxVisualBaselines = process.platform === 'linux'
 
 const fixture = {
   version: 5,
@@ -47,7 +48,7 @@ const fixture = {
   community: { enabled: false, aliasId: 'blue-current', peers: [] },
 }
 
-async function mount(page: Page): Promise<void> {
+async function mount(page: Page, initial = fixture): Promise<void> {
   await page.setContent(`
     <style>
       :root {
@@ -148,7 +149,7 @@ async function mount(page: Page): Promise<void> {
     const overlay = slots['whale-companion']
     ReactDOM.createRoot(document.getElementById('settings')).render(React.createElement(settings.Component, settings.meta.inject()))
     ReactDOM.createRoot(document.getElementById('overlay')).render(React.createElement(overlay.Component, overlay.meta.inject()))
-  }, fixture)
+  }, initial)
   await expect(page.getByRole('heading', { name: '鲸鱼小屋' })).toBeVisible()
   await expect(page.getByRole('heading', { name: '伙伴档案与动态航线' })).toBeVisible()
 }
@@ -156,11 +157,11 @@ async function mount(page: Page): Promise<void> {
 test('renders the integrated planned dashboard and quick card', async ({ page }) => {
   await mount(page)
   const planned = page.getByRole('heading', { name: '伙伴档案与动态航线' }).locator('xpath=ancestor::section[1]')
-  await expect(planned).toHaveScreenshot('planned-dashboard-dark.png')
+  if (usesLinuxVisualBaselines) await expect(planned).toHaveScreenshot('planned-dashboard-dark.png')
   const whale = page.getByRole('button', { name: /快速航行卡/ })
   await whale.click()
   await expect(page.getByLabel('鲸鱼伙伴快速航行卡')).toBeVisible()
-  await expect(page.getByLabel('鲸鱼伙伴快速航行卡')).toHaveScreenshot('quick-card-dark.png')
+  if (usesLinuxVisualBaselines) await expect(page.getByLabel('鲸鱼伙伴快速航行卡')).toHaveScreenshot('quick-card-dark.png')
   await page.getByLabel('伙伴名字').fill('星潮')
   await page.getByRole('button', { name: '保存名字' }).click()
   await expect(page.getByText('已将鲸鱼伙伴命名为“星潮”。')).toBeVisible()
@@ -173,12 +174,62 @@ test('keeps the planned dashboard polished on a narrow viewport', async ({ page 
   await page.setViewportSize({ width: 390, height: 844 })
   await mount(page)
   const planned = page.getByRole('heading', { name: '伙伴档案与动态航线' }).locator('xpath=ancestor::section[1]')
-  await expect(planned).toHaveScreenshot('planned-dashboard-mobile.png')
+  if (usesLinuxVisualBaselines) await expect(planned).toHaveScreenshot('planned-dashboard-mobile.png')
 })
 
 test('honours light theme and reduced motion', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' })
   await mount(page)
   const planned = page.getByRole('heading', { name: '伙伴档案与动态航线' }).locator('xpath=ancestor::section[1]')
-  await expect(planned).toHaveScreenshot('planned-dashboard-light-reduced.png')
+  if (usesLinuxVisualBaselines) await expect(planned).toHaveScreenshot('planned-dashboard-light-reduced.png')
+})
+
+test('renders continuous minke motion over a static ocean layer', async ({ page }) => {
+  await mount(page, { ...fixture, species: 'common-minke' })
+  const card = page.getByLabel('当前同行鲸灵：小须鲸')
+  await expect(card).toBeVisible()
+  const stage = card.locator(':scope > span').first()
+  const sprite = stage.locator(':scope > span')
+  const stageBefore = await stage.evaluate(element => getComputedStyle(element).backgroundImage)
+  const start = await sprite.evaluate(element => {
+    const style = getComputedStyle(element)
+    return { animationName: style.animationName, backgroundImage: style.backgroundImage, backgroundPosition: style.backgroundPosition }
+  })
+  expect(start.animationName).not.toBe('none')
+  expect(start.backgroundImage).toContain('data:image/png;base64,')
+  if (process.env.DSH_CAPTURE_MINKE === '1') await card.screenshot({ path: resolve('docs/minke-card-dark.png') })
+  const firstPixels = await stage.screenshot()
+  await page.waitForTimeout(420)
+  const endPosition = await sprite.evaluate(element => getComputedStyle(element).backgroundPosition)
+  const secondPixels = await stage.screenshot()
+  expect(endPosition).not.toBe(start.backgroundPosition)
+  expect(secondPixels.equals(firstPixels)).toBe(false)
+  expect(await stage.evaluate(element => getComputedStyle(element).backgroundImage)).toBe(stageBefore)
+})
+
+test('freezes the minke card when reduced motion is requested', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' })
+  await mount(page, { ...fixture, species: 'common-minke' })
+  const card = page.getByLabel('当前同行鲸灵：小须鲸')
+  const sprite = card.locator(':scope > span').first().locator(':scope > span')
+  const before = await sprite.evaluate(element => {
+    const style = getComputedStyle(element)
+    return { animationName: style.animationName, backgroundPosition: style.backgroundPosition }
+  })
+  await page.waitForTimeout(420)
+  const after = await sprite.evaluate(element => getComputedStyle(element).backgroundPosition)
+  expect(before.animationName).toBe('none')
+  expect(after).toBe(before.backgroundPosition)
+  if (process.env.DSH_CAPTURE_MINKE === '1') await card.screenshot({ path: resolve('docs/minke-card-light-reduced.png') })
+})
+
+test('keeps the minke motion card inside a narrow viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await mount(page, { ...fixture, species: 'common-minke' })
+  const card = page.getByLabel('当前同行鲸灵：小须鲸')
+  const box = await card.boundingBox()
+  expect(box).not.toBeNull()
+  expect(box!.x).toBeGreaterThanOrEqual(0)
+  expect(box!.x + box!.width).toBeLessThanOrEqual(390)
+  if (process.env.DSH_CAPTURE_MINKE === '1') await card.screenshot({ path: resolve('docs/minke-card-mobile.png') })
 })

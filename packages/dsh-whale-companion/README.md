@@ -6,7 +6,7 @@ A local-first DSH whale world with safe tide reactions, 20 whale spirits, 24 col
 
 ## Features
 
-- **Complete 2.2.0 delivery:** named companion, four adaptive voyage goals, an animated self-contained SVG whale, a compact quick card, XP feedback, six multi-layer palettes, and local PNG/text sharing.
+- **Complete 2.3.0 delivery:** named companion, four adaptive voyage goals, an animated self-contained SVG whale, a compact quick card, XP feedback, six multi-layer palettes, local PNG/text sharing, and the verified common-minke motion card.
 - Session dates now prefer the real creation timestamp; late historical events cannot roll streaks backward; every text import is capped at 512 KiB before JSON parsing; durable writes are fully schema-validated.
 - CI now mounts the actual built client bundle in a browser-compatible DSH slot/Remote harness and runs desktop, mobile, light-theme, and reduced-motion Playwright visual regression.
 - The `shell.overlay` whale is keyboard-accessible, draggable, edge-snapped, viewport-safe, and refreshed through one shared five-second store. New moments become visible, bounded reaction bubbles; only milestones enter the live region.
@@ -28,7 +28,7 @@ Build a tarball and add it to the DSH Web profile:
 
 ```powershell
 npm pack . --pack-destination ../../dist
-dsh plugin --profile web add ../../dist/dsh-whale-companion-2.2.0.tgz
+dsh plugin --profile web add ../../dist/dsh-whale-companion-2.3.0.tgz
 ```
 
 Restart the existing DSH Web process and refresh its page. See the suite [installation guide](../../INSTALL.md) for prerequisites and validation steps.

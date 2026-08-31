@@ -16,6 +16,7 @@ import { WhaleArt, skinPaletteStyle } from './WhaleArt.tsx'
 import { CompanionPlanSection, SkinPaletteSection, WhaleOverlayExtras } from './planned-sections.tsx'
 import { usePresentation } from './presentation-store.ts'
 import { speciesArtStyle } from './asset-styles.ts'
+import { SpeciesMotionCard } from './SpeciesMotionCard.tsx'
 import { apiFrom, storeFor, useWhale, type RawWhaleApi, type WhaleApi } from './store.ts'
 import { coveItems, currentStoryBeat, reactionDuration, reactionPresentation, sevenDayJournal, shouldPresentReaction } from './view-model.ts'
 import styles from './Whale.module.css'
@@ -183,7 +184,7 @@ function WhaleSettings({ api, headingId }: { api: WhaleApi, headingId?: string }
     React.createElement(StoryBeatSection, { story, speciesName: species.nameZh }),
     React.createElement(PresentationSection, { presentation, onNotice: setNotice }),
     React.createElement(TideSectionV21, { api, state, busy, onNotice: setNotice }),
-    React.createElement('section', { className: styles.section, 'aria-labelledby': sectionIds.species }, React.createElement('div', { className: styles.sectionHeading }, React.createElement('h3', { id: sectionIds.species }, '鲸灵图鉴'), React.createElement('span', null, '与解锁的鲸灵同行')), React.createElement('div', { className: styles.speciesGrid }, ...WHALE_SPECIES.map(candidate => {
+    React.createElement('section', { className: styles.section, 'aria-labelledby': sectionIds.species }, React.createElement('div', { className: styles.sectionHeading }, React.createElement('h3', { id: sectionIds.species }, '鲸灵图鉴'), React.createElement('span', null, '与解锁的鲸灵同行')), React.createElement(SpeciesMotionCard, { species }), React.createElement('div', { className: styles.speciesGrid }, ...WHALE_SPECIES.map(candidate => {
       const unlocked = isSpeciesUnlocked(candidate, state.level); const selected = candidate.id === state.species; const candidateStars = resonanceStars(state.resonance[candidate.id] ?? 0)
       return React.createElement('article', { key: candidate.id, className: unlocked ? styles.speciesCard : `${styles.speciesCard} ${styles.locked}` }, React.createElement('span', { className: styles.speciesArt, style: speciesArtStyle(candidate), 'aria-hidden': true }), React.createElement('div', null, React.createElement('strong', null, candidate.nameZh), React.createElement('span', null, candidate.nameEn), React.createElement('p', null, unlocked ? candidate.ability : `海洋等级 ${candidate.unlockLevel} 解锁`), React.createElement('small', null, unlocked ? `共鸣 ${candidateStars}/5` : '尚未观测')), React.createElement('button', { type: 'button', disabled: busy || !unlocked || selected, 'aria-pressed': selected, onClick: () => void action(() => api.setSpeciesV5(candidate.id), `已与${candidate.nameZh}同行。`) }, selected ? '同行中' : unlocked ? '与它同行' : `Lv ${candidate.unlockLevel}`))
     }))),

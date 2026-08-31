@@ -1,6 +1,6 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
-import { basename, dirname, resolve } from 'node:path'
+import { basename, dirname, relative, resolve } from 'node:path'
 import { transform } from 'lightningcss'
 import { defineConfig, type UserConfig } from 'tsdown'
 import { WorkspaceTypertGenerator } from '@deepseek-ai/dsh-typert-generator'
@@ -18,6 +18,10 @@ const platformModules = [
 const cssPrefix = '\0dsh-community-css:'
 const cssSuffix = '.mjs'
 
+function normalizeTypertJsDocs(value: string): string {
+  return value.replace(/"jsDoc":\s*"(?:\\.|[^"\\])*"/g, match => match.replaceAll('\\r\\n', '\\n'))
+}
+
 function packageTypertPlugin() {
   const official = typertPlugin({ mode: 'package', faces: ['host'] })
   return {
@@ -31,11 +35,11 @@ function packageTypertPlugin() {
       mkdirSync(output, { recursive: true })
       let emittedRemote = false
       for (const artifact of artifacts) {
-        writeFileSync(resolve(output, `typert.${artifact.face}.js`), artifact.js)
+        writeFileSync(resolve(output, `typert.${artifact.face}.js`), normalizeTypertJsDocs(artifact.js))
         writeFileSync(resolve(output, `typert.${artifact.face}.d.ts`), artifact.dts)
         if (artifact.remote === undefined) continue
         emittedRemote = true
-        writeFileSync(resolve(output, 'typert.remote-client.js'), artifact.remote.js)
+        writeFileSync(resolve(output, 'typert.remote-client.js'), normalizeTypertJsDocs(artifact.remote.js))
         writeFileSync(resolve(output, 'typert.remote-client.d.ts'), artifact.remote.dts)
         writeFileSync(resolve(output, 'typert.remote-client.d.ts.map'), artifact.remote.dtsMap)
       }
@@ -66,6 +70,7 @@ export function hostBundle(): ReturnType<typeof defineConfig> {
 
 /** Build a DSH browser closure-factory with inlined CSS Modules and Remote descriptors. */
 export function clientBundle(packageName: string): ReturnType<typeof defineConfig> {
+  const cssFiles = new Map<string, { filename: string, stableName: string }>()
   const config: UserConfig = {
     entry: { client: 'src/client/index.tsx' },
     outDir: 'lib',
@@ -87,14 +92,20 @@ export function clientBundle(packageName: string): ReturnType<typeof defineConfi
       name: 'dsh-community-css-modules-inline',
       resolveId(source: string, importer: string | undefined) {
         if (!source.endsWith('.module.css')) return null
-        return cssPrefix + resolve(importer === undefined ? '.' : dirname(importer), source) + cssSuffix
+        const filename = resolve(importer === undefined ? '.' : dirname(importer), source)
+        const stableName = relative(process.cwd(), filename).replaceAll('\\', '/')
+        const id = cssPrefix + stableName + cssSuffix
+        cssFiles.set(id, { filename, stableName })
+        return id
       },
       async load(id: string) {
         if (!id.startsWith(cssPrefix)) return null
-        const filename = id.slice(cssPrefix.length, -cssSuffix.length)
+        const resolved = cssFiles.get(id)
+        if (resolved === undefined) throw new Error(`Unknown CSS module: ${id}`)
+        const { filename, stableName } = resolved
         this.addWatchFile(filename)
         const result = transform({
-          filename,
+          filename: stableName,
           code: await readFile(filename),
           cssModules: { pattern: '[hash]_[local]' },
           minify: true,

@@ -1,6 +1,6 @@
 {
   "name": "dsh-whale-companion",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "A local-first DSH whale world with a named SVG companion, dynamic goals, collectibles, expeditions, and privacy-safe sharing",
   "type": "module",
   "main": "lib/index.js",
@@ -30,7 +30,7 @@
   "files": [
     "lib/*.js",
     "lib/*.d.ts",
-    "lib/*.js.map",
+    "lib/index.js.map",
     "lib/*.d.ts.map",
     "lib/typert.host.js",
     "lib/typert.host.d.ts",
@@ -59,8 +59,11 @@
     }
   },
   "scripts": {
-    "build:host": "tsdown --config tsdown.host.config.ts",
-    "build:client": "tsdown --config tsdown.client.config.ts",
+    "build:host": "tsdown --config tsdown.host.config.ts && node ../../scripts/normalize-build-text.mjs",
+    "build:client": "node ../../scripts/embed-minke-animation.mjs && tsdown --config tsdown.client.config.ts && node ../../scripts/normalize-build-text.mjs",
+    "art:minke": "python -B ../../scripts/build-minke-animation.py",
+    "verify:minke:rebuild": "python -B ../../scripts/build-minke-animation.py --check",
+    "verify:minke": "python -B ../../scripts/audit-minke-animation.py",
     "clean": "node -e \"require('node:fs').rmSync('lib',{recursive:true,force:true})\"",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "pack:check": "npm pack --dry-run"

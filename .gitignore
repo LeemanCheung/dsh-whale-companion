@@ -5,3 +5,8 @@ coverage/
 .DS_Store
 test-results/
 playwright-report/
+__pycache__/
+*.pyc
+.venv-art/
+docs/minke-card-*.png
+tests/e2e/whale-companion.e2e.ts-snapshots/*-win32.png
