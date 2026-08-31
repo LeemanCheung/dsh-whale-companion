@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reference": {
-    "path": "packages/dsh-whale-companion/assets/whale-species-atlas.webp",
+    "path": "packages/dsh-whale-companion/assets/whale-species-atlas-minke-reference.webp",
     "sha256": "5b71c91786ececb67214ce4df4f764d89c428275514af80067d5c1caba138e77",
     "cell": [
       0,

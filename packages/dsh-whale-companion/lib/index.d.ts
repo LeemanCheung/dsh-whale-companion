@@ -3498,7 +3498,7 @@ declare function resetWhale(): WhaleState;
 declare function exportWhale(state: WhaleState): string;
 /** Imports and migrates every supported whale backup version. */
 declare function importWhale(raw: unknown): WhaleState;
-/** Projects the current local state into a non-sensitive SVG card view model. */
+/** Projects the current local state into a non-sensitive raster postcard view model. */
 declare function postcardView(state: WhaleState): WhalePostcard;
 //#endregion
 //#region src/types.d.ts

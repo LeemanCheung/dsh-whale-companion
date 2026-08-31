@@ -6,14 +6,14 @@ A local-first DSH whale world with safe tide reactions, 20 whale spirits, 24 col
 
 ## Features
 
-- **Complete 2.3.0 delivery:** named companion, four adaptive voyage goals, an animated self-contained SVG whale, a compact quick card, XP feedback, six multi-layer palettes, local PNG/text sharing, and the verified common-minke motion card.
+- **Complete 2.4.0 delivery:** named companion, adaptive goals, ImageGen raster portraits, a raster-sprite common-minke animation, PNG/text sharing, and no runtime vector whale art.
 - Session dates now prefer the real creation timestamp; late historical events cannot roll streaks backward; every text import is capped at 512 KiB before JSON parsing; durable writes are fully schema-validated.
 - CI now mounts the actual built client bundle in a browser-compatible DSH slot/Remote harness and runs desktop, mobile, light-theme, and reduced-motion Playwright visual regression.
 - The `shell.overlay` whale is keyboard-accessible, draggable, edge-snapped, viewport-safe, and refreshed through one shared five-second store. New moments become visible, bounded reaction bubbles; only milestones enter the live region.
 - Browser-local quiet, standard, and lively preferences control presentation without entering Host state, backups, or community cards. Whale Home adds a seven-day journal, current story beat, cove preview, and Privacy Ledger.
 - A 20-species manifest maps safe live event families to tide effects. It never reads event content or changes model behavior.
 - Tides are bounded local moments built from session starts, user turns, and tool results. Tool-result repetition cannot farm collectibles or expeditions.
-- Whale Home includes local SVG postcards, eight fixed room slots, three room presets, a 24-item catalog, and a non-punitive expedition.
+- Whale Home includes local PNG postcards, eight fixed room slots, three room presets, a 24-item catalog, and a non-punitive expedition.
 - Visitor bottles are strict, read-only local room previews. Whale-circle cards are explicit local-file exchanges with no networking or free text.
 
 ## Privacy
@@ -28,7 +28,7 @@ Build a tarball and add it to the DSH Web profile:
 
 ```powershell
 npm pack . --pack-destination ../../dist
-dsh plugin --profile web add ../../dist/dsh-whale-companion-2.3.0.tgz
+dsh plugin --profile web add ../../dist/dsh-whale-companion-2.4.0.tgz
 ```
 
 Restart the existing DSH Web process and refresh its page. See the suite [installation guide](../../INSTALL.md) for prerequisites and validation steps.

@@ -1,36 +1,71 @@
 import type { WhalePostcard } from '../reducer.ts'
-import { WHALE_SPECIES_BY_ID } from '../species.ts'
+import { WHALE_SPECIES, WHALE_SPECIES_BY_ID } from '../species.ts'
 import { SKINS } from './catalog.ts'
-import { momentDescription } from './view-model.ts'
+import { WHALE_SPECIES_ATLAS } from './species-atlas.ts'
 
-export function createPostcardSvg(view: WhalePostcard): string {
+export function normalizePostcardText(value: string, maximum = 96): string {
+  return value.replace(/[\u0000-\u001F\u007F]/gu, ' ').replace(/\s+/gu, ' ').trim().slice(0, maximum)
+}
+
+function loadRaster(url: string): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const image = new Image()
+    image.onload = () => resolve(image)
+    image.onerror = () => reject(new Error('鲸鱼栅格美术加载失败'))
+    image.src = url
+  })
+}
+
+export async function createPostcardPng(view: WhalePostcard): Promise<Blob> {
+  const canvas = document.createElement('canvas')
+  canvas.width = 1200
+  canvas.height = 630
+  const context = canvas.getContext('2d')
+  if (context === null) throw new Error('浏览器不支持 PNG 明信片绘制')
   const species = WHALE_SPECIES_BY_ID[view.species]
   const skin = SKINS[view.skin]
-  const moments = view.moments.map(moment => escapeXml(momentDescription(moment))).join(' · ').slice(0, 90)
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="${skin.color}"/><path d="M0 470 C160 410 300 540 470 470 S800 400 1200 490 V630 H0Z" fill="#081a31" opacity=".86"/><circle cx="950" cy="150" r="84" fill="#ffffff" opacity=".16"/><text x="80" y="120" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" letter-spacing="6">WHALE TIDES · LOCAL ONLY</text><text x="80" y="250" fill="#ffffff" font-family="system-ui, sans-serif" font-size="82" font-weight="700">${escapeXml(species.nameZh)}</text><text x="80" y="310" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28">海洋等级 ${view.level} · ${escapeXml(view.day)}</text><text x="80" y="435" fill="#ffffff" font-family="system-ui, sans-serif" font-size="34">${escapeXml(view.message)}</text><text x="80" y="535" fill="#ffffff" font-family="system-ui, sans-serif" font-size="22" opacity=".84">${moments}</text><g transform="translate(930 250)" fill="#ffffff" opacity=".92"><path d="M20 92 C48 52 118 42 172 60 C198 68 216 82 230 94 C214 94 200 99 188 108 C173 121 153 131 126 133 C88 136 49 123 20 92Z"/><path d="M30 90 C9 72 0 52 8 29 C22 46 37 56 54 62 C47 72 39 82 30 90Z"/><path d="M132 72 C141 51 153 37 171 28 C172 48 166 65 154 79Z"/></g></svg>`
+  const gradient = context.createLinearGradient(0, 0, 1200, 630)
+  gradient.addColorStop(0, skin.deep)
+  gradient.addColorStop(1, '#06182d')
+  context.fillStyle = gradient
+  context.fillRect(0, 0, 1200, 630)
+  context.fillStyle = 'rgba(255,255,255,.08)'
+  context.beginPath()
+  context.arc(986, 148, 92, 0, Math.PI * 2)
+  context.fill()
+
+  const atlas = await loadRaster(WHALE_SPECIES_ATLAS)
+  const index = WHALE_SPECIES.findIndex(candidate => candidate.id === species.id)
+  const sourceWidth = atlas.naturalWidth / 5
+  const sourceHeight = atlas.naturalHeight / 4
+  context.drawImage(atlas, (index % 5) * sourceWidth, Math.floor(index / 5) * sourceHeight, sourceWidth, sourceHeight, 814, 220, 330, 275)
+
+  context.fillStyle = '#f7fbff'
+  context.font = '600 25px system-ui, sans-serif'
+  context.fillText('WHALE TIDES · LOCAL ONLY', 72, 104)
+  context.font = '700 76px system-ui, sans-serif'
+  context.fillText(normalizePostcardText(species.nameZh, 18), 72, 236)
+  context.font = '500 27px system-ui, sans-serif'
+  context.fillStyle = 'rgba(247,251,255,.82)'
+  context.fillText(`海洋等级 ${view.level} · ${normalizePostcardText(view.day, 16)}`, 72, 291)
+  context.font = '600 31px system-ui, sans-serif'
+  context.fillStyle = '#f7fbff'
+  context.fillText(normalizePostcardText(view.message, 38), 72, 415)
+  context.font = '500 21px system-ui, sans-serif'
+  context.fillStyle = 'rgba(247,251,255,.72)'
+  const moments = view.moments.slice(-3).map(moment => normalizePostcardText(moment.category, 24)).join(' · ') || '海面平静'
+  context.fillText(moments, 72, 516)
+
+  return await new Promise<Blob>((resolve, reject) => canvas.toBlob(blob => blob === null ? reject(new Error('PNG 明信片编码失败')) : resolve(blob), 'image/png'))
 }
 
-export function downloadSvg(svg: string, filename: string): void {
-  if (unsafeSvgReason(svg) !== undefined) throw new Error('SVG 安全检查失败')
+export function downloadPng(blob: Blob, filename: string): void {
+  if (blob.type !== 'image/png') throw new Error('明信片必须是 PNG')
   const safeName = filename.replace(/[^a-z0-9-]+/giu, '-').replace(/(^-|-$)/g, '').slice(0, 80) || 'whale-tide'
-  const url = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }))
+  const url = URL.createObjectURL(blob)
   const anchor = document.createElement('a')
   anchor.href = url
-  anchor.download = `${safeName}.svg`
+  anchor.download = `${safeName}.png`
   anchor.click()
   window.setTimeout(() => URL.revokeObjectURL(url), 0)
-}
-
-export function unsafeSvgReason(svg: string): string | undefined {
-  if (!svg.startsWith('<svg xmlns="http://www.w3.org/2000/svg"')) return 'root'
-  if (/<(?:script|foreignObject|animate|set|use)\b/iu.test(svg)) return 'element'
-  if (/\bon[a-z]+\s*=/iu.test(svg)) return 'event-attribute'
-  if (/\b(?:href|src)\s*=/iu.test(svg)) return 'resource-reference'
-  if (/url\s*\(/iu.test(svg)) return 'css-url'
-  if (/\0|[\u0001-\u0008\u000B\u000C\u000E-\u001F]/u.test(svg)) return 'control-character'
-  return undefined
-}
-
-export function escapeXml(value: string): string {
-  return value.replace(/[<>&'\"]/g, character => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[character]!)
 }

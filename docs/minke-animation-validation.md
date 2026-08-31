@@ -5,7 +5,7 @@ Status: implementation, offline validation, browser-harness validation, and isol
 ## Provenance
 
 - Canonical repository base: `fdfb6e6707901ed6a1980fd56b630af64f49d287` (`2.2.0`).
-- Original atlas: `packages/dsh-whale-companion/assets/whale-species-atlas.webp`, SHA-256 `5b71c91786ececb67214ce4df4f764d89c428275514af80067d5c1caba138e77`.
+- Original atlas reference: `packages/dsh-whale-companion/assets/whale-species-atlas-minke-reference.webp`, SHA-256 `5b71c91786ececb67214ce4df4f764d89c428275514af80067d5c1caba138e77`.
 - The local image-edit reference was the first atlas cell, cropped by the legacy 384×320 pipeline. Its decoded RGB pixels were rechecked byte-for-byte against the repository atlas on 2026-08-30.
 - Selected transparent source: `packages/dsh-whale-companion/assets/minke-imagegen-clean.png`, SHA-256 `ae9f40403fca9ab58ed640b64d63f6ad1ea4a12148dc4faf62a930b5f62642ae`.
 - The built-in OpenAI image edit received the local atlas cell as its reference. The edit was restricted to background/ripple removal and style-preserving cleanup. It used no API key, model credential, runtime URL, or external package state.

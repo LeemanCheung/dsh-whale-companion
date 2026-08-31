@@ -33,7 +33,7 @@ describe('common minke motion asset', () => {
       backgroundContract: string
     }
     expect(report.sprite.sha256).toBe(sha256(png))
-    expect(report.reference.sha256).toBe(sha256(bytes('assets/whale-species-atlas.webp')))
+    expect(report.reference.sha256).toBe(sha256(bytes('assets/whale-species-atlas-minke-reference.webp')))
     expect(report.reference.decodedRgbSha256).toMatch(/^[a-f0-9]{64}$/)
     expect(report.source.sha256).toBe(sha256(bytes('assets/minke-imagegen-clean.png')))
     expect(report.preview.sha256).toBe(sha256(bytes('assets/minke-swim-preview.gif')))

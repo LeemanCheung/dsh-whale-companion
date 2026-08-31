@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 PACKAGE = ROOT / "packages" / "dsh-whale-companion"
-ATLAS = PACKAGE / "assets" / "whale-species-atlas.webp"
+ATLAS = PACKAGE / "assets" / "whale-species-atlas-minke-reference.webp"
 SOURCE = PACKAGE / "assets" / "minke-imagegen-clean.png"
 SPRITE = PACKAGE / "assets" / "minke-swim-sprite.png"
 PREVIEW = PACKAGE / "assets" / "minke-swim-preview.gif"

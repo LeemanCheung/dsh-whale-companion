@@ -1,0 +1,67 @@
+name: Release Whale Companion 2.4.0
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing immutable release tag (must match package.json)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: github.repository == 'LeemanCheung/dsh-whale-companion'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ inputs.tag }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: corepack enable
+      - run: corepack pnpm install --frozen-lockfile
+      - run: python -m pip install --disable-pip-version-check -r requirements-art.txt
+      - run: corepack pnpm verify:release-workflow
+      - run: corepack pnpm verify:planned
+      - run: corepack pnpm verify:minke:rebuild
+      - run: corepack pnpm verify:minke
+      - run: corepack pnpm verify:species:rebuild
+      - run: corepack pnpm typecheck
+      - run: corepack pnpm test
+      - run: corepack pnpm build
+      - run: git diff --exit-code -- packages/dsh-whale-companion/assets/whale-species-atlas.webp packages/dsh-whale-companion/assets/whale-species-atlas-report.json packages/dsh-whale-companion/src/client/species-atlas.ts packages/dsh-whale-companion/src/client/minke-swim-sprite.ts packages/dsh-whale-companion/lib
+      - run: corepack pnpm pack:check
+      - run: corepack pnpm exec playwright install --with-deps chromium
+      - run: corepack pnpm test:e2e
+      - name: Verify immutable package identity
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+          version="$(node -p "require('./package.json').version")"
+          test "$TAG" = "v$version"
+          head_commit="$(git rev-parse HEAD)"
+          local_tag_commit="$(git rev-list -n 1 "$TAG")"
+          remote_tag_commit="$(git ls-remote --tags origin "refs/tags/$TAG^{}" | awk 'NR == 1 { print $1 }')"
+          if [ -z "$remote_tag_commit" ]; then remote_tag_commit="$(git ls-remote --tags origin "refs/tags/$TAG" | awk 'NR == 1 { print $1 }')"; fi
+          test "$local_tag_commit" = "$head_commit"
+          test "$remote_tag_commit" = "$head_commit"
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "GitHub Release $TAG already exists; refusing to overwrite it."
+            exit 1
+          fi
+          gh release create "$TAG" --verify-tag --target "$(git rev-parse HEAD)" --title "Whale Companion 2.4.0 — ImageGen Raster Art" --generate-notes

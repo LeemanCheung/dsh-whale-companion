@@ -25,10 +25,11 @@ jobs:
       - run: corepack pnpm verify:planned
       - run: corepack pnpm verify:minke:rebuild
       - run: corepack pnpm verify:minke
+      - run: corepack pnpm verify:species:rebuild
       - run: corepack pnpm typecheck
       - run: corepack pnpm test
       - run: corepack pnpm build
-      - run: git diff --exit-code -- packages/dsh-whale-companion/lib packages/dsh-whale-companion/src/client/minke-swim-sprite.ts
+      - run: git diff --exit-code -- packages/dsh-whale-companion/lib packages/dsh-whale-companion/assets/whale-species-atlas.webp packages/dsh-whale-companion/assets/whale-species-atlas-report.json packages/dsh-whale-companion/src/client/species-atlas.ts packages/dsh-whale-companion/src/client/minke-swim-sprite.ts
       - run: corepack pnpm pack:check
       - run: corepack pnpm exec playwright install --with-deps chromium
       - run: corepack pnpm test:e2e

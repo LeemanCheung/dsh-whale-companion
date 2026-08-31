@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.4.0
+
+- Replace the inline vector companion with ImageGen raster portraits for all 20 species.
+- Keep common-minke motion on the verified ImageGen-derived 24-frame PNG sprite; reduced motion freezes the first frame.
+- Replace vector postcard export with a local PNG canvas export using the selected species raster cell.
+- Add locked ImageGen source/output provenance and a build gate that rejects stale species atlases.
+
 ## 2.3.0
 
 - Add a reference-edited, transparent 24-frame common-minke swim card with a static ocean layer and reduced-motion fallback.
@@ -9,7 +16,7 @@
 ## 2.2.0
 
 - Complete every audited plan item without removing the 2.1 whale-world features.
-- Add a persisted, validated companion name; four adaptive voyage goals; a compact desktop quick card; XP feedback; and a self-contained animated SVG companion.
+- Add a persisted, validated companion name; four adaptive voyage goals; a compact desktop quick card; XP feedback; and a self-contained illustrated companion.
 - Upgrade all six skins to multi-layer body, belly, accent, depth, and glow palettes.
 - Add local 1200×675 PNG voyage cards and privacy-safe text reports.
 - Make session dates use the real creation timestamp, keep streak dates monotonic, bound every text import before parsing, and validate every durable commit.
@@ -19,7 +26,7 @@
 
 - Add visible, priority-aware floating-whale reactions with quiet, standard, and lively browser-local presentation modes.
 - Add a seven-day ocean journal, current whale story beat, lightweight cove preview, and Privacy Ledger.
-- Share one race-safe polling store across overlay and settings roots, and move catalogs, projections, preferences, and SVG safety into tested modules.
+- Share one race-safe polling store across overlay and settings roots, and move catalogs, projections, preferences, and export safety into tested modules.
 
 ## 2.0.0
 

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "file": "whale-species-atlas-imagegen-source.png",
+    "sha256": "da8aa7998559e9130d356914a44e89484d6b20fd1df6af6114d3a6f62d8e24b4",
+    "mode": "RGB",
+    "size": [
+      1537,
+      1023
+    ],
+    "origin": "built-in image_gen",
+    "prompt": "docs/species-atlas-imagegen-v2.md#final-built-in-imagegen-prompt"
+  },
+  "output": {
+    "file": "whale-species-atlas.webp",
+    "sha256": "1c8ac2af0612652e71a290f6bcb9dcb207a12cceb9eff41b2b84d6dbed6cb062",
+    "format": "WEBP",
+    "size": [
+      960,
+      640
+    ],
+    "columns": 5,
+    "rows": 4,
+    "cell": [
+      192,
+      160
+    ],
+    "speciesOrder": [
+      "common-minke",
+      "brydes",
+      "humpback",
+      "gray",
+      "beluga",
+      "orca",
+      "sperm",
+      "pilot",
+      "narwhal",
+      "bowhead",
+      "fin",
+      "sei",
+      "blue",
+      "southern-right",
+      "omura",
+      "cuviers-beaked",
+      "north-atlantic-right",
+      "north-pacific-right",
+      "rices",
+      "spade-toothed"
+    ]
+  },
+  "constraints": {
+    "vectorRuntimeArt": false,
+    "visibleGridLines": false,
+    "textOrLogos": false
+  }
+}

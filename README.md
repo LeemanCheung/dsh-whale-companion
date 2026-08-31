@@ -16,7 +16,7 @@ A local-first DSH whale world. Privacy-safe session metadata becomes a draggable
 
 ## Features
 
-- **Complete 2.3.0 delivery:** named companion, four adaptive voyage goals, an animated self-contained SVG whale, a compact quick card, XP feedback, six multi-layer palettes, local PNG/text sharing, and the verified common-minke motion card.
+- **Complete 2.4.0 delivery:** named companion, four adaptive voyage goals, ImageGen raster whale portraits, a raster-sprite common-minke animation, a compact quick card, XP feedback, six palettes, local PNG/text sharing, and no runtime vector whale art.
 - Session dates now prefer the real creation timestamp; late historical events cannot roll streaks backward; every text import is capped at 512 KiB before JSON parsing; durable writes are fully schema-validated.
 - CI now mounts the actual built client bundle in a browser-compatible DSH slot/Remote harness and runs desktop, mobile, light-theme, and reduced-motion Playwright visual regression.
 - A movable `shell.overlay` whale supports pointer drag, keyboard movement, edge snapping, persisted viewport-safe placement, and one shared five-second local refresh. New tide moments appear in a bounded visible bubble; only milestones are announced to screen readers.
@@ -25,7 +25,7 @@ A local-first DSH whale world. Privacy-safe session metadata becomes a draggable
 - The selected-species card gives the common minke a reference-edited 24-frame swim: the head stays readable, motion travels through the torso, pectoral fin, tail stock, and fluke, and the ocean layer remains static. Reduced-motion mode freezes the first frame.
 - 20 whale spirits unlock over Ocean Levels 1–100. Each maps its story and visible tide response to a safe event family, without changing model behavior.
 - Live-only `session/created`, `user/message`, and `tool/result` metadata drives bounded local tide moments. Repeated tool results still count toward legacy XP, but cannot farm tide moments, collectibles, or expedition progress.
-- The Whale Home provides a tide timeline, local SVG postcard export, a 24-item collectible catalog, eight fixed room slots, three room presets, and a non-punitive expedition.
+- The Whale Home provides a tide timeline, local PNG postcard export, a 24-item collectible catalog, eight fixed room slots, three room presets, and a non-punitive expedition.
 - Visitor bottles are isolated read-only room previews. They do not merge or overwrite the receiver's progress.
 - Whale-circle cards are opt-in and local-file based. They exchange only a preset alias, species, skin, coarse activity buckets, and resonance stars. There is no account, networking, ranking, free text, prompt excerpt, task name, or tool data.
 - Six sea skins, all 12 achievements, responsive layouts, keyboard controls, focus handling, and reduced-motion rendering are included.
@@ -36,7 +36,7 @@ Turns grant 10 XP, tool results grant 5 XP, and session starts grant 20 XP. Only
 
 The Host reads only session id, event sequence, event type, and timestamp. It never reads, stores, exports, or renders prompt text, assistant output, code, paths, tool arguments, or tool results.
 
-New in-memory receipt digests use an HMAC key that never leaves the Host process. The durable receipt window is capped at 4,096 records, so it prevents recent duplicate live delivery, not permanent replay across Host restarts. Backups intentionally contain no receipt digests, session ids, or event data. SVG postcards and community cards are generated locally and contain only the documented safe fields.
+New in-memory receipt digests use an HMAC key that never leaves the Host process. The durable receipt window is capped at 4,096 records, so it prevents recent duplicate live delivery, not permanent replay across Host restarts. Backups intentionally contain no receipt digests, session ids, or event data. PNG postcards and community cards are generated locally and contain only the documented safe fields.
 
 ## Install
 
@@ -65,12 +65,13 @@ python -m pip install -r requirements-art.txt
 corepack pnpm typecheck
 corepack pnpm verify:minke:rebuild
 corepack pnpm verify:minke
+corepack pnpm verify:species:rebuild
 corepack pnpm test
 corepack pnpm build
 corepack pnpm pack:check
 ```
 
-The art pipeline is pinned to Python 3.12, NumPy 2.3.3, and Pillow 12.3.0. `corepack pnpm art:minke` deterministically rebuilds the transparent sprite, preview GIF, contact sheet, and motion report from the checked-in reference-edited source. The source and generated assets contain no runtime URL or model credential. The production client embeds the sprite to keep runtime requests local; `client.js.map` remains a repository validation artifact and is excluded from the published package to avoid duplicating the embedded image payload.
+The art pipeline is pinned to Python 3.12, NumPy 2.3.3, and Pillow 12.3.0. `corepack pnpm art:minke` rebuilds the transparent sprite; `corepack pnpm art:species` normalizes the checked-in ImageGen 20-species atlas. The production client embeds both raster assets and contains no runtime vector whale drawing.
 
 Visual snapshot baselines are maintained on Ubuntu in CI. Other platforms still run the interaction, motion, reduced-motion, and narrow-layout assertions, but do not create release-candidate screenshot baselines.
 

@@ -1273,7 +1273,7 @@ function importWhale(raw) {
 	if (typeof state !== "object" || state === null || state.version !== version) throw new Error("Whale export versions do not match");
 	return whaleStateSchema.parse(state);
 }
-/** Projects the current local state into a non-sensitive SVG card view model. */
+/** Projects the current local state into a non-sensitive raster postcard view model. */
 function postcardView(state) {
 	const latest = state.moments.slice(-3);
 	return {

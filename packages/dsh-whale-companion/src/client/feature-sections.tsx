@@ -4,7 +4,7 @@ import type { WhaleState } from '../spec.ts'
 import type { WhaleSkin } from '../types.ts'
 import { WHALE_SPECIES_BY_ID } from '../species.ts'
 import { SKINS } from './catalog.ts'
-import { createPostcardSvg, downloadSvg } from './exports.ts'
+import { createPostcardPng, downloadPng } from './exports.ts'
 import { collectibleArtStyle } from './asset-styles.ts'
 import type { WhaleApi } from './store.ts'
 import { momentDescription } from './view-model.ts'
@@ -20,14 +20,14 @@ export function TideSection({ api, state, busy, onNotice }: { api: WhaleApi, sta
   const download = async (): Promise<void> => {
     try {
       const postcard = await api.postcardV5()
-      downloadSvg(createPostcardSvg(postcard), `whale-tide-${postcard.day}`)
-      onNotice('已下载本地 SVG 潮汐明信片。')
+      downloadPng(await createPostcardPng(postcard), `whale-tide-${postcard.day}`)
+      onNotice('已下载本地 PNG 潮汐明信片。')
     } catch (reason) { onNotice(reason instanceof Error ? reason.message : String(reason)) }
   }
   return React.createElement('section', { className: `${styles.section} ${styles.tideSection}`, 'aria-labelledby': titleId },
     React.createElement('div', { className: styles.sectionHeading }, React.createElement('h3', { id: titleId }, '今日潮汐'), React.createElement('span', null, latestDay ?? '等待第一段航行')),
     moments.length === 0 ? React.createElement('p', { className: styles.empty }, '海面平静。自然使用 DSH 后，鲸鱼会留下不含工作内容的航行痕迹。') : React.createElement('ol', { className: styles.tideList }, ...moments.map(moment => React.createElement('li', { key: moment.id }, React.createElement('span', { className: styles.tideDot, 'data-category': moment.category, 'aria-hidden': true }), React.createElement('div', null, React.createElement('strong', null, momentDescription(moment)), React.createElement('span', null, `${WHALE_SPECIES_BY_ID[moment.species].nameZh} · ${moment.progressDay}`))))),
-    React.createElement('button', { type: 'button', className: styles.postcardButton, disabled: busy || moments.length === 0, onClick: () => void download() }, '下载潮汐明信片（SVG）'),
+    React.createElement('button', { type: 'button', className: styles.postcardButton, disabled: busy || moments.length === 0, onClick: () => void download() }, '下载潮汐明信片（PNG）'),
   )
 }
 

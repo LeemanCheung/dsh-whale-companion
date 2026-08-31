@@ -11,7 +11,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 PACKAGE = ROOT / "packages" / "dsh-whale-companion"
-ATLAS = PACKAGE / "assets" / "whale-species-atlas.webp"
+ATLAS = PACKAGE / "assets" / "whale-species-atlas-minke-reference.webp"
 SOURCE = PACKAGE / "assets" / "minke-imagegen-clean.png"
 SPRITE = PACKAGE / "assets" / "minke-swim-sprite.png"
 PREVIEW = PACKAGE / "assets" / "minke-swim-preview.gif"
@@ -48,7 +48,7 @@ def reference_fingerprint() -> dict[str, object]:
     cell_width, cell_height = atlas.width // 5, atlas.height // 4
     cell = atlas.crop((2, 2, cell_width - 2, cell_height - 2)).resize((FRAME_WIDTH, FRAME_HEIGHT), Image.Resampling.LANCZOS)
     return {
-        "path": "packages/dsh-whale-companion/assets/whale-species-atlas.webp",
+        "path": "packages/dsh-whale-companion/assets/whale-species-atlas-minke-reference.webp",
         "sha256": sha256(ATLAS),
         "cell": [0, 0],
         "extraction": "crop (2,2,cellWidth-2,cellHeight-2), then Lanczos resize to 384x320 RGB",

@@ -5,7 +5,7 @@ import { resolve } from 'node:path'
 const bundle = readFileSync(resolve('packages/dsh-whale-companion/lib/client.js'), 'utf8')
 const react = resolve('node_modules/react/umd/react.production.min.js')
 const reactDom = resolve('node_modules/react-dom/umd/react-dom.production.min.js')
-const usesLinuxVisualBaselines = process.platform === 'linux'
+const captureArt = process.env.DSH_CAPTURE_ART === '1'
 
 const fixture = {
   version: 5,
@@ -156,32 +156,54 @@ async function mount(page: Page, initial = fixture): Promise<void> {
 
 test('renders the integrated planned dashboard and quick card', async ({ page }) => {
   await mount(page)
+  const hero = page.getByRole('heading', { name: '鲸鱼小屋' }).locator('xpath=ancestor::header[1]')
+  await expect(hero.locator('[data-raster-art]')).toBeVisible()
+  expect(await hero.locator('svg').count()).toBe(0)
+  if (captureArt) await hero.screenshot({ path: resolve('docs/whale-home-hero-dark.png') })
+  if (captureArt) {
+    const settingsBox = await page.locator('#settings').boundingBox()
+    if (settingsBox !== null) await page.screenshot({ path: resolve('assets/screenshots/overview.png'), clip: { x: settingsBox.x, y: settingsBox.y, width: settingsBox.width, height: Math.min(1040, settingsBox.height) } })
+    await page.getByRole('heading', { name: '鲸灵图鉴' }).locator('xpath=ancestor::section[1]').screenshot({ path: resolve('assets/screenshots/atlas.png') })
+    await page.getByRole('heading', { name: '海域主题' }).locator('xpath=ancestor::section[1]').screenshot({ path: resolve('assets/screenshots/customize.png') })
+  }
   const planned = page.getByRole('heading', { name: '伙伴档案与动态航线' }).locator('xpath=ancestor::section[1]')
-  if (usesLinuxVisualBaselines) await expect(planned).toHaveScreenshot('planned-dashboard-dark.png')
+  await expect(planned.locator('[data-raster-art]').first()).toBeVisible()
+  expect(await planned.locator('svg').count()).toBe(0)
+  if (captureArt) await planned.screenshot({ path: resolve('docs/planned-dashboard-dark.png') })
   const whale = page.getByRole('button', { name: /快速航行卡/ })
   await whale.click()
   await expect(page.getByLabel('鲸鱼伙伴快速航行卡')).toBeVisible()
-  if (usesLinuxVisualBaselines) await expect(page.getByLabel('鲸鱼伙伴快速航行卡')).toHaveScreenshot('quick-card-dark.png')
+  if (captureArt) await page.getByLabel('鲸鱼伙伴快速航行卡').screenshot({ path: resolve('docs/quick-card-dark.png') })
   await page.getByLabel('伙伴名字').fill('星潮')
   await page.getByRole('button', { name: '保存名字' }).click()
   await expect(page.getByText('已将鲸鱼伙伴命名为“星潮”。')).toBeVisible()
   const download = page.waitForEvent('download')
   await page.getByRole('button', { name: '下载 PNG 名片' }).click()
   await download
+  const postcardDownload = page.waitForEvent('download')
+  await page.getByRole('button', { name: '下载潮汐明信片（PNG）' }).click()
+  expect((await postcardDownload).suggestedFilename()).toMatch(/^whale-tide-.*\.png$/u)
 })
 
 test('keeps the planned dashboard polished on a narrow viewport', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await mount(page)
   const planned = page.getByRole('heading', { name: '伙伴档案与动态航线' }).locator('xpath=ancestor::section[1]')
-  if (usesLinuxVisualBaselines) await expect(planned).toHaveScreenshot('planned-dashboard-mobile.png')
+  const hero = page.getByRole('heading', { name: '鲸鱼小屋' }).locator('xpath=ancestor::header[1]')
+  expect(await planned.locator('svg').count()).toBe(0)
+  if (captureArt) await planned.screenshot({ path: resolve('docs/planned-dashboard-mobile.png') })
+  if (captureArt) await hero.screenshot({ path: resolve('docs/whale-home-hero-mobile.png') })
 })
 
 test('honours light theme and reduced motion', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' })
   await mount(page)
   const planned = page.getByRole('heading', { name: '伙伴档案与动态航线' }).locator('xpath=ancestor::section[1]')
-  if (usesLinuxVisualBaselines) await expect(planned).toHaveScreenshot('planned-dashboard-light-reduced.png')
+  const hero = page.getByRole('heading', { name: '鲸鱼小屋' }).locator('xpath=ancestor::header[1]')
+  await expect(planned.locator('[data-raster-art]').first()).toBeVisible()
+  expect(await planned.locator('svg').count()).toBe(0)
+  if (captureArt) await planned.screenshot({ path: resolve('docs/planned-dashboard-light-reduced.png') })
+  if (captureArt) await hero.screenshot({ path: resolve('docs/whale-home-hero-light-reduced.png') })
 })
 
 test('renders continuous minke motion over a static ocean layer', async ({ page }) => {

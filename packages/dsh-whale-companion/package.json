@@ -1,7 +1,7 @@
 {
   "name": "dsh-whale-companion",
-  "version": "2.3.0",
-  "description": "A local-first DSH whale world with a named SVG companion, dynamic goals, collectibles, expeditions, and privacy-safe sharing",
+  "version": "2.4.0",
+  "description": "A local-first DSH whale world with ImageGen raster companions, dynamic goals, collectibles, expeditions, and privacy-safe sharing",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -60,10 +60,12 @@
   },
   "scripts": {
     "build:host": "tsdown --config tsdown.host.config.ts && node ../../scripts/normalize-build-text.mjs",
-    "build:client": "node ../../scripts/embed-minke-animation.mjs && tsdown --config tsdown.client.config.ts && node ../../scripts/normalize-build-text.mjs",
+    "build:client": "node ../../scripts/embed-minke-animation.mjs && node ../../scripts/embed-species-atlas.mjs && tsdown --config tsdown.client.config.ts && node ../../scripts/normalize-build-text.mjs",
     "art:minke": "python -B ../../scripts/build-minke-animation.py",
     "verify:minke:rebuild": "python -B ../../scripts/build-minke-animation.py --check",
     "verify:minke": "python -B ../../scripts/audit-minke-animation.py",
+    "art:species": "python -B ../../scripts/build-species-atlas.py",
+    "verify:species:rebuild": "python -B ../../scripts/build-species-atlas.py --check",
     "clean": "node -e \"require('node:fs').rmSync('lib',{recursive:true,force:true})\"",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "pack:check": "npm pack --dry-run"

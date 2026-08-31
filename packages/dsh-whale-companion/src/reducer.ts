@@ -187,7 +187,7 @@ export function importWhale(raw: unknown): WhaleState {
   return whaleStateSchema.parse(state)
 }
 
-/** Projects the current local state into a non-sensitive SVG card view model. */
+/** Projects the current local state into a non-sensitive raster postcard view model. */
 export function postcardView(state: WhaleState): WhalePostcard {
   const latest = state.moments.slice(-3)
   return { day: latest.at(-1)?.progressDay ?? dayOf(state.updatedAt), species: state.species, skin: state.skin, level: state.level, moments: latest, message: latest.at(-1) === undefined ? '海面平静，下一次航行正在等待。' : reactionMessage(latest.at(-1)!.templateId) }
