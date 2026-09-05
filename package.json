@@ -57,7 +57,8 @@
     "README.md",
     "README.zh-CN.md",
     "CHANGELOG.md",
-    "LICENSE"
+    "LICENSE",
+    "COMPATIBILITY.md"
   ],
   "dsh": {
     "bundle": {
@@ -72,6 +73,12 @@
         "@deepseek-ai/dsh-client-ui-settings",
         "@deepseek-ai/dsh-client-ui-theme"
       ]
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.1.2-rc.1": "compatible"
+      },
+      "profiles": ["web"]
     }
   },
   "scripts": {

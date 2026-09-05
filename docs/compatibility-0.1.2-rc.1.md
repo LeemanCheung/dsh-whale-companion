@@ -27,13 +27,13 @@ The persistent state schemas and v1–v5 migrations are unchanged. The existing 
 | New service regressions | 7 tests: three event failure/recovery paths, malformed metadata, shutdown drain, session flush, explicit save failure/recovery |
 | `corepack pnpm build:host` / `build:client` | Passed |
 | Browser tests | 10 passed, including both PNG exports for ink/atlas species, 488 px content inside a desktop viewport, native motion and both system/in-product reduced motion |
-| `corepack pnpm pack:check` | Passed; 59 files, 11.5 MB including source art, history and validation previews; runtime client 2.60 MB |
+| `corepack pnpm pack:check` | Passed; 60 files, 11.5 MB including source art, history and validation previews; runtime client 2.60 MB |
 | Release and planned-feature checks | Passed |
 | Raster asset/provenance gate | Passed; no vector whale art in the client |
 | Ink playback gate | 24 exact source poses, 72 in-betweens, 96 frames, 16/17 ms timing, 1.6 seconds; exact accepted WebP embedded in client |
 | `git diff --check` | Passed |
 
-The browser tests mount the actual built plugin in its existing DSH-compatible test host. Final installation in the upgraded DSH profile is a separate deployment check owned by the coordinating task.
+The browser tests mount the actual built plugin in its DSH-compatible test host. The coordinating task also verified Host/Client activation in the real QA 3081 and original Web 3080 Profiles, with level 100, the name “小蓝” and the humpback selection retained. The exact release matrix is in [COMPATIBILITY.md](../COMPATIBILITY.md); unverified older alpha releases remain unknown.
 
 The 488 px settings-pane check keeps the browser at 1280×720: the four-character title stays on one line, the description is wider than 200 px, and the image remains 140 px wide. Container queries adjust the plugin content without expanding the host dialog. The actual capture is `docs/ink-whale-settings-488px.png`.
 
