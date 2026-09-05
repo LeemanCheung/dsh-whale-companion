@@ -24,7 +24,7 @@ The GIF is a compatibility preview; format and browser timing limits apply. The 
 
 ## Features
 
-- **Complete 2.4.0 delivery:** named companion, four adaptive voyage goals, ImageGen raster whale portraits, a raster-sprite common-minke animation, a compact quick card, XP feedback, six palettes, local PNG/text sharing, and no runtime vector whale art.
+- **Complete 2.4.0 delivery:** named companion, four adaptive voyage goals, ImageGen raster whale portraits, a raster-sprite common-minke animation, a compact quick card, XP feedback, six cove themes, local PNG/text sharing, and no runtime vector whale art.
 - Session dates now prefer the real creation timestamp; late historical events cannot roll streaks backward; every text import is capped at 512 KiB before JSON parsing; durable writes are fully schema-validated.
 - CI now mounts the actual built client bundle in a browser-compatible DSH slot/Remote harness and runs desktop, mobile, light-theme, and reduced-motion Playwright visual regression.
 - A movable `shell.overlay` whale supports pointer drag, keyboard movement, edge snapping, persisted viewport-safe placement, and one shared five-second local refresh. New tide moments appear in a bounded visible bubble; only milestones are announced to screen readers.
@@ -36,7 +36,7 @@ The GIF is a compatibility preview; format and browser timing limits apply. The 
 - The Whale Home provides a tide timeline, local PNG postcard export, a 24-item collectible catalog, eight fixed room slots, three room presets, and a non-punitive expedition.
 - Visitor bottles are isolated read-only room previews. They do not merge or overwrite the receiver's progress.
 - Whale-circle cards are opt-in and local-file based. They exchange only a preset alias, species, skin, coarse activity buckets, and resonance stars. There is no account, networking, ranking, free text, prompt excerpt, task name, or tool data.
-- Six sea skins, all 12 achievements, responsive layouts, keyboard controls, focus handling, and reduced-motion rendering are included.
+- Six themes adjust cove backgrounds, interface accents and ambient light; whale artwork retains its own colors. All 12 achievements, responsive layouts, keyboard controls, focus handling, and reduced-motion rendering are included.
 
 Turns grant 10 XP, tool results grant 5 XP, and session starts grant 20 XP. Only `user/message` counts as a turn. Levels derive from XP, and streaks use UTC session-start dates. Missing days never remove progress or collectibles.
 

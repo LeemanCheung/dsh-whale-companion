@@ -8,9 +8,10 @@ const clientRoot = resolve(import.meta.dirname, '../src/client')
 
 describe('raster-only whale art contract', () => {
   it('contains no runtime vector markup or vector image export', () => {
-    for (const filename of ['WhaleArt.tsx', 'exports.ts', 'feature-sections.tsx']) {
+    for (const filename of ['WhaleArt.tsx', 'exports.ts', 'feature-sections.tsx', 'planned-sections.tsx']) {
       const source = readFileSync(resolve(clientRoot, filename), 'utf8')
       expect(source).not.toMatch(/<svg|createElement\(['"]svg|image\/svg\+xml|\.svg\b/iu)
+      expect(source).not.toMatch(/\bdrawWhale\b|\bbezierCurveTo\b|\bquadraticCurveTo\b/u)
     }
   })
 

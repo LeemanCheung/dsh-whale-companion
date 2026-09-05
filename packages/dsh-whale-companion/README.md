@@ -8,6 +8,8 @@ Version 2.5.0 supports DSH 0.1.2-rc.1 while retaining all personalized state and
 
 ## Features
 
+The six themes adjust cove backgrounds, interface accents and ambient light; whale artwork retains its own colors.
+
 - **Complete 2.4.0 delivery:** named companion, adaptive goals, ImageGen raster portraits, a raster-sprite common-minke animation, PNG/text sharing, and no runtime vector whale art.
 - Session dates now prefer the real creation timestamp; late historical events cannot roll streaks backward; every text import is capped at 512 KiB before JSON parsing; durable writes are fully schema-validated.
 - CI now mounts the actual built client bundle in a browser-compatible DSH slot/Remote harness and runs desktop, mobile, light-theme, and reduced-motion Playwright visual regression.

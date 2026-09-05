@@ -2,6 +2,8 @@
 
 ## 2.5.0
 
+- Adapt to a 488 px settings pane and use existing ImageGen raster artwork for both PNG exports.
+
 - Support DSH 0.1.2-rc.1 using the renderer and Remote client entry points.
 - Contain background progress write failures with content-free diagnostics and keep later updates working.
 - Drain accepted writes on session flush and shutdown; reject new writes after shutdown begins.

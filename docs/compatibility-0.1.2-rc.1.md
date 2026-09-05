@@ -23,10 +23,10 @@ The persistent state schemas and v1–v5 migrations are unchanged. The existing 
 | `corepack pnpm install --frozen-lockfile` | Passed |
 | `corepack pnpm peers check` | No peer dependency issues |
 | `corepack pnpm typecheck` | Passed |
-| `corepack pnpm test` | 13 files, 56 tests passed |
+| `corepack pnpm test` | 14 files, 62 tests passed |
 | New service regressions | 7 tests: three event failure/recovery paths, malformed metadata, shutdown drain, session flush, explicit save failure/recovery |
 | `corepack pnpm build:host` / `build:client` | Passed |
-| Browser tests | 7 passed, including PNG export, narrow layout, native motion and both system/in-product reduced motion |
+| Browser tests | 10 passed, including both PNG exports for ink/atlas species, 488 px content inside a desktop viewport, native motion and both system/in-product reduced motion |
 | `corepack pnpm pack:check` | Passed; 59 files, 11.5 MB including source art, history and validation previews; runtime client 2.60 MB |
 | Release and planned-feature checks | Passed |
 | Raster asset/provenance gate | Passed; no vector whale art in the client |
@@ -34,5 +34,9 @@ The persistent state schemas and v1–v5 migrations are unchanged. The existing 
 | `git diff --check` | Passed |
 
 The browser tests mount the actual built plugin in its existing DSH-compatible test host. Final installation in the upgraded DSH profile is a separate deployment check owned by the coordinating task.
+
+The 488 px settings-pane check keeps the browser at 1280×720: the four-character title stays on one line, the description is wider than 200 px, and the image remains 140 px wide. Container queries adjust the plugin content without expanding the host dialog. The actual capture is `docs/ink-whale-settings-488px.png`.
+
+Both PNG outlets now composite only the selected ImageGen raster art. Common minke uses the matching ink still on a pale field; other species use their atlas cell. `drawWhale` and its procedural silhouette were removed. Export captures are `docs/whale-share-card-common-minke.png`, `docs/whale-postcard-common-minke.png` and the corresponding humpback files. The six theme options are described as cove backgrounds, interface accents and ambient light, which matches their actual effect.
 
 The manual release workflow uses the requested immutable tag and package version, rather than a hard-coded old version. It still neither creates tags nor runs on push.

@@ -267,3 +267,63 @@ test('stops native WebP motion for the saved in-product preference', async ({ pa
   await page.getByLabel('减少视觉动效', { exact: true }).uncheck()
   await expect.poll(() => sprite.evaluate(element => getComputedStyle(element).backgroundImage)).toContain('data:image/webp;base64,')
 })
+
+test('fits the home hero into a 488 px settings pane on a desktop viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 })
+  await mount(page, { ...fixture, species: 'common-minke' })
+  await page.addStyleTag({ content: '#settings { width: 488px; margin: 24px auto; }' })
+  const title = page.getByRole('heading', { name: '鲸鱼小屋', exact: true })
+  const hero = title.locator('xpath=ancestor::header[1]')
+  const measure = await title.evaluate(element => {
+    const style = getComputedStyle(element)
+    const range = document.createRange()
+    range.selectNodeContents(element)
+    return { lines: range.getClientRects().length, height: element.getBoundingClientRect().height, lineHeight: Number.parseFloat(style.lineHeight) }
+  })
+  expect(measure.lines).toBe(1)
+  expect(measure.height).toBeLessThanOrEqual(measure.lineHeight + 1)
+  expect(await page.locator('#settings').evaluate(element => element.getBoundingClientRect().width)).toBe(488)
+  expect(await page.evaluate(() => innerWidth)).toBe(1280)
+  const intro = hero.locator('p').last()
+  expect((await intro.boundingBox())!.width).toBeGreaterThan(200)
+  const art = hero.locator('[data-raster-art]')
+  await expect(art).toBeVisible()
+  expect((await art.boundingBox())!.width).toBeGreaterThanOrEqual(120)
+  // The decorative circle intentionally extends beyond the clipped header;
+  // verify the actual text and artwork boxes rather than that pseudo-element.
+  expect(await hero.evaluate(element => {
+    const bounds = element.getBoundingClientRect()
+    return [...element.children].every(child => {
+      const box = child.getBoundingClientRect()
+      return box.left >= bounds.left && box.right <= bounds.right
+    })
+  })).toBe(true)
+  await expect(page.getByText('6 套海湾背景、界面强调与环境光配色', { exact: true })).toBeVisible()
+  await hero.screenshot({ path: resolve('docs/ink-whale-settings-488px.png') })
+})
+
+for (const species of ['common-minke', 'humpback']) {
+  test(`exports both PNG cards with the selected raster art: ${species}`, async ({ page }) => {
+    await mount(page, { ...fixture, species })
+    await page.evaluate(() => {
+      const used: string[] = []
+      ;(window as any).__exportRasterKinds = used
+      const original = CanvasRenderingContext2D.prototype.drawImage
+      CanvasRenderingContext2D.prototype.drawImage = function (...args: any[]) {
+        const image = args[0]
+        if (image instanceof HTMLImageElement) used.push(image.src.startsWith('data:image/png;') ? 'png' : image.src.startsWith('data:image/webp;') ? 'webp' : 'unexpected')
+        return (original as any).apply(this, args)
+      }
+    })
+    const shareDownload = page.waitForEvent('download')
+    await page.getByRole('button', { name: '下载 PNG 名片', exact: true }).click()
+    const share = await shareDownload
+    expect(share.suggestedFilename()).toMatch(/-whale-voyage\.png$/u)
+    await share.saveAs(resolve(`docs/whale-share-card-${species}.png`))
+    const postcardDownload = page.waitForEvent('download')
+    await page.getByRole('button', { name: '下载潮汐明信片（PNG）', exact: true }).click()
+    const postcard = await postcardDownload
+    await postcard.saveAs(resolve(`docs/whale-postcard-${species}.png`))
+    expect(await page.evaluate(() => (window as any).__exportRasterKinds)).toEqual([species === 'common-minke' ? 'png' : 'webp', species === 'common-minke' ? 'png' : 'webp'])
+  })
+}

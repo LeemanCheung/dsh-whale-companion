@@ -8,7 +8,7 @@
 .hutBackdrop { position: fixed; inset: 0; display: grid; place-items: center; padding: clamp(12px, 3vw, 40px); background: color-mix(in srgb, var(--dsw-alias-bg-base) 78%, transparent); backdrop-filter: blur(4px); pointer-events: auto; }
 .hut { position: relative; width: min(1120px, 100%); max-height: min(900px, calc(100vh - 24px)); overflow: auto; border: 1px solid var(--dsw-alias-border-l2); border-radius: 24px; background: var(--dsw-alias-bg-base); box-shadow: 0 24px 80px color-mix(in srgb, var(--dsw-alias-bg-base) 42%, transparent); }
 .hutClose { position: sticky; top: 10px; z-index: 2; float: right; width: 44px; height: 44px; margin: 10px 12px 0 0; border: 1px solid var(--dsw-alias-border-l2); border-radius: 50%; color: var(--dsw-alias-label-primary); background: var(--dsw-alias-bg-layer-2); font-size: 21px; line-height: 1; cursor: pointer; }
-.home { box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; padding: clamp(16px, 3vw, 34px); overflow-x: clip; color: var(--dsw-alias-label-primary); }
+.home { box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; padding: min(4%, 34px); overflow-x: clip; color: var(--dsw-alias-label-primary); container-type: inline-size; }
 .home h2, .home h3, .home p { margin-top: 0; }
 .hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(18px, 4vw, 56px); align-items: center; min-width: 0; padding: clamp(22px, 4vw, 46px); overflow: hidden; border: 1px solid var(--dsw-alias-border-l2); border-radius: 20px 52px 20px 20px; background: linear-gradient(125deg, var(--dsw-alias-bg-layer-1) 0 58%, color-mix(in srgb, var(--dsw-alias-brand-primary) 13%, var(--dsw-alias-bg-layer-2)) 100%); }
 .hero > div:first-child { min-width: 0; }
@@ -38,6 +38,28 @@
 .sectionHeading h3 { margin-bottom: 0; font-size: 18px; letter-spacing: -.025em; }
 .sectionHeading span { font-size: 12px; }
 .sectionIntro { max-width: 720px; margin-bottom: 14px; font-size: 13px; line-height: 1.6; }
+@container (max-width: 760px) {
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .home .room { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home .motionCard { grid-template-columns: minmax(0, 1fr); }
+}
+@container (max-width: 620px) {
+  .hero { grid-template-columns: minmax(0, 1fr) 140px; gap: 16px; padding: 22px; border-radius: 18px 34px 18px 18px; }
+  .hero h2 { font-size: clamp(30px, 8cqi, 42px); line-height: 1.12; white-space: nowrap; }
+  .intro { font-size: 14px; line-height: 1.65; }
+  .heroWhale { width: 140px; }
+  .home .speciesGrid, .home .achievements, .home .skins, .home .communityControls, .home .preferenceOptions { grid-template-columns: minmax(0, 1fr); }
+  .home .privacyLedger { grid-template-columns: minmax(0, 1fr); }
+  .home .privacyLedger dt { border-bottom: 0; }
+  .home .journal { grid-template-columns: repeat(7, minmax(44px, 1fr)); overflow-x: auto; }
+}
+@container (max-width: 420px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .heroWhale { order: -1; }
+  .hero h2 { font-size: 34px; }
+  .home .tideList { grid-template-columns: minmax(0, 1fr); }
+  .home .room { grid-template-columns: minmax(0, 1fr); }
+}
 .tideSection { border-top: 2px solid color-mix(in srgb, var(--dsw-alias-brand-primary) 55%, var(--dsw-alias-border-l1)); }
 .tideList { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0; padding: 0; margin: 0; list-style: none; border: 1px solid var(--dsw-alias-border-l1); }
 .tideList li { display: flex; gap: 10px; min-width: 0; padding: 13px; border-right: 1px solid var(--dsw-alias-border-l1); }

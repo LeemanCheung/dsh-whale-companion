@@ -204,6 +204,19 @@
   .goalGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .paletteGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+@container (max-width: 640px) {
+  .planSection { padding: 16px; }
+  .planHero { grid-template-columns: minmax(0, 1fr); }
+  .planWhale .whaleArt { width: 170px; }
+  .goalGrid, .paletteGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .encounterShare { grid-template-columns: minmax(0, 1fr); }
+  .goalCard p { min-height: 0; }
+}
+@container (max-width: 420px) {
+  .goalGrid, .paletteGrid { grid-template-columns: minmax(0, 1fr); }
+  .nameForm > div { align-items: stretch; flex-direction: column; }
+  .nameForm button { min-height: 40px; }
+}
 @media (max-width: 640px) {
   .planSection { padding: 15px; }
   .planHero { grid-template-columns: 1fr; }

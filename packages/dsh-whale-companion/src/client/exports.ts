@@ -1,6 +1,7 @@
 import type { WhalePostcard } from '../reducer.ts'
-import { WHALE_SPECIES, WHALE_SPECIES_BY_ID } from '../species.ts'
+import { WHALE_SPECIES, WHALE_SPECIES_BY_ID, type WhaleSpeciesId } from '../species.ts'
 import { SKINS } from './catalog.ts'
+import { INK_WHALE_STILL } from './ink-whale-sprite.ts'
 import { WHALE_SPECIES_ATLAS } from './species-atlas.ts'
 
 export function normalizePostcardText(value: string, maximum = 96): string {
@@ -14,6 +15,31 @@ function loadRaster(url: string): Promise<HTMLImageElement> {
     image.onerror = () => reject(new Error('鲸鱼栅格美术加载失败'))
     image.src = url
   })
+}
+
+export async function drawSpeciesRaster(context: CanvasRenderingContext2D, species: WhaleSpeciesId, x: number, y: number, width: number, height: number): Promise<void> {
+  const ink = species === 'common-minke'
+  const image = await loadRaster(ink ? INK_WHALE_STILL : WHALE_SPECIES_ATLAS)
+  const index = WHALE_SPECIES.findIndex(candidate => candidate.id === species)
+  if (index < 0 || image.naturalWidth <= 0 || image.naturalHeight <= 0) throw new Error('鲸鱼美术尺寸或种类无效')
+  const sourceWidth = image.naturalWidth / (ink ? 1 : 5)
+  const sourceHeight = image.naturalHeight / (ink ? 1 : 4)
+  const scale = Math.min(width / sourceWidth, height / sourceHeight)
+  const drawWidth = sourceWidth * scale
+  const drawHeight = sourceHeight * scale
+  context.save()
+  try {
+    // The ink portrait has transparent pixels; a light paper field keeps the
+    // original black artwork legible on every dark ocean theme.
+    if (ink) {
+      context.fillStyle = '#f6f8fa'
+      context.fillRect(x, y, width, height)
+    }
+    context.drawImage(image, ink ? 0 : (index % 5) * sourceWidth, ink ? 0 : Math.floor(index / 5) * sourceHeight,
+      sourceWidth, sourceHeight, x + (width - drawWidth) / 2, y + (height - drawHeight) / 2, drawWidth, drawHeight)
+  } finally {
+    context.restore()
+  }
 }
 
 export async function createPostcardPng(view: WhalePostcard): Promise<Blob> {
@@ -34,11 +60,7 @@ export async function createPostcardPng(view: WhalePostcard): Promise<Blob> {
   context.arc(986, 148, 92, 0, Math.PI * 2)
   context.fill()
 
-  const atlas = await loadRaster(WHALE_SPECIES_ATLAS)
-  const index = WHALE_SPECIES.findIndex(candidate => candidate.id === species.id)
-  const sourceWidth = atlas.naturalWidth / 5
-  const sourceHeight = atlas.naturalHeight / 4
-  context.drawImage(atlas, (index % 5) * sourceWidth, Math.floor(index / 5) * sourceHeight, sourceWidth, sourceHeight, 814, 220, 330, 275)
+  await drawSpeciesRaster(context, view.species, 814, 220, 330, 275)
 
   context.fillStyle = '#f7fbff'
   context.font = '600 25px system-ui, sans-serif'

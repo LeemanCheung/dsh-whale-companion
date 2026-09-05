@@ -4,6 +4,7 @@ import type { WhaleSkin } from '../types.ts'
 import { WHALE_SPECIES_BY_ID } from '../species.ts'
 import { SKINS } from './catalog.ts'
 import { WhaleArt, skinPaletteStyle } from './WhaleArt.tsx'
+import { drawSpeciesRaster } from './exports.ts'
 import { companionName, levelProgress, nextSpeciesForLevel, shareSummary, unlockedSpeciesCount, voyageGoals, type VoyageGoal } from './planned-features.ts'
 import type { WhaleApi } from './store.ts'
 import styles from './Planned.module.css'
@@ -206,8 +207,8 @@ export function SkinPaletteSection({
   return (
     <section className={`${styles.paletteSection} ${styles.glassPanel}`} aria-labelledby={titleId}>
       <div className={styles.sectionHeading}>
-        <div><span className={styles.kicker}>MULTI-LAYER OCEAN MOODS</span><h3 id={titleId}>海域主题</h3></div>
-        <span>6 套完整主体、腹部、强调和环境光配色</span>
+        <div><span className={styles.kicker}>COVE THEMES &amp; AMBIENT LIGHT</span><h3 id={titleId}>海域主题</h3></div>
+        <span>6 套海湾背景、界面强调与环境光配色</span>
       </div>
       <div className={styles.paletteGrid} role="radiogroup" aria-label="选择鲸鱼海域主题">
         {(Object.entries(SKINS) as [WhaleSkin, (typeof SKINS)[WhaleSkin]][]).map(([skin, palette]) => (
@@ -250,7 +251,7 @@ function GoalCard({ goal }: { goal: VoyageGoal }): React.ReactElement {
   )
 }
 
-async function downloadPngShareCard(state: WhaleState): Promise<void> {
+export async function downloadPngShareCard(state: WhaleState): Promise<void> {
   const canvas = document.createElement('canvas')
   canvas.width = 1200
   canvas.height = 675
@@ -314,7 +315,7 @@ async function downloadPngShareCard(state: WhaleState): Promise<void> {
     ctx.font = '500 15px Inter, "PingFang SC", "Microsoft YaHei", sans-serif'
     ctx.fillText(label, x + 15, 417)
   })
-  drawWhale(ctx, 742, 176, 1.72, palette.color, palette.deep, palette.belly)
+  await drawSpeciesRaster(ctx, state.species, 754, 162, 360, 300)
   ctx.fillStyle = 'rgba(255,255,255,.5)'
   ctx.font = '400 15px Inter, "PingFang SC", "Microsoft YaHei", sans-serif'
   ctx.fillText('不包含提示词、回复、代码、路径、工具名称、参数或结果内容', 98, 568)
@@ -341,60 +342,6 @@ function roundedRect(ctx: CanvasRenderingContext2D, x: number, y: number, width:
   ctx.arcTo(x, y + height, x, y, r)
   ctx.arcTo(x, y, x + width, y, r)
   ctx.closePath()
-}
-
-function drawWhale(ctx: CanvasRenderingContext2D, x: number, y: number, scale: number, main: string, deep: string, belly: string): void {
-  ctx.save()
-  ctx.translate(x, y)
-  ctx.scale(scale, scale)
-  ctx.fillStyle = 'rgba(255,255,255,.12)'
-  ctx.beginPath()
-  ctx.ellipse(118, 78, 112, 68, 0, 0, Math.PI * 2)
-  ctx.fill()
-  ctx.fillStyle = deep
-  ctx.beginPath()
-  ctx.moveTo(42, 74)
-  ctx.bezierCurveTo(20, 56, 13, 39, 16, 23)
-  ctx.bezierCurveTo(36, 30, 49, 43, 55, 61)
-  ctx.bezierCurveTo(60, 41, 74, 29, 92, 25)
-  ctx.bezierCurveTo(91, 48, 80, 67, 58, 79)
-  ctx.closePath()
-  ctx.fill()
-  const gradient = ctx.createLinearGradient(48, 34, 207, 118)
-  gradient.addColorStop(0, belly)
-  gradient.addColorStop(.28, main)
-  gradient.addColorStop(1, deep)
-  ctx.fillStyle = gradient
-  ctx.beginPath()
-  ctx.moveTo(48, 72)
-  ctx.bezierCurveTo(68, 34, 113, 19, 161, 29)
-  ctx.bezierCurveTo(201, 37, 225, 59, 219, 84)
-  ctx.bezierCurveTo(213, 111, 169, 124, 119, 113)
-  ctx.bezierCurveTo(86, 106, 67, 88, 42, 96)
-  ctx.bezierCurveTo(49, 87, 52, 80, 48, 72)
-  ctx.closePath()
-  ctx.fill()
-  ctx.fillStyle = belly
-  ctx.globalAlpha = .72
-  ctx.beginPath()
-  ctx.moveTo(94, 98)
-  ctx.bezierCurveTo(126, 111, 175, 107, 202, 91)
-  ctx.bezierCurveTo(188, 117, 147, 124, 116, 114)
-  ctx.bezierCurveTo(104, 110, 97, 104, 94, 98)
-  ctx.fill()
-  ctx.globalAlpha = 1
-  ctx.fillStyle = deep
-  ctx.beginPath()
-  ctx.arc(190, 64, 5, 0, Math.PI * 2)
-  ctx.fill()
-  ctx.strokeStyle = deep
-  ctx.lineWidth = 3
-  ctx.lineCap = 'round'
-  ctx.beginPath()
-  ctx.moveTo(188, 88)
-  ctx.quadraticCurveTo(203, 99, 216, 88)
-  ctx.stroke()
-  ctx.restore()
 }
 
 async function copyText(value: string): Promise<void> {

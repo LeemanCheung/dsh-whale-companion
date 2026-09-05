@@ -2,6 +2,9 @@
 
 ## 2.5.0
 
+- Adapt Whale Home to narrow settings containers, keeping the title and whale readable at 488 px inside a desktop dialog.
+- Composite both PNG exports from the selected ImageGen art and describe the six themes as background/accent/ambient colors.
+
 - Support DSH 0.1.2-rc.1 with its renderer and Remote client entry points; remove the retired client-runtime package.
 - Contain background progress write failures without logging session content, identifiers, file paths, or raw storage errors. Later events and explicit saves remain usable.
 - Drain accepted writes on session flush and plugin shutdown, and reject new explicit writes once shutdown starts.
