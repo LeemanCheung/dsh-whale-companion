@@ -22,6 +22,7 @@ jobs:
       - run: corepack pnpm install --frozen-lockfile
       - run: corepack pnpm peers check
       - run: python -m pip install --disable-pip-version-check -r requirements-art.txt
+      - run: python -B -m unittest discover -s tests/python -p 'test_*.py'
       - run: corepack pnpm verify:release-workflow
       - run: corepack pnpm verify:planned
       - run: corepack pnpm verify:minke:rebuild

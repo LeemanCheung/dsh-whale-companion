@@ -40,3 +40,9 @@ The 488 px settings-pane check keeps the browser at 1280×720: the four-characte
 Both PNG outlets now composite only the selected ImageGen raster art. Common minke uses the matching ink still on a pale field; other species use their atlas cell. `drawWhale` and its procedural silhouette were removed. Export captures are `docs/whale-share-card-common-minke.png`, `docs/whale-postcard-common-minke.png` and the corresponding humpback files. The six theme options are described as cove backgrounds, interface accents and ambient light, which matches their actual effect.
 
 The manual release workflow uses the requested immutable tag and package version, rather than a hard-coded old version. It still neither creates tags nor runs on push.
+
+## PNG rebuild verification
+
+[Linux CI run 33946990417](https://github.com/LeemanCheung/dsh-whale-companion/actions/runs/33946990417) failed at `verify:ink:rebuild`, which compared compressed PNG bytes. The rebuild contract now compares the PNG format, mode, dimensions, metadata and every decoded pixel channel with zero tolerance. Compression differences are reported separately. Each frame records its decoded RGBA hash, while the sprite's stored SHA-256 continues to protect the committed file bytes. Source, crop, anchor and motion metadata remain fully compared.
+
+Eight checker regression cases cover alternate PNG compression, one-channel pixel changes, hidden RGB changes, metadata-only transparency changes, wrong formats/dimensions, stale file hashes and altered source/frame records. Local Windows verification passed. Linux success must be established by the subsequent actual CI run; this change alone is not a claim that the failed run passed.

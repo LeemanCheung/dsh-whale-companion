@@ -10,6 +10,7 @@ the eye and body area. No frame interpolation or pose reordering is performed.
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import io
 import json
@@ -103,6 +104,34 @@ def png_bytes(image: Image.Image) -> bytes:
     return stream.getvalue()
 
 
+def compare_png_pixels(actual: bytes, expected: bytes, name: str) -> dict[str, object]:
+    """Require exact pixels, including hidden RGB, without requiring a PNG codec."""
+    with Image.open(io.BytesIO(actual)) as verify:
+        verify.verify()
+    with Image.open(io.BytesIO(actual)) as stored, Image.open(io.BytesIO(expected)) as rebuilt:
+        if stored.format != "PNG" or rebuilt.format != "PNG":
+            raise ValueError(f"{name}: output must remain PNG")
+        stored.load()
+        rebuilt.load()
+        if stored.mode != rebuilt.mode or stored.size != rebuilt.size:
+            raise ValueError(f"{name}: mode/size differ: stored={stored.mode}/{stored.size}, rebuilt={rebuilt.mode}/{rebuilt.size}")
+        if stored.info != rebuilt.info:
+            keys = [key for key in sorted(stored.info.keys() | rebuilt.info.keys()) if stored.info.get(key) != rebuilt.info.get(key)]
+            raise ValueError(f"{name}: PNG metadata differs: {', '.join(keys)}")
+        if stored.tobytes() != rebuilt.tobytes():
+            delta = np.abs(np.asarray(stored).astype(np.int16) - np.asarray(rebuilt).astype(np.int16))
+            different = np.any(delta != 0, axis=-1) if delta.ndim == 3 else delta != 0
+            raise ValueError(f"{name}: {int(different.sum())} pixels differ, maximum channel error={int(delta.max())}; stored pixel SHA256={digest(stored.tobytes())}; rebuilt pixel SHA256={digest(rebuilt.tobytes())}")
+        return {"path": name, "mode": stored.mode, "size": list(stored.size), "pixelSha256": digest(stored.tobytes()), "maximumChannelError": 0, "encodedBytesEqual": actual == expected}
+
+
+def expected_stored_report(report: dict, sprite: bytes) -> dict:
+    """The stored artifact SHA guards stored bytes, not a new codec's output."""
+    result = copy.deepcopy(report)
+    result["runtime"]["spriteSha256"] = digest(sprite)
+    return result
+
+
 def composite_white(frame: Image.Image, width: int) -> Image.Image:
     small = frame.resize((width, round(width * FRAME_SIZE[1] / FRAME_SIZE[0])), Image.Resampling.LANCZOS)
     paper = Image.new("RGBA", small.size, "white")
@@ -146,7 +175,7 @@ def build() -> dict[Path, bytes]:
         frame.alpha_composite(scaled, origin)
         frames.append(frame)
         alpha = np.asarray(frame)[:, :, 3]
-        records.append({"frame": index + 1, "sourceCrop": list(bounds), "sourceDarkArea": len(part), "sourceEye": [round(eye[0] + bounds[0], 5), round(eye[1] + bounds[1], 5)], "uniformScale": round(scale, 8), "resizedSize": list(new_size), "origin": list(origin), "outputEye": [round(eye_scaled[0] + origin[0], 5), round(eye_scaled[1] + origin[1], 5)], "alphaBoundingBox": list(frame.getbbox()), "opaqueArea": int((alpha > 200).sum()), "sha256": digest(png_bytes(frame))})
+        records.append({"frame": index + 1, "sourceCrop": list(bounds), "sourceDarkArea": len(part), "sourceEye": [round(eye[0] + bounds[0], 5), round(eye[1] + bounds[1], 5)], "uniformScale": round(scale, 8), "resizedSize": list(new_size), "origin": list(origin), "outputEye": [round(eye_scaled[0] + origin[0], 5), round(eye_scaled[1] + origin[1], 5)], "alphaBoundingBox": list(frame.getbbox()), "opaqueArea": int((alpha > 200).sum()), "decodedRgbaSha256": digest(frame.tobytes())})
 
     sheet = Image.new("RGBA", (2304, 1280))
     for index, frame in enumerate(frames):
@@ -197,7 +226,12 @@ def build() -> dict[Path, bytes]:
     seam = mad(premultiplied[-1], premultiplied[0])
     regions = {"head": [275, 95, 365, 195], "torso": [140, 80, 275, 215], "tail": [15, 75, 140, 245]}
     report = {
-        "version": 1,
+        "version": 2,
+        "rebuildContract": {
+            "images": "Exact PNG format, decoded mode, dimensions, metadata and every pixel channel; no pixel tolerance",
+            "pngEncoding": "PNG compression bytes may vary across Pillow/zlib builds",
+            "storedIntegrity": "runtime.spriteSha256 guards the committed PNG bytes; frame decodedRgbaSha256 guards every full RGBA frame",
+        },
         "source": {
             "path": str(SOURCE.relative_to(ROOT)).replace("\\", "/"),
             "sha256": digest(source_bytes),
@@ -214,7 +248,7 @@ def build() -> dict[Path, bytes]:
             "previewWidthsPx": [240, 144, 100],
         },
         "checks": {
-            "uniqueFrames": len(set(record["sha256"] for record in records)),
+            "uniqueFrames": len(set(record["decodedRgbaSha256"] for record in records)),
             "allFrameBordersTransparent": all(not np.any(np.asarray(frame)[[0, -1], :, 3]) and not np.any(np.asarray(frame)[:, [0, -1], 3]) for frame in frames),
             "outputEyeRangePx": np.ptp(np.asarray([record["outputEye"] for record in records]), axis=0).round(6).tolist(),
             "opaqueAreaRange": [min(record["opaqueArea"] for record in records), max(record["opaqueArea"] for record in records)],
@@ -245,20 +279,43 @@ def build() -> dict[Path, bytes]:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true", help="Verify exact output bytes without writing")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--check", action="store_true", help="Verify exact image pixels and complete metadata without writing")
+    mode.add_argument("--refresh-report", action="store_true", help="Migrate the report only after verifying all existing image pixels")
     args = parser.parse_args()
     output = build()
     mismatches = []
+    comparisons = []
+    report_path = ASSETS / "ink-whale-motion-report.json"
     for path, data in output.items():
-        if args.check:
-            if not path.exists() or path.read_bytes() != data:
-                mismatches.append(str(path.relative_to(ROOT)))
+        if args.check or args.refresh_report:
+            if path == report_path:
+                continue
+            if not path.exists():
+                mismatches.append(f"{path.relative_to(ROOT)}: missing")
+            elif path.suffix == ".png":
+                try:
+                    comparisons.append(compare_png_pixels(path.read_bytes(), data, str(path.relative_to(ROOT))))
+                except (ValueError, OSError) as error:
+                    mismatches.append(str(error))
+            elif path.read_bytes() != data:
+                mismatches.append(f"{path.relative_to(ROOT)}: bytes differ")
         else:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(data)
     if mismatches:
         raise SystemExit("Non-reproducible/missing files: " + ", ".join(mismatches))
-    print(("CHECK OK: " if args.check else "BUILT: ") + ", ".join(str(path.relative_to(ROOT)) for path in output))
+    if args.check or args.refresh_report:
+        expected = expected_stored_report(json.loads(output[report_path]), (ASSETS / "ink-whale-sprite.png").read_bytes())
+        if args.refresh_report:
+            report_path.write_text(json.dumps(expected, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        elif not report_path.exists() or json.loads(report_path.read_text(encoding="utf-8")) != expected:
+            actual = json.loads(report_path.read_text(encoding="utf-8")) if report_path.exists() else {}
+            sections = [key for key in sorted(actual.keys() | expected.keys()) if actual.get(key) != expected.get(key)]
+            raise SystemExit("Motion report differs in sections: " + ", ".join(sections))
+        print(json.dumps({"pngComparisons": comparisons, "report": "refreshed" if args.refresh_report else "exact metadata match"}))
+    prefix = "CHECK OK: " if args.check else "REFRESHED REPORT ONLY: " if args.refresh_report else "BUILT: "
+    print(prefix + ", ".join(str(path.relative_to(ROOT)) for path in output))
 
 
 if __name__ == "__main__":
