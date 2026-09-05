@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.6.0
+
+- Redesign the selected minke as a white-bellied ink breach with a fixed generated waterline, 24 selected ImageGen drawings, 72 raster in-betweens and a matching reduced-motion PNG. Playback is 96 frames at 40 fps over 2.4 seconds.
+- Keep original Dive/Classic status animations and all personalized data. Record generation prompts and source hashes, and verify unique frames, transparent margins and exact shipped artwork.
+
 ## 2.5.0
 
 - Adapt to a 488 px settings pane and use existing ImageGen raster artwork for both PNG exports.

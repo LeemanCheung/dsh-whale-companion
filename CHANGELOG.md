@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.6.0
+
+- Redesign the minke as a white-bellied ink whale breaching, arching and re-entering a fixed ImageGen waterline. Use 24 selected generated drawings, including two corrected apex poses, plus 72 explicitly identified raster in-betweens.
+- Ship a 96-frame, 40 fps, 2.4-second lossless WebP and matching square PNG fallback across the companion, quick card and local image exports. Retain personalized state and the separate original Dive/Classic status animations.
+- Archive all four built-in generation prompts and reference sources. Check source hashes, exact shipped bytes, frame timing, distinct frames, four-pixel transparent margins and rebuilt decoded pixels in CI.
+
 ## 2.5.0
 
 - Adapt Whale Home to narrow settings containers, keeping the title and whale readable at 488 px inside a desktop dialog.

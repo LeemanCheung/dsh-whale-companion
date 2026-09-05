@@ -1,6 +1,6 @@
 {
   "name": "dsh-whale-companion",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "A local-first DSH whale world with ImageGen raster companions, dynamic goals, collectibles, expeditions, and privacy-safe sharing",
   "type": "module",
   "main": "lib/index.js",

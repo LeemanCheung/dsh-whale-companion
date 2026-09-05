@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-05",
+  "status": "assistant-reviewed",
+  "userApproval": "not-yet-recorded",
+  "motionSha256": "0511b078add171ae4b288d431c19ecfd133649e3aaa0b81fd20d61dca0e0f74e",
+  "generatedPoseCount": 24,
+  "interpolatedFrameCount": 72,
+  "frameCount": 96,
+  "fps": 40,
+  "loopMs": 2400,
+  "reviewedWidthsPx": [100, 170, 240],
+  "backgrounds": ["light", "dark"],
+  "checks": ["24-pose contact sheet", "browser native WebP playback", "no cropped frame edges", "fixed waterline", "body articulation rather than only whole-image motion"],
+  "limitations": ["raster in-betweens can show minor silhouette variation at enlarged sizes", "the new art has not been approved by the user"]
+}

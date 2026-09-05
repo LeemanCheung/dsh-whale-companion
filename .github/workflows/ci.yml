@@ -30,6 +30,7 @@ jobs:
       - run: corepack pnpm verify:species:rebuild
       - run: corepack pnpm verify:ink:rebuild
       - run: corepack pnpm verify:ink:motion
+      - run: corepack pnpm verify:breach:rebuild
       - run: corepack pnpm typecheck
       - run: corepack pnpm test
       - run: corepack pnpm build

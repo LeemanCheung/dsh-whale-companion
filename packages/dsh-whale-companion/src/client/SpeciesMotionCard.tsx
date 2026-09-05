@@ -21,6 +21,6 @@ export function SpeciesMotionCard({ species }: { species: WhaleSpeciesDefinition
     React.createElement('small', null, '当前同行鲸灵'),
     React.createElement('strong', null, species.nameZh),
     React.createElement('span', null, species.nameEn),
-    React.createElement('p', null, animated ? '躯干、胸鳍与尾部形成连续游动；海水背景保持静止。' : species.story),
+    React.createElement('p', null, animated ? '墨鲸跃出水面，弯身入水；躯干、胸鳍与尾部随动作变化，水面保持静止。' : species.story),
   ))
 }

@@ -4,13 +4,13 @@ English | [中文](README.zh-CN.md)
 
 A local-first DSH whale world. Privacy-safe session metadata becomes a draggable companion, 20 unlockable whale spirits, visible tides, a personal sea cove, gentle expeditions, and opt-in local whale-circle cards.
 
-Version 2.5.0 targets DSH 0.1.2-rc.1. It uses the new UI renderer service while retaining the existing name, appearance, position, progress, collectibles, room presets and ImageGen species atlas. Background write failures cannot interrupt the DSH session; the affected progress update may be missed, and later updates remain accepted. Explicit user saves still report failure. Session flush and plugin shutdown wait for already accepted writes before the domain closes.
+Version 2.6.0 targets DSH 0.1.2-rc.1. It retains the existing name, appearance, position, progress, collectibles, room presets and ImageGen species atlas. Background write failures cannot interrupt the DSH session; the affected progress update may be missed, and later updates remain accepted. Explicit user saves still report failure. Session flush and plugin shutdown wait for already accepted writes before the domain closes.
 
-The selected minke companion now uses 24 individually generated black-ink poses plus 72 explicitly identified raster in-betweens: 96 frames, 60 fps, a 1.6-second loop. The head stays registered while the torso, fins and tail move. Both system and in-product reduced motion select the matching PNG still. See the [ImageGen prompts and source record](docs/imagegen-20260905-prompts.md).
+The selected minke now breaches through a fixed ink waterline, arches and dives back under it. The white-bellied silhouette uses 24 selected ImageGen drawings and 72 raster in-betweens: 96 frames at 40 fps in a 2.4-second loop. Both system and in-product reduced motion select the matching PNG still. The original Dive/Classic status animations are not replaced. See the [design, full prompts and source record](docs/ink-breach-design.md).
 
-![Ink whale playback at 240,144 and100 pixels](docs/ink-whale-motion-60fps.gif)
+![White-bellied ink whale breach preview](docs/ink-breach-preview.gif)
 
-The GIF is a compatibility preview; format and browser timing limits apply. The plugin and [native WebP](packages/dsh-whale-companion/assets/ink-whale-motion.webp) use the accurate 16/17 ms frame timing.
+The GIF is a compatibility preview; format and browser timing limits apply. The plugin and [native WebP](packages/dsh-whale-companion/assets/ink-breach-motion.webp) use uniform 25 ms frame timing.
 
 ## Screenshots
 
@@ -30,7 +30,7 @@ The GIF is a compatibility preview; format and browser timing limits apply. The 
 - A movable `shell.overlay` whale supports pointer drag, keyboard movement, edge snapping, persisted viewport-safe placement, and one shared five-second local refresh. New tide moments appear in a bounded visible bubble; only milestones are announced to screen readers.
 - Quiet, standard, and lively presentation modes stay in browser-local preferences. System reduced-motion always wins, and storage denial falls back safely without affecting progress.
 - Whale Home now leads with a seven-day ocean journal, the current whale story beat, a visual cove preview, and a field-backed Privacy Ledger.
-- The selected-species card gives the common minke a reference-edited 24-frame swim: the head stays readable, motion travels through the torso, pectoral fin, tail stock, and fluke, and the ocean layer remains static. Reduced-motion mode freezes the first frame.
+- The selected-species card, floating companion and quick card share the same breach animation and generated-art PNG fallback; the ocean layer remains static.
 - 20 whale spirits unlock over Ocean Levels 1–100. Each maps its story and visible tide response to a safe event family, without changing model behavior.
 - Live-only `session/created`, `user/message`, and `tool/result` metadata drives bounded local tide moments. Repeated tool results still count toward legacy XP, but cannot farm tide moments, collectibles, or expedition progress.
 - The Whale Home provides a tide timeline, local PNG postcard export, a 24-item collectible catalog, eight fixed room slots, three room presets, and a non-punitive expedition.

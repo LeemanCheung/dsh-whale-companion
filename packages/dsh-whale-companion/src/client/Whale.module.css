@@ -79,7 +79,7 @@
 .minkeSprite { background-position: center; background-size: contain; }
 .home[data-reduced='true'] .minkeSprite, .home[data-reduced='true'] [data-raster-art='imagegen-animation'], .overlay[data-reduced='true'] [data-raster-art='imagegen-animation'] { background-image: var(--ink-whale-still) !important; }
 @media (prefers-reduced-motion: reduce) { .minkeSprite { background-image: var(--ink-whale-still) !important; } }
-.motionStage[data-ink='true'] { background: linear-gradient(180deg, #f6f9fc, #ddeaf2); border-color: #c6d7e2; box-shadow: inset 0 0 34px rgba(255, 255, 255, .4); }
+.motionStage[data-ink='true'] { aspect-ratio: 1; background: linear-gradient(180deg, #f6f9fc, #ddeaf2); border-color: #c6d7e2; box-shadow: inset 0 0 34px rgba(255, 255, 255, .4); }
 .motionStage[data-ink='true']::before, .motionStage[data-ink='true']::after { border-color: rgba(71, 119, 147, .12); }
 .motionFallback { background-position: center; background-size: 500% 400%; }
 .motionCopy { display: block; min-width: 0; }
