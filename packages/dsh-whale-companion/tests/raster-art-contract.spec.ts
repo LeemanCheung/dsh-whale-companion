@@ -22,6 +22,7 @@ describe('raster-only whale art contract', () => {
     expect(String(still.props.style.backgroundImage)).toContain('data:image/webp;base64,')
     expect(animated.type).toBe('span')
     expect(animated.props['data-raster-art']).toBe('imagegen-animation')
-    expect(String(animated.props.style.backgroundImage)).toContain('data:image/png;base64,')
+    expect(String(animated.props.style.backgroundImage)).toContain('data:image/webp;base64,')
+    expect(String(animated.props.style['--ink-whale-still'])).toContain('data:image/png;base64,')
   })
 })

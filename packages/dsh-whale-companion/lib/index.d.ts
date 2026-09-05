@@ -3551,6 +3551,7 @@ declare class WhaleCompanionService extends TypertRemoteService {
   private recordEvent;
   private record;
   private receipt;
+  private observe;
   private enqueue;
   private state;
   private commit;

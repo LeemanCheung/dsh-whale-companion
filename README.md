@@ -4,6 +4,14 @@ English | [中文](README.zh-CN.md)
 
 A local-first DSH whale world. Privacy-safe session metadata becomes a draggable companion, 20 unlockable whale spirits, visible tides, a personal sea cove, gentle expeditions, and opt-in local whale-circle cards.
 
+Version 2.5.0 targets DSH 0.1.2-rc.1. It uses the new UI renderer service while retaining the existing name, appearance, position, progress, collectibles, room presets and ImageGen species atlas. Background write failures cannot interrupt the DSH session; the affected progress update may be missed, and later updates remain accepted. Explicit user saves still report failure. Session flush and plugin shutdown wait for already accepted writes before the domain closes.
+
+The selected minke companion now uses 24 individually generated black-ink poses plus 72 explicitly identified raster in-betweens: 96 frames, 60 fps, a 1.6-second loop. The head stays registered while the torso, fins and tail move. Both system and in-product reduced motion select the matching PNG still. See the [ImageGen prompts and source record](docs/imagegen-20260905-prompts.md).
+
+![Ink whale playback at 240,144 and100 pixels](docs/ink-whale-motion-60fps.gif)
+
+The GIF is a compatibility preview; format and browser timing limits apply. The plugin and [native WebP](packages/dsh-whale-companion/assets/ink-whale-motion.webp) use the accurate 16/17 ms frame timing.
+
 ## Screenshots
 
 | Whale Home | Whale atlas |

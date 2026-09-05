@@ -35,3 +35,4 @@ for (const value of inspectedText) {
   process.exit(1)
 }
 console.log('Verified release artifacts for dsh-whale-companion.')
+await import('./verify-ink-playback.mjs')

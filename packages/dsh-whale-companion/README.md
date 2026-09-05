@@ -4,6 +4,8 @@ English | [中文](README.zh-CN.md)
 
 A local-first DSH whale world with safe tide reactions, 20 whale spirits, 24 collectible cove objects, gentle expeditions, visitor bottles, and opt-in local whale-circle cards.
 
+Version 2.5.0 supports DSH 0.1.2-rc.1 while retaining all personalized state and the ImageGen species atlas. The selected minke uses 24 new black-ink ImageGen poses plus 72 raster in-betweens, playing 96 frames at 60 fps with a matching PNG reduced-motion still. Background save errors are contained with content-free diagnostics; explicit save errors remain visible. Already accepted writes drain before shutdown, and later updates can recover after a temporary storage failure.
+
 ## Features
 
 - **Complete 2.4.0 delivery:** named companion, adaptive goals, ImageGen raster portraits, a raster-sprite common-minke animation, PNG/text sharing, and no runtime vector whale art.

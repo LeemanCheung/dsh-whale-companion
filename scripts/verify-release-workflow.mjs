@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 
-const workflowPath = '.github/workflows/release-2.4.0.yml'
+const workflowPath = '.github/workflows/release.yml'
 const workflow = readFileSync(workflowPath, 'utf8')
 const required = [
   'workflow_dispatch:',
@@ -22,4 +22,4 @@ if (missing.length > 0) {
   for (const value of missing) console.error(`- ${value}`)
   process.exit(1)
 }
-console.log('Verified manual immutable 2.4.0 release workflow.')
+console.log('Verified manual immutable release workflow.')

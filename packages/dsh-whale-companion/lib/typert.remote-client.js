@@ -2044,7 +2044,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_claimExpeditionV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":110,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":111,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/export',
@@ -2059,7 +2059,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion#whaleCompanion/export:result',
         schema: dsh_whale_companion_whaleCompanion_export_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":136,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":137,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/exportCommunitySongV5',
@@ -2075,7 +2075,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion#whaleCompanion/exportCommunitySongV5:result',
         schema: dsh_whale_companion_whaleCompanion_exportCommunitySongV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":124,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":125,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/exportVisitorBottleV5',
@@ -2091,7 +2091,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion#whaleCompanion/exportVisitorBottleV5:result',
         schema: dsh_whale_companion_whaleCompanion_exportVisitorBottleV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":113,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":114,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/get',
@@ -2106,7 +2106,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_get_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":60,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":61,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/getV5',
@@ -2121,7 +2121,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_getV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":63,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":64,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/import',
@@ -2146,7 +2146,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_import_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":139,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":140,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/importCommunitySongV5',
@@ -2172,7 +2172,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_importCommunitySongV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":127,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":128,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/importVisitorBottleV5',
@@ -2198,7 +2198,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleVisitorBottle',
         schema: dsh_whale_companion_whaleCompanion_importVisitorBottleV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":116,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":117,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/loadRoomPresetV5',
@@ -2224,7 +2224,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_loadRoomPresetV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":100,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":101,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/placeCollectibleV5',
@@ -2260,7 +2260,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_placeCollectibleV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":90,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":91,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/postcardV5',
@@ -2276,7 +2276,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhalePostcard',
         schema: dsh_whale_companion_whaleCompanion_postcardV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":133,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":134,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/removeCommunityPeerV5',
@@ -2302,7 +2302,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_removeCommunityPeerV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":130,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":131,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/reset',
@@ -2317,7 +2317,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_reset_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":142,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":143,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/saveRoomPresetV5',
@@ -2333,7 +2333,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_saveRoomPresetV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":97,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":98,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/setCommunityV5',
@@ -2369,7 +2369,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_setCommunityV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":119,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":120,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/setName',
@@ -2394,7 +2394,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_setName_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":72,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":73,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/setPosition',
@@ -2419,7 +2419,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_setPosition_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":78,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":79,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/setSkin',
@@ -2444,7 +2444,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_setSkin_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":66,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":67,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/setSpeciesV5',
@@ -2470,7 +2470,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_setSpeciesV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":84,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":85,"column":9},
     },
     {
       id: 'dsh-whale-companion#whaleCompanion/startExpeditionV5',
@@ -2516,7 +2516,7 @@ export const TYPERT_REMOTE = {
         typeSymbol: 'dsh-whale-companion/types#WhaleState',
         schema: dsh_whale_companion_whaleCompanion_startExpeditionV5_result$schema,
       },
-      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":103,"column":9},
+      sourceLocation: {"file":"packages/dsh-whale-companion/src/index.ts","line":104,"column":9},
     },
   ],
 }

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.5.0
+
+- Support DSH 0.1.2-rc.1 using the renderer and Remote client entry points.
+- Contain background progress write failures with content-free diagnostics and keep later updates working.
+- Drain accepted writes on session flush and shutdown; reject new writes after shutdown begins.
+- Preserve all personalized v1–v5 state and ImageGen PNG/WebP assets.
+- Add new black-ink swimming art from 24 distinct ImageGen poses with a stable head, torso/fin movement, raster in-betweens and a matching reduced-motion PNG.
+
 ## 2.4.0
 
 - Replace inline vector whale art with ImageGen PNG/WebP species portraits and the verified raster minke sprite.

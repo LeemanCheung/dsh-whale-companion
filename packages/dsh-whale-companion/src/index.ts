@@ -43,12 +43,13 @@ export class WhaleCompanionService extends TypertRemoteService {
   protected async [Service.init](): Promise<void> {
     const domain = await this.ctx.storageDomain.open(whaleDomainSpec)
     this.table = domain.table('state')
-    this.ctx.on('session/created', session => {
+    this.ctx.on('session/created', session => this.observe(async () => {
       const createdAt = session.header.createdAt
       const at = typeof createdAt === 'number' && Number.isFinite(createdAt) ? createdAt : Date.now()
-      void this.record({ checkpoint: this.receipt('session-created', session.id, String(createdAt)), kind: 'session', day: dayOf(at), at })
-    })
-    this.ctx.on('session/event', (session, event) => { void this.recordEvent(session, event) })
+      await this.record({ checkpoint: this.receipt('session-created', session.id, String(createdAt)), kind: 'session', day: dayOf(at), at })
+    }))
+    this.ctx.on('session/event', (session, event) => this.observe(() => this.recordEvent(session, event)))
+    this.ctx.on('session/flush', () => this.tail)
     this.ctx.effect(() => async () => {
       this.accepting = false
       await this.tail
@@ -156,7 +157,19 @@ export class WhaleCompanionService extends TypertRemoteService {
     return `v5:${createHmac('sha256', this.receiptKey).update(`${scope}\0${parts.join('\0')}`, 'utf8').digest('base64url')}`
   }
 
+  private async observe(work: () => Promise<void>): Promise<void> {
+    if (!this.accepting) return
+    try {
+      await work()
+    } catch {
+      // Storage errors can contain paths or record contents. Neither the error
+      // object nor session metadata belongs in an observer diagnostic.
+      this.ctx.logger.warn('Whale Companion could not save this progress update; later updates will still be accepted.')
+    }
+  }
+
   private enqueue<T>(work: () => Promise<T>): Promise<T> {
+    if (!this.accepting) return Promise.reject(new Error('whale companion is closing'))
     const result = this.tail.then(work)
     this.tail = result.then(() => undefined, () => undefined)
     return result

@@ -64,8 +64,8 @@ describe('common minke motion asset', () => {
     expect(component).toContain("className: styles.motionStage")
     expect(component).toContain("className: styles.minkeSprite")
     expect(css).toMatch(/\.motionStage\s*\{[^}]*background:/)
-    expect(css).toMatch(/\.minkeSprite\s*\{[^}]*animation:\s*minkeSwim/)
-    expect(css).toMatch(/prefers-reduced-motion:[\s\S]*\.minkeSprite\s*\{\s*animation:\s*none/)
+    expect(css).toMatch(/\.minkeSprite\s*\{[^}]*background-size:\s*contain/)
+    expect(css).toMatch(/prefers-reduced-motion:[\s\S]*\.minkeSprite\s*\{\s*background-image:\s*var\(--ink-whale-still\)/)
     for (const position of ['0 0', '20% 0', '100% 0', '0 33.333%', '100% 33.333%', '0 66.667%', '100% 66.667%', '0 100%', '100% 100%']) {
       expect(css).toContain(`background-position: ${position}`)
     }

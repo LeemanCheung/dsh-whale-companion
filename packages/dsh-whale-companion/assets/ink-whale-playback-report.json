@@ -1,0 +1,2326 @@
+{
+  "version": 1,
+  "sourceHashes": {
+    "packages/dsh-whale-companion/assets/ink-whale-sprite.png": "557750b76da28e9aa8415e509924a310833426eda35a2093b5d986e0aa14c975",
+    "artwork-sources/ink-whale-poses-imagegen.png": "a6993c0f3dfb158c3ad8fde200af0e3852f3620718467ffc02be8e0b0a9b802f",
+    "artwork-sources/ink-whale-identity-imagegen.png": "2efc6218ec3b23a9e383c6e6b813ce78765942fc2cbc20b27ff25d540b677414"
+  },
+  "sourceOrder": [
+    1,
+    19,
+    7,
+    10,
+    9,
+    8,
+    11,
+    12,
+    3,
+    16,
+    22,
+    13,
+    14,
+    23,
+    15,
+    5,
+    4,
+    17,
+    6,
+    18,
+    24,
+    2,
+    21,
+    20
+  ],
+  "runtime": {
+    "path": "packages/dsh-whale-companion/assets/ink-whale-motion.webp",
+    "sha256": "5a69d16f15c2f84ac027c19b3a9c186cd72ae6a1329efc66d8443d90adbea109",
+    "frameSize": [
+      384,
+      320
+    ],
+    "frameCount": 96,
+    "ImageGenAnchors": 24,
+    "interpolatedFrames": 72,
+    "durationMs": 1600,
+    "fps": 60,
+    "durationsMs": [
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17,
+      17,
+      16,
+      17
+    ]
+  },
+  "method": "Frozen V2. Bidirectional Farneback flow warps signed-distance mattes to one interpolated contour. Premultiplied source RGB retains the source eye with a 9px stationary sampling guard. Only 72 intermediate frames are interpolated; all 24 original raster anchors remain unchanged. No SVG and no procedural drawing of the whale.",
+  "buildEnvironment": {
+    "numpy": "2.3.3",
+    "Pillow": "12.1.1",
+    "opencv": "4.13.0"
+  },
+  "encodedChecks": {
+    "frameCount": 96,
+    "totalDurationMs": 1600,
+    "durationCounts": {
+      "16": 32,
+      "17": 64
+    },
+    "all24AnchorVisibleRgbaExact": true,
+    "all96VisibleFramesReproduced": true,
+    "maximumInterpolatedChannelError": 0
+  },
+  "metrics": {
+    "uniqueFrames": 96,
+    "allBordersTransparent": true,
+    "maximumLargeConnectedBodies": 1,
+    "meanMad": 0.573461,
+    "maxMad": 0.874295,
+    "seamMad": 0.731895,
+    "semiTransparentFractionRange": [
+      0.047688,
+      0.098167
+    ],
+    "frames": [
+      {
+        "frame": 1,
+        "rgbaSha256": "483ad47fe19dddee825e465db938e1a2980544b6ed740cccef1d4def0e8d867f",
+        "alphaBoundingBox": [
+          35,
+          104,
+          346,
+          211
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.098167,
+        "nextFramePremultipliedRgbaMad": 0.651403
+      },
+      {
+        "frame": 2,
+        "rgbaSha256": "8f90fda27f44170c33a9d4560e56f758a86ff5efd0509caa70531f47474dca17",
+        "alphaBoundingBox": [
+          40,
+          107,
+          343,
+          206
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.060753,
+        "nextFramePremultipliedRgbaMad": 0.599634
+      },
+      {
+        "frame": 3,
+        "rgbaSha256": "3fb57c81d1b9e77891c0af18e76f957b6d511f0cec96593e29aab129e3169604",
+        "alphaBoundingBox": [
+          42,
+          107,
+          344,
+          205
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.058067,
+        "nextFramePremultipliedRgbaMad": 0.583333
+      },
+      {
+        "frame": 4,
+        "rgbaSha256": "7593996286ae082231e6760fdf51858e74b8d6ad87bd50b59f9814f6072c964d",
+        "alphaBoundingBox": [
+          44,
+          107,
+          345,
+          203
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.058595,
+        "nextFramePremultipliedRgbaMad": 0.599849
+      },
+      {
+        "frame": 5,
+        "rgbaSha256": "e02d7ce2bef281b14f8bb74c1f5381c088d07e7a28fc8c8ebf2521a73c2da47d",
+        "alphaBoundingBox": [
+          44,
+          105,
+          349,
+          204
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.095175,
+        "nextFramePremultipliedRgbaMad": 0.64209
+      },
+      {
+        "frame": 6,
+        "rgbaSha256": "50f02a9b62364897f6d39a2315ff884849087a651ca7c6846c38b97c7186e3c0",
+        "alphaBoundingBox": [
+          50,
+          107,
+          345,
+          199
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.066736,
+        "nextFramePremultipliedRgbaMad": 0.607212
+      },
+      {
+        "frame": 7,
+        "rgbaSha256": "52fce8c6789677c5cdb2bb190535b60b2c17b9f369c2203c05e6cd0db143f433",
+        "alphaBoundingBox": [
+          53,
+          106,
+          345,
+          197
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.069418,
+        "nextFramePremultipliedRgbaMad": 0.609866
+      },
+      {
+        "frame": 8,
+        "rgbaSha256": "a6a37c3985316e5b2e6d6bb7daa990446f6d11d4599f455f9e2a89cf78b70393",
+        "alphaBoundingBox": [
+          57,
+          106,
+          344,
+          195
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.066173,
+        "nextFramePremultipliedRgbaMad": 0.638747
+      },
+      {
+        "frame": 9,
+        "rgbaSha256": "901db68a53a615f09c126d4ce7c10961642e9d13609b70730d65755dac0f9688",
+        "alphaBoundingBox": [
+          57,
+          103,
+          347,
+          196
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.08923,
+        "nextFramePremultipliedRgbaMad": 0.821635
+      },
+      {
+        "frame": 10,
+        "rgbaSha256": "a23379394528de3ccc99197ac942b8a94e5d4809cf87ff60a721ca681b53fb5d",
+        "alphaBoundingBox": [
+          59,
+          103,
+          344,
+          191
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.068362,
+        "nextFramePremultipliedRgbaMad": 0.818247
+      },
+      {
+        "frame": 11,
+        "rgbaSha256": "41cbacfe0c08a44de2f5d6a67113c6a63fd7c44cf3561664926245374a156de6",
+        "alphaBoundingBox": [
+          58,
+          100,
+          344,
+          190
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.07119,
+        "nextFramePremultipliedRgbaMad": 0.82173
+      },
+      {
+        "frame": 12,
+        "rgbaSha256": "34d1abbd432cd826b5ebf318b5d8c6a18015428a298a120e9212ba9069ce79b9",
+        "alphaBoundingBox": [
+          57,
+          98,
+          344,
+          189
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.066518,
+        "nextFramePremultipliedRgbaMad": 0.843334
+      },
+      {
+        "frame": 13,
+        "rgbaSha256": "10be6a27d9e4d8613ba652b64f82c326124ae7e6e0ad8b1d48332fcf9b88d4ef",
+        "alphaBoundingBox": [
+          53,
+          93,
+          348,
+          192
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.094946,
+        "nextFramePremultipliedRgbaMad": 0.545319
+      },
+      {
+        "frame": 14,
+        "rgbaSha256": "dd8820b3024660e1779701dec695af7c25308ffc6de4a2d7463f8446894f959e",
+        "alphaBoundingBox": [
+          54,
+          96,
+          345,
+          189
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.061121,
+        "nextFramePremultipliedRgbaMad": 0.504939
+      },
+      {
+        "frame": 15,
+        "rgbaSha256": "8731fc7c5de87008cbf48290a4de12dbe8bad32211419fd463941a36b0e771f4",
+        "alphaBoundingBox": [
+          52,
+          96,
+          345,
+          189
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.061957,
+        "nextFramePremultipliedRgbaMad": 0.505948
+      },
+      {
+        "frame": 16,
+        "rgbaSha256": "982ad56dd990c17fa91a3a5ee416273efe04ef418fe4b526af324b527bf3225b",
+        "alphaBoundingBox": [
+          49,
+          97,
+          345,
+          189
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.060264,
+        "nextFramePremultipliedRgbaMad": 0.537875
+      },
+      {
+        "frame": 17,
+        "rgbaSha256": "11874edc49f3899fe809bcfddbe090a20cb53a4ba226e2331d320ed054849e98",
+        "alphaBoundingBox": [
+          43,
+          94,
+          348,
+          193
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.09797,
+        "nextFramePremultipliedRgbaMad": 0.760891
+      },
+      {
+        "frame": 18,
+        "rgbaSha256": "98bbfb921b9e880d3f9c223a79e0a44b8c592ed03e66590beac5c50bc8f52e1e",
+        "alphaBoundingBox": [
+          46,
+          99,
+          345,
+          190
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.06028,
+        "nextFramePremultipliedRgbaMad": 0.742014
+      },
+      {
+        "frame": 19,
+        "rgbaSha256": "bfddbb90f06c2ec88c8b75e933b269a5b3db16c5a3b1e3afd79daa760acf7b3f",
+        "alphaBoundingBox": [
+          46,
+          100,
+          345,
+          190
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.059859,
+        "nextFramePremultipliedRgbaMad": 0.74558
+      },
+      {
+        "frame": 20,
+        "rgbaSha256": "f115052947e4815241a7ec22370308e1bc08552bde178b374153bb900db3dabb",
+        "alphaBoundingBox": [
+          46,
+          102,
+          344,
+          191
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.06139,
+        "nextFramePremultipliedRgbaMad": 0.777191
+      },
+      {
+        "frame": 21,
+        "rgbaSha256": "70355426e19812892698e5fc72e3bc33eed26b94642ecaf190c757ae64e36343",
+        "alphaBoundingBox": [
+          43,
+          100,
+          347,
+          194
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.092162,
+        "nextFramePremultipliedRgbaMad": 0.579843
+      },
+      {
+        "frame": 22,
+        "rgbaSha256": "c5ef900b6201800229b602c29605e4a83e222309424474cc155d97d34f31ecac",
+        "alphaBoundingBox": [
+          50,
+          103,
+          344,
+          192
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.066624,
+        "nextFramePremultipliedRgbaMad": 0.556814
+      },
+      {
+        "frame": 23,
+        "rgbaSha256": "03a2a971c8b6334b38dce4dec9429a25e9e98f7253fb4734c6e923ed2cbe1a41",
+        "alphaBoundingBox": [
+          53,
+          103,
+          344,
+          192
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.062703,
+        "nextFramePremultipliedRgbaMad": 0.545951
+      },
+      {
+        "frame": 24,
+        "rgbaSha256": "3c378b74183953239d4bd34aa5c5443c6bcc5e437e6483351951464deafed846",
+        "alphaBoundingBox": [
+          56,
+          103,
+          344,
+          192
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.065046,
+        "nextFramePremultipliedRgbaMad": 0.55729
+      },
+      {
+        "frame": 25,
+        "rgbaSha256": "ec35c426be9be0f3a0c1ed09aebbbf891dcfbbb7353d6ebd8cb95d30fa488846",
+        "alphaBoundingBox": [
+          56,
+          99,
+          348,
+          196
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.092816,
+        "nextFramePremultipliedRgbaMad": 0.48038
+      },
+      {
+        "frame": 26,
+        "rgbaSha256": "5d4c46ba0d392fe18d3b5b5f1f0d80ec2f062892cad721bbd2003a7b8ec79cf5",
+        "alphaBoundingBox": [
+          60,
+          103,
+          345,
+          193
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.051901,
+        "nextFramePremultipliedRgbaMad": 0.445829
+      },
+      {
+        "frame": 27,
+        "rgbaSha256": "d9d28d9f784fbaf7300c7ea1d1b44c45e271e761e4b2d48a28b920e16774ce68",
+        "alphaBoundingBox": [
+          60,
+          103,
+          346,
+          194
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.05259,
+        "nextFramePremultipliedRgbaMad": 0.442264
+      },
+      {
+        "frame": 28,
+        "rgbaSha256": "c3e73d4001c469fe36d1949caf8969c3e83f6bb36adccbfe3ffe5ddb99a3106b",
+        "alphaBoundingBox": [
+          60,
+          103,
+          346,
+          195
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.051407,
+        "nextFramePremultipliedRgbaMad": 0.473023
+      },
+      {
+        "frame": 29,
+        "rgbaSha256": "65afd35a234d5ce748ddf9efa20d11fa635f20c9f4601f5d6eeaf779c4cd45b7",
+        "alphaBoundingBox": [
+          57,
+          101,
+          349,
+          199
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.088748,
+        "nextFramePremultipliedRgbaMad": 0.576537
+      },
+      {
+        "frame": 30,
+        "rgbaSha256": "75dca960b140420765b7673912a17b383e529dc3167223021422d49eba5e001b",
+        "alphaBoundingBox": [
+          63,
+          104,
+          346,
+          198
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.061402,
+        "nextFramePremultipliedRgbaMad": 0.545662
+      },
+      {
+        "frame": 31,
+        "rgbaSha256": "eae8c7e14f567e6d54f85c577004e3c30ea63ea3e3b896b054454ce32ce52a64",
+        "alphaBoundingBox": [
+          67,
+          104,
+          346,
+          199
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.061399,
+        "nextFramePremultipliedRgbaMad": 0.541298
+      },
+      {
+        "frame": 32,
+        "rgbaSha256": "9ac887b1bd7fc8cc4312b7077529579d76dab3101e16ba7c5aefaee4529bdab8",
+        "alphaBoundingBox": [
+          69,
+          105,
+          345,
+          200
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.062137,
+        "nextFramePremultipliedRgbaMad": 0.567724
+      },
+      {
+        "frame": 33,
+        "rgbaSha256": "7c9f2dc4d22fc293a9a23b288111c112479254d1d3cc2cabfdff5f17897630c1",
+        "alphaBoundingBox": [
+          69,
+          102,
+          347,
+          205
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.089973,
+        "nextFramePremultipliedRgbaMad": 0.573105
+      },
+      {
+        "frame": 34,
+        "rgbaSha256": "1caafa05a02a65c3c27e06e9f4f55c7f153a5cdb69edbebc24c34de0a3526ac4",
+        "alphaBoundingBox": [
+          69,
+          105,
+          345,
+          204
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.05655,
+        "nextFramePremultipliedRgbaMad": 0.538224
+      },
+      {
+        "frame": 35,
+        "rgbaSha256": "c8d63109080f370ef0f929cd47e9993ef1b224a53b3b9097aba96740e3504f6f",
+        "alphaBoundingBox": [
+          66,
+          105,
+          345,
+          206
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.055719,
+        "nextFramePremultipliedRgbaMad": 0.533056
+      },
+      {
+        "frame": 36,
+        "rgbaSha256": "7eb1e5ca90c89a400659a1b63aeef1984b4ff680bfef1f5c69f275cdb6cef9ae",
+        "alphaBoundingBox": [
+          61,
+          105,
+          345,
+          208
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.056595,
+        "nextFramePremultipliedRgbaMad": 0.566417
+      },
+      {
+        "frame": 37,
+        "rgbaSha256": "7f228ffc033a2d3355591e1a216b0e43b6de0bb3d4c4ce4e701bebb0374208a5",
+        "alphaBoundingBox": [
+          55,
+          103,
+          348,
+          212
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.090766,
+        "nextFramePremultipliedRgbaMad": 0.381432
+      },
+      {
+        "frame": 38,
+        "rgbaSha256": "44cf5ee5d95cc050e2e229fb7de0e3f27b760d8002387ad2d1ad44becc3081e9",
+        "alphaBoundingBox": [
+          57,
+          104,
+          346,
+          210
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.063793,
+        "nextFramePremultipliedRgbaMad": 0.347375
+      },
+      {
+        "frame": 39,
+        "rgbaSha256": "39c916962808cacdb1904f74255b0cb6144e47746504581ef0c58b9e20dbd98a",
+        "alphaBoundingBox": [
+          56,
+          103,
+          346,
+          211
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.060411,
+        "nextFramePremultipliedRgbaMad": 0.340039
+      },
+      {
+        "frame": 40,
+        "rgbaSha256": "bea359e7b63393d6445fdc3addfed4a875044b4062cc451bd95f15a15d14cd97",
+        "alphaBoundingBox": [
+          55,
+          102,
+          346,
+          211
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.063749,
+        "nextFramePremultipliedRgbaMad": 0.356976
+      },
+      {
+        "frame": 41,
+        "rgbaSha256": "536cd37906d0ea0249712d416898dfef541985ae8232698f319243ca4ac123ae",
+        "alphaBoundingBox": [
+          51,
+          98,
+          349,
+          214
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.095179,
+        "nextFramePremultipliedRgbaMad": 0.36334
+      },
+      {
+        "frame": 42,
+        "rgbaSha256": "ca2111225ccedad2b220b860f1d04e52ac3d8bc83d7902ad889591683dd7333d",
+        "alphaBoundingBox": [
+          54,
+          101,
+          347,
+          212
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.050446,
+        "nextFramePremultipliedRgbaMad": 0.304475
+      },
+      {
+        "frame": 43,
+        "rgbaSha256": "2f4e1368e8fc6d20a40b74a64ec42fae5c92e5d0696a200af00354696ebd8ad6",
+        "alphaBoundingBox": [
+          54,
+          101,
+          347,
+          212
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.051886,
+        "nextFramePremultipliedRgbaMad": 0.302843
+      },
+      {
+        "frame": 44,
+        "rgbaSha256": "6e786b549bd0470ca0239f23c21d3cd336a9ac748e98851bc456b66b8a0680c3",
+        "alphaBoundingBox": [
+          54,
+          101,
+          346,
+          212
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.049825,
+        "nextFramePremultipliedRgbaMad": 0.350906
+      },
+      {
+        "frame": 45,
+        "rgbaSha256": "a4974d41c922a4cb0c398b44a4f122554e68bde6523797292ddbf659e3c786b0",
+        "alphaBoundingBox": [
+          51,
+          99,
+          350,
+          215
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.091199,
+        "nextFramePremultipliedRgbaMad": 0.504735
+      },
+      {
+        "frame": 46,
+        "rgbaSha256": "3f0861e79fbb556fafe4ef7a3f1e0a39bd4999466664a123be127f6261e57ff7",
+        "alphaBoundingBox": [
+          55,
+          102,
+          346,
+          213
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.055994,
+        "nextFramePremultipliedRgbaMad": 0.454562
+      },
+      {
+        "frame": 47,
+        "rgbaSha256": "d4c7eb3630e090266736d8d7d80aeee453a4352fb72b6c4c31fd8825be3246db",
+        "alphaBoundingBox": [
+          55,
+          102,
+          346,
+          214
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.055161,
+        "nextFramePremultipliedRgbaMad": 0.451639
+      },
+      {
+        "frame": 48,
+        "rgbaSha256": "d2baf57cc4181266104432d576a0ffc309a6ac741505f13fee7d7bd3641f95a3",
+        "alphaBoundingBox": [
+          55,
+          102,
+          346,
+          215
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.054411,
+        "nextFramePremultipliedRgbaMad": 0.48605
+      },
+      {
+        "frame": 49,
+        "rgbaSha256": "b235eff1d9076023bd29115bb1b18046312daeff35650dff6d8c34b2dafa89ec",
+        "alphaBoundingBox": [
+          52,
+          99,
+          348,
+          218
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.088591,
+        "nextFramePremultipliedRgbaMad": 0.767089
+      },
+      {
+        "frame": 50,
+        "rgbaSha256": "0ef84a76d61181fed7b633206b4d22e32bdbedc2b2830ce82daa209ec80e2e7e",
+        "alphaBoundingBox": [
+          56,
+          103,
+          346,
+          217
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.062674,
+        "nextFramePremultipliedRgbaMad": 0.759916
+      },
+      {
+        "frame": 51,
+        "rgbaSha256": "04bbae51e79b5954bf00db8ce6b499a76b804bdf60764ef4134e1314ef8ec2d1",
+        "alphaBoundingBox": [
+          57,
+          103,
+          346,
+          219
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.062594,
+        "nextFramePremultipliedRgbaMad": 0.77725
+      },
+      {
+        "frame": 52,
+        "rgbaSha256": "f136ebba6e56f8c0b300bbf765d134d7cf702e2f3057884f99e2c9e7d5ffdfc6",
+        "alphaBoundingBox": [
+          57,
+          104,
+          346,
+          221
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.06156,
+        "nextFramePremultipliedRgbaMad": 0.813652
+      },
+      {
+        "frame": 53,
+        "rgbaSha256": "11eb7094ada60ace8320707b7525c849a542ddd6bca9e6d1c1de62ea45f2d79c",
+        "alphaBoundingBox": [
+          54,
+          102,
+          350,
+          226
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.091375,
+        "nextFramePremultipliedRgbaMad": 0.530992
+      },
+      {
+        "frame": 54,
+        "rgbaSha256": "7cb8e295d5d3e2f16387daaf4e35a9e841f611c787bf78fd0038080238f1efe7",
+        "alphaBoundingBox": [
+          59,
+          104,
+          347,
+          224
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.061042,
+        "nextFramePremultipliedRgbaMad": 0.490963
+      },
+      {
+        "frame": 55,
+        "rgbaSha256": "e9c1c4d14e1e103e30baef98f2c659393ba1e0e0865b060a59d22d67e922a82a",
+        "alphaBoundingBox": [
+          59,
+          104,
+          347,
+          226
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.055873,
+        "nextFramePremultipliedRgbaMad": 0.48526
+      },
+      {
+        "frame": 56,
+        "rgbaSha256": "cea9582cfa8bb6357b06c09fdf35a686fc3de46e2f14b4df764bf0eb92c91db5",
+        "alphaBoundingBox": [
+          60,
+          104,
+          347,
+          228
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.060558,
+        "nextFramePremultipliedRgbaMad": 0.502092
+      },
+      {
+        "frame": 57,
+        "rgbaSha256": "e53987d7a276d4b3d5fd300808817372a31de2cd888a1b38b9955aa9124e8e80",
+        "alphaBoundingBox": [
+          58,
+          101,
+          349,
+          233
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.088348,
+        "nextFramePremultipliedRgbaMad": 0.450175
+      },
+      {
+        "frame": 58,
+        "rgbaSha256": "c483ce14a74817d3fc90ec6a3228ed71cc3e9dfc5ef50b8127e0d202e39a916f",
+        "alphaBoundingBox": [
+          60,
+          104,
+          346,
+          231
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.061413,
+        "nextFramePremultipliedRgbaMad": 0.437125
+      },
+      {
+        "frame": 59,
+        "rgbaSha256": "84e3f1b874a23b24f15fea9ccb0b8de4c3d6cc869607f490ef22e0b482b0ae9f",
+        "alphaBoundingBox": [
+          60,
+          105,
+          346,
+          233
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.052963,
+        "nextFramePremultipliedRgbaMad": 0.442538
+      },
+      {
+        "frame": 60,
+        "rgbaSha256": "d92a4c45872fec5491028c81d1ba2416bedb9f9f2c2b95d19689776675cc5ce8",
+        "alphaBoundingBox": [
+          60,
+          106,
+          345,
+          234
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.060962,
+        "nextFramePremultipliedRgbaMad": 0.466176
+      },
+      {
+        "frame": 61,
+        "rgbaSha256": "e62a8b1ad05bc79a34c2400c0a308b8bd1f84bcc1ae7870079a7b2971f0cb4d7",
+        "alphaBoundingBox": [
+          57,
+          103,
+          347,
+          238
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.088598,
+        "nextFramePremultipliedRgbaMad": 0.617956
+      },
+      {
+        "frame": 62,
+        "rgbaSha256": "2cbe60b960758743b0b1783dcc8542208f42a7d22471247a8e6eb3682ca94dc7",
+        "alphaBoundingBox": [
+          63,
+          106,
+          345,
+          237
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.062441,
+        "nextFramePremultipliedRgbaMad": 0.597787
+      },
+      {
+        "frame": 63,
+        "rgbaSha256": "91ef82b524a1f068f28e19fc7ebdf761dade20ac2fb9848072fb59e0a93afed4",
+        "alphaBoundingBox": [
+          66,
+          106,
+          345,
+          238
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.066112,
+        "nextFramePremultipliedRgbaMad": 0.615847
+      },
+      {
+        "frame": 64,
+        "rgbaSha256": "11fe9acb6ffdc15a251cb5fbdb42214fdbb6c934128bcc5ab4601d7ce7c3dc77",
+        "alphaBoundingBox": [
+          69,
+          106,
+          345,
+          239
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.062729,
+        "nextFramePremultipliedRgbaMad": 0.663244
+      },
+      {
+        "frame": 65,
+        "rgbaSha256": "6db02b009b116c985fab2314b5bc5fe36a77fd89717ebc6a87e58a295eb1d369",
+        "alphaBoundingBox": [
+          69,
+          104,
+          347,
+          243
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.089778,
+        "nextFramePremultipliedRgbaMad": 0.419574
+      },
+      {
+        "frame": 66,
+        "rgbaSha256": "6a8ac4e91a781b5d813a32d85852cea4ead97feb23f465f3f6e1f73ae1f7f2a5",
+        "alphaBoundingBox": [
+          72,
+          108,
+          345,
+          240
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.059766,
+        "nextFramePremultipliedRgbaMad": 0.383527
+      },
+      {
+        "frame": 67,
+        "rgbaSha256": "86641ebf545853dac084874bab5a602bfd6c34af208421b2a70034182ce92789",
+        "alphaBoundingBox": [
+          71,
+          109,
+          346,
+          240
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.058744,
+        "nextFramePremultipliedRgbaMad": 0.384506
+      },
+      {
+        "frame": 68,
+        "rgbaSha256": "fd06efe266e43ad1c8583728d5fb223662d5e031e8565e181d2e9361d03f8a5f",
+        "alphaBoundingBox": [
+          70,
+          109,
+          346,
+          240
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.058632,
+        "nextFramePremultipliedRgbaMad": 0.41152
+      },
+      {
+        "frame": 69,
+        "rgbaSha256": "b863f49c08cdd6d0b4050628d051d99ef8b3244cb28cdf3229786e0a970cc39b",
+        "alphaBoundingBox": [
+          67,
+          107,
+          349,
+          243
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.09069,
+        "nextFramePremultipliedRgbaMad": 0.36032
+      },
+      {
+        "frame": 70,
+        "rgbaSha256": "018ec3105ee4b750cd89313160931b0e63cf6032a41860779ca92adee93babe5",
+        "alphaBoundingBox": [
+          68,
+          110,
+          346,
+          241
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.051178,
+        "nextFramePremultipliedRgbaMad": 0.307423
+      },
+      {
+        "frame": 71,
+        "rgbaSha256": "e604d793431229d2c38219442f883c93d8fe4057305cd36a8a18f42dc7d10770",
+        "alphaBoundingBox": [
+          67,
+          110,
+          346,
+          242
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.047688,
+        "nextFramePremultipliedRgbaMad": 0.30694
+      },
+      {
+        "frame": 72,
+        "rgbaSha256": "2cd7db7170ea15fe14e6007c59e02360f094a468348bb24968e822654cd8418f",
+        "alphaBoundingBox": [
+          66,
+          110,
+          345,
+          243
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.052762,
+        "nextFramePremultipliedRgbaMad": 0.358774
+      },
+      {
+        "frame": 73,
+        "rgbaSha256": "6d4739c6f8da1fcedfaaec8637bcaa32d8b39c312ccbcbad609c734be07c163c",
+        "alphaBoundingBox": [
+          61,
+          107,
+          348,
+          246
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.092321,
+        "nextFramePremultipliedRgbaMad": 0.599052
+      },
+      {
+        "frame": 74,
+        "rgbaSha256": "ebc48bc18b1492c91baa8d9cbdb937ce8ce91695283a0192c1e2f99e663534b9",
+        "alphaBoundingBox": [
+          63,
+          110,
+          345,
+          242
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.061873,
+        "nextFramePremultipliedRgbaMad": 0.570313
+      },
+      {
+        "frame": 75,
+        "rgbaSha256": "725089bf9ec7d614d8db96137d2f64d0ab83feffc34da44b524b07d14239220a",
+        "alphaBoundingBox": [
+          62,
+          110,
+          346,
+          241
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.053068,
+        "nextFramePremultipliedRgbaMad": 0.567376
+      },
+      {
+        "frame": 76,
+        "rgbaSha256": "366a93002b6e6df8251258268b0ba7051bcc93121cb0def20dc9d506d5323cda",
+        "alphaBoundingBox": [
+          61,
+          110,
+          346,
+          240
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.061781,
+        "nextFramePremultipliedRgbaMad": 0.5887
+      },
+      {
+        "frame": 77,
+        "rgbaSha256": "dd0c9d1bbb27432b4ed3e4cebfc21d36d5661d3076f12457b56a48adaf462f6b",
+        "alphaBoundingBox": [
+          57,
+          106,
+          349,
+          242
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.093414,
+        "nextFramePremultipliedRgbaMad": 0.648171
+      },
+      {
+        "frame": 78,
+        "rgbaSha256": "ec103198622f737146cd143f19424e37842d97fb775e2a7b5cd0c70820150f99",
+        "alphaBoundingBox": [
+          61,
+          108,
+          347,
+          234
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.054624,
+        "nextFramePremultipliedRgbaMad": 0.61338
+      },
+      {
+        "frame": 79,
+        "rgbaSha256": "92d2a4be7ad443cc7fe184a23bd14c2f08a67558d466cbbec8763688181b22cc",
+        "alphaBoundingBox": [
+          62,
+          107,
+          347,
+          230
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.055807,
+        "nextFramePremultipliedRgbaMad": 0.624827
+      },
+      {
+        "frame": 80,
+        "rgbaSha256": "6b8f92a087c7e11d32602f656b8ec12cc6b62591201380cca1326c595fdfa314",
+        "alphaBoundingBox": [
+          63,
+          106,
+          347,
+          225
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.052946,
+        "nextFramePremultipliedRgbaMad": 0.686256
+      },
+      {
+        "frame": 81,
+        "rgbaSha256": "426052672e342bafc97b395d12e24dd5b2b23d3b9427719b5975375a38ea8b21",
+        "alphaBoundingBox": [
+          60,
+          103,
+          350,
+          224
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.093623,
+        "nextFramePremultipliedRgbaMad": 0.86432
+      },
+      {
+        "frame": 82,
+        "rgbaSha256": "fecc8b592c31dc87e31ae6457a17855f609a05aef16fb69f945ab6434382b7b8",
+        "alphaBoundingBox": [
+          62,
+          108,
+          346,
+          220
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.060809,
+        "nextFramePremultipliedRgbaMad": 0.828809
+      },
+      {
+        "frame": 83,
+        "rgbaSha256": "9dc6c82ee60871dc07068d326952e55d08a7b302b4349ded7e0d4424262d1e14",
+        "alphaBoundingBox": [
+          62,
+          109,
+          345,
+          219
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.063545,
+        "nextFramePremultipliedRgbaMad": 0.818453
+      },
+      {
+        "frame": 84,
+        "rgbaSha256": "3286ee2cdf448392711fb7d2999baff42aea8ab38f4b622d297b1c0be5125842",
+        "alphaBoundingBox": [
+          62,
+          109,
+          344,
+          218
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.061952,
+        "nextFramePremultipliedRgbaMad": 0.817611
+      },
+      {
+        "frame": 85,
+        "rgbaSha256": "24476425720c12d80ba64fa4af97b562394d3e28941a65d68e7eebe3a2d14b8d",
+        "alphaBoundingBox": [
+          57,
+          107,
+          346,
+          219
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.089296,
+        "nextFramePremultipliedRgbaMad": 0.84501
+      },
+      {
+        "frame": 86,
+        "rgbaSha256": "fb946a899816b8576c1f7f73986b1abfbec54eb7ddad712cefad240f76be2915",
+        "alphaBoundingBox": [
+          59,
+          109,
+          344,
+          216
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.064647,
+        "nextFramePremultipliedRgbaMad": 0.842946
+      },
+      {
+        "frame": 87,
+        "rgbaSha256": "709b3c14487027a095bb52d751be47f33d1cdf43a0d7e78343e69233f4a49708",
+        "alphaBoundingBox": [
+          57,
+          109,
+          344,
+          216
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.0677,
+        "nextFramePremultipliedRgbaMad": 0.853264
+      },
+      {
+        "frame": 88,
+        "rgbaSha256": "71c40359845f86ce187f7a3848f9b6bb0d4123aa7dde8b95a3a1bf02e6c2583c",
+        "alphaBoundingBox": [
+          52,
+          107,
+          344,
+          216
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.064934,
+        "nextFramePremultipliedRgbaMad": 0.874295
+      },
+      {
+        "frame": 89,
+        "rgbaSha256": "805baa5d8efb9b9c00b8f7ac2cc72d1c36aac04cca3791cccb27eb82472b44ed",
+        "alphaBoundingBox": [
+          47,
+          102,
+          348,
+          218
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.095566,
+        "nextFramePremultipliedRgbaMad": 0.442871
+      },
+      {
+        "frame": 90,
+        "rgbaSha256": "1d586ccc26a564a2f3af2f041776e0cc52947057787652f9eb481dd604aff1ff",
+        "alphaBoundingBox": [
+          49,
+          105,
+          345,
+          215
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.051032,
+        "nextFramePremultipliedRgbaMad": 0.385743
+      },
+      {
+        "frame": 91,
+        "rgbaSha256": "3c6c6eeeb571ff03e1d92c037eae706850b0d2186296e7fc30ad57a4f4b6ba41",
+        "alphaBoundingBox": [
+          47,
+          105,
+          345,
+          215
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.05567,
+        "nextFramePremultipliedRgbaMad": 0.383245
+      },
+      {
+        "frame": 92,
+        "rgbaSha256": "e26c48f57e96f5dd908dc7267b05ea2126dedfb8a48a73ad187ce98226f6d6f8",
+        "alphaBoundingBox": [
+          46,
+          106,
+          345,
+          215
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.049751,
+        "nextFramePremultipliedRgbaMad": 0.444579
+      },
+      {
+        "frame": 93,
+        "rgbaSha256": "4b30aa6559f9e10aeb58f5ebb35583a88859d6edf63f0ad72cd996dabd8402f7",
+        "alphaBoundingBox": [
+          41,
+          103,
+          347,
+          218
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.092712,
+        "nextFramePremultipliedRgbaMad": 0.733909
+      },
+      {
+        "frame": 94,
+        "rgbaSha256": "dc8fa3316aee3805b476416d481810c7f04d7ec2842bc676cdfac5433b1b4ad9",
+        "alphaBoundingBox": [
+          43,
+          106,
+          344,
+          213
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.063213,
+        "nextFramePremultipliedRgbaMad": 0.705
+      },
+      {
+        "frame": 95,
+        "rgbaSha256": "7827a6937f38ce0009ee1a486807d2e647f46d5fdea2d44a4deba315b4201f63",
+        "alphaBoundingBox": [
+          41,
+          106,
+          344,
+          211
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.055454,
+        "nextFramePremultipliedRgbaMad": 0.706979
+      },
+      {
+        "frame": 96,
+        "rgbaSha256": "6ca6c8eedebabd8edb55333b0ababf9955d4bcd79c802af3470ef55997de1682",
+        "alphaBoundingBox": [
+          40,
+          106,
+          343,
+          209
+        ],
+        "largeConnectedBodies": 1,
+        "borderTransparent": true,
+        "semiTransparentFraction": 0.063739,
+        "nextFramePremultipliedRgbaMad": 0.731895
+      }
+    ]
+  },
+  "flowPairs": [
+    {
+      "fromSourceFrame": 1,
+      "toSourceFrame": 19,
+      "maxFlowPx": 19.677786
+    },
+    {
+      "fromSourceFrame": 19,
+      "toSourceFrame": 7,
+      "maxFlowPx": 21.939749
+    },
+    {
+      "fromSourceFrame": 7,
+      "toSourceFrame": 10,
+      "maxFlowPx": 23.307674
+    },
+    {
+      "fromSourceFrame": 10,
+      "toSourceFrame": 9,
+      "maxFlowPx": 17.579813
+    },
+    {
+      "fromSourceFrame": 9,
+      "toSourceFrame": 8,
+      "maxFlowPx": 12.339138
+    },
+    {
+      "fromSourceFrame": 8,
+      "toSourceFrame": 11,
+      "maxFlowPx": 19.622383
+    },
+    {
+      "fromSourceFrame": 11,
+      "toSourceFrame": 12,
+      "maxFlowPx": 7.490917
+    },
+    {
+      "fromSourceFrame": 12,
+      "toSourceFrame": 3,
+      "maxFlowPx": 31.900015
+    },
+    {
+      "fromSourceFrame": 3,
+      "toSourceFrame": 16,
+      "maxFlowPx": 18.773115
+    },
+    {
+      "fromSourceFrame": 16,
+      "toSourceFrame": 22,
+      "maxFlowPx": 18.205172
+    },
+    {
+      "fromSourceFrame": 22,
+      "toSourceFrame": 13,
+      "maxFlowPx": 11.852584
+    },
+    {
+      "fromSourceFrame": 13,
+      "toSourceFrame": 14,
+      "maxFlowPx": 12.742956
+    },
+    {
+      "fromSourceFrame": 14,
+      "toSourceFrame": 23,
+      "maxFlowPx": 23.853653
+    },
+    {
+      "fromSourceFrame": 23,
+      "toSourceFrame": 15,
+      "maxFlowPx": 12.763124
+    },
+    {
+      "fromSourceFrame": 15,
+      "toSourceFrame": 5,
+      "maxFlowPx": 9.065299
+    },
+    {
+      "fromSourceFrame": 5,
+      "toSourceFrame": 4,
+      "maxFlowPx": 32.074207
+    },
+    {
+      "fromSourceFrame": 4,
+      "toSourceFrame": 17,
+      "maxFlowPx": 15.515116
+    },
+    {
+      "fromSourceFrame": 17,
+      "toSourceFrame": 6,
+      "maxFlowPx": 11.197631
+    },
+    {
+      "fromSourceFrame": 6,
+      "toSourceFrame": 18,
+      "maxFlowPx": 11.377058
+    },
+    {
+      "fromSourceFrame": 18,
+      "toSourceFrame": 24,
+      "maxFlowPx": 22.022936
+    },
+    {
+      "fromSourceFrame": 24,
+      "toSourceFrame": 2,
+      "maxFlowPx": 19.642206
+    },
+    {
+      "fromSourceFrame": 2,
+      "toSourceFrame": 21,
+      "maxFlowPx": 14.926749
+    },
+    {
+      "fromSourceFrame": 21,
+      "toSourceFrame": 20,
+      "maxFlowPx": 16.709261
+    },
+    {
+      "fromSourceFrame": 20,
+      "toSourceFrame": 1,
+      "maxFlowPx": 23.556742
+    }
+  ],
+  "frameMapping": [
+    {
+      "outputFrame": 1,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 1,
+      "sourceTo": 19,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 2,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 1,
+      "sourceTo": 19,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 3,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 1,
+      "sourceTo": 19,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 4,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 1,
+      "sourceTo": 19,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 5,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 19,
+      "sourceTo": 7,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 6,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 19,
+      "sourceTo": 7,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 7,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 19,
+      "sourceTo": 7,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 8,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 19,
+      "sourceTo": 7,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 9,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 7,
+      "sourceTo": 10,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 10,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 7,
+      "sourceTo": 10,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 11,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 7,
+      "sourceTo": 10,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 12,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 7,
+      "sourceTo": 10,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 13,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 10,
+      "sourceTo": 9,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 14,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 10,
+      "sourceTo": 9,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 15,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 10,
+      "sourceTo": 9,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 16,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 10,
+      "sourceTo": 9,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 17,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 9,
+      "sourceTo": 8,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 18,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 9,
+      "sourceTo": 8,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 19,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 9,
+      "sourceTo": 8,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 20,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 9,
+      "sourceTo": 8,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 21,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 8,
+      "sourceTo": 11,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 22,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 8,
+      "sourceTo": 11,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 23,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 8,
+      "sourceTo": 11,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 24,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 8,
+      "sourceTo": 11,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 25,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 11,
+      "sourceTo": 12,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 26,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 11,
+      "sourceTo": 12,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 27,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 11,
+      "sourceTo": 12,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 28,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 11,
+      "sourceTo": 12,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 29,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 12,
+      "sourceTo": 3,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 30,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 12,
+      "sourceTo": 3,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 31,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 12,
+      "sourceTo": 3,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 32,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 12,
+      "sourceTo": 3,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 33,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 3,
+      "sourceTo": 16,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 34,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 3,
+      "sourceTo": 16,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 35,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 3,
+      "sourceTo": 16,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 36,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 3,
+      "sourceTo": 16,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 37,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 16,
+      "sourceTo": 22,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 38,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 16,
+      "sourceTo": 22,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 39,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 16,
+      "sourceTo": 22,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 40,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 16,
+      "sourceTo": 22,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 41,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 22,
+      "sourceTo": 13,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 42,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 22,
+      "sourceTo": 13,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 43,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 22,
+      "sourceTo": 13,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 44,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 22,
+      "sourceTo": 13,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 45,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 13,
+      "sourceTo": 14,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 46,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 13,
+      "sourceTo": 14,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 47,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 13,
+      "sourceTo": 14,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 48,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 13,
+      "sourceTo": 14,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 49,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 14,
+      "sourceTo": 23,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 50,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 14,
+      "sourceTo": 23,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 51,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 14,
+      "sourceTo": 23,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 52,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 14,
+      "sourceTo": 23,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 53,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 23,
+      "sourceTo": 15,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 54,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 23,
+      "sourceTo": 15,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 55,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 23,
+      "sourceTo": 15,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 56,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 23,
+      "sourceTo": 15,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 57,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 15,
+      "sourceTo": 5,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 58,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 15,
+      "sourceTo": 5,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 59,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 15,
+      "sourceTo": 5,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 60,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 15,
+      "sourceTo": 5,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 61,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 5,
+      "sourceTo": 4,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 62,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 5,
+      "sourceTo": 4,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 63,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 5,
+      "sourceTo": 4,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 64,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 5,
+      "sourceTo": 4,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 65,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 4,
+      "sourceTo": 17,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 66,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 4,
+      "sourceTo": 17,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 67,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 4,
+      "sourceTo": 17,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 68,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 4,
+      "sourceTo": 17,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 69,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 17,
+      "sourceTo": 6,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 70,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 17,
+      "sourceTo": 6,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 71,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 17,
+      "sourceTo": 6,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 72,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 17,
+      "sourceTo": 6,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 73,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 6,
+      "sourceTo": 18,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 74,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 6,
+      "sourceTo": 18,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 75,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 6,
+      "sourceTo": 18,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 76,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 6,
+      "sourceTo": 18,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 77,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 18,
+      "sourceTo": 24,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 78,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 18,
+      "sourceTo": 24,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 79,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 18,
+      "sourceTo": 24,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 80,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 18,
+      "sourceTo": 24,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 81,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 24,
+      "sourceTo": 2,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 82,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 24,
+      "sourceTo": 2,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 83,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 24,
+      "sourceTo": 2,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 84,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 24,
+      "sourceTo": 2,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 85,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 2,
+      "sourceTo": 21,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 86,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 2,
+      "sourceTo": 21,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 87,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 2,
+      "sourceTo": 21,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 88,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 2,
+      "sourceTo": 21,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 89,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 21,
+      "sourceTo": 20,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 90,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 21,
+      "sourceTo": 20,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 91,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 21,
+      "sourceTo": 20,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 92,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 21,
+      "sourceTo": 20,
+      "fraction": 0.75
+    },
+    {
+      "outputFrame": 93,
+      "kind": "ImageGen-anchor",
+      "sourceFrom": 20,
+      "sourceTo": 1,
+      "fraction": 0.0
+    },
+    {
+      "outputFrame": 94,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 20,
+      "sourceTo": 1,
+      "fraction": 0.25
+    },
+    {
+      "outputFrame": 95,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 20,
+      "sourceTo": 1,
+      "fraction": 0.5
+    },
+    {
+      "outputFrame": 96,
+      "kind": "optical-flow-SDF-interpolation",
+      "sourceFrom": 20,
+      "sourceTo": 1,
+      "fraction": 0.75
+    }
+  ],
+  "visualAcceptance": {
+    "status": "PENDING_INDEPENDENT_REVIEW",
+    "reviewFile": "docs/ink-whale-visual-review.json",
+    "knownLimitations": [
+      "Generated source anatomy varies slightly between the 24 anchors.",
+      "SDF intermediate edges are slightly harder than unmodified source edges at 240px and above.",
+      "Single connected bodies and low MAD do not prove attractive or fluid motion; inspect playable 100/144/240px output.",
+      "The GIF preview uses 10/20ms timing quantization; runtime WebP uses 16/17ms frames for a 1600ms loop."
+    ]
+  }
+}

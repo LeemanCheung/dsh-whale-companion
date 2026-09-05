@@ -1,0 +1,988 @@
+{
+  "version": 1,
+  "source": {
+    "path": "artwork-sources/ink-whale-poses-imagegen.png",
+    "sha256": "a6993c0f3dfb158c3ad8fde200af0e3852f3620718467ffc02be8e0b0a9b802f",
+    "size": [
+      1536,
+      1024
+    ],
+    "identityPath": "artwork-sources/ink-whale-identity-imagegen.png",
+    "identitySha256": "2efc6218ec3b23a9e383c6e6b813ce78765942fc2cbc20b27ff25d540b677414",
+    "method": "ImageGen source; component crop, exterior paper removal, uniform scale and eye translation only; original row-major order; no SVG, redraw, deformation or frame interpolation"
+  },
+  "runtime": {
+    "spritePath": "packages/dsh-whale-companion/assets/ink-whale-sprite.png",
+    "spriteSha256": "557750b76da28e9aa8415e509924a310833426eda35a2093b5d986e0aa14c975",
+    "size": [
+      2304,
+      1280
+    ],
+    "grid": [
+      6,
+      4
+    ],
+    "frameSize": [
+      384,
+      320
+    ],
+    "frameCount": 24,
+    "previewFps": 24,
+    "previewDurationMs": 1000,
+    "previewWidthsPx": [
+      240,
+      144,
+      100
+    ]
+  },
+  "checks": {
+    "uniqueFrames": 24,
+    "allFrameBordersTransparent": true,
+    "outputEyeRangePx": [
+      0.96493,
+      0.93893
+    ],
+    "opaqueAreaRange": [
+      11806,
+      11928
+    ],
+    "adjacentPremultipliedRgbaMad": [
+      3.117007,
+      3.173759,
+      2.689229,
+      2.070598,
+      2.614272,
+      4.260115,
+      1.798495,
+      2.414299,
+      1.568361,
+      2.419895,
+      1.42338,
+      1.949037,
+      1.455924,
+      2.51127,
+      2.264386,
+      3.282068,
+      1.676496,
+      2.903625,
+      1.874218,
+      1.257044,
+      1.214411,
+      2.021252,
+      0.845282
+    ],
+    "largestAdjacentPairs": [
+      {
+        "fromFrame": 6,
+        "toFrame": 7,
+        "mad": 4.260115
+      },
+      {
+        "fromFrame": 16,
+        "toFrame": 17,
+        "mad": 3.282068
+      },
+      {
+        "fromFrame": 2,
+        "toFrame": 3,
+        "mad": 3.173759
+      },
+      {
+        "fromFrame": 1,
+        "toFrame": 2,
+        "mad": 3.117007
+      },
+      {
+        "fromFrame": 18,
+        "toFrame": 19,
+        "mad": 2.903625
+      }
+    ],
+    "meanAdjacentMad": 2.208888,
+    "maxAdjacentMad": 4.260115,
+    "loopSeamMad": 2.326683,
+    "loopSeamToMeanAdjacentRatio": 1.053328,
+    "regions": {
+      "head": {
+        "bounds": [
+          275,
+          95,
+          365,
+          195
+        ],
+        "meanAdjacentMad": 2.661958
+      },
+      "torso": {
+        "bounds": [
+          140,
+          80,
+          275,
+          215
+        ],
+        "meanAdjacentMad": 6.056183
+      },
+      "tail": {
+        "bounds": [
+          15,
+          75,
+          140,
+          245
+        ],
+        "meanAdjacentMad": 6.451576
+      }
+    }
+  },
+  "visualAcceptance": {
+    "status": "REQUIRES_MOTION_REVIEW",
+    "limitations": [
+      "Independent generated poses vary in head outline, body anatomy and tail height.",
+      "Eye alignment and equal area remove positional drift but cannot make an inconsistent source temporally smooth.",
+      "24 distinct poses and a small seam metric do not prove attractive or fluid motion.",
+      "This extraction preserves source order, including possible discontinuities at row transitions.",
+      "The largest change is 06 to 07: the downward tail suddenly moves upward and the torso flattens.",
+      "Other conspicuous reversals include 02 to 03 and 16 to 17. Review the 1-second preview before runtime acceptance."
+    ]
+  },
+  "frames": [
+    {
+      "frame": 1,
+      "sourceCrop": [
+        25,
+        136,
+        280,
+        226
+      ],
+      "sourceDarkArea": 7944,
+      "sourceEye": [
+        231.0,
+        174.0
+      ],
+      "uniformScale": 1.23416455,
+      "resizedSize": [
+        315,
+        111
+      ],
+      "origin": [
+        33,
+        102
+      ],
+      "outputEye": [
+        287.47059,
+        148.86667
+      ],
+      "alphaBoundingBox": [
+        35,
+        104,
+        346,
+        211
+      ],
+      "opaqueArea": 11883,
+      "sha256": "0587b7bfd03708b17306ff7b3d092572574a19b56ca1fe0821ae7d89a0208f6f"
+    },
+    {
+      "frame": 2,
+      "sourceCrop": [
+        297,
+        131,
+        543,
+        230
+      ],
+      "sourceDarkArea": 8450,
+      "sourceEye": [
+        491.0,
+        168.5
+      ],
+      "uniformScale": 1.19664225,
+      "resizedSize": [
+        294,
+        118
+      ],
+      "origin": [
+        55,
+        104
+      ],
+      "outputEye": [
+        286.85366,
+        148.69697
+      ],
+      "alphaBoundingBox": [
+        57,
+        107,
+        346,
+        219
+      ],
+      "opaqueArea": 11853,
+      "sha256": "8838f658afe7f7670f8fa4a51989cf7678b68d43a98b074bb66202580f094fb3"
+    },
+    {
+      "frame": 3,
+      "sourceCrop": [
+        561,
+        138,
+        791,
+        226
+      ],
+      "sourceDarkArea": 7923,
+      "sourceEye": [
+        740.0,
+        178.0
+      ],
+      "uniformScale": 1.23579905,
+      "resizedSize": [
+        284,
+        109
+      ],
+      "origin": [
+        66,
+        99
+      ],
+      "outputEye": [
+        287.02609,
+        148.54545
+      ],
+      "alphaBoundingBox": [
+        69,
+        102,
+        347,
+        205
+      ],
+      "opaqueArea": 11912,
+      "sha256": "3a34a487891908995148117cfd88647168fc32e31c854da03ad6044e94cbde6b"
+    },
+    {
+      "frame": 4,
+      "sourceCrop": [
+        803,
+        135,
+        1033,
+        252
+      ],
+      "sourceDarkArea": 7987,
+      "sourceEye": [
+        981.7,
+        174.3
+      ],
+      "uniformScale": 1.23083785,
+      "resizedSize": [
+        283,
+        144
+      ],
+      "origin": [
+        67,
+        101
+      ],
+      "outputEye": [
+        286.8787,
+        149.36923
+      ],
+      "alphaBoundingBox": [
+        69,
+        104,
+        347,
+        243
+      ],
+      "opaqueArea": 11908,
+      "sha256": "39b39710cd70f9294b90ac359018bbf0b4446b5e9e2fac31bc4bd0a67857da11"
+    },
+    {
+      "frame": 5,
+      "sourceCrop": [
+        1043,
+        142,
+        1283,
+        257
+      ],
+      "sourceDarkArea": 8018,
+      "sourceEye": [
+        1232.0,
+        182.0
+      ],
+      "uniformScale": 1.22845615,
+      "resizedSize": [
+        295,
+        141
+      ],
+      "origin": [
+        55,
+        100
+      ],
+      "outputEye": [
+        287.3125,
+        149.04348
+      ],
+      "alphaBoundingBox": [
+        57,
+        103,
+        347,
+        238
+      ],
+      "opaqueArea": 11882,
+      "sha256": "b13963b4825c314d095156afe3f9a2d0289b8081d3c19318813d2225e7d94409"
+    },
+    {
+      "frame": 6,
+      "sourceCrop": [
+        1287,
+        143,
+        1519,
+        258
+      ],
+      "sourceDarkArea": 7666,
+      "sourceEye": [
+        1468.5,
+        178.0
+      ],
+      "uniformScale": 1.25634315,
+      "resizedSize": [
+        291,
+        144
+      ],
+      "origin": [
+        59,
+        105
+      ],
+      "outputEye": [
+        286.65733,
+        148.82609
+      ],
+      "alphaBoundingBox": [
+        61,
+        107,
+        348,
+        246
+      ],
+      "opaqueArea": 11820,
+      "sha256": "e49831e98fb2b68a321f95001fb081f91423d08aa8b70453e3351ca6aeece2d9"
+    },
+    {
+      "frame": 7,
+      "sourceCrop": [
+        17,
+        349,
+        260,
+        430
+      ],
+      "sourceDarkArea": 8201,
+      "sourceEye": [
+        209.11111,
+        389.33333
+      ],
+      "uniformScale": 1.21467272,
+      "resizedSize": [
+        295,
+        98
+      ],
+      "origin": [
+        54,
+        100
+      ],
+      "outputEye": [
+        287.22131,
+        148.79835
+      ],
+      "alphaBoundingBox": [
+        57,
+        103,
+        347,
+        196
+      ],
+      "opaqueArea": 11838,
+      "sha256": "2a106831b24ebf1267e243762ec0d63528c631b9a136d5e1ed47b66600fd2ba6"
+    },
+    {
+      "frame": 8,
+      "sourceCrop": [
+        282,
+        357,
+        531,
+        437
+      ],
+      "sourceDarkArea": 7836,
+      "sourceEye": [
+        479.875,
+        398.125
+      ],
+      "uniformScale": 1.24264041,
+      "resizedSize": [
+        309,
+        99
+      ],
+      "origin": [
+        41,
+        98
+      ],
+      "outputEye": [
+        286.55572,
+        148.89219
+      ],
+      "alphaBoundingBox": [
+        43,
+        100,
+        347,
+        194
+      ],
+      "opaqueArea": 11853,
+      "sha256": "62acbb9edda4e236a71076b5369181c2e6824d85f000102e15df5d990183ca4e"
+    },
+    {
+      "frame": 9,
+      "sourceCrop": [
+        554,
+        356,
+        796,
+        437
+      ],
+      "sourceDarkArea": 7383,
+      "sourceEye": [
+        746.0,
+        400.5
+      ],
+      "uniformScale": 1.28019537,
+      "resizedSize": [
+        310,
+        104
+      ],
+      "origin": [
+        41,
+        92
+      ],
+      "outputEye": [
+        286.95041,
+        149.1358
+      ],
+      "alphaBoundingBox": [
+        43,
+        94,
+        348,
+        193
+      ],
+      "opaqueArea": 11924,
+      "sha256": "f1cfcf6a45e1d92f5f2f94c3a5e6e09291668a13923f54be20b73c1f40cc7144"
+    },
+    {
+      "frame": 10,
+      "sourceCrop": [
+        820,
+        367,
+        1051,
+        447
+      ],
+      "sourceDarkArea": 7209,
+      "sourceEye": [
+        1002.11111,
+        412.66667
+      ],
+      "uniformScale": 1.29555296,
+      "resizedSize": [
+        299,
+        104
+      ],
+      "origin": [
+        51,
+        90
+      ],
+      "outputEye": [
+        286.71958,
+        149.36667
+      ],
+      "alphaBoundingBox": [
+        53,
+        93,
+        348,
+        192
+      ],
+      "opaqueArea": 11928,
+      "sha256": "5e285d5f74fa0444c8c53aa9c76d7dc9c9bca17d9fc9837e382dc8bbdb0ed75f"
+    },
+    {
+      "frame": 11,
+      "sourceCrop": [
+        1058,
+        377,
+        1284,
+        455
+      ],
+      "sourceDarkArea": 6950,
+      "sourceEye": [
+        1235.125,
+        417.125
+      ],
+      "uniformScale": 1.31947232,
+      "resizedSize": [
+        298,
+        103
+      ],
+      "origin": [
+        53,
+        96
+      ],
+      "outputEye": [
+        286.5542,
+        148.98558
+      ],
+      "alphaBoundingBox": [
+        56,
+        99,
+        348,
+        196
+      ],
+      "opaqueArea": 11866,
+      "sha256": "5a909790ebcf8129d88584970dc8c36393daa2c9c310a583cbab65511720531c"
+    },
+    {
+      "frame": 12,
+      "sourceCrop": [
+        1287,
+        377,
+        1517,
+        458
+      ],
+      "sourceDarkArea": 7276,
+      "sourceEye": [
+        1466.33333,
+        416.88889
+      ],
+      "uniformScale": 1.28957421,
+      "resizedSize": [
+        297,
+        104
+      ],
+      "origin": [
+        55,
+        98
+      ],
+      "outputEye": [
+        286.57391,
+        149.21536
+      ],
+      "alphaBoundingBox": [
+        57,
+        101,
+        349,
+        199
+      ],
+      "opaqueArea": 11861,
+      "sha256": "99caefe2950072ff516ea09250ed618e26035c867243a7bc07edfbedc6d2589b"
+    },
+    {
+      "frame": 13,
+      "sourceCrop": [
+        19,
+        571,
+        258,
+        667
+      ],
+      "sourceDarkArea": 7529,
+      "sourceEye": [
+        206.71429,
+        613.0
+      ],
+      "uniformScale": 1.26772203,
+      "resizedSize": [
+        303,
+        122
+      ],
+      "origin": [
+        49,
+        96
+      ],
+      "outputEye": [
+        286.98087,
+        149.375
+      ],
+      "alphaBoundingBox": [
+        51,
+        99,
+        350,
+        215
+      ],
+      "opaqueArea": 11921,
+      "sha256": "3bad18d7da7078840038c19e9639e9ff10e01abf6d0c08614a66428342c2cb7f"
+    },
+    {
+      "frame": 14,
+      "sourceCrop": [
+        272,
+        579,
+        517,
+        679
+      ],
+      "sourceDarkArea": 7944,
+      "sourceEye": [
+        465.11111,
+        621.66667
+      ],
+      "uniformScale": 1.23416455,
+      "resizedSize": [
+        302,
+        123
+      ],
+      "origin": [
+        49,
+        97
+      ],
+      "outputEye": [
+        287.039,
+        149.48
+      ],
+      "alphaBoundingBox": [
+        52,
+        99,
+        348,
+        218
+      ],
+      "opaqueArea": 11857,
+      "sha256": "9b1dfddaec51718c21c9c6832f554f9ca442ce40ff29e41ed5cad869609f4d89"
+    },
+    {
+      "frame": 15,
+      "sourceCrop": [
+        532,
+        580,
+        773,
+        692
+      ],
+      "sourceDarkArea": 8038,
+      "sourceEye": [
+        720.2,
+        622.0
+      ],
+      "uniformScale": 1.22692689,
+      "resizedSize": [
+        296,
+        137
+      ],
+      "origin": [
+        56,
+        98
+      ],
+      "outputEye": [
+        287.15021,
+        149.375
+      ],
+      "alphaBoundingBox": [
+        58,
+        101,
+        349,
+        233
+      ],
+      "opaqueArea": 11887,
+      "sha256": "1f0710c32cf00cf680ec282c34d12e330b33a24f9d14bc0dbaf7c1bce629f8e5"
+    },
+    {
+      "frame": 16,
+      "sourceCrop": [
+        793,
+        591,
+        1034,
+        684
+      ],
+      "sourceDarkArea": 7898,
+      "sourceEye": [
+        982.11111,
+        630.33333
+      ],
+      "uniformScale": 1.23775338,
+      "resizedSize": [
+        298,
+        115
+      ],
+      "origin": [
+        53,
+        100
+      ],
+      "outputEye": [
+        286.83864,
+        148.63799
+      ],
+      "alphaBoundingBox": [
+        55,
+        103,
+        348,
+        212
+      ],
+      "opaqueArea": 11889,
+      "sha256": "ce4c43ef66b3eb62b921c1b369920dd6185c4aa2b61b4289edccf518e3f53139"
+    },
+    {
+      "frame": 17,
+      "sourceCrop": [
+        1042,
+        595,
+        1270,
+        707
+      ],
+      "sourceDarkArea": 7563,
+      "sourceEye": [
+        1218.875,
+        630.875
+      ],
+      "uniformScale": 1.26486925,
+      "resizedSize": [
+        288,
+        142
+      ],
+      "origin": [
+        64,
+        104
+      ],
+      "outputEye": [
+        287.42105,
+        149.48438
+      ],
+      "alphaBoundingBox": [
+        67,
+        107,
+        349,
+        243
+      ],
+      "opaqueArea": 11900,
+      "sha256": "6c2f0fb45ab1893085177905a64c048b0d40ac07d90c468ba7938f03b38af666"
+    },
+    {
+      "frame": 18,
+      "sourceCrop": [
+        1279,
+        600,
+        1516,
+        712
+      ],
+      "sourceDarkArea": 7723,
+      "sourceEye": [
+        1464.11111,
+        636.33333
+      ],
+      "uniformScale": 1.25169832,
+      "resizedSize": [
+        297,
+        140
+      ],
+      "origin": [
+        55,
+        104
+      ],
+      "outputEye": [
+        286.97468,
+        149.41667
+      ],
+      "alphaBoundingBox": [
+        57,
+        106,
+        349,
+        242
+      ],
+      "opaqueArea": 11862,
+      "sha256": "f4b6bf37af290b42fddca1bc595c945bbe792812b781af2ef2699a0c3f559efb"
+    },
+    {
+      "frame": 19,
+      "sourceCrop": [
+        18,
+        808,
+        265,
+        892
+      ],
+      "sourceDarkArea": 7685,
+      "sourceEye": [
+        214.33333,
+        845.88889
+      ],
+      "uniformScale": 1.25478913,
+      "resizedSize": [
+        310,
+        105
+      ],
+      "origin": [
+        41,
+        102
+      ],
+      "outputEye": [
+        287.41026,
+        149.36111
+      ],
+      "alphaBoundingBox": [
+        44,
+        105,
+        349,
+        204
+      ],
+      "opaqueArea": 11828,
+      "sha256": "5be4163874b95233e4279bf37cee55acc59348146fde10ec79aaaa96d2a4568d"
+    },
+    {
+      "frame": 20,
+      "sourceCrop": [
+        281,
+        807,
+        533,
+        903
+      ],
+      "sourceDarkArea": 7939,
+      "sourceEye": [
+        482.11111,
+        845.66667
+      ],
+      "uniformScale": 1.23455313,
+      "resizedSize": [
+        311,
+        119
+      ],
+      "origin": [
+        39,
+        101
+      ],
+      "outputEye": [
+        287.19665,
+        148.93056
+      ],
+      "alphaBoundingBox": [
+        41,
+        103,
+        347,
+        218
+      ],
+      "opaqueArea": 11926,
+      "sha256": "9ec003ff2a2932f283d189a1f6c6a8eb4c716eae1a5c4cfc7bda1d86a3791eb6"
+    },
+    {
+      "frame": 21,
+      "sourceCrop": [
+        547,
+        806,
+        789,
+        903
+      ],
+      "sourceDarkArea": 7618,
+      "sourceEye": [
+        738.88889,
+        845.66667
+      ],
+      "uniformScale": 1.26029496,
+      "resizedSize": [
+        305,
+        122
+      ],
+      "origin": [
+        45,
+        99
+      ],
+      "outputEye": [
+        286.84343,
+        148.89003
+      ],
+      "alphaBoundingBox": [
+        47,
+        102,
+        348,
+        218
+      ],
+      "opaqueArea": 11883,
+      "sha256": "78a808e7b8af138493676be2e5a9ae7f7bb1216bcddf9604b0bccc90310924a6"
+    },
+    {
+      "frame": 22,
+      "sourceCrop": [
+        803,
+        808,
+        1036,
+        902
+      ],
+      "sourceDarkArea": 7133,
+      "sourceEye": [
+        985.63636,
+        849.45455
+      ],
+      "uniformScale": 1.30243654,
+      "resizedSize": [
+        303,
+        122
+      ],
+      "origin": [
+        49,
+        95
+      ],
+      "outputEye": [
+        286.50566,
+        148.80271
+      ],
+      "alphaBoundingBox": [
+        51,
+        98,
+        349,
+        214
+      ],
+      "opaqueArea": 11806,
+      "sha256": "d2ac734c1d158c8fe72a988ca906c4a79b3524b2ca71634ee40770be791c2728"
+    },
+    {
+      "frame": 23,
+      "sourceCrop": [
+        1043,
+        811,
+        1278,
+        912
+      ],
+      "sourceDarkArea": 7449,
+      "sourceEye": [
+        1227.125,
+        849.875
+      ],
+      "uniformScale": 1.27451132,
+      "resizedSize": [
+        300,
+        129
+      ],
+      "origin": [
+        52,
+        99
+      ],
+      "outputEye": [
+        287.05319,
+        148.65223
+      ],
+      "alphaBoundingBox": [
+        54,
+        102,
+        350,
+        226
+      ],
+      "opaqueArea": 11928,
+      "sha256": "9bd0882e66cbdefccdc45c632021ab59fd6f1e6e103e7f3a4a546f3442cf626d"
+    },
+    {
+      "frame": 24,
+      "sourceCrop": [
+        1285,
+        816,
+        1514,
+        914
+      ],
+      "sourceDarkArea": 7328,
+      "sourceEye": [
+        1463.5,
+        854.0
+      ],
+      "uniformScale": 1.28499061,
+      "resizedSize": [
+        294,
+        126
+      ],
+      "origin": [
+        58,
+        100
+      ],
+      "outputEye": [
+        287.16594,
+        148.85714
+      ],
+      "alphaBoundingBox": [
+        60,
+        103,
+        350,
+        224
+      ],
+      "opaqueArea": 11895,
+      "sha256": "2ac81e765d48fdc39c6429d1c614d5d312bfc38bac06eb8111cfa3da87387a86"
+    }
+  ]
+}

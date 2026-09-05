@@ -3,7 +3,7 @@ import type { WhaleSkin } from '../types.ts'
 import type { WhaleSpeciesDefinition } from '../species.ts'
 import { SKINS } from './catalog.ts'
 import { speciesArtStyle } from './asset-styles.ts'
-import { MINKE_SWIM_SPRITE } from './minke-swim-sprite.ts'
+import { INK_WHALE_MOTION, INK_WHALE_STILL } from './ink-whale-sprite.ts'
 import styles from './Planned.module.css'
 
 export type WhaleArtProps = Readonly<{
@@ -34,7 +34,7 @@ export function WhaleArt({ species, skin, compact = false, className, title }: W
     className ?? '',
   ].filter(Boolean).join(' ')
   const artStyle = animated
-    ? { backgroundImage: `url(${MINKE_SWIM_SPRITE})`, ...skinPaletteStyle(skin) }
+    ? { backgroundImage: `url(${INK_WHALE_MOTION})`, '--ink-whale-still': `url(${INK_WHALE_STILL})`, ...skinPaletteStyle(skin) }
     : { ...speciesArtStyle(species), ...skinPaletteStyle(skin) }
   return React.createElement('span', {
     className: classNames,

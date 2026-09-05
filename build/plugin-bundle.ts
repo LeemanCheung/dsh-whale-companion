@@ -10,7 +10,7 @@ const platformModules = [
   'react', 'react/jsx-runtime', 'react-dom', 'react-dom/client', '@deepseek-ai/cordis',
   '@deepseek-ai/dsh-client-ui-slots', '@deepseek-ai/dsh-client-web-react',
   '@deepseek-ai/dsh-client-ui-primitives', '@deepseek-ai/dsh-client-ui-attachment',
-  '@deepseek-ai/dsh-client-schema-form', '@deepseek-ai/dsh-client-runtime/client',
+  '@deepseek-ai/dsh-client-schema-form', '@deepseek-ai/dsh-client-ui-renderer/client',
   '@deepseek-ai/dsh-api-remotes/client', '@deepseek-ai/dsh-client-ui-layout/client',
   '@deepseek-ai/dsh-client-ui-settings/client', '@deepseek-ai/dsh-client-ui-theme/client',
 ] as const

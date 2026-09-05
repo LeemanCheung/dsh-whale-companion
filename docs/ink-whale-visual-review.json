@@ -1,0 +1,29 @@
+{
+  "status": "accepted",
+  "reviewedOn": "2026-09-05",
+  "motionSha256": "5a69d16f15c2f84ac027c19b3a9c186cd72ae6a1329efc66d8443d90adbea109",
+  "generatedPoseCount": 24,
+  "interpolatedFrameCount": 72,
+  "playbackFrameCount": 96,
+  "encodedFps": 60,
+  "loopDurationMs": 1600,
+  "review": [
+    "The coordinating agent reviewed the 24 original poses and V2 transition sheet: one consistent black-ink whale, stable eye and mouth, connected torso and fins, no V1 gray tail afterimages.",
+    "Every original ImageGen anchor remains pixel-identical in the encoded animation; only the 72 in-between frames are interpolated.",
+    "Final compiled-component screenshots were inspected at desktop and 390 px mobile sizes; the whale is complete and clearly visible against the static pale ocean stage.",
+    "Seven built-bundle browser checks passed: normal native WebP movement, system and in-product PNG reduced-motion behavior, dark/light and narrow layouts, planned features and PNG export. The in-product PNG stayed pixel-identical over 450 ms before playback resumed.",
+    "Actual upgraded DSH Shell verification is performed by the coordinating task after this component-level acceptance."
+  ],
+  "acceptedLimitations": [
+    "At an enlarged 288 px transition view, interpolated contour edges are slightly harder than the untouched ImageGen anchors."
+  ],
+  "evidence": [
+    "docs/ink-whale-contact-sheet.png",
+    "docs/ink-whale-transition-contact-sheet.png",
+    "docs/ink-whale-motion-60fps.gif",
+    "docs/ink-whale-card-dark.png",
+    "docs/ink-whale-card-light-reduced.png",
+    "docs/ink-whale-card-mobile.png",
+    "docs/imagegen-20260905-prompts.md"
+  ]
+}
