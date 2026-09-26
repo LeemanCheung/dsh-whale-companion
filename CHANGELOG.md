@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Keep XP feedback beside the whale while the lift animation plays by positioning it independently of the animation transform.
+
 ## 2.6.0
 
 - Redesign the minke as a white-bellied ink whale breaching, arching and re-entering a fixed ImageGen waterline. Use 24 selected generated drawings, including two corrected apex poses, plus 72 explicitly identified raster in-betweens.

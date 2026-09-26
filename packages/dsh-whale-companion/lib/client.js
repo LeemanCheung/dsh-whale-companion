@@ -18410,7 +18410,10 @@ Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.
 			const top = Math.min(Math.max(8, position.y - 12), Math.max(8, viewportHeight - 306));
 			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [xpGain !== void 0 && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
 				className: Planned_module_css_default.xpBurst,
-				style: { transform: `translate(${position.x + 54}px, ${Math.max(8, position.y - 16)}px)` },
+				style: {
+					left: position.x + 54,
+					top: Math.max(8, position.y - 16)
+				},
 				role: "status",
 				"aria-live": "polite",
 				children: [
