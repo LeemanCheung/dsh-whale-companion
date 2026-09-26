@@ -132,7 +132,11 @@ def premultiplied_bilinear_warp(rgba: Image.Image, phase: float) -> Image.Image:
     """Move the torso, pectoral fin, tail stock and fluke as one swimming stroke."""
     pixels = np.asarray(rgba, dtype=np.float32)
     height, width, _ = pixels.shape
-    rows, columns = np.indices((height, width), dtype=np.float32)
+    # NumPy's float32 transcendental kernels vary with CPU SIMD dispatch.
+    # Keep the motion field in double precision and snap sampling coordinates
+    # to a millionth of a pixel before interpolation, so those last-bit
+    # differences cannot change the committed eight-bit sprite pixels.
+    rows, columns = np.indices((height, width), dtype=np.float64)
     progress = np.clip((columns - width * 0.07) / (width * 0.86), 0.0, 1.0)
 
     # The snout and eye remain readable. Motion grows continuously behind the
@@ -157,8 +161,8 @@ def premultiplied_bilinear_warp(rgba: Image.Image, phase: float) -> Image.Image:
     )
     fin_offset = 8.5 * np.sin(phase + 0.68) * fin_region
 
-    source_x = np.clip(columns - horizontal_offset, 0.0, width - 1.0)
-    source_y = np.clip(rows - vertical_offset - fin_offset, 0.0, height - 1.0)
+    source_x = np.round(np.clip(columns - horizontal_offset, 0.0, width - 1.0), 6)
+    source_y = np.round(np.clip(rows - vertical_offset - fin_offset, 0.0, height - 1.0), 6)
     left = np.floor(source_x).astype(np.int32)
     top = np.floor(source_y).astype(np.int32)
     right = np.minimum(left + 1, width - 1)

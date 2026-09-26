@@ -17,7 +17,7 @@
   },
   "sprite": {
     "path": "packages/dsh-whale-companion/assets/minke-swim-sprite.png",
-    "sha256": "8ff88ff4f722c43621620c7718479ad4b1797bc7ccb04b901bdb80f71afd3cdb",
+    "sha256": "90a523e7eef23603ef167c163341897b50425a90ba54397499328b7a633ea45d",
     "size": [
       2304,
       1280
@@ -32,45 +32,45 @@
   },
   "preview": {
     "path": "packages/dsh-whale-companion/assets/minke-swim-preview.gif",
-    "sha256": "edfc11a48d5406a1a29bafe756963b93d1dfeacf5874da9b31d664cbab3664f7",
+    "sha256": "de480cdda1a5e8200a8a8c1db03e1271b878b735131cdcd0d91f06d25485a324",
     "durationMs": 70
   },
   "contactSheet": {
     "path": "docs/minke-motion-contact-sheet.png",
-    "sha256": "6d9329d8f088b93f6c454bc75258c7b8ed685196b5035b5ea42ea7f07af56f85"
+    "sha256": "fbba370ddd527e1f4835e419ad28c43889ada1d6cec59073ef122e4e2ca50a03"
   },
   "motion": {
     "uniqueFrames": 24,
     "uniqueMasks": 24,
     "adjacentPremultipliedMad": [
-      0.969999,
-      0.856553,
-      0.762033,
-      0.649085,
-      0.590442,
-      0.582749,
-      0.64348,
-      0.83502,
-      1.009176,
-      1.112297,
-      1.122808,
-      1.096068,
-      1.026173,
-      0.910982,
-      0.801374,
-      0.701532,
-      0.642189,
-      0.580107,
-      0.639008,
-      0.819658,
-      0.991507,
-      1.076164,
-      1.093929,
-      1.050262
+      0.969906,
+      0.856611,
+      0.762063,
+      0.649072,
+      0.590468,
+      0.582738,
+      0.643439,
+      0.834983,
+      1.009052,
+      1.11124,
+      1.122806,
+      1.096128,
+      1.02615,
+      0.911027,
+      0.801435,
+      0.701518,
+      0.642206,
+      0.580137,
+      0.639038,
+      0.819634,
+      0.991453,
+      1.075133,
+      1.093856,
+      1.050283
     ],
-    "medianAdjacentMad": 0.83502,
-    "loopSeamRatio": 1.257769,
-    "maxAdjacentRatio": 1.344648,
+    "medianAdjacentMad": 0.834983,
+    "loopSeamRatio": 1.25785,
+    "maxAdjacentRatio": 1.344706,
     "adjacentMaskChange": [
       0.004867,
       0.00437,
@@ -113,10 +113,10 @@
     ],
     "nonzeroAlphaCoverageRange": [
       0.113631,
-      0.114648
+      0.114632
     ],
     "lowAlphaCoverageRange": [
-      0.009473,
+      0.009456,
       0.010181
     ]
   },

@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Keep XP feedback beside the whale while the lift animation plays by positioning it independently of the animation transform.
+- Make the legacy minke sprite rebuild independent of NumPy CPU dispatch by using double-precision motion coordinates on a fixed subpixel grid; regenerate its derived assets and retain exact pixel, provenance, motion and bundle checks.
 
 ## 2.6.0
 
