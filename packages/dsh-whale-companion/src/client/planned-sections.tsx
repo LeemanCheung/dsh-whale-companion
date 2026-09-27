@@ -38,7 +38,7 @@ export function WhaleOverlayExtras({
       {xpGain !== undefined && (
         <span
           className={styles.xpBurst}
-          style={{ transform: `translate(${position.x + 54}px, ${Math.max(8, position.y - 16)}px)` }}
+          style={{ left: position.x + 54, top: Math.max(8, position.y - 16) }}
           role="status"
           aria-live="polite"
         >
